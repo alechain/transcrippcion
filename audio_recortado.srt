@@ -1,0 +1,4556 @@
+1
+00:00:00,000 --> 00:00:08,000
+Bueno, continuando, entonces,
+
+2
+00:00:08,000 --> 00:00:12,000
+con lo programado, tenemos la
+
+3
+00:00:12,000 --> 00:00:16,000
+presentación de Panamerican,
+
+4
+00:00:16,000 --> 00:00:19,000
+la presentación va a ser realizada
+
+5
+00:00:19,000 --> 00:00:22,000
+por Martín Ruiz, quien ya conocemos
+
+6
+00:00:22,000 --> 00:00:25,000
+del año pasado, estado con nosotros,
+
+7
+00:00:25,000 --> 00:00:29,000
+y Diego Zobro, el título de la
+
+8
+00:00:29,000 --> 00:00:32,000
+presentación de Panamerican,
+
+9
+00:00:32,000 --> 00:00:35,000
+con modelos basados en árboles.
+
+10
+00:00:35,000 --> 00:00:38,000
+Bueno, ¿están listos, Diego?
+
+11
+00:00:38,000 --> 00:00:40,000
+Sí, estamos listos.
+
+12
+00:00:40,000 --> 00:00:41,000
+Perfecto.
+
+13
+00:00:41,000 --> 00:00:43,000
+¿A Martín?
+
+14
+00:00:43,000 --> 00:00:47,000
+Martín se estaba uniendo.
+
+15
+00:00:47,000 --> 00:00:52,000
+Bueno, comparto.
+
+16
+00:00:52,000 --> 00:00:58,000
+Ok.
+
+17
+00:00:58,000 --> 00:01:01,000
+Muchas gracias por la invitación.
+
+18
+00:01:01,000 --> 00:01:07,000
+Vamos a estar hablando de
+
+19
+00:01:07,000 --> 00:01:09,000
+predicción de ventas en estaciones de
+
+20
+00:01:09,000 --> 00:01:11,000
+servicio como modelos basados en árboles.
+
+21
+00:01:11,000 --> 00:01:13,000
+Vamos de una clasión, vamos a
+
+22
+00:01:13,000 --> 00:01:15,000
+predecir cuánto va a vender una estación
+
+23
+00:01:15,000 --> 00:01:16,000
+que todavía no existe.
+
+24
+00:01:16,000 --> 00:01:19,000
+Esa es lo que tiene interesante.
+
+25
+00:01:19,000 --> 00:01:22,000
+Y comenzamos, hablando un poco
+
+26
+00:01:22,000 --> 00:01:24,000
+de otra acción de la colación,
+
+27
+00:01:24,000 --> 00:01:26,000
+una viñeta clásica que nos muestra
+
+28
+00:01:26,000 --> 00:01:28,000
+alguien que está buscando su
+
+29
+00:01:28,000 --> 00:01:31,000
+billetera abajo de un farol
+
+30
+00:01:31,000 --> 00:01:33,000
+y se le acerca a un policía y le
+
+31
+00:01:33,000 --> 00:01:35,000
+pregunta si es ahí donde le había
+
+32
+00:01:35,000 --> 00:01:37,000
+perdido, le dice no, la perdí en el
+
+33
+00:01:37,000 --> 00:01:39,000
+parque, pero acá es donde hay luz.
+
+34
+00:01:39,000 --> 00:01:41,000
+Esta viñeta es clásica, hay
+
+35
+00:01:41,000 --> 00:01:43,000
+muchos variantes, con llaves,
+
+36
+00:01:43,000 --> 00:01:46,000
+con billeteras, con monedas,
+
+37
+00:01:46,000 --> 00:01:49,000
+y nos permite pasar una analogía
+
+38
+00:01:49,000 --> 00:01:52,000
+en general con lo que es la
+
+39
+00:01:52,000 --> 00:01:54,000
+ciencia de datos, el data mining,
+
+40
+00:01:54,000 --> 00:01:56,000
+que en general los problemas
+
+41
+00:01:56,000 --> 00:01:59,000
+están en el parque a tres o cuatro
+
+42
+00:01:59,000 --> 00:02:01,000
+cuadras de donde está el farol,
+
+43
+00:02:01,000 --> 00:02:03,000
+y generalmente tratamos de resolverlo
+
+44
+00:02:03,000 --> 00:02:05,000
+con los datos que es justamente los
+
+45
+00:02:05,000 --> 00:02:06,000
+que están debajo del farol.
+
+46
+00:02:06,000 --> 00:02:08,000
+Y lo que vamos a contar hoy es
+
+47
+00:02:08,000 --> 00:02:10,000
+cómo resolvimos un caso yendo
+
+48
+00:02:10,000 --> 00:02:12,000
+a buscar el problema al parque.
+
+49
+00:02:15,000 --> 00:02:17,000
+Básicamente el problema de negocio
+
+50
+00:02:17,000 --> 00:02:19,000
+que queríamos resolver era
+
+51
+00:02:19,000 --> 00:02:22,000
+evaluar la inversión en términos
+
+52
+00:02:22,000 --> 00:02:24,000
+económicos de construir una nueva
+
+53
+00:02:24,000 --> 00:02:26,000
+estación de servicio. Básicamente
+
+54
+00:02:26,000 --> 00:02:28,000
+para hacer una evaluación económica
+
+55
+00:02:28,000 --> 00:02:30,000
+y financiera de la construcción de
+
+56
+00:02:30,000 --> 00:02:32,000
+una nueva estación de servicio, lo
+
+57
+00:02:32,000 --> 00:02:34,000
+primero que hay que construir es un
+
+58
+00:02:34,000 --> 00:02:36,000
+cashflow, y sobre ese cashflow se
+
+59
+00:02:36,000 --> 00:02:38,000
+les van a aplicar algunos indicadores
+
+60
+00:02:38,000 --> 00:02:40,000
+financieros, sobre ese cashflow se van
+
+61
+00:02:40,000 --> 00:02:42,000
+a aplicar unos algoritmos que nos van
+
+62
+00:02:42,000 --> 00:02:44,000
+a permitir obtener un valor actual
+
+63
+00:02:44,000 --> 00:02:46,000
+neto, un valor presente neto,
+
+64
+00:02:46,000 --> 00:02:48,000
+y una tasa interna de retorno.
+
+65
+00:02:48,000 --> 00:02:50,000
+Pero básicamente esos son algoritmos,
+
+66
+00:02:50,000 --> 00:02:52,000
+lo primero que hay que hacer es
+
+67
+00:02:52,000 --> 00:02:54,000
+construir un cashflow.
+
+68
+00:02:54,000 --> 00:02:56,000
+Y para construir bien un cashflow
+
+69
+00:02:56,000 --> 00:02:58,000
+necesitamos básicamente tres
+
+70
+00:02:58,000 --> 00:03:00,000
+componentes, las inversiones,
+
+71
+00:03:00,000 --> 00:03:02,000
+los costos operativos y la
+
+72
+00:03:02,000 --> 00:03:04,000
+facturación.
+
+73
+00:03:04,000 --> 00:03:06,000
+Tenemos clarísimo cuánto
+
+74
+00:03:06,000 --> 00:03:08,000
+cuesta hacer una estación de servicio.
+
+75
+00:03:08,000 --> 00:03:10,000
+Si le pasamos a nuestro departamento
+
+76
+00:03:10,000 --> 00:03:12,000
+de ingeniería, cómo va a hacer el
+
+77
+00:03:12,000 --> 00:03:14,000
+diseño, y todos los detalles nos
+
+78
+00:03:14,000 --> 00:03:16,000
+dicen exactamente cuánto va a costar
+
+79
+00:03:16,000 --> 00:03:18,000
+ese es un valor que no tiene ninguna
+
+80
+00:03:18,000 --> 00:03:20,000
+necesidad.
+
+81
+00:03:20,000 --> 00:03:22,000
+Y para saber cuál es la facturación
+
+82
+00:03:22,000 --> 00:03:24,000
+necesitamos dos valores.
+
+83
+00:03:24,000 --> 00:03:26,000
+El precio de venta y el volumen
+
+84
+00:03:26,000 --> 00:03:28,000
+de venta.
+
+85
+00:03:28,000 --> 00:03:30,000
+El precio de venta en línea general
+
+86
+00:03:30,000 --> 00:03:32,000
+y en particular en el mercado argentino
+
+87
+00:03:32,000 --> 00:03:34,000
+es un valor que es muy estable
+
+88
+00:03:34,000 --> 00:03:36,000
+en dólares, si miramos el precio
+
+89
+00:03:36,000 --> 00:03:38,000
+en los últimos 10 o 15 años en dólares
+
+90
+00:03:38,000 --> 00:03:40,000
+ha estado terriblemente
+
+91
+00:03:40,000 --> 00:03:42,000
+estable cerca de entre los 90
+
+92
+00:03:42,000 --> 00:03:44,000
+centavos y un dólar por litro.
+
+93
+00:03:44,000 --> 00:03:46,000
+El gran problema es
+
+94
+00:03:46,000 --> 00:03:48,000
+determinar cuál
+
+95
+00:03:48,000 --> 00:03:50,000
+va a ser el volumen de ventas.
+
+96
+00:03:50,000 --> 00:03:52,000
+Entonces el problema
+
+97
+00:03:52,000 --> 00:03:54,000
+que tenemos se transforma justamente
+
+98
+00:03:54,000 --> 00:03:56,000
+en estimar el volumen de ventas de esa
+
+99
+00:03:56,000 --> 00:03:58,000
+estación que todavía no existe.
+
+100
+00:03:58,000 --> 00:04:00,000
+¿Cómo hacemos tradicionalmente?
+
+101
+00:04:00,000 --> 00:04:02,000
+¿Cómo hizo la industria tradicionalmente
+
+102
+00:04:02,000 --> 00:04:04,000
+para hacer esto? Básicamente
+
+103
+00:04:04,000 --> 00:04:06,000
+usando dos tipos de modelos
+
+104
+00:04:06,000 --> 00:04:08,000
+y en algunos casos combinándolos.
+
+105
+00:04:08,000 --> 00:04:10,000
+Tenemos modelos
+
+106
+00:04:10,000 --> 00:04:12,000
+para lo que llamo áreas urbanas
+
+107
+00:04:12,000 --> 00:04:14,000
+compactas, lo que puede ser
+
+108
+00:04:14,000 --> 00:04:16,000
+el tejido urbano
+
+109
+00:04:16,000 --> 00:04:18,000
+de una ciudad
+
+110
+00:04:18,000 --> 00:04:20,000
+relativamente chica, 50.000, 100.000 habitantes
+
+111
+00:04:20,000 --> 00:04:22,000
+que se basa en
+
+112
+00:04:22,000 --> 00:04:24,000
+lo que llamamos trade áreas.
+
+113
+00:04:24,000 --> 00:04:26,000
+Tenemos
+
+114
+00:04:26,000 --> 00:04:28,000
+modelos para
+
+115
+00:04:28,000 --> 00:04:30,000
+estaciones que están en rutas en autopistas
+
+116
+00:04:30,000 --> 00:04:32,000
+que están basados en lo que llamamos tasas de captura.
+
+117
+00:04:32,000 --> 00:04:34,000
+Esto es
+
+118
+00:04:34,000 --> 00:04:36,000
+qué porcentaje de los vehículos que pasan por delante
+
+119
+00:04:36,000 --> 00:04:38,000
+de la estación van a entrar y realmente
+
+120
+00:04:38,000 --> 00:04:40,000
+cargará ahí. Y donde
+
+121
+00:04:40,000 --> 00:04:42,000
+en los casos de áreas urbanas extensas
+
+122
+00:04:42,000 --> 00:04:44,000
+que pueden ser una gran metrópolis
+
+123
+00:04:44,000 --> 00:04:46,000
+como el área metropolitana de Buenos Aires,
+
+124
+00:04:46,000 --> 00:04:48,000
+se suele combinar el trade area
+
+125
+00:04:48,000 --> 00:04:50,000
+con las tasas de captura.
+
+126
+00:04:50,000 --> 00:04:52,000
+Básicamente
+
+127
+00:04:52,000 --> 00:04:54,000
+el trade area
+
+128
+00:04:54,000 --> 00:04:56,000
+se basa en definir
+
+129
+00:04:56,000 --> 00:04:58,000
+para una región
+
+130
+00:04:58,000 --> 00:05:00,000
+los distintos segmentos
+
+131
+00:05:00,000 --> 00:05:02,000
+de esa región
+
+132
+00:05:02,000 --> 00:05:04,000
+que no compiten entre sí
+
+133
+00:05:04,000 --> 00:05:06,000
+analizar cuáles son las estaciones que están ahí
+
+134
+00:05:06,000 --> 00:05:08,000
+existentes, cuánto venden
+
+135
+00:05:08,000 --> 00:05:10,000
+y cómo se puede repartir ese volumen.
+
+136
+00:05:10,000 --> 00:05:12,000
+Para lo que son las tasas de captura
+
+137
+00:05:12,000 --> 00:05:14,000
+básicamente es analizar el tránsito
+
+138
+00:05:14,000 --> 00:05:16,000
+o descomponer ese tránsito
+
+139
+00:05:16,000 --> 00:05:18,000
+en las componentes
+
+140
+00:05:18,000 --> 00:05:20,000
+de tendencia, de estacionalidad
+
+141
+00:05:20,000 --> 00:05:22,000
+y aleatoria
+
+142
+00:05:22,000 --> 00:05:24,000
+y a partir de cómo va a evolucionar el futuro
+
+143
+00:05:24,000 --> 00:05:26,000
+estimar cuánto podríamos llegar a capturar
+
+144
+00:05:26,000 --> 00:05:28,000
+con nuestra estación.
+
+145
+00:05:28,000 --> 00:05:30,000
+¿Qué problemas
+
+146
+00:05:30,000 --> 00:05:32,000
+han tenido o tienen siguen teniendo
+
+147
+00:05:32,000 --> 00:05:34,000
+estos métodos tradicionales de estimación?
+
+148
+00:05:34,000 --> 00:05:36,000
+El trade area es básicamente
+
+149
+00:05:36,000 --> 00:05:38,000
+que si bien conocemos
+
+150
+00:05:38,000 --> 00:05:40,000
+las estaciones existen
+
+151
+00:05:40,000 --> 00:05:42,000
+y cuánto venden
+
+152
+00:05:42,000 --> 00:05:44,000
+no solamente es la ubicación
+
+153
+00:05:44,000 --> 00:05:46,000
+y el tamaño de la estación
+
+154
+00:05:46,000 --> 00:05:48,000
+lo que importa, sino también las instalaciones
+
+155
+00:05:48,000 --> 00:05:50,000
+la operación
+
+156
+00:05:50,000 --> 00:05:52,000
+el tráfico que circula por ese lugar
+
+157
+00:05:54,000 --> 00:05:56,000
+y eso hace que
+
+158
+00:05:56,000 --> 00:05:58,000
+sea relativamente fácil construir
+
+159
+00:05:58,000 --> 00:06:00,000
+una matriz donde
+
+160
+00:06:00,000 --> 00:06:02,000
+podemos
+
+161
+00:06:02,000 --> 00:06:04,000
+ubicar la fortaleza
+
+162
+00:06:04,000 --> 00:06:06,000
+de la ubicación
+
+163
+00:06:06,000 --> 00:06:08,000
+y la fortaleza del site
+
+164
+00:06:08,000 --> 00:06:10,000
+de las instalaciones
+
+165
+00:06:10,000 --> 00:06:12,000
+y establecer un rango
+
+166
+00:06:12,000 --> 00:06:14,000
+que es una buena posición
+
+167
+00:06:14,000 --> 00:06:16,000
+y que es una buena instalación
+
+168
+00:06:16,000 --> 00:06:18,000
+este tipo de métodos
+
+169
+00:06:18,000 --> 00:06:20,000
+funciona muy bien en los extremos
+
+170
+00:06:20,000 --> 00:06:22,000
+es decir, cuando una estación está muy bien ubicada
+
+171
+00:06:22,000 --> 00:06:24,000
+y tiene muy buenas instalaciones
+
+172
+00:06:24,000 --> 00:06:26,000
+queda bien evaluada
+
+173
+00:06:26,000 --> 00:06:28,000
+cuando una estación está muy mal ubicada
+
+174
+00:06:28,000 --> 00:06:30,000
+y tiene muy malas instalaciones queda muy mal evaluada
+
+175
+00:06:30,000 --> 00:06:32,000
+y nos quedan como los extremos de una distribución normal
+
+176
+00:06:32,000 --> 00:06:34,000
+y en esos casos generalmente
+
+177
+00:06:34,000 --> 00:06:36,000
+poco error, el tema es que la mayoría
+
+178
+00:06:36,000 --> 00:06:38,000
+de las estaciones están en el medio
+
+179
+00:06:38,000 --> 00:06:40,000
+y eso es lo difícil de evaluar
+
+180
+00:06:40,000 --> 00:06:42,000
+con este tipo de modelos
+
+181
+00:06:42,000 --> 00:06:44,000
+y en el caso de las tasas de captura
+
+182
+00:06:44,000 --> 00:06:46,000
+es
+
+183
+00:06:46,000 --> 00:06:48,000
+la complejidad acá es cómo se estima
+
+184
+00:06:48,000 --> 00:06:50,000
+ese porcentaje de ingreso
+
+185
+00:06:50,000 --> 00:06:52,000
+de vehículos a la estación
+
+186
+00:06:52,000 --> 00:06:54,000
+porque cuando uno mira los casos reales
+
+187
+00:06:54,000 --> 00:06:56,000
+dependiendo
+
+188
+00:06:56,000 --> 00:06:58,000
+del tipo de arteria
+
+189
+00:06:58,000 --> 00:07:00,000
+la tasa de captura puede estar
+
+190
+00:07:00,000 --> 00:07:02,000
+en torno al 1 al 1.5%
+
+191
+00:07:02,000 --> 00:07:04,000
+en torno al 3.5%
+
+192
+00:07:04,000 --> 00:07:06,000
+en torno al 5%
+
+193
+00:07:06,000 --> 00:07:08,000
+en torno al 15%
+
+194
+00:07:08,000 --> 00:07:10,000
+y la pregunta es de qué depende esto
+
+195
+00:07:10,000 --> 00:07:12,000
+entonces
+
+196
+00:07:12,000 --> 00:07:14,000
+en función de ver las limitaciones
+
+197
+00:07:14,000 --> 00:07:16,000
+que tenían estos métodos tradicionales
+
+198
+00:07:16,000 --> 00:07:18,000
+que usaba la industria
+
+199
+00:07:18,000 --> 00:07:20,000
+nos surgió la siguiente hipótesis
+
+200
+00:07:20,000 --> 00:07:22,000
+la pregunta que nos hacíamos es
+
+201
+00:07:22,000 --> 00:07:24,000
+si tenemos un conjunto grande
+
+202
+00:07:24,000 --> 00:07:26,000
+con gran cantidad de datos
+
+203
+00:07:26,000 --> 00:07:28,000
+que tenga todas las características
+
+204
+00:07:28,000 --> 00:07:30,000
+relevantes de una estación de servicio
+
+205
+00:07:30,000 --> 00:07:32,000
+y que deberíamos en teoría
+
+206
+00:07:32,000 --> 00:07:34,000
+poder entrenar un volumen
+
+207
+00:07:34,000 --> 00:07:36,000
+que capture esas particularidades
+
+208
+00:07:36,000 --> 00:07:38,000
+que explican el volumen
+
+209
+00:07:38,000 --> 00:07:40,000
+y nos permita predecirlo
+
+210
+00:07:40,000 --> 00:07:42,000
+en estaciones que no existen
+
+211
+00:07:42,000 --> 00:07:44,000
+pero que van a tener ciertas características
+
+212
+00:07:44,000 --> 00:07:46,000
+esta fue la gran idea
+
+213
+00:07:46,000 --> 00:07:48,000
+que tuvimos con hipótesis
+
+214
+00:07:48,000 --> 00:07:50,000
+y transformamos entonces
+
+215
+00:07:50,000 --> 00:07:52,000
+este problema
+
+216
+00:07:52,000 --> 00:07:54,000
+en tres problemas operacionalizables
+
+217
+00:07:54,000 --> 00:07:56,000
+que son definir el tamaño del conjunto
+
+218
+00:07:56,000 --> 00:07:58,000
+estimar cuáles son las características relevantes
+
+219
+00:07:58,000 --> 00:08:00,000
+para el modelo
+
+220
+00:08:02,000 --> 00:08:04,000
+vamos a ver
+
+221
+00:08:04,000 --> 00:08:06,000
+cada una de estos tres problemas
+
+222
+00:08:06,000 --> 00:08:08,000
+en particular
+
+223
+00:08:08,000 --> 00:08:10,000
+y empezamos con la definición del tamaño del conjunto
+
+224
+00:08:10,000 --> 00:08:12,000
+de qué tamaño debería ser el conjunto
+
+225
+00:08:12,000 --> 00:08:14,000
+para entrenar este modelo
+
+226
+00:08:14,000 --> 00:08:16,000
+bueno, en Argentina tenemos
+
+227
+00:08:16,000 --> 00:08:18,000
+más o menos 4200 estaciones de servicio
+
+228
+00:08:18,000 --> 00:08:20,000
+dado que es un número
+
+229
+00:08:20,000 --> 00:08:22,000
+relativamente acotado
+
+230
+00:08:22,000 --> 00:08:24,000
+dijimos cuanto más grande sea el conjunto
+
+231
+00:08:24,000 --> 00:08:26,000
+mejor, ahora como le esquimos
+
+232
+00:08:26,000 --> 00:08:28,000
+bueno, la variable
+
+233
+00:08:28,000 --> 00:08:30,000
+de respuesta que queremos usar nosotros
+
+234
+00:08:30,000 --> 00:08:32,000
+es el volumen de ventas
+
+235
+00:08:32,000 --> 00:08:34,000
+no todas las estaciones que existen
+
+236
+00:08:34,000 --> 00:08:36,000
+reportan el volumen de ventas en forma regular
+
+237
+00:08:36,000 --> 00:08:38,000
+a la Secretaría de Energía
+
+238
+00:08:38,000 --> 00:08:40,000
+con lo cual dijimos, vamos a agarrar el conjunto
+
+239
+00:08:40,000 --> 00:08:42,000
+de estaciones que sí reportan en forma regular
+
+240
+00:08:42,000 --> 00:08:44,000
+que terminaba
+
+241
+00:08:44,000 --> 00:08:46,000
+transformándose en un conjunto de más o menos
+
+242
+00:08:46,000 --> 00:08:48,000
+4200 estaciones
+
+243
+00:08:48,000 --> 00:08:50,000
+un conjunto de aproximadamente 3.800 estaciones
+
+244
+00:08:50,000 --> 00:08:52,000
+en segundo lugar
+
+245
+00:08:52,000 --> 00:08:54,000
+nos quedaba definir
+
+246
+00:08:54,000 --> 00:08:56,000
+las características relevantes
+
+247
+00:08:56,000 --> 00:08:58,000
+de las estaciones para introducir el modelo
+
+248
+00:08:58,000 --> 00:09:00,000
+esto lo hicimos en base
+
+249
+00:09:00,000 --> 00:09:02,000
+a primer lugar
+
+250
+00:09:02,000 --> 00:09:04,000
+tomando experiencia en la industria
+
+251
+00:09:04,000 --> 00:09:06,000
+hicimos survey con expertos
+
+252
+00:09:06,000 --> 00:09:08,000
+usamos nuestra experiencia de campo
+
+253
+00:09:08,000 --> 00:09:10,000
+en particular
+
+254
+00:09:10,000 --> 00:09:12,000
+esto lo hicimos desde el área de planeamiento de red
+
+255
+00:09:12,000 --> 00:09:14,000
+el equipo que lo hizo
+
+256
+00:09:14,000 --> 00:09:16,000
+había recorrido
+
+257
+00:09:16,000 --> 00:09:18,000
+más de 30.000 kilómetros de rutas nacionales
+
+258
+00:09:18,000 --> 00:09:20,000
+había visitado
+
+259
+00:09:20,000 --> 00:09:22,000
+todas las ciudades de más de
+
+260
+00:09:22,000 --> 00:09:24,000
+100.000 habitantes del país
+
+261
+00:09:24,000 --> 00:09:26,000
+y todas las ciudades entre
+
+262
+00:09:26,000 --> 00:09:28,000
+10.000 y 100.000 habitantes que estaban
+
+263
+00:09:28,000 --> 00:09:30,000
+a los costados
+
+264
+00:09:30,000 --> 00:09:32,000
+de estos 30.000 kilómetros de rutas nacionales
+
+265
+00:09:32,000 --> 00:09:34,000
+con lo cual
+
+266
+00:09:34,000 --> 00:09:36,000
+de alguna forma había generado
+
+267
+00:09:36,000 --> 00:09:38,000
+una aurística después de ver más de
+
+268
+00:09:38,000 --> 00:09:40,000
+2.000 estaciones de qué era lo importante
+
+269
+00:09:40,000 --> 00:09:42,000
+y qué era lo que no
+
+270
+00:09:42,000 --> 00:09:44,000
+y por último dado que
+
+271
+00:09:44,000 --> 00:09:46,000
+al momento de definir las variables
+
+272
+00:09:46,000 --> 00:09:48,000
+antes de tener que relevarlas no había límite
+
+273
+00:09:48,000 --> 00:09:50,000
+hicimos un brainstorming con los sectores
+
+274
+00:09:50,000 --> 00:09:52,000
+lucrados en el área de ventas
+
+275
+00:09:52,000 --> 00:09:54,000
+para ver qué otras variables
+
+276
+00:09:54,000 --> 00:09:56,000
+les podían ocurrir como relevantes
+
+277
+00:09:58,000 --> 00:10:00,000
+y por último teníamos que definir
+
+278
+00:10:00,000 --> 00:10:02,000
+qué modelos utilizar
+
+279
+00:10:02,000 --> 00:10:04,000
+básicamente teníamos dos grandes candidatos
+
+280
+00:10:04,000 --> 00:10:06,000
+los basados en árboles que son los que
+
+281
+00:10:06,000 --> 00:10:08,000
+se suelen utilizar para
+
+282
+00:10:08,000 --> 00:10:10,000
+datos estructurados
+
+283
+00:10:10,000 --> 00:10:12,000
+también pensamos usar como candidato
+
+284
+00:10:12,000 --> 00:10:14,000
+las redes neuronales al final funcionaron
+
+285
+00:10:14,000 --> 00:10:16,000
+mucho mejor los diárboles por eso
+
+286
+00:10:16,000 --> 00:10:18,000
+son los que vamos a contar hoy
+
+287
+00:10:18,000 --> 00:10:20,000
+y vamos a entrar en los resultados
+
+288
+00:10:20,000 --> 00:10:22,000
+de los modelos en base a
+
+289
+00:10:22,000 --> 00:10:24,000
+redes neuronales artificiales
+
+290
+00:10:26,000 --> 00:10:28,000
+yendo al primer problema
+
+291
+00:10:28,000 --> 00:10:30,000
+que es la construcción de las listas de características
+
+292
+00:10:30,000 --> 00:10:32,000
+una vez ya definido que vamos a trabajar
+
+293
+00:10:32,000 --> 00:10:34,000
+sobre las 1.800 estaciones
+
+294
+00:10:34,000 --> 00:10:36,000
+vamos a ver cómo lo hicimos
+
+295
+00:10:36,000 --> 00:10:38,000
+tenemos
+
+296
+00:10:38,000 --> 00:10:40,000
+tres grandes fuentes de características
+
+297
+00:10:40,000 --> 00:10:42,000
+las variables
+
+298
+00:10:42,000 --> 00:10:44,000
+que podemos obtener de alguna fuente pública
+
+299
+00:10:44,000 --> 00:10:46,000
+o privada de fácil acceso
+
+300
+00:10:46,000 --> 00:10:48,000
+que es lo que normalmente
+
+301
+00:10:48,000 --> 00:10:50,000
+todos conocemos como el dataset
+
+302
+00:10:50,000 --> 00:10:52,000
+en este caso sería
+
+303
+00:10:52,000 --> 00:10:54,000
+volviendo a la analogía de la persona
+
+304
+00:10:54,000 --> 00:10:56,000
+que estaba buscando la billetera
+
+305
+00:10:56,000 --> 00:10:58,000
+esto sería lo que está bajo la luz
+
+306
+00:10:58,000 --> 00:11:00,000
+¿Qué tenemos ahí?
+
+307
+00:11:00,000 --> 00:11:02,000
+coordenadas las estaciones, precios
+
+308
+00:11:02,000 --> 00:11:04,000
+volúmenes históricos
+
+309
+00:11:04,000 --> 00:11:06,000
+después podemos
+
+310
+00:11:06,000 --> 00:11:08,000
+a partir de las variables que tenemos
+
+311
+00:11:08,000 --> 00:11:10,000
+calcular otras variables
+
+312
+00:11:10,000 --> 00:11:12,000
+que es lo que normalmente llamamos
+
+313
+00:11:12,000 --> 00:11:14,000
+feature engineering
+
+314
+00:11:14,000 --> 00:11:16,000
+market share
+
+315
+00:11:16,000 --> 00:11:18,000
+la población dentro de X radio
+
+316
+00:11:18,000 --> 00:11:20,000
+y por último tenemos algo
+
+317
+00:11:20,000 --> 00:11:22,000
+de lo que generalmente
+
+318
+00:11:22,000 --> 00:11:24,000
+no hablamos
+
+319
+00:11:24,000 --> 00:11:26,000
+que es las variables que no están en ningún lado
+
+320
+00:11:26,000 --> 00:11:28,000
+y que hay que relevar
+
+321
+00:11:28,000 --> 00:11:30,000
+en este caso estamos hablando del layout
+
+322
+00:11:30,000 --> 00:11:32,000
+tipo de surtidores
+
+323
+00:11:32,000 --> 00:11:34,000
+y otras más que vamos a
+
+324
+00:11:34,000 --> 00:11:36,000
+ir comentando
+
+325
+00:11:36,000 --> 00:11:38,000
+¿Cómo obtenemos
+
+326
+00:11:38,000 --> 00:11:40,000
+esos datos?
+
+327
+00:11:40,000 --> 00:11:42,000
+bueno para lo que son los datos públicos
+
+328
+00:11:42,000 --> 00:11:44,000
+y privados básicamente
+
+329
+00:11:44,000 --> 00:11:46,000
+lo que tenemos es un proceso clásico de tele
+
+330
+00:11:46,000 --> 00:11:48,000
+de extracción, análisis, limpieza
+
+331
+00:11:48,000 --> 00:11:50,000
+corrección e integración
+
+332
+00:11:50,000 --> 00:11:52,000
+y esta primera
+
+333
+00:11:52,000 --> 00:11:54,000
+construcción del modelo de predicción de ventas
+
+334
+00:11:54,000 --> 00:11:56,000
+generó una serie de procesos
+
+335
+00:11:56,000 --> 00:11:58,000
+que hoy son procesos mensuales
+
+336
+00:11:58,000 --> 00:12:00,000
+que nos permiten además de
+
+337
+00:12:00,000 --> 00:12:02,000
+alimentar este modelo
+
+338
+00:12:02,000 --> 00:12:04,000
+alimentar otros muchos modelos
+
+339
+00:12:04,000 --> 00:12:06,000
+y además tener un monitoreo
+
+340
+00:12:06,000 --> 00:12:08,000
+de cómo está el mercado y cómo está la competencia
+
+341
+00:12:08,000 --> 00:12:10,000
+con un nivel muy fino en forma mensual
+
+342
+00:12:10,000 --> 00:12:12,000
+que va a generar datos trabajos de estaciones
+
+343
+00:12:12,000 --> 00:12:14,000
+de volúmenes, de reviews de Google Maps
+
+344
+00:12:16,000 --> 00:12:18,000
+El feature engineering
+
+345
+00:12:18,000 --> 00:12:20,000
+lo usamos
+
+346
+00:12:20,000 --> 00:12:22,000
+básicamente
+
+347
+00:12:22,000 --> 00:12:24,000
+la mayoría de las variables son cálculos
+
+348
+00:12:24,000 --> 00:12:26,000
+usando sistemas de información geográfica
+
+349
+00:12:26,000 --> 00:12:28,000
+es decir es un feature engineering
+
+350
+00:12:28,000 --> 00:12:30,000
+no con lógica matemática
+
+351
+00:12:30,000 --> 00:12:32,000
+no transformamos las variables
+
+352
+00:12:32,000 --> 00:12:34,000
+y obtenemos otras variables a partir
+
+353
+00:12:34,000 --> 00:12:36,000
+de ciertas funciones sino
+
+354
+00:12:36,000 --> 00:12:38,000
+buscamos cosas que puedan llegar a tener
+
+355
+00:12:38,000 --> 00:12:40,000
+lógica de un sentido de negocio
+
+356
+00:12:40,000 --> 00:12:42,000
+por ejemplo, cuál es el market share
+
+357
+00:12:42,000 --> 00:12:44,000
+dentro del kilómetro de radio
+
+358
+00:12:44,000 --> 00:12:46,000
+los dos kilómetros, los cinco kilómetros
+
+359
+00:12:46,000 --> 00:12:48,000
+cuál es el love of share
+
+360
+00:12:48,000 --> 00:12:50,000
+para el caso de tiendas cuántos kioscos tengo cerca
+
+361
+00:12:50,000 --> 00:12:52,000
+cuántos cafés tengo cerca
+
+362
+00:12:52,000 --> 00:12:54,000
+cuál es el nivel socioeconómico
+
+363
+00:12:54,000 --> 00:12:56,000
+de la población
+
+364
+00:12:56,000 --> 00:12:58,000
+que tengo dentro de determinado radio
+
+365
+00:12:58,000 --> 00:13:00,000
+ese es el tipo de feature engineer que usamos acá
+
+366
+00:13:00,000 --> 00:13:02,000
+y por último nos quedaba
+
+367
+00:13:02,000 --> 00:13:04,000
+relevar
+
+368
+00:13:04,000 --> 00:13:06,000
+130 características
+
+369
+00:13:06,000 --> 00:13:08,000
+en esas aproximadamente 3.080 estaciones
+
+370
+00:13:08,000 --> 00:13:10,000
+de servicio
+
+371
+00:13:10,000 --> 00:13:12,000
+que eran las que habían surgido de el proceso
+
+372
+00:13:12,000 --> 00:13:14,000
+que les comentamos antes de service con expertos
+
+373
+00:13:16,000 --> 00:13:18,000
+de
+
+374
+00:13:18,000 --> 00:13:20,000
+las heurísticas
+
+375
+00:13:20,000 --> 00:13:22,000
+de haber
+
+376
+00:13:22,000 --> 00:13:24,000
+recorrido el país y del
+
+377
+00:13:24,000 --> 00:13:26,000
+proceso de brainstorming
+
+378
+00:13:26,000 --> 00:13:28,000
+la pregunta que viene acá es
+
+379
+00:13:28,000 --> 00:13:30,000
+cómo hacemos para que nos den presupuesto
+
+380
+00:13:30,000 --> 00:13:32,000
+para
+
+381
+00:13:32,000 --> 00:13:34,000
+relevar 3.080 estaciones de servicios
+
+382
+00:13:34,000 --> 00:13:36,000
+en forma presencial
+
+383
+00:13:36,000 --> 00:13:38,000
+estamos hablando
+
+384
+00:13:38,000 --> 00:13:40,000
+de 200, 300.000 dólares
+
+385
+00:13:40,000 --> 00:13:42,000
+que se hará hacer esto
+
+386
+00:13:42,000 --> 00:13:44,000
+básicamente lo que hicimos fue
+
+387
+00:13:44,000 --> 00:13:46,000
+presentar la idea
+
+388
+00:13:46,000 --> 00:13:48,000
+y contar la historia de
+
+389
+00:13:48,000 --> 00:13:50,000
+supermercados target
+
+390
+00:13:50,000 --> 00:13:52,000
+es una historia que supongo que la
+
+391
+00:13:52,000 --> 00:13:54,000
+habrán visto, que la conocen
+
+392
+00:13:54,000 --> 00:13:56,000
+en el año 2002
+
+393
+00:13:56,000 --> 00:13:58,000
+un estadístico que empezaba a trabajar
+
+394
+00:13:58,000 --> 00:14:00,000
+en supermercados target
+
+395
+00:14:00,000 --> 00:14:02,000
+recibió una pregunta de su equipo de marketing
+
+396
+00:14:02,000 --> 00:14:04,000
+que le consultaba si
+
+397
+00:14:04,000 --> 00:14:06,000
+consideraba que sería posible
+
+398
+00:14:06,000 --> 00:14:08,000
+identificar
+
+399
+00:14:08,000 --> 00:14:10,000
+cuando una mujer estaba embarazada
+
+400
+00:14:10,000 --> 00:14:12,000
+incluso si
+
+401
+00:14:12,000 --> 00:14:14,000
+esa mujer no quería que lo supieran
+
+402
+00:14:14,000 --> 00:14:16,000
+y lo que hizo
+
+403
+00:14:16,000 --> 00:14:18,000
+supermercados target fue armar
+
+404
+00:14:18,000 --> 00:14:20,000
+con todos los datos que tenían
+
+405
+00:14:20,000 --> 00:14:22,000
+un modelo que
+
+406
+00:14:22,000 --> 00:14:24,000
+a partir de 25 productos trazadores
+
+407
+00:14:24,000 --> 00:14:26,000
+le permitía identificar si una mujer
+
+408
+00:14:26,000 --> 00:14:28,000
+estaba embarazada o no
+
+409
+00:14:28,000 --> 00:14:30,000
+qué trimestre estaba cursando
+
+410
+00:14:30,000 --> 00:14:32,000
+o si no se ha hecho probable departo
+
+411
+00:14:32,000 --> 00:14:34,000
+este caso se hizo muy famoso
+
+412
+00:14:34,000 --> 00:14:36,000
+no solamente porque está contado en el libro
+
+413
+00:14:36,000 --> 00:14:38,000
+que mencionábamos, sino porque
+
+414
+00:14:38,000 --> 00:14:40,000
+fue nota de Forbes cuando
+
+415
+00:14:40,000 --> 00:14:42,000
+el padre de un adolescente se quejó
+
+416
+00:14:42,000 --> 00:14:44,000
+al gerente de una sucursal
+
+417
+00:14:44,000 --> 00:14:46,000
+porque su hija estaba recibiendo cupones de descuento
+
+418
+00:14:46,000 --> 00:14:48,000
+para productos relacionados con bebé
+
+419
+00:14:48,000 --> 00:14:50,000
+se quejaba porque les preguntaba
+
+420
+00:14:50,000 --> 00:14:52,000
+si la estaban induciendo a quedar embarazada
+
+421
+00:14:52,000 --> 00:14:54,000
+y unos días más tarde se disculpó
+
+422
+00:14:54,000 --> 00:14:56,000
+porque
+
+423
+00:14:56,000 --> 00:14:58,000
+justamente después de tener una charla con su hija
+
+424
+00:14:58,000 --> 00:15:00,000
+que realmente estaba embarazada
+
+425
+00:15:00,000 --> 00:15:02,000
+y justamente el caso se hizo famoso porque
+
+426
+00:15:02,000 --> 00:15:04,000
+los sistemas estadísticos de target
+
+427
+00:15:04,000 --> 00:15:06,000
+supieron que el adolescente estaba embarazada
+
+428
+00:15:06,000 --> 00:15:08,000
+antes que el padre
+
+429
+00:15:08,000 --> 00:15:10,000
+la gran enseñanza que sacamos de acá
+
+430
+00:15:10,000 --> 00:15:12,000
+no solamente es que es posible ser
+
+431
+00:15:12,000 --> 00:15:14,000
+con buenos datos
+
+432
+00:15:14,000 --> 00:15:16,000
+sino que
+
+433
+00:15:16,000 --> 00:15:18,000
+lo importante
+
+434
+00:15:18,000 --> 00:15:20,000
+era el conjunto de datos
+
+435
+00:15:20,000 --> 00:15:22,000
+target tenía
+
+436
+00:15:22,000 --> 00:15:24,000
+el 50%
+
+437
+00:15:24,000 --> 00:15:26,000
+de lo que vendía
+
+438
+00:15:26,000 --> 00:15:28,000
+para asociar a una persona determinada
+
+439
+00:15:28,000 --> 00:15:30,000
+es
+
+440
+00:15:30,000 --> 00:15:32,000
+por eso que conociendo la demografía de los clientes
+
+441
+00:15:32,000 --> 00:15:34,000
+podía ser en inferencias super
+
+442
+00:15:34,000 --> 00:15:36,000
+robustas a partir de las ventas
+
+443
+00:15:36,000 --> 00:15:38,000
+la clave en el modelo entonces
+
+444
+00:15:38,000 --> 00:15:40,000
+de target estaba mucho más en el
+
+445
+00:15:40,000 --> 00:15:42,000
+dataset que en el modelo estadístico
+
+446
+00:15:42,000 --> 00:15:44,000
+entonces con esta idea en la cabeza
+
+447
+00:15:44,000 --> 00:15:46,000
+convencimos
+
+448
+00:15:46,000 --> 00:15:48,000
+al equipo de dirección
+
+449
+00:15:48,000 --> 00:15:50,000
+que nos aprobaba el presupuesto
+
+450
+00:15:50,000 --> 00:15:52,000
+ese proceso
+
+451
+00:15:52,000 --> 00:15:54,000
+de contratación, relevamiento
+
+452
+00:15:54,000 --> 00:15:56,000
+de datos nos llevó un año y medio
+
+453
+00:15:56,000 --> 00:15:58,000
+el proceso
+
+454
+00:15:58,000 --> 00:16:00,000
+de construcción de los datos
+
+455
+00:16:00,000 --> 00:16:02,000
+originales nos llevó
+
+456
+00:16:02,000 --> 00:16:04,000
+dos años
+
+457
+00:16:04,000 --> 00:16:06,000
+básicamente lo empezamos antes
+
+458
+00:16:06,000 --> 00:16:08,000
+y todo el proceso completo
+
+459
+00:16:08,000 --> 00:16:10,000
+desde que empezamos a tener
+
+460
+00:16:10,000 --> 00:16:12,000
+las ideas y fuimos
+
+461
+00:16:12,000 --> 00:16:14,000
+obteniendo cada vez más datos
+
+462
+00:16:14,000 --> 00:16:16,000
+hasta que llegamos al dataset
+
+463
+00:16:16,000 --> 00:16:18,000
+que nos permitió construir el modelo
+
+464
+00:16:18,000 --> 00:16:20,000
+nos habrá llevado aproximadamente unos 5 años
+
+465
+00:16:20,000 --> 00:16:22,000
+desde que empezamos
+
+466
+00:16:22,000 --> 00:16:24,000
+confirmamos la máxima
+
+467
+00:16:24,000 --> 00:16:26,000
+de ETL
+
+468
+00:16:26,000 --> 00:16:28,000
+y de los procesos Machine Learning
+
+469
+00:16:28,000 --> 00:16:30,000
+donde se suele decir que
+
+470
+00:16:30,000 --> 00:16:32,000
+el 95% del tiempo
+
+471
+00:16:32,000 --> 00:16:34,000
+se va a obtener
+
+472
+00:16:34,000 --> 00:16:36,000
+y construir el conjunto de datos
+
+473
+00:16:36,000 --> 00:16:38,000
+y solamente 5% en entrenar
+
+474
+00:16:38,000 --> 00:16:40,000
+a los modelos y obtener los resultados
+
+475
+00:16:42,000 --> 00:16:44,000
+una vez que tuvimos
+
+476
+00:16:44,000 --> 00:16:46,000
+el conjunto de datos
+
+477
+00:16:46,000 --> 00:16:48,000
+construido, las estaciones relevadas
+
+478
+00:16:48,000 --> 00:16:50,000
+necesitábamos
+
+479
+00:16:50,000 --> 00:16:52,000
+entrenar el modelo y predecir
+
+480
+00:16:52,000 --> 00:16:54,000
+un volumen de ventas
+
+481
+00:16:54,000 --> 00:16:56,000
+y lo que necesitábamos era un valor
+
+482
+00:16:56,000 --> 00:16:58,000
+necesitábamos saber cuánto iba a vender
+
+483
+00:16:58,000 --> 00:17:00,000
+en metros cúbicos
+
+484
+00:17:00,000 --> 00:17:02,000
+entonces había dos formas de plantear el problema
+
+485
+00:17:02,000 --> 00:17:04,000
+una era forma de problema continuo
+
+486
+00:17:04,000 --> 00:17:06,000
+problema de regresión o de discreto
+
+487
+00:17:06,000 --> 00:17:08,000
+de clasificación
+
+488
+00:17:08,000 --> 00:17:10,000
+y la pregunta es si lo planteamos como
+
+489
+00:17:10,000 --> 00:17:12,000
+continuo en ningún problema
+
+490
+00:17:12,000 --> 00:17:14,000
+ponemos los volúmenes
+
+491
+00:17:14,000 --> 00:17:16,000
+como variable de respuesta
+
+492
+00:17:16,000 --> 00:17:18,000
+si lo planteamos como discreto la pregunta es
+
+493
+00:17:19,000 --> 00:17:21,000
+y la solución
+
+494
+00:17:21,000 --> 00:17:23,000
+que se nos ocurrió
+
+495
+00:17:23,000 --> 00:17:25,000
+era hacer
+
+496
+00:17:25,000 --> 00:17:27,000
+en el mismo conjunto
+
+497
+00:17:27,000 --> 00:17:29,000
+en reparticiones de dos clases
+
+498
+00:17:29,000 --> 00:17:31,000
+esas dos clases iban a ser
+
+499
+00:17:31,000 --> 00:17:33,000
+la estación vende más de un x volumen
+
+500
+00:17:33,000 --> 00:17:35,000
+o menos de un x volumen por mes
+
+501
+00:17:35,000 --> 00:17:37,000
+y esas x las definimos en
+
+502
+00:17:37,000 --> 00:17:39,000
+100 mil litros
+
+503
+00:17:39,000 --> 00:17:41,000
+150 mil litros
+
+504
+00:17:41,000 --> 00:17:43,000
+200 mil litros, 250 mil litros
+
+505
+00:17:43,000 --> 00:17:45,000
+y así con cortes de 50 mil
+
+506
+00:17:45,000 --> 00:17:47,000
+hasta un millón de litros
+
+507
+00:17:47,000 --> 00:17:49,000
+trabajamos en metros cúbicos
+
+508
+00:17:49,000 --> 00:17:51,000
+por eso también 200, 150, 200
+
+509
+00:17:51,000 --> 00:17:53,000
+etc.
+
+510
+00:17:53,000 --> 00:17:55,000
+y el modelo fue entrenado para que pudiera
+
+511
+00:17:55,000 --> 00:17:57,000
+trabajar bien en el rango de
+
+512
+00:17:57,000 --> 00:17:59,000
+100 metros cúbicos hasta
+
+513
+00:17:59,000 --> 00:18:01,000
+1000 metros cúbicos
+
+514
+00:18:01,000 --> 00:18:03,000
+a este
+
+515
+00:18:03,000 --> 00:18:05,000
+conjunto de datos y a cada una
+
+516
+00:18:05,000 --> 00:18:07,000
+de esas particiones le aplicamos
+
+517
+00:18:07,000 --> 00:18:09,000
+un conjunto de algoritmos
+
+518
+00:18:09,000 --> 00:18:11,000
+y básicamente usamos random forest
+
+519
+00:18:11,000 --> 00:18:13,000
+c50,
+
+520
+00:18:13,000 --> 00:18:15,000
+catbus,
+
+521
+00:18:15,000 --> 00:18:17,000
+y daishi bien
+
+522
+00:18:17,000 --> 00:18:19,000
+y al principio hicimos separaciones
+
+523
+00:18:19,000 --> 00:18:21,000
+para probar en conjuntos de trénites
+
+524
+00:18:21,000 --> 00:18:23,000
+entre 25, 75, 80,
+
+525
+00:18:23,000 --> 00:18:25,000
+15, 85, 90
+
+526
+00:18:25,000 --> 00:18:27,000
+10, nos terminamos
+
+527
+00:18:27,000 --> 00:18:29,000
+quedando con el de 20, 80
+
+528
+00:18:29,000 --> 00:18:31,000
+pero no vimos grandes variaciones entre todos
+
+529
+00:18:31,000 --> 00:18:33,000
+como
+
+530
+00:18:33,000 --> 00:18:35,000
+producto final
+
+531
+00:18:35,000 --> 00:18:37,000
+de este proceso
+
+532
+00:18:37,000 --> 00:18:39,000
+tuvimos los modelos entrenados
+
+533
+00:18:39,000 --> 00:18:41,000
+y la importancia relativa de
+
+534
+00:18:41,000 --> 00:18:43,000
+variables
+
+535
+00:18:43,000 --> 00:18:45,000
+este es un ejemplo de algunos modelos
+
+536
+00:18:45,000 --> 00:18:47,000
+entrenados con
+
+537
+00:18:47,000 --> 00:18:49,000
+las métricas de accuracy
+
+538
+00:18:49,000 --> 00:18:51,000
+de sensibilidad
+
+539
+00:18:51,000 --> 00:18:53,000
+de especificidad y de área bajo la curva
+
+540
+00:18:53,000 --> 00:18:55,000
+en línea general, bueno ahora vamos a ver
+
+541
+00:18:55,000 --> 00:18:57,000
+que si bien usamos todos estos
+
+542
+00:18:57,000 --> 00:18:59,000
+terminaron dando muy muy bien
+
+543
+00:18:59,000 --> 00:19:01,000
+los más justos terminaron siendo random forest
+
+544
+00:19:01,000 --> 00:19:03,000
+y c50 que fue con los que nos terminamos
+
+545
+00:19:03,000 --> 00:19:05,000
+quedando al final
+
+546
+00:19:07,000 --> 00:19:09,000
+¿Cómo es el resultado cuando aplicamos
+
+547
+00:19:09,000 --> 00:19:11,000
+estos modelos entrenados
+
+548
+00:19:11,000 --> 00:19:13,000
+en el conjunto de test?
+
+549
+00:19:13,000 --> 00:19:15,000
+Bueno, habiendo hecho las particiones
+
+550
+00:19:15,000 --> 00:19:17,000
+lo que tenemos es
+
+551
+00:19:17,000 --> 00:19:19,000
+básicamente
+
+552
+00:19:19,000 --> 00:19:21,000
+una probabilidad
+
+553
+00:19:21,000 --> 00:19:23,000
+por rango de volumen, lo que nos está diciendo
+
+554
+00:19:23,000 --> 00:19:25,000
+para esta estación en particular el modelo
+
+555
+00:19:25,000 --> 00:19:27,000
+es que está viendo un 0,78
+
+556
+00:19:27,000 --> 00:19:29,000
+de probabilidad de que venda
+
+557
+00:19:29,000 --> 00:19:31,000
+100,000 litros por mes
+
+558
+00:19:33,000 --> 00:19:35,000
+más de 100,000 litros
+
+559
+00:19:35,000 --> 00:19:37,000
+y 0,13 de que venda más de 150,000
+
+560
+00:19:37,000 --> 00:19:39,000
+básicamente
+
+561
+00:19:39,000 --> 00:19:41,000
+diciendo que esta estación debería estar
+
+562
+00:19:41,000 --> 00:19:43,000
+en torno a los 100,000 litros
+
+563
+00:19:43,000 --> 00:19:45,000
+por mes
+
+564
+00:19:45,000 --> 00:19:47,000
+este es la probabilidad
+
+565
+00:19:47,000 --> 00:19:49,000
+promedio, fíjense que cada uno de los modelos
+
+566
+00:19:49,000 --> 00:19:51,000
+da bastante similar, tiene una barra
+
+567
+00:19:51,000 --> 00:19:53,000
+muy alta y después
+
+568
+00:19:53,000 --> 00:19:55,000
+las probabilidades se caen
+
+569
+00:19:55,000 --> 00:19:57,000
+y recordemos que como decíamos al principio
+
+570
+00:19:57,000 --> 00:19:59,000
+el modelo está entrenado para el rango de
+
+571
+00:19:59,000 --> 00:20:01,000
+100 a 1000
+
+572
+00:20:01,000 --> 00:20:03,000
+con lo cual lo que sea menos de 100
+
+573
+00:20:03,000 --> 00:20:05,000
+y más de 1000 le va a costar más
+
+574
+00:20:05,000 --> 00:20:07,000
+en este caso la estación
+
+575
+00:20:07,000 --> 00:20:09,000
+vendía 93 metros
+
+576
+00:20:09,000 --> 00:20:11,000
+casi 94
+
+577
+00:20:11,000 --> 00:20:13,000
+y nos estaba dando una probabilidad de casi 0,80
+
+578
+00:20:13,000 --> 00:20:15,000
+de vender 100
+
+579
+00:20:15,000 --> 00:20:17,000
+el modelo andaba bien para este caso
+
+580
+00:20:19,000 --> 00:20:21,000
+vemos acá otro ejemplo
+
+581
+00:20:21,000 --> 00:20:23,000
+una estación
+
+582
+00:20:23,000 --> 00:20:25,000
+de la bandera gel
+
+583
+00:20:25,000 --> 00:20:27,000
+y acá lo que estamos viendo es que
+
+584
+00:20:27,000 --> 00:20:29,000
+el modelo nos está diciendo que esta estación
+
+585
+00:20:29,000 --> 00:20:31,000
+tiene una probabilidad alta de vender
+
+586
+00:20:31,000 --> 00:20:33,000
+más de 100,000 litros
+
+587
+00:20:33,000 --> 00:20:35,000
+alta de vender más de 150,000 litros
+
+588
+00:20:35,000 --> 00:20:37,000
+alta de vender más de 200,000 litros
+
+589
+00:20:37,000 --> 00:20:39,000
+pero ya baja
+
+590
+00:20:39,000 --> 00:20:41,000
+muy baja de vender más de 250,000
+
+591
+00:20:41,000 --> 00:20:43,000
+litros
+
+592
+00:20:43,000 --> 00:20:45,000
+esto se traduce en que el modelo nos está diciendo que esta estación
+
+593
+00:20:45,000 --> 00:20:47,000
+está más o menos entre los 200
+
+594
+00:20:47,000 --> 00:20:49,000
+y los 250 metros
+
+595
+00:20:49,000 --> 00:20:51,000
+prácticamente todos los modelos dan
+
+596
+00:20:51,000 --> 00:20:53,000
+muy similar
+
+597
+00:20:53,000 --> 00:20:55,000
+y el promedio da este resultado
+
+598
+00:20:55,000 --> 00:20:57,000
+cuando vemos cuánto vende realmente la estación
+
+599
+00:20:57,000 --> 00:20:59,000
+vemos que vende 205 metros cúbicos
+
+600
+00:20:59,000 --> 00:21:01,000
+vamos a ver otro ejemplo
+
+601
+00:21:01,000 --> 00:21:03,000
+acá lo que tenemos es una IPF
+
+602
+00:21:03,000 --> 00:21:05,000
+fíjense que vimos una oil
+
+603
+00:21:05,000 --> 00:21:07,000
+una gel, una IPF
+
+604
+00:21:07,000 --> 00:21:09,000
+estamos viendo todas estaciones de otras banderas
+
+605
+00:21:09,000 --> 00:21:11,000
+con lo cual estamos usando
+
+606
+00:21:11,000 --> 00:21:13,000
+información que obtuvimos
+
+607
+00:21:13,000 --> 00:21:15,000
+en forma pública pues
+
+608
+00:21:15,000 --> 00:21:17,000
+salvo el volumen que está reportado
+
+609
+00:21:17,000 --> 00:21:19,000
+del resto no sabemos nada
+
+610
+00:21:19,000 --> 00:21:21,000
+en este ejemplo
+
+611
+00:21:21,000 --> 00:21:23,000
+lo que vemos es que el promedio
+
+612
+00:21:23,000 --> 00:21:25,000
+nos está diciendo que esta estación tiene una probabilidad
+
+613
+00:21:25,000 --> 00:21:27,000
+altas de vender
+
+614
+00:21:27,000 --> 00:21:29,000
+de 100, 150
+
+615
+00:21:29,000 --> 00:21:31,000
+200, 250
+
+616
+00:21:31,000 --> 00:21:33,000
+300, 350
+
+617
+00:21:33,000 --> 00:21:35,000
+400 y baja
+
+618
+00:21:35,000 --> 00:21:37,000
+en 450
+
+619
+00:21:37,000 --> 00:21:39,000
+es decir que es una estación que tiene probabilidad alta de vender
+
+620
+00:21:39,000 --> 00:21:41,000
+más de 400 menos de 450 metros
+
+621
+00:21:43,000 --> 00:21:45,000
+vende 400 casi 413 metros
+
+622
+00:21:47,000 --> 00:21:49,000
+acá también tenemos el modelo
+
+623
+00:21:49,000 --> 00:21:51,000
+prediciendo muy bien el rango de ventas
+
+624
+00:21:53,000 --> 00:21:55,000
+lo mismo para otra estación IPF
+
+625
+00:21:55,000 --> 00:21:57,000
+vamos a ver que las probabilidades
+
+626
+00:21:57,000 --> 00:21:59,000
+son altas
+
+627
+00:21:59,000 --> 00:22:01,000
+para 100, 150
+
+628
+00:22:01,000 --> 00:22:03,000
+200, 250
+
+629
+00:22:03,000 --> 00:22:05,000
+300, 350
+
+630
+00:22:05,000 --> 00:22:07,000
+400, 450
+
+631
+00:22:07,000 --> 00:22:09,000
+500, 550
+
+632
+00:22:09,000 --> 00:22:11,000
+600, 650
+
+633
+00:22:11,000 --> 00:22:13,000
+700, 750 crepes
+
+634
+00:22:13,000 --> 00:22:15,000
+hasta 800 que llega
+
+635
+00:22:15,000 --> 00:22:17,000
+y lo que vemos es que vende entre
+
+636
+00:22:17,000 --> 00:22:19,000
+800 y 850
+
+637
+00:22:19,000 --> 00:22:21,000
+también el modelo
+
+638
+00:22:21,000 --> 00:22:23,000
+funciona muy bien en este caso
+
+639
+00:22:25,000 --> 00:22:27,000
+qué pasa
+
+640
+00:22:27,000 --> 00:22:29,000
+acá
+
+641
+00:22:29,000 --> 00:22:31,000
+acá tengo un modelo
+
+642
+00:22:31,000 --> 00:22:33,000
+que me está diciendo que las probabilidades son muy altas
+
+643
+00:22:33,000 --> 00:22:35,000
+para todos los rangos
+
+644
+00:22:35,000 --> 00:22:37,000
+en ningún momento cae
+
+645
+00:22:37,000 --> 00:22:39,000
+por qué
+
+646
+00:22:39,000 --> 00:22:41,000
+porque la estación vende
+
+647
+00:22:41,000 --> 00:22:43,000
+1,470,000 litros
+
+648
+00:22:43,000 --> 00:22:45,000
+y el modelo está entrenado
+
+649
+00:22:45,000 --> 00:22:47,000
+para predecir
+
+650
+00:22:47,000 --> 00:22:49,000
+bien
+
+651
+00:22:49,000 --> 00:22:51,000
+en el rango de 100 a 1000
+
+652
+00:22:51,000 --> 00:22:53,000
+lo que esté arriba de 1000
+
+653
+00:22:53,000 --> 00:22:55,000
+es decir, si es alto
+
+654
+00:22:55,000 --> 00:22:57,000
+vende más de 1000 con una probabilidad alta
+
+655
+00:22:57,000 --> 00:22:59,000
+pero no te puedo decir si son
+
+656
+00:22:59,000 --> 00:23:01,000
+1,150, 1,100, 2,000, 3,000
+
+657
+00:23:01,000 --> 00:23:03,000
+o lo que sea
+
+658
+00:23:05,000 --> 00:23:07,000
+esto puede parecer
+
+659
+00:23:07,000 --> 00:23:09,000
+un problema, la realidad es que las bocas
+
+660
+00:23:09,000 --> 00:23:11,000
+que venden, las estaciones que venden
+
+661
+00:23:11,000 --> 00:23:13,000
+más de 1 millón de litros en Argentina
+
+662
+00:23:13,000 --> 00:23:15,000
+son del orden del 2%
+
+663
+00:23:15,000 --> 00:23:17,000
+es decir que para el grueso
+
+664
+00:23:17,000 --> 00:23:19,000
+de las estaciones que existen y se construyan
+
+665
+00:23:19,000 --> 00:23:21,000
+esto anda muy bien
+
+666
+00:23:21,000 --> 00:23:23,000
+por último, un caso
+
+667
+00:23:25,000 --> 00:23:27,000
+raro
+
+668
+00:23:27,000 --> 00:23:29,000
+¿por qué digo raro?
+
+669
+00:23:29,000 --> 00:23:31,000
+porque el modelo nos está diciendo que
+
+670
+00:23:31,000 --> 00:23:33,000
+cuando uno lo mira acá
+
+671
+00:23:33,000 --> 00:23:35,000
+nos dice que esta estación tiene
+
+672
+00:23:35,000 --> 00:23:37,000
+probabilidad alta de vender más de 100, 150, 200
+
+673
+00:23:37,000 --> 00:23:39,000
+250, 300, 350
+
+674
+00:23:39,000 --> 00:23:41,000
+400 metros cúbicos
+
+675
+00:23:41,000 --> 00:23:43,000
+pero
+
+676
+00:23:43,000 --> 00:23:45,000
+muy baja probabilidad de vender
+
+677
+00:23:45,000 --> 00:23:47,000
+más de 450
+
+678
+00:23:47,000 --> 00:23:49,000
+ahora cuando vemos
+
+679
+00:23:49,000 --> 00:23:51,000
+todo esto es lo que realmente vende
+
+680
+00:23:51,000 --> 00:23:53,000
+330
+
+681
+00:23:53,000 --> 00:23:55,000
+es decir que esta barra de acá nos está
+
+682
+00:23:55,000 --> 00:23:57,000
+confundiendo
+
+683
+00:23:57,000 --> 00:23:59,000
+tendría que haber considerado esta
+
+684
+00:23:59,000 --> 00:24:01,000
+ahora eso a priori no lo sabemos
+
+685
+00:24:01,000 --> 00:24:03,000
+por eso el modelo funciona
+
+686
+00:24:03,000 --> 00:24:05,000
+bien
+
+687
+00:24:05,000 --> 00:24:07,000
+más o menos 9 de cada 10 casos
+
+688
+00:24:07,000 --> 00:24:09,000
+tenemos un orden de error
+
+689
+00:24:09,000 --> 00:24:11,000
+del 10%
+
+690
+00:24:11,000 --> 00:24:13,000
+igualmente
+
+691
+00:24:13,000 --> 00:24:15,000
+no predice con la precisión que quisiéramos
+
+692
+00:24:15,000 --> 00:24:17,000
+pero tampoco es que
+
+693
+00:24:17,000 --> 00:24:19,000
+estamos muy lejos de la realidad
+
+694
+00:24:21,000 --> 00:24:23,000
+con esto entrenado
+
+695
+00:24:23,000 --> 00:24:25,000
+nos quedaba un problema
+
+696
+00:24:25,000 --> 00:24:27,000
+adicional antes de pasar a producción
+
+697
+00:24:27,000 --> 00:24:29,000
+y era que
+
+698
+00:24:29,000 --> 00:24:31,000
+la cantidad de variables que teníamos originalmente
+
+699
+00:24:31,000 --> 00:24:33,000
+en el modelo estaban en torno a las 400
+
+700
+00:24:33,000 --> 00:24:35,000
+entonces
+
+701
+00:24:35,000 --> 00:24:37,000
+cuando esto está listo y uno le dice bueno
+
+702
+00:24:37,000 --> 00:24:39,000
+vamos a alguien
+
+703
+00:24:39,000 --> 00:24:41,000
+el área de desarrollo de rendos
+
+704
+00:24:41,000 --> 00:24:43,000
+vamos a construir una estación nueva
+
+705
+00:24:43,000 --> 00:24:45,000
+me puedo decir que volumen va a vender
+
+706
+00:24:45,000 --> 00:24:47,000
+pero me tenés que dar estas 400 variables
+
+707
+00:24:47,000 --> 00:24:49,000
+y es medio
+
+708
+00:24:49,000 --> 00:24:51,000
+poco operativo eso
+
+709
+00:24:51,000 --> 00:24:53,000
+entonces lo que buscamos es
+
+710
+00:24:53,000 --> 00:24:55,000
+ver de reducir esas variables
+
+711
+00:24:55,000 --> 00:24:57,000
+buscarlas las más relevantes
+
+712
+00:24:57,000 --> 00:24:59,000
+y ver si cuando reentrenábamos el modelo
+
+713
+00:24:59,000 --> 00:25:01,000
+perdíamos qué capacidad predictiva perdíamos
+
+714
+00:25:01,000 --> 00:25:03,000
+y la realidad que lo hicimos
+
+715
+00:25:03,000 --> 00:25:05,000
+y no solamente vimos que no perdíamos capacidad
+
+716
+00:25:05,000 --> 00:25:07,000
+predictiva sino que
+
+717
+00:25:07,000 --> 00:25:09,000
+en la versión final
+
+718
+00:25:09,000 --> 00:25:11,000
+llegábamos a tener mayor capacidad
+
+719
+00:25:11,000 --> 00:25:13,000
+predictiva que en los modelos originales
+
+720
+00:25:13,000 --> 00:25:15,000
+y terminamos con
+
+721
+00:25:17,000 --> 00:25:19,000
+un rango de accuracy
+
+722
+00:25:19,000 --> 00:25:21,000
+en torno a 0.9
+
+723
+00:25:25,000 --> 00:25:27,000
+cuando aplicamos esto sobre un caso real
+
+724
+00:25:27,000 --> 00:25:29,000
+esto hasta ahora vimos en test
+
+725
+00:25:29,000 --> 00:25:31,000
+le estamos mostrando un caso real que no prosperó
+
+726
+00:25:31,000 --> 00:25:33,000
+los casos que prosperaron
+
+727
+00:25:33,000 --> 00:25:35,000
+lamentablemente no los podemos compartir
+
+728
+00:25:35,000 --> 00:25:37,000
+pero queríamos instalar
+
+729
+00:25:37,000 --> 00:25:39,000
+una estación de servicio en esta zona
+
+730
+00:25:39,000 --> 00:25:41,000
+en algún punto
+
+731
+00:25:41,000 --> 00:25:43,000
+de este círculo de la
+
+732
+00:25:43,000 --> 00:25:45,000
+de la ciudad de La Plata
+
+733
+00:25:45,000 --> 00:25:47,000
+corrimos el modelo
+
+734
+00:25:47,000 --> 00:25:49,000
+nos dio este resultado
+
+735
+00:25:51,000 --> 00:25:53,000
+este es otro caso particular que no vimos antes
+
+736
+00:25:53,000 --> 00:25:55,000
+antes vimos probabilidades que estaban
+
+737
+00:25:55,000 --> 00:25:57,000
+que estaban bien definidas muy alto
+
+738
+00:25:57,000 --> 00:25:59,000
+hasta cierto valor y caía y era muy bajo
+
+739
+00:25:59,000 --> 00:26:01,000
+en algunos casos el resultado
+
+740
+00:26:01,000 --> 00:26:03,000
+aparece como un escalón
+
+741
+00:26:03,000 --> 00:26:05,000
+cuando aparece como un escalón
+
+742
+00:26:05,000 --> 00:26:07,000
+para la interpretación de esto vamos al criterio clásico de probabilidades
+
+743
+00:26:07,000 --> 00:26:09,000
+y nos quedamos con probabilidad muy alta
+
+744
+00:26:09,000 --> 00:26:11,000
+y es más de 0.85
+
+745
+00:26:11,000 --> 00:26:13,000
+alta si es de más de 0.75
+
+746
+00:26:13,000 --> 00:26:15,000
+moderada si es más de la mitad
+
+747
+00:26:15,000 --> 00:26:17,000
+y baja si es menos de la mitad
+
+748
+00:26:17,000 --> 00:26:19,000
+en este caso la probabilidad alta daba
+
+749
+00:26:19,000 --> 00:26:21,000
+200.000 litros
+
+750
+00:26:21,000 --> 00:26:23,000
+con más de 75%
+
+751
+00:26:23,000 --> 00:26:25,000
+con ese volumen no resultaba ser
+
+752
+00:26:25,000 --> 00:26:27,000
+un potencial negocio interesante
+
+753
+00:26:27,000 --> 00:26:29,000
+y por eso
+
+754
+00:26:29,000 --> 00:26:31,000
+fue descartado
+
+755
+00:26:33,000 --> 00:26:35,000
+esto era
+
+756
+00:26:35,000 --> 00:26:37,000
+lo que teníamos para contarles
+
+757
+00:26:37,000 --> 00:26:39,000
+para poder mostrar
+
+758
+00:26:39,000 --> 00:26:41,000
+el caso
+
+759
+00:26:41,000 --> 00:26:43,000
+desde el problema
+
+760
+00:26:43,000 --> 00:26:45,000
+a la solución específica
+
+761
+00:26:45,000 --> 00:26:47,000
+de cómo solucionamos ese problema
+
+762
+00:26:47,000 --> 00:26:49,000
+o sea, ir no de los datos
+
+763
+00:26:49,000 --> 00:26:51,000
+sino del problema de negocio
+
+764
+00:26:51,000 --> 00:26:53,000
+y no sólo mostrar el producto final
+
+765
+00:26:53,000 --> 00:26:55,000
+que era básicamente el predictor de ventas
+
+766
+00:26:55,000 --> 00:26:57,000
+sino contar todo el proceso
+
+767
+00:26:57,000 --> 00:26:59,000
+con el cual había sido construido
+
+768
+00:26:59,000 --> 00:27:01,000
+y esto es básicamente
+
+769
+00:27:01,000 --> 00:27:03,000
+mostrar no solamente el edificio
+
+770
+00:27:03,000 --> 00:27:05,000
+sino todos los andamios
+
+771
+00:27:05,000 --> 00:27:07,000
+que se movieron las personas
+
+772
+00:27:07,000 --> 00:27:09,000
+que lo construyeron
+
+773
+00:27:09,000 --> 00:27:11,000
+Bueno, digo
+
+774
+00:27:11,000 --> 00:27:13,000
+muchísimas gracias
+
+775
+00:27:13,000 --> 00:27:15,000
+excelente la presentación
+
+776
+00:27:15,000 --> 00:27:17,000
+y hay algunas preguntas
+
+777
+00:27:17,000 --> 00:27:19,000
+En primer lugar
+
+778
+00:27:19,000 --> 00:27:21,000
+Alejandro nos pregunta
+
+779
+00:27:21,000 --> 00:27:23,000
+¿Cuánto fue la cantidad
+
+780
+00:27:23,000 --> 00:27:25,000
+de variables que tuvo el dataset
+
+781
+00:27:25,000 --> 00:27:27,000
+previo al feature engineering?
+
+782
+00:27:29,000 --> 00:27:31,000
+¿Tenés una idea?
+
+783
+00:27:31,000 --> 00:27:33,000
+Sí, debemos haber tenido
+
+784
+00:27:33,000 --> 00:27:35,000
+en total terminamos con unas 400
+
+785
+00:27:35,000 --> 00:27:37,000
+y algo y debe haber unas 100 que son de feature
+
+786
+00:27:37,000 --> 00:27:39,000
+así que damos del orden de 300
+
+787
+00:27:39,000 --> 00:27:41,000
+300
+
+788
+00:27:41,000 --> 00:27:43,000
+Y en este relevamiento de campo
+
+789
+00:27:43,000 --> 00:27:45,000
+también pregunta Alejandro
+
+790
+00:27:45,000 --> 00:27:47,000
+¿Hubo alguna variable importante
+
+791
+00:27:47,000 --> 00:27:49,000
+que les haya destacado algo
+
+792
+00:27:49,000 --> 00:27:51,000
+que les haya sorprendido?
+
+793
+00:27:51,000 --> 00:27:53,000
+En el relevamiento de campo no
+
+794
+00:27:53,000 --> 00:27:55,000
+Sí, el relevamiento de campo
+
+795
+00:27:55,000 --> 00:27:57,000
+son lo que mandamos a relevar
+
+796
+00:27:57,000 --> 00:27:59,000
+Si nos sorprendieron algunas cosas
+
+797
+00:27:59,000 --> 00:28:01,000
+cuando apareció la importancia
+
+798
+00:28:01,000 --> 00:28:03,000
+de variables, lamentablemente
+
+799
+00:28:03,000 --> 00:28:05,000
+y justamente ese dato no está puesto
+
+800
+00:28:05,000 --> 00:28:07,000
+es parte del know-how
+
+801
+00:28:07,000 --> 00:28:09,000
+que quedó del proceso pero sí
+
+802
+00:28:09,000 --> 00:28:11,000
+¿Hubo algunas variables
+
+803
+00:28:11,000 --> 00:28:13,000
+que no hubiésemos dicho
+
+804
+00:28:13,000 --> 00:28:15,000
+que iban a estar y estuvieron?
+
+805
+00:28:19,000 --> 00:28:21,000
+¿Qué les decía?
+
+806
+00:28:21,000 --> 00:28:23,000
+¿Esta realmente es importante?
+
+807
+00:28:23,000 --> 00:28:25,000
+Sí, esa realmente es importante
+
+808
+00:28:25,000 --> 00:28:27,000
+Siempre pasa
+
+809
+00:28:27,000 --> 00:28:29,000
+Nunca la capacidad de asombres
+
+810
+00:28:29,000 --> 00:28:31,000
+es infinita
+
+811
+00:28:35,000 --> 00:28:37,000
+Si recordás
+
+812
+00:28:37,000 --> 00:28:39,000
+si nos puedes explicar algo del proceso
+
+813
+00:28:39,000 --> 00:28:41,000
+de hyperparametrización
+
+814
+00:28:41,000 --> 00:28:43,000
+¿Cómo lo trabajaron?
+
+815
+00:28:45,000 --> 00:28:47,000
+Originalmente
+
+816
+00:28:47,000 --> 00:28:49,000
+esto lo hicimos hace bastante
+
+817
+00:28:49,000 --> 00:28:51,000
+Empezamos
+
+818
+00:28:51,000 --> 00:28:53,000
+el primero lo hicimos con una búsqueda
+
+819
+00:28:53,000 --> 00:28:55,000
+por grid search
+
+820
+00:28:55,000 --> 00:28:57,000
+y después fuimos directamente ya más
+
+821
+00:28:57,000 --> 00:28:59,000
+modelos de métodos
+
+822
+00:28:59,000 --> 00:29:01,000
+No lo hicimos una vez esto
+
+823
+00:29:01,000 --> 00:29:03,000
+fuimos más a métodos
+
+824
+00:29:03,000 --> 00:29:05,000
+de random search
+
+825
+00:29:05,000 --> 00:29:07,000
+dentro del rango de parámetros
+
+826
+00:29:07,000 --> 00:29:09,000
+que teníamos
+
+827
+00:29:09,000 --> 00:29:11,000
+estimados para los hyperparámetros
+
+828
+00:29:13,000 --> 00:29:15,000
+Acá nos dice
+
+829
+00:29:15,000 --> 00:29:17,000
+también nos preguntan
+
+830
+00:29:17,000 --> 00:29:19,000
+el mantenimiento posterior
+
+831
+00:29:19,000 --> 00:29:21,000
+una vez que ya sacaron el modelo
+
+832
+00:29:23,000 --> 00:29:25,000
+luego de esto
+
+833
+00:29:25,000 --> 00:29:27,000
+el mantenimiento
+
+834
+00:29:27,000 --> 00:29:29,000
+el mantenimiento posterior
+
+835
+00:29:29,000 --> 00:29:31,000
+tiene dos procesos
+
+836
+00:29:31,000 --> 00:29:33,000
+uno de mantenimiento y uno de enrequisimiento
+
+837
+00:29:35,000 --> 00:29:37,000
+lo que hacemos es una vez por año
+
+838
+00:29:37,000 --> 00:29:39,000
+relevamos las estaciones nuevas
+
+839
+00:29:39,000 --> 00:29:41,000
+o sea
+
+840
+00:29:41,000 --> 00:29:43,000
+el conjunto original se hizo una vez
+
+841
+00:29:43,000 --> 00:29:45,000
+y en el medio se van construyendo
+
+842
+00:29:45,000 --> 00:29:47,000
+estaciones van apareciendo
+
+843
+00:29:47,000 --> 00:29:49,000
+algunas van cambiando de bandera
+
+844
+00:29:49,000 --> 00:29:51,000
+algunas tienen alguna obra
+
+845
+00:29:51,000 --> 00:29:53,000
+una vez por año relevamos los deltas
+
+846
+00:29:53,000 --> 00:29:55,000
+incorporamos
+
+847
+00:29:55,000 --> 00:29:57,000
+y si aparece algún elemento
+
+848
+00:29:57,000 --> 00:29:59,000
+nuevo
+
+849
+00:29:59,000 --> 00:30:01,000
+dentro del set de datos
+
+850
+00:30:01,000 --> 00:30:03,000
+también lo incorporamos por ejemplo
+
+851
+00:30:03,000 --> 00:30:05,000
+este modelo que estuvimos contando
+
+852
+00:30:05,000 --> 00:30:07,000
+no tiene como datos los reviews
+
+853
+00:30:07,000 --> 00:30:09,000
+ni las puntuaciones de google maps
+
+854
+00:30:09,000 --> 00:30:11,000
+a fin de este año
+
+855
+00:30:11,000 --> 00:30:13,000
+cuando terminemos el relevamiento de las estaciones
+
+856
+00:30:13,000 --> 00:30:15,000
+que se construyeron en 2022
+
+857
+00:30:15,000 --> 00:30:17,000
+más lo que pasó en pandemia
+
+858
+00:30:17,000 --> 00:30:19,000
+que eso todavía no estaba relevado
+
+859
+00:30:19,000 --> 00:30:21,000
+vamos a agregarle al nuevo set de datos
+
+860
+00:30:21,000 --> 00:30:23,000
+las puntuaciones promedios
+
+861
+00:30:23,000 --> 00:30:25,000
+y algún dato más
+
+862
+00:30:25,000 --> 00:30:27,000
+que saben de google maps
+
+863
+00:30:27,000 --> 00:30:29,000
+de no solo nuestro sino de todo el resto de las banderas
+
+864
+00:30:29,000 --> 00:30:31,000
+a ver si
+
+865
+00:30:31,000 --> 00:30:33,000
+con ese dato mejoramos algún tipo
+
+866
+00:30:33,000 --> 00:30:35,000
+de surgeador relevante
+
+867
+00:30:35,000 --> 00:30:37,000
+y mejoramos la predicción
+
+868
+00:30:37,000 --> 00:30:39,000
+en cuyo caso después tendremos que ver
+
+869
+00:30:39,000 --> 00:30:41,000
+como lo estimamos
+
+870
+00:30:41,000 --> 00:30:43,000
+cuando vamos a construir una boca nueva
+
+871
+00:30:43,000 --> 00:30:45,000
+podemos tener que si por ejemplo
+
+872
+00:30:45,000 --> 00:30:47,000
+supongamos que
+
+873
+00:30:47,000 --> 00:30:49,000
+el rating promedio de una estación
+
+874
+00:30:49,000 --> 00:30:51,000
+como variable relevante
+
+875
+00:30:51,000 --> 00:30:53,000
+tendríamos que cuando vamos a construir una nueva
+
+876
+00:30:53,000 --> 00:30:55,000
+darle un rating promedio estimado
+
+877
+00:30:55,000 --> 00:30:57,000
+y decir mira para que esta estación venda
+
+878
+00:30:57,000 --> 00:30:59,000
+esto vas a tener que esperar a un nivel de
+
+879
+00:30:59,000 --> 00:31:01,000
+4, 4.5
+
+880
+00:31:01,000 --> 00:31:03,000
+4.3 estrellas
+
+881
+00:31:03,000 --> 00:31:05,000
+perfecto
+
+882
+00:31:05,000 --> 00:31:07,000
+después siguen diciendo
+
+883
+00:31:07,000 --> 00:31:09,000
+muy buena la presentación
+
+884
+00:31:09,000 --> 00:31:11,000
+muy interesante la charla
+
+885
+00:31:11,000 --> 00:31:13,000
+y si sabes
+
+886
+00:31:13,000 --> 00:31:15,000
+si en alguna otra industria
+
+887
+00:31:15,000 --> 00:31:17,000
+están trabajando con algo
+
+888
+00:31:17,000 --> 00:31:19,000
+en este sentido
+
+889
+00:31:19,000 --> 00:31:21,000
+bueno
+
+890
+00:31:21,000 --> 00:31:23,000
+yo les voy a decir lo que es
+
+891
+00:31:23,000 --> 00:31:25,000
+tradicionalmente
+
+892
+00:31:25,000 --> 00:31:27,000
+se usaban estos modelos que comenté
+
+893
+00:31:27,000 --> 00:31:29,000
+básicamente
+
+894
+00:31:29,000 --> 00:31:31,000
+se usaba un modelo que fue desarrollado
+
+895
+00:31:31,000 --> 00:31:33,000
+conceptualmente en la década de 1930
+
+896
+00:31:33,000 --> 00:31:35,000
+que es un modelo gravitacional
+
+897
+00:31:35,000 --> 00:31:37,000
+que hablaba de
+
+898
+00:31:37,000 --> 00:31:39,000
+demandas por distancias
+
+899
+00:31:39,000 --> 00:31:41,000
+que variaban con la inversa del cuadro
+
+900
+00:31:41,000 --> 00:31:43,000
+de la distancia como si fuera la gravitación
+
+901
+00:31:43,000 --> 00:31:45,000
+pero con la inversa del cuadro de la distancia
+
+902
+00:31:45,000 --> 00:31:47,000
+a donde estaba el público consumidor
+
+903
+00:31:47,000 --> 00:31:49,000
+ese modelo
+
+904
+00:31:49,000 --> 00:31:51,000
+una empresa
+
+905
+00:31:51,000 --> 00:31:53,000
+norteamericana
+
+906
+00:31:53,000 --> 00:31:55,000
+que lo aplica
+
+907
+00:31:55,000 --> 00:31:57,000
+vende el servicio para
+
+908
+00:31:57,000 --> 00:31:59,000
+Estados Unidos, para Europa y para América Latina
+
+909
+00:31:59,000 --> 00:32:01,000
+lo estuvo usando hasta hace
+
+910
+00:32:01,000 --> 00:32:03,000
+dos o tres años
+
+911
+00:32:03,000 --> 00:32:05,000
+que empezaron un modelo similar
+
+912
+00:32:05,000 --> 00:32:07,000
+a este pero cuando lo vimos
+
+913
+00:32:07,000 --> 00:32:09,000
+la última vez que teníamos contacto con ellos
+
+914
+00:32:09,000 --> 00:32:11,000
+el modelo de ellos
+
+915
+00:32:11,000 --> 00:32:13,000
+estaba por así decirlo
+
+916
+00:32:13,000 --> 00:32:15,000
+es más avanzado que el nuestro
+
+917
+00:32:15,000 --> 00:32:17,000
+así que la industria entiendo
+
+918
+00:32:17,000 --> 00:32:19,000
+que está yendo en este sentido
+
+919
+00:32:19,000 --> 00:32:21,000
+pero el modelo que tenemos
+
+920
+00:32:21,000 --> 00:32:23,000
+nosotros está bastante en punta
+
+921
+00:32:23,000 --> 00:32:25,000
+muy bien
+
+922
+00:32:25,000 --> 00:32:27,000
+y después si evaluaron
+
+923
+00:32:27,000 --> 00:32:29,000
+hicieron una clase
+
+924
+00:32:29,000 --> 00:32:31,000
+modelos de clasificación pero si evaluaron
+
+925
+00:32:31,000 --> 00:32:33,000
+algún modelo de regresión
+
+926
+00:32:33,000 --> 00:32:35,000
+con intervalos de
+
+927
+00:32:35,000 --> 00:32:37,000
+confianza
+
+928
+00:32:37,000 --> 00:32:39,000
+si, lo hicimos
+
+929
+00:32:39,000 --> 00:32:41,000
+continuo y discreto
+
+930
+00:32:41,000 --> 00:32:43,000
+funcionó para nosotros mucho mejor el discreto
+
+931
+00:32:43,000 --> 00:32:45,000
+nos permite tener justamente
+
+932
+00:32:45,000 --> 00:32:47,000
+esta curva
+
+933
+00:32:47,000 --> 00:32:49,000
+que resulta
+
+934
+00:32:49,000 --> 00:32:51,000
+muy interesante porque
+
+935
+00:32:51,000 --> 00:32:53,000
+claramente se ven donde están
+
+936
+00:32:53,000 --> 00:32:55,000
+los quiebres grandes y uno dice
+
+937
+00:32:55,000 --> 00:32:57,000
+por ahí es por donde va a estar el volumen
+
+938
+00:32:57,000 --> 00:32:59,000
+le vamos a agregar algo más
+
+939
+00:32:59,000 --> 00:33:01,000
+que este modelo hoy no tiene
+
+940
+00:33:01,000 --> 00:33:03,000
+que es en lugar de tener una curva
+
+941
+00:33:03,000 --> 00:33:05,000
+o lo que nuestro próximo
+
+942
+00:33:05,000 --> 00:33:07,000
+desafío es tener una familia de curvas
+
+943
+00:33:07,000 --> 00:33:09,000
+porque estimamos que
+
+944
+00:33:09,000 --> 00:33:11,000
+para cada una de esas barras
+
+945
+00:33:11,000 --> 00:33:13,000
+la incertidumbre no es la misma
+
+946
+00:33:13,000 --> 00:33:15,000
+en función de la cantidad de casos que tengo
+
+947
+00:33:15,000 --> 00:33:17,000
+pero eso
+
+948
+00:33:17,000 --> 00:33:19,000
+lo contaremos en todo caso en las jornadas del año que viene
+
+949
+00:33:19,000 --> 00:33:21,000
+lo vamos a empezar a estar aplicando
+
+950
+00:33:21,000 --> 00:33:23,000
+aplicando a partir de marzo a brinco
+
+951
+00:33:23,000 --> 00:33:25,000
+y después
+
+952
+00:33:25,000 --> 00:33:27,000
+dicen cuánto tiempo le llevó
+
+953
+00:33:27,000 --> 00:33:29,000
+todo este análisis ya me imagino
+
+954
+00:33:29,000 --> 00:33:31,000
+que bueno todo el proceso estuvo en cinco años
+
+955
+00:33:31,000 --> 00:33:33,000
+y me lo recuerdo
+
+956
+00:33:33,000 --> 00:33:35,000
+desde el momento en el que empezamos a tener datos
+
+957
+00:33:35,000 --> 00:33:37,000
+lo suficientemente granulares
+
+958
+00:33:37,000 --> 00:33:39,000
+como para empezar a pensar en algo distinto
+
+959
+00:33:39,000 --> 00:33:41,000
+hasta que tenemos el conjunto
+
+960
+00:33:41,000 --> 00:33:43,000
+relevado de las 3.800 estaciones
+
+961
+00:33:43,000 --> 00:33:45,000
+pasan cinco años
+
+962
+00:33:45,000 --> 00:33:47,000
+después construir todos los modelos
+
+963
+00:33:47,000 --> 00:33:49,000
+calibrarlos, probar
+
+964
+00:33:49,000 --> 00:33:51,000
+la predicción, ponerlo en producción
+
+965
+00:33:51,000 --> 00:33:53,000
+entre 6 y 9 meses
+
+966
+00:33:55,000 --> 00:33:57,000
+bien y acá siempre
+
+967
+00:33:57,000 --> 00:33:59,000
+lo que les gusta preguntar es
+
+968
+00:33:59,000 --> 00:34:01,000
+¿cuáles fueron los problemas más
+
+969
+00:34:01,000 --> 00:34:03,000
+grandes
+
+970
+00:34:03,000 --> 00:34:05,000
+que se encontraron dentro del proceso?
+
+971
+00:34:05,000 --> 00:34:07,000
+el conjunto de datos y dentro de ese
+
+972
+00:34:07,000 --> 00:34:09,000
+los errores
+
+973
+00:34:09,000 --> 00:34:11,000
+los errores tanto
+
+974
+00:34:11,000 --> 00:34:13,000
+en lo que viene de información pública
+
+975
+00:34:13,000 --> 00:34:15,000
+o sea yo conté algo
+
+976
+00:34:15,000 --> 00:34:17,000
+a ver, alguno detalle no lo conté
+
+977
+00:34:17,000 --> 00:34:19,000
+pero los volúmenes que uno usa
+
+978
+00:34:19,000 --> 00:34:21,000
+son los volúmenes que están públicos
+
+979
+00:34:21,000 --> 00:34:23,000
+informados por cada una de las estaciones
+
+980
+00:34:23,000 --> 00:34:25,000
+a la Secretaría de Energía
+
+981
+00:34:25,000 --> 00:34:27,000
+ese conjunto no viene limpio
+
+982
+00:34:27,000 --> 00:34:29,000
+ese conjunto viene con un montón de
+
+983
+00:34:29,000 --> 00:34:31,000
+errores
+
+984
+00:34:31,000 --> 00:34:33,000
+hay que corregirlo
+
+985
+00:34:33,000 --> 00:34:35,000
+hay un montón de reglas eurísticas
+
+986
+00:34:35,000 --> 00:34:37,000
+porque son errores que uno se da cuenta
+
+987
+00:34:37,000 --> 00:34:39,000
+entonces ella directamente aplica ciertas
+
+988
+00:34:39,000 --> 00:34:41,000
+reglas como por ejemplo
+
+989
+00:34:41,000 --> 00:34:43,000
+cargar litros en lugar de metros cúbicos
+
+990
+00:34:43,000 --> 00:34:45,000
+y hay un montón de reglas estadísticas en términos de
+
+991
+00:34:45,000 --> 00:34:47,000
+hay errores que se detectan
+
+992
+00:34:47,000 --> 00:34:49,000
+aplicando series de tiempo diciendo
+
+993
+00:34:49,000 --> 00:34:51,000
+no, si hubiese sido el valor real
+
+994
+00:34:51,000 --> 00:34:53,000
+tendría que haber sido este otro
+
+995
+00:34:53,000 --> 00:34:55,000
+entonces tenemos
+
+996
+00:34:55,000 --> 00:34:57,000
+todo un conjunto muy grande de reglas
+
+997
+00:34:57,000 --> 00:34:59,000
+de corrección para tratar
+
+998
+00:34:59,000 --> 00:35:01,000
+esos volúmenes que están publicados
+
+999
+00:35:01,000 --> 00:35:03,000
+en Secretaría de Energía
+
+1000
+00:35:03,000 --> 00:35:05,000
+ese es uno, el otro es
+
+1001
+00:35:05,000 --> 00:35:07,000
+cuando uno mira el conjunto de estaciones
+
+1002
+00:35:07,000 --> 00:35:09,000
+también que están en ese
+
+1003
+00:35:09,000 --> 00:35:11,000
+en ese dataset
+
+1004
+00:35:11,000 --> 00:35:13,000
+las estaciones no están bien en términos de
+
+1005
+00:35:13,000 --> 00:35:15,000
+cuál es la marca
+
+1006
+00:35:15,000 --> 00:35:17,000
+nosotros lo llamamos bandera pero cuál es la marca
+
+1007
+00:35:17,000 --> 00:35:19,000
+uno encuentra que dice que es una IPF
+
+1008
+00:35:19,000 --> 00:35:21,000
+pero no es una IPF o dice que es una oil
+
+1009
+00:35:21,000 --> 00:35:23,000
+pero no es una oil o dice que es una gel
+
+1010
+00:35:23,000 --> 00:35:25,000
+pero no es una gel y saber exactamente
+
+1011
+00:35:25,000 --> 00:35:27,000
+qué estación es requiere otro proceso
+
+1012
+00:35:27,000 --> 00:35:29,000
+que implica mantener un dataset actualizado
+
+1013
+00:35:29,000 --> 00:35:31,000
+barriendo información pública
+
+1014
+00:35:31,000 --> 00:35:33,000
+información también de Google Maps
+
+1015
+00:35:33,000 --> 00:35:35,000
+de cuáles son las estaciones y dónde están
+
+1016
+00:35:37,000 --> 00:35:39,000
+otra de las complejidades fue cuando mandamos
+
+1017
+00:35:39,000 --> 00:35:41,000
+a relevar las estaciones de servicio
+
+1018
+00:35:41,000 --> 00:35:43,000
+venía la información y teníamos que buscar la forma
+
+1019
+00:35:43,000 --> 00:35:45,000
+de auditar lo que venía
+
+1020
+00:35:45,000 --> 00:35:47,000
+entonces había también cierto
+
+1021
+00:35:47,000 --> 00:35:49,000
+conjunto de consistencia de reglas
+
+1022
+00:35:49,000 --> 00:35:51,000
+para ver si lo que estaba viendo estaba bien
+
+1023
+00:35:51,000 --> 00:35:53,000
+pero de vuelta
+
+1024
+00:35:53,000 --> 00:35:55,000
+lo más complejo por lejos
+
+1025
+00:35:55,000 --> 00:35:57,000
+es el conjunto de datos
+
+1026
+00:35:57,000 --> 00:35:59,000
+lo suficientemente bueno como para que el modelo
+
+1027
+00:35:59,000 --> 00:36:01,000
+pueda dar esos resultados
+
+1028
+00:36:01,000 --> 00:36:03,000
+bien
+
+1029
+00:36:03,000 --> 00:36:05,000
+y para ahí finalizando
+
+1030
+00:36:05,000 --> 00:36:07,000
+preguntan si
+
+1031
+00:36:07,000 --> 00:36:09,000
+se basan solamente en uno
+
+1032
+00:36:09,000 --> 00:36:11,000
+de los modelos o hacen alguna
+
+1033
+00:36:11,000 --> 00:36:13,000
+algún tipo de ponderación entre los modelos
+
+1034
+00:36:13,000 --> 00:36:15,000
+mencionados
+
+1035
+00:36:15,000 --> 00:36:17,000
+nos basamos básicamente
+
+1036
+00:36:17,000 --> 00:36:19,000
+el mejor resultado
+
+1037
+00:36:19,000 --> 00:36:21,000
+de todos lo obtenemos
+
+1038
+00:36:21,000 --> 00:36:23,000
+lo obtenemos hoy ponderando
+
+1039
+00:36:23,000 --> 00:36:25,000
+C50 con Random Forest
+
+1040
+00:36:25,000 --> 00:36:27,000
+aunque parezca raro
+
+1041
+00:36:27,000 --> 00:36:29,000
+porque no esperaría que fueran Exibus
+
+1042
+00:36:29,000 --> 00:36:31,000
+o que fueran la HBM
+
+1043
+00:36:31,000 --> 00:36:33,000
+que son los algoritmos
+
+1044
+00:36:33,000 --> 00:36:35,000
+más avanzados o incluso Cat Boost
+
+1045
+00:36:35,000 --> 00:36:37,000
+el mejor resultado lo tenemos
+
+1046
+00:36:37,000 --> 00:36:39,000
+haciendo promedios
+
+1047
+00:36:39,000 --> 00:36:41,000
+de
+
+1048
+00:36:41,000 --> 00:36:43,000
+C50 y Random Forest
+
+1049
+00:36:43,000 --> 00:36:45,000
+y haciendo algo
+
+1050
+00:36:45,000 --> 00:36:47,000
+promediando algo que no aclaré
+
+1051
+00:36:47,000 --> 00:36:49,000
+que es esa partición
+
+1052
+00:36:49,000 --> 00:36:51,000
+de mayor y menor
+
+1053
+00:36:51,000 --> 00:36:53,000
+la corremos para un lado y para el otro
+
+1054
+00:36:53,000 --> 00:36:55,000
+no solamente lo que es más de esto
+
+1055
+00:36:55,000 --> 00:36:57,000
+y menos de esto sino la corremos al revés
+
+1056
+00:36:57,000 --> 00:36:59,000
+y promedíamos las dos cosas
+
+1057
+00:36:59,000 --> 00:37:01,000
+bien y por último
+
+1058
+00:37:01,000 --> 00:37:03,000
+si tenés alguna impresión
+
+1059
+00:37:03,000 --> 00:37:05,000
+por qué los modelos
+
+1060
+00:37:05,000 --> 00:37:07,000
+de redes neuronales
+
+1061
+00:37:07,000 --> 00:37:09,000
+no fueron tan buenos
+
+1062
+00:37:09,000 --> 00:37:11,000
+como los que terminaron eligiendo
+
+1063
+00:37:11,000 --> 00:37:13,000
+si sospechar de algo algún norte
+
+1064
+00:37:13,000 --> 00:37:15,000
+puede haber
+
+1065
+00:37:15,000 --> 00:37:17,000
+a ver todavía no tengo una
+
+1066
+00:37:17,000 --> 00:37:19,000
+una noción
+
+1067
+00:37:19,000 --> 00:37:21,000
+del porqué matemático
+
+1068
+00:37:21,000 --> 00:37:23,000
+ahora desde el punto de vista empírico
+
+1069
+00:37:27,000 --> 00:37:29,000
+toda la experiencia de la gente
+
+1070
+00:37:29,000 --> 00:37:31,000
+que ya había trabajado con modelos
+
+1071
+00:37:31,000 --> 00:37:33,000
+con datos estructurados nos decía
+
+1072
+00:37:33,000 --> 00:37:35,000
+los árboles funcionan mejor
+
+1073
+00:37:35,000 --> 00:37:37,000
+las pruebas con otras cosas
+
+1074
+00:37:37,000 --> 00:37:39,000
+nos daba que funcionaban mejor
+
+1075
+00:37:39,000 --> 00:37:41,000
+cuando uno lee
+
+1076
+00:37:41,000 --> 00:37:43,000
+lo que
+
+1077
+00:37:43,000 --> 00:37:45,000
+escriben los campeones
+
+1078
+00:37:45,000 --> 00:37:47,000
+de las competencias de Kaggle
+
+1079
+00:37:47,000 --> 00:37:49,000
+dicen que cuando hay que trabajar
+
+1080
+00:37:49,000 --> 00:37:51,000
+en la que vienen conjuntos datos estructurados
+
+1081
+00:37:51,000 --> 00:37:53,000
+lo que mejor les funcionan son los árboles
+
+1082
+00:37:53,000 --> 00:37:55,000
+entonces de vuelta
+
+1083
+00:37:55,000 --> 00:37:57,000
+no te podría decir por qué desde el punto
+
+1084
+00:37:57,000 --> 00:37:59,000
+de vista matemático desde el punto de vista empírico
+
+1085
+00:37:59,000 --> 00:38:01,000
+para datos estructurados están funcionando
+
+1086
+00:38:01,000 --> 00:38:03,000
+mejor los árboles
+
+1087
+00:38:03,000 --> 00:38:05,000
+quiero creer que es por el tipo de
+
+1088
+00:38:05,000 --> 00:38:07,000
+de estructura de estructura matemática
+
+1089
+00:38:07,000 --> 00:38:09,000
+de la data
+
+1090
+00:38:09,000 --> 00:38:11,000
+más que
+
+1091
+00:38:11,000 --> 00:38:13,000
+más que del algoritmo
+
+1092
+00:38:13,000 --> 00:38:15,000
+y si había otra cosa había algo que si
+
+1093
+00:38:15,000 --> 00:38:17,000
+queríamos por lo cual si hubieran dado
+
+1094
+00:38:17,000 --> 00:38:19,000
+no digo
+
+1095
+00:38:19,000 --> 00:38:21,000
+igual
+
+1096
+00:38:21,000 --> 00:38:23,000
+tendría que haber dado muchísimo mejor
+
+1097
+00:38:23,000 --> 00:38:25,000
+redes neuronales
+
+1098
+00:38:25,000 --> 00:38:27,000
+si hubiesen dado igual también nos hubiésemos quedado con árboles
+
+1099
+00:38:27,000 --> 00:38:29,000
+árboles nos permitía
+
+1100
+00:38:29,000 --> 00:38:31,000
+tener un ranking
+
+1101
+00:38:31,000 --> 00:38:33,000
+estimado de la importancia relativa de variables
+
+1102
+00:38:33,000 --> 00:38:35,000
+incluso cuando usamos
+
+1103
+00:38:35,000 --> 00:38:37,000
+modelos de boosting
+
+1104
+00:38:37,000 --> 00:38:39,000
+el ranking no es perfecto es surge de un promedio
+
+1105
+00:38:39,000 --> 00:38:41,000
+pero nos permite decir
+
+1106
+00:38:41,000 --> 00:38:43,000
+esta variable es mucho más importante
+
+1107
+00:38:43,000 --> 00:38:45,000
+que esta otra
+
+1108
+00:38:45,000 --> 00:38:47,000
+que los modelos de redes neuronales
+
+1109
+00:38:47,000 --> 00:38:49,000
+es imposible
+
+1110
+00:38:49,000 --> 00:38:51,000
+por qué
+
+1111
+00:38:51,000 --> 00:38:53,000
+más allá de
+
+1112
+00:38:53,000 --> 00:38:55,000
+esto tiene otro spin off
+
+1113
+00:38:55,000 --> 00:38:57,000
+más allá de la predicción del volumen
+
+1114
+00:38:57,000 --> 00:38:59,000
+para cuando tenemos que construir una estación que no existe
+
+1115
+00:38:59,000 --> 00:39:01,000
+tener un ranking de variables importantes
+
+1116
+00:39:01,000 --> 00:39:03,000
+nos permite si la variable
+
+1117
+00:39:03,000 --> 00:39:05,000
+es modificable
+
+1118
+00:39:05,000 --> 00:39:07,000
+hay variables que no son modificables por ejemplo
+
+1119
+00:39:07,000 --> 00:39:09,000
+si dentro de esa importancia está la cantidad de metros cuadrados
+
+1120
+00:39:09,000 --> 00:39:11,000
+que tiene una estación
+
+1121
+00:39:11,000 --> 00:39:13,000
+y uno está hablando de una estación de ciudad
+
+1122
+00:39:13,000 --> 00:39:15,000
+que tiene dos mil metros cuadrados
+
+1123
+00:39:15,000 --> 00:39:17,000
+no va a tener más porque seguramente al lado hay un edificio
+
+1124
+00:39:17,000 --> 00:39:19,000
+un negocio
+
+1125
+00:39:19,000 --> 00:39:21,000
+pero si la variable fuera
+
+1126
+00:39:21,000 --> 00:39:23,000
+por ejemplo
+
+1127
+00:39:23,000 --> 00:39:25,000
+tener surtidores de
+
+1128
+00:39:25,000 --> 00:39:27,000
+lo que llamo soft tuples
+
+1129
+00:39:27,000 --> 00:39:29,000
+de cuatro picos por lado o sea de ocho picos
+
+1130
+00:39:29,000 --> 00:39:31,000
+ver sustenar surtidores quadruples que son de dos picos por lado
+
+1131
+00:39:31,000 --> 00:39:33,000
+uno tranquilamente lo que puede hacer es
+
+1132
+00:39:33,000 --> 00:39:35,000
+cambiar los surtidores para mejorar la venta
+
+1133
+00:39:35,000 --> 00:39:37,000
+de volumen
+
+1134
+00:39:37,000 --> 00:39:39,000
+esa es otra de las ventajas que nos daba los modelos de árboles
+
+1135
+00:39:39,000 --> 00:39:41,000
+bien
+
+1136
+00:39:41,000 --> 00:39:43,000
+bueno digo felicitaciones
+
+1137
+00:39:43,000 --> 00:39:45,000
+excelente la presentación
+
+1138
+00:39:45,000 --> 00:39:47,000
+muchísimas gracias
+
+1139
+00:39:47,000 --> 00:39:49,000
+bueno
+

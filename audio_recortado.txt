@@ -1,0 +1,1139 @@
+Bueno, continuando, entonces,
+con lo programado, tenemos la
+presentación de Panamerican,
+la presentación va a ser realizada
+por Martín Ruiz, quien ya conocemos
+del año pasado, estado con nosotros,
+y Diego Zobro, el título de la
+presentación de Panamerican,
+con modelos basados en árboles.
+Bueno, ¿están listos, Diego?
+Sí, estamos listos.
+Perfecto.
+¿A Martín?
+Martín se estaba uniendo.
+Bueno, comparto.
+Ok.
+Muchas gracias por la invitación.
+Vamos a estar hablando de
+predicción de ventas en estaciones de
+servicio como modelos basados en árboles.
+Vamos de una clasión, vamos a
+predecir cuánto va a vender una estación
+que todavía no existe.
+Esa es lo que tiene interesante.
+Y comenzamos, hablando un poco
+de otra acción de la colación,
+una viñeta clásica que nos muestra
+alguien que está buscando su
+billetera abajo de un farol
+y se le acerca a un policía y le
+pregunta si es ahí donde le había
+perdido, le dice no, la perdí en el
+parque, pero acá es donde hay luz.
+Esta viñeta es clásica, hay
+muchos variantes, con llaves,
+con billeteras, con monedas,
+y nos permite pasar una analogía
+en general con lo que es la
+ciencia de datos, el data mining,
+que en general los problemas
+están en el parque a tres o cuatro
+cuadras de donde está el farol,
+y generalmente tratamos de resolverlo
+con los datos que es justamente los
+que están debajo del farol.
+Y lo que vamos a contar hoy es
+cómo resolvimos un caso yendo
+a buscar el problema al parque.
+Básicamente el problema de negocio
+que queríamos resolver era
+evaluar la inversión en términos
+económicos de construir una nueva
+estación de servicio. Básicamente
+para hacer una evaluación económica
+y financiera de la construcción de
+una nueva estación de servicio, lo
+primero que hay que construir es un
+cashflow, y sobre ese cashflow se
+les van a aplicar algunos indicadores
+financieros, sobre ese cashflow se van
+a aplicar unos algoritmos que nos van
+a permitir obtener un valor actual
+neto, un valor presente neto,
+y una tasa interna de retorno.
+Pero básicamente esos son algoritmos,
+lo primero que hay que hacer es
+construir un cashflow.
+Y para construir bien un cashflow
+necesitamos básicamente tres
+componentes, las inversiones,
+los costos operativos y la
+facturación.
+Tenemos clarísimo cuánto
+cuesta hacer una estación de servicio.
+Si le pasamos a nuestro departamento
+de ingeniería, cómo va a hacer el
+diseño, y todos los detalles nos
+dicen exactamente cuánto va a costar
+ese es un valor que no tiene ninguna
+necesidad.
+Y para saber cuál es la facturación
+necesitamos dos valores.
+El precio de venta y el volumen
+de venta.
+El precio de venta en línea general
+y en particular en el mercado argentino
+es un valor que es muy estable
+en dólares, si miramos el precio
+en los últimos 10 o 15 años en dólares
+ha estado terriblemente
+estable cerca de entre los 90
+centavos y un dólar por litro.
+El gran problema es
+determinar cuál
+va a ser el volumen de ventas.
+Entonces el problema
+que tenemos se transforma justamente
+en estimar el volumen de ventas de esa
+estación que todavía no existe.
+¿Cómo hacemos tradicionalmente?
+¿Cómo hizo la industria tradicionalmente
+para hacer esto? Básicamente
+usando dos tipos de modelos
+y en algunos casos combinándolos.
+Tenemos modelos
+para lo que llamo áreas urbanas
+compactas, lo que puede ser
+el tejido urbano
+de una ciudad
+relativamente chica, 50.000, 100.000 habitantes
+que se basa en
+lo que llamamos trade áreas.
+Tenemos
+modelos para
+estaciones que están en rutas en autopistas
+que están basados en lo que llamamos tasas de captura.
+Esto es
+qué porcentaje de los vehículos que pasan por delante
+de la estación van a entrar y realmente
+cargará ahí. Y donde
+en los casos de áreas urbanas extensas
+que pueden ser una gran metrópolis
+como el área metropolitana de Buenos Aires,
+se suele combinar el trade area
+con las tasas de captura.
+Básicamente
+el trade area
+se basa en definir
+para una región
+los distintos segmentos
+de esa región
+que no compiten entre sí
+analizar cuáles son las estaciones que están ahí
+existentes, cuánto venden
+y cómo se puede repartir ese volumen.
+Para lo que son las tasas de captura
+básicamente es analizar el tránsito
+o descomponer ese tránsito
+en las componentes
+de tendencia, de estacionalidad
+y aleatoria
+y a partir de cómo va a evolucionar el futuro
+estimar cuánto podríamos llegar a capturar
+con nuestra estación.
+¿Qué problemas
+han tenido o tienen siguen teniendo
+estos métodos tradicionales de estimación?
+El trade area es básicamente
+que si bien conocemos
+las estaciones existen
+y cuánto venden
+no solamente es la ubicación
+y el tamaño de la estación
+lo que importa, sino también las instalaciones
+la operación
+el tráfico que circula por ese lugar
+y eso hace que
+sea relativamente fácil construir
+una matriz donde
+podemos
+ubicar la fortaleza
+de la ubicación
+y la fortaleza del site
+de las instalaciones
+y establecer un rango
+que es una buena posición
+y que es una buena instalación
+este tipo de métodos
+funciona muy bien en los extremos
+es decir, cuando una estación está muy bien ubicada
+y tiene muy buenas instalaciones
+queda bien evaluada
+cuando una estación está muy mal ubicada
+y tiene muy malas instalaciones queda muy mal evaluada
+y nos quedan como los extremos de una distribución normal
+y en esos casos generalmente
+poco error, el tema es que la mayoría
+de las estaciones están en el medio
+y eso es lo difícil de evaluar
+con este tipo de modelos
+y en el caso de las tasas de captura
+es
+la complejidad acá es cómo se estima
+ese porcentaje de ingreso
+de vehículos a la estación
+porque cuando uno mira los casos reales
+dependiendo
+del tipo de arteria
+la tasa de captura puede estar
+en torno al 1 al 1.5%
+en torno al 3.5%
+en torno al 5%
+en torno al 15%
+y la pregunta es de qué depende esto
+entonces
+en función de ver las limitaciones
+que tenían estos métodos tradicionales
+que usaba la industria
+nos surgió la siguiente hipótesis
+la pregunta que nos hacíamos es
+si tenemos un conjunto grande
+con gran cantidad de datos
+que tenga todas las características
+relevantes de una estación de servicio
+y que deberíamos en teoría
+poder entrenar un volumen
+que capture esas particularidades
+que explican el volumen
+y nos permita predecirlo
+en estaciones que no existen
+pero que van a tener ciertas características
+esta fue la gran idea
+que tuvimos con hipótesis
+y transformamos entonces
+este problema
+en tres problemas operacionalizables
+que son definir el tamaño del conjunto
+estimar cuáles son las características relevantes
+para el modelo
+vamos a ver
+cada una de estos tres problemas
+en particular
+y empezamos con la definición del tamaño del conjunto
+de qué tamaño debería ser el conjunto
+para entrenar este modelo
+bueno, en Argentina tenemos
+más o menos 4200 estaciones de servicio
+dado que es un número
+relativamente acotado
+dijimos cuanto más grande sea el conjunto
+mejor, ahora como le esquimos
+bueno, la variable
+de respuesta que queremos usar nosotros
+es el volumen de ventas
+no todas las estaciones que existen
+reportan el volumen de ventas en forma regular
+a la Secretaría de Energía
+con lo cual dijimos, vamos a agarrar el conjunto
+de estaciones que sí reportan en forma regular
+que terminaba
+transformándose en un conjunto de más o menos
+4200 estaciones
+un conjunto de aproximadamente 3.800 estaciones
+en segundo lugar
+nos quedaba definir
+las características relevantes
+de las estaciones para introducir el modelo
+esto lo hicimos en base
+a primer lugar
+tomando experiencia en la industria
+hicimos survey con expertos
+usamos nuestra experiencia de campo
+en particular
+esto lo hicimos desde el área de planeamiento de red
+el equipo que lo hizo
+había recorrido
+más de 30.000 kilómetros de rutas nacionales
+había visitado
+todas las ciudades de más de
+100.000 habitantes del país
+y todas las ciudades entre
+10.000 y 100.000 habitantes que estaban
+a los costados
+de estos 30.000 kilómetros de rutas nacionales
+con lo cual
+de alguna forma había generado
+una aurística después de ver más de
+2.000 estaciones de qué era lo importante
+y qué era lo que no
+y por último dado que
+al momento de definir las variables
+antes de tener que relevarlas no había límite
+hicimos un brainstorming con los sectores
+lucrados en el área de ventas
+para ver qué otras variables
+les podían ocurrir como relevantes
+y por último teníamos que definir
+qué modelos utilizar
+básicamente teníamos dos grandes candidatos
+los basados en árboles que son los que
+se suelen utilizar para
+datos estructurados
+también pensamos usar como candidato
+las redes neuronales al final funcionaron
+mucho mejor los diárboles por eso
+son los que vamos a contar hoy
+y vamos a entrar en los resultados
+de los modelos en base a
+redes neuronales artificiales
+yendo al primer problema
+que es la construcción de las listas de características
+una vez ya definido que vamos a trabajar
+sobre las 1.800 estaciones
+vamos a ver cómo lo hicimos
+tenemos
+tres grandes fuentes de características
+las variables
+que podemos obtener de alguna fuente pública
+o privada de fácil acceso
+que es lo que normalmente
+todos conocemos como el dataset
+en este caso sería
+volviendo a la analogía de la persona
+que estaba buscando la billetera
+esto sería lo que está bajo la luz
+¿Qué tenemos ahí?
+coordenadas las estaciones, precios
+volúmenes históricos
+después podemos
+a partir de las variables que tenemos
+calcular otras variables
+que es lo que normalmente llamamos
+feature engineering
+market share
+la población dentro de X radio
+y por último tenemos algo
+de lo que generalmente
+no hablamos
+que es las variables que no están en ningún lado
+y que hay que relevar
+en este caso estamos hablando del layout
+tipo de surtidores
+y otras más que vamos a
+ir comentando
+¿Cómo obtenemos
+esos datos?
+bueno para lo que son los datos públicos
+y privados básicamente
+lo que tenemos es un proceso clásico de tele
+de extracción, análisis, limpieza
+corrección e integración
+y esta primera
+construcción del modelo de predicción de ventas
+generó una serie de procesos
+que hoy son procesos mensuales
+que nos permiten además de
+alimentar este modelo
+alimentar otros muchos modelos
+y además tener un monitoreo
+de cómo está el mercado y cómo está la competencia
+con un nivel muy fino en forma mensual
+que va a generar datos trabajos de estaciones
+de volúmenes, de reviews de Google Maps
+El feature engineering
+lo usamos
+básicamente
+la mayoría de las variables son cálculos
+usando sistemas de información geográfica
+es decir es un feature engineering
+no con lógica matemática
+no transformamos las variables
+y obtenemos otras variables a partir
+de ciertas funciones sino
+buscamos cosas que puedan llegar a tener
+lógica de un sentido de negocio
+por ejemplo, cuál es el market share
+dentro del kilómetro de radio
+los dos kilómetros, los cinco kilómetros
+cuál es el love of share
+para el caso de tiendas cuántos kioscos tengo cerca
+cuántos cafés tengo cerca
+cuál es el nivel socioeconómico
+de la población
+que tengo dentro de determinado radio
+ese es el tipo de feature engineer que usamos acá
+y por último nos quedaba
+relevar
+130 características
+en esas aproximadamente 3.080 estaciones
+de servicio
+que eran las que habían surgido de el proceso
+que les comentamos antes de service con expertos
+de
+las heurísticas
+de haber
+recorrido el país y del
+proceso de brainstorming
+la pregunta que viene acá es
+cómo hacemos para que nos den presupuesto
+para
+relevar 3.080 estaciones de servicios
+en forma presencial
+estamos hablando
+de 200, 300.000 dólares
+que se hará hacer esto
+básicamente lo que hicimos fue
+presentar la idea
+y contar la historia de
+supermercados target
+es una historia que supongo que la
+habrán visto, que la conocen
+en el año 2002
+un estadístico que empezaba a trabajar
+en supermercados target
+recibió una pregunta de su equipo de marketing
+que le consultaba si
+consideraba que sería posible
+identificar
+cuando una mujer estaba embarazada
+incluso si
+esa mujer no quería que lo supieran
+y lo que hizo
+supermercados target fue armar
+con todos los datos que tenían
+un modelo que
+a partir de 25 productos trazadores
+le permitía identificar si una mujer
+estaba embarazada o no
+qué trimestre estaba cursando
+o si no se ha hecho probable departo
+este caso se hizo muy famoso
+no solamente porque está contado en el libro
+que mencionábamos, sino porque
+fue nota de Forbes cuando
+el padre de un adolescente se quejó
+al gerente de una sucursal
+porque su hija estaba recibiendo cupones de descuento
+para productos relacionados con bebé
+se quejaba porque les preguntaba
+si la estaban induciendo a quedar embarazada
+y unos días más tarde se disculpó
+porque
+justamente después de tener una charla con su hija
+que realmente estaba embarazada
+y justamente el caso se hizo famoso porque
+los sistemas estadísticos de target
+supieron que el adolescente estaba embarazada
+antes que el padre
+la gran enseñanza que sacamos de acá
+no solamente es que es posible ser
+con buenos datos
+sino que
+lo importante
+era el conjunto de datos
+target tenía
+el 50%
+de lo que vendía
+para asociar a una persona determinada
+es
+por eso que conociendo la demografía de los clientes
+podía ser en inferencias super
+robustas a partir de las ventas
+la clave en el modelo entonces
+de target estaba mucho más en el
+dataset que en el modelo estadístico
+entonces con esta idea en la cabeza
+convencimos
+al equipo de dirección
+que nos aprobaba el presupuesto
+ese proceso
+de contratación, relevamiento
+de datos nos llevó un año y medio
+el proceso
+de construcción de los datos
+originales nos llevó
+dos años
+básicamente lo empezamos antes
+y todo el proceso completo
+desde que empezamos a tener
+las ideas y fuimos
+obteniendo cada vez más datos
+hasta que llegamos al dataset
+que nos permitió construir el modelo
+nos habrá llevado aproximadamente unos 5 años
+desde que empezamos
+confirmamos la máxima
+de ETL
+y de los procesos Machine Learning
+donde se suele decir que
+el 95% del tiempo
+se va a obtener
+y construir el conjunto de datos
+y solamente 5% en entrenar
+a los modelos y obtener los resultados
+una vez que tuvimos
+el conjunto de datos
+construido, las estaciones relevadas
+necesitábamos
+entrenar el modelo y predecir
+un volumen de ventas
+y lo que necesitábamos era un valor
+necesitábamos saber cuánto iba a vender
+en metros cúbicos
+entonces había dos formas de plantear el problema
+una era forma de problema continuo
+problema de regresión o de discreto
+de clasificación
+y la pregunta es si lo planteamos como
+continuo en ningún problema
+ponemos los volúmenes
+como variable de respuesta
+si lo planteamos como discreto la pregunta es
+y la solución
+que se nos ocurrió
+era hacer
+en el mismo conjunto
+en reparticiones de dos clases
+esas dos clases iban a ser
+la estación vende más de un x volumen
+o menos de un x volumen por mes
+y esas x las definimos en
+100 mil litros
+150 mil litros
+200 mil litros, 250 mil litros
+y así con cortes de 50 mil
+hasta un millón de litros
+trabajamos en metros cúbicos
+por eso también 200, 150, 200
+etc.
+y el modelo fue entrenado para que pudiera
+trabajar bien en el rango de
+100 metros cúbicos hasta
+1000 metros cúbicos
+a este
+conjunto de datos y a cada una
+de esas particiones le aplicamos
+un conjunto de algoritmos
+y básicamente usamos random forest
+c50,
+catbus,
+y daishi bien
+y al principio hicimos separaciones
+para probar en conjuntos de trénites
+entre 25, 75, 80,
+15, 85, 90
+10, nos terminamos
+quedando con el de 20, 80
+pero no vimos grandes variaciones entre todos
+como
+producto final
+de este proceso
+tuvimos los modelos entrenados
+y la importancia relativa de
+variables
+este es un ejemplo de algunos modelos
+entrenados con
+las métricas de accuracy
+de sensibilidad
+de especificidad y de área bajo la curva
+en línea general, bueno ahora vamos a ver
+que si bien usamos todos estos
+terminaron dando muy muy bien
+los más justos terminaron siendo random forest
+y c50 que fue con los que nos terminamos
+quedando al final
+¿Cómo es el resultado cuando aplicamos
+estos modelos entrenados
+en el conjunto de test?
+Bueno, habiendo hecho las particiones
+lo que tenemos es
+básicamente
+una probabilidad
+por rango de volumen, lo que nos está diciendo
+para esta estación en particular el modelo
+es que está viendo un 0,78
+de probabilidad de que venda
+100,000 litros por mes
+más de 100,000 litros
+y 0,13 de que venda más de 150,000
+básicamente
+diciendo que esta estación debería estar
+en torno a los 100,000 litros
+por mes
+este es la probabilidad
+promedio, fíjense que cada uno de los modelos
+da bastante similar, tiene una barra
+muy alta y después
+las probabilidades se caen
+y recordemos que como decíamos al principio
+el modelo está entrenado para el rango de
+100 a 1000
+con lo cual lo que sea menos de 100
+y más de 1000 le va a costar más
+en este caso la estación
+vendía 93 metros
+casi 94
+y nos estaba dando una probabilidad de casi 0,80
+de vender 100
+el modelo andaba bien para este caso
+vemos acá otro ejemplo
+una estación
+de la bandera gel
+y acá lo que estamos viendo es que
+el modelo nos está diciendo que esta estación
+tiene una probabilidad alta de vender
+más de 100,000 litros
+alta de vender más de 150,000 litros
+alta de vender más de 200,000 litros
+pero ya baja
+muy baja de vender más de 250,000
+litros
+esto se traduce en que el modelo nos está diciendo que esta estación
+está más o menos entre los 200
+y los 250 metros
+prácticamente todos los modelos dan
+muy similar
+y el promedio da este resultado
+cuando vemos cuánto vende realmente la estación
+vemos que vende 205 metros cúbicos
+vamos a ver otro ejemplo
+acá lo que tenemos es una IPF
+fíjense que vimos una oil
+una gel, una IPF
+estamos viendo todas estaciones de otras banderas
+con lo cual estamos usando
+información que obtuvimos
+en forma pública pues
+salvo el volumen que está reportado
+del resto no sabemos nada
+en este ejemplo
+lo que vemos es que el promedio
+nos está diciendo que esta estación tiene una probabilidad
+altas de vender
+de 100, 150
+200, 250
+300, 350
+400 y baja
+en 450
+es decir que es una estación que tiene probabilidad alta de vender
+más de 400 menos de 450 metros
+vende 400 casi 413 metros
+acá también tenemos el modelo
+prediciendo muy bien el rango de ventas
+lo mismo para otra estación IPF
+vamos a ver que las probabilidades
+son altas
+para 100, 150
+200, 250
+300, 350
+400, 450
+500, 550
+600, 650
+700, 750 crepes
+hasta 800 que llega
+y lo que vemos es que vende entre
+800 y 850
+también el modelo
+funciona muy bien en este caso
+qué pasa
+acá
+acá tengo un modelo
+que me está diciendo que las probabilidades son muy altas
+para todos los rangos
+en ningún momento cae
+por qué
+porque la estación vende
+1,470,000 litros
+y el modelo está entrenado
+para predecir
+bien
+en el rango de 100 a 1000
+lo que esté arriba de 1000
+es decir, si es alto
+vende más de 1000 con una probabilidad alta
+pero no te puedo decir si son
+1,150, 1,100, 2,000, 3,000
+o lo que sea
+esto puede parecer
+un problema, la realidad es que las bocas
+que venden, las estaciones que venden
+más de 1 millón de litros en Argentina
+son del orden del 2%
+es decir que para el grueso
+de las estaciones que existen y se construyan
+esto anda muy bien
+por último, un caso
+raro
+¿por qué digo raro?
+porque el modelo nos está diciendo que
+cuando uno lo mira acá
+nos dice que esta estación tiene
+probabilidad alta de vender más de 100, 150, 200
+250, 300, 350
+400 metros cúbicos
+pero
+muy baja probabilidad de vender
+más de 450
+ahora cuando vemos
+todo esto es lo que realmente vende
+330
+es decir que esta barra de acá nos está
+confundiendo
+tendría que haber considerado esta
+ahora eso a priori no lo sabemos
+por eso el modelo funciona
+bien
+más o menos 9 de cada 10 casos
+tenemos un orden de error
+del 10%
+igualmente
+no predice con la precisión que quisiéramos
+pero tampoco es que
+estamos muy lejos de la realidad
+con esto entrenado
+nos quedaba un problema
+adicional antes de pasar a producción
+y era que
+la cantidad de variables que teníamos originalmente
+en el modelo estaban en torno a las 400
+entonces
+cuando esto está listo y uno le dice bueno
+vamos a alguien
+el área de desarrollo de rendos
+vamos a construir una estación nueva
+me puedo decir que volumen va a vender
+pero me tenés que dar estas 400 variables
+y es medio
+poco operativo eso
+entonces lo que buscamos es
+ver de reducir esas variables
+buscarlas las más relevantes
+y ver si cuando reentrenábamos el modelo
+perdíamos qué capacidad predictiva perdíamos
+y la realidad que lo hicimos
+y no solamente vimos que no perdíamos capacidad
+predictiva sino que
+en la versión final
+llegábamos a tener mayor capacidad
+predictiva que en los modelos originales
+y terminamos con
+un rango de accuracy
+en torno a 0.9
+cuando aplicamos esto sobre un caso real
+esto hasta ahora vimos en test
+le estamos mostrando un caso real que no prosperó
+los casos que prosperaron
+lamentablemente no los podemos compartir
+pero queríamos instalar
+una estación de servicio en esta zona
+en algún punto
+de este círculo de la
+de la ciudad de La Plata
+corrimos el modelo
+nos dio este resultado
+este es otro caso particular que no vimos antes
+antes vimos probabilidades que estaban
+que estaban bien definidas muy alto
+hasta cierto valor y caía y era muy bajo
+en algunos casos el resultado
+aparece como un escalón
+cuando aparece como un escalón
+para la interpretación de esto vamos al criterio clásico de probabilidades
+y nos quedamos con probabilidad muy alta
+y es más de 0.85
+alta si es de más de 0.75
+moderada si es más de la mitad
+y baja si es menos de la mitad
+en este caso la probabilidad alta daba
+200.000 litros
+con más de 75%
+con ese volumen no resultaba ser
+un potencial negocio interesante
+y por eso
+fue descartado
+esto era
+lo que teníamos para contarles
+para poder mostrar
+el caso
+desde el problema
+a la solución específica
+de cómo solucionamos ese problema
+o sea, ir no de los datos
+sino del problema de negocio
+y no sólo mostrar el producto final
+que era básicamente el predictor de ventas
+sino contar todo el proceso
+con el cual había sido construido
+y esto es básicamente
+mostrar no solamente el edificio
+sino todos los andamios
+que se movieron las personas
+que lo construyeron
+Bueno, digo
+muchísimas gracias
+excelente la presentación
+y hay algunas preguntas
+En primer lugar
+Alejandro nos pregunta
+¿Cuánto fue la cantidad
+de variables que tuvo el dataset
+previo al feature engineering?
+¿Tenés una idea?
+Sí, debemos haber tenido
+en total terminamos con unas 400
+y algo y debe haber unas 100 que son de feature
+así que damos del orden de 300
+300
+Y en este relevamiento de campo
+también pregunta Alejandro
+¿Hubo alguna variable importante
+que les haya destacado algo
+que les haya sorprendido?
+En el relevamiento de campo no
+Sí, el relevamiento de campo
+son lo que mandamos a relevar
+Si nos sorprendieron algunas cosas
+cuando apareció la importancia
+de variables, lamentablemente
+y justamente ese dato no está puesto
+es parte del know-how
+que quedó del proceso pero sí
+¿Hubo algunas variables
+que no hubiésemos dicho
+que iban a estar y estuvieron?
+¿Qué les decía?
+¿Esta realmente es importante?
+Sí, esa realmente es importante
+Siempre pasa
+Nunca la capacidad de asombres
+es infinita
+Si recordás
+si nos puedes explicar algo del proceso
+de hyperparametrización
+¿Cómo lo trabajaron?
+Originalmente
+esto lo hicimos hace bastante
+Empezamos
+el primero lo hicimos con una búsqueda
+por grid search
+y después fuimos directamente ya más
+modelos de métodos
+No lo hicimos una vez esto
+fuimos más a métodos
+de random search
+dentro del rango de parámetros
+que teníamos
+estimados para los hyperparámetros
+Acá nos dice
+también nos preguntan
+el mantenimiento posterior
+una vez que ya sacaron el modelo
+luego de esto
+el mantenimiento
+el mantenimiento posterior
+tiene dos procesos
+uno de mantenimiento y uno de enrequisimiento
+lo que hacemos es una vez por año
+relevamos las estaciones nuevas
+o sea
+el conjunto original se hizo una vez
+y en el medio se van construyendo
+estaciones van apareciendo
+algunas van cambiando de bandera
+algunas tienen alguna obra
+una vez por año relevamos los deltas
+incorporamos
+y si aparece algún elemento
+nuevo
+dentro del set de datos
+también lo incorporamos por ejemplo
+este modelo que estuvimos contando
+no tiene como datos los reviews
+ni las puntuaciones de google maps
+a fin de este año
+cuando terminemos el relevamiento de las estaciones
+que se construyeron en 2022
+más lo que pasó en pandemia
+que eso todavía no estaba relevado
+vamos a agregarle al nuevo set de datos
+las puntuaciones promedios
+y algún dato más
+que saben de google maps
+de no solo nuestro sino de todo el resto de las banderas
+a ver si
+con ese dato mejoramos algún tipo
+de surgeador relevante
+y mejoramos la predicción
+en cuyo caso después tendremos que ver
+como lo estimamos
+cuando vamos a construir una boca nueva
+podemos tener que si por ejemplo
+supongamos que
+el rating promedio de una estación
+como variable relevante
+tendríamos que cuando vamos a construir una nueva
+darle un rating promedio estimado
+y decir mira para que esta estación venda
+esto vas a tener que esperar a un nivel de
+4, 4.5
+4.3 estrellas
+perfecto
+después siguen diciendo
+muy buena la presentación
+muy interesante la charla
+y si sabes
+si en alguna otra industria
+están trabajando con algo
+en este sentido
+bueno
+yo les voy a decir lo que es
+tradicionalmente
+se usaban estos modelos que comenté
+básicamente
+se usaba un modelo que fue desarrollado
+conceptualmente en la década de 1930
+que es un modelo gravitacional
+que hablaba de
+demandas por distancias
+que variaban con la inversa del cuadro
+de la distancia como si fuera la gravitación
+pero con la inversa del cuadro de la distancia
+a donde estaba el público consumidor
+ese modelo
+una empresa
+norteamericana
+que lo aplica
+vende el servicio para
+Estados Unidos, para Europa y para América Latina
+lo estuvo usando hasta hace
+dos o tres años
+que empezaron un modelo similar
+a este pero cuando lo vimos
+la última vez que teníamos contacto con ellos
+el modelo de ellos
+estaba por así decirlo
+es más avanzado que el nuestro
+así que la industria entiendo
+que está yendo en este sentido
+pero el modelo que tenemos
+nosotros está bastante en punta
+muy bien
+y después si evaluaron
+hicieron una clase
+modelos de clasificación pero si evaluaron
+algún modelo de regresión
+con intervalos de
+confianza
+si, lo hicimos
+continuo y discreto
+funcionó para nosotros mucho mejor el discreto
+nos permite tener justamente
+esta curva
+que resulta
+muy interesante porque
+claramente se ven donde están
+los quiebres grandes y uno dice
+por ahí es por donde va a estar el volumen
+le vamos a agregar algo más
+que este modelo hoy no tiene
+que es en lugar de tener una curva
+o lo que nuestro próximo
+desafío es tener una familia de curvas
+porque estimamos que
+para cada una de esas barras
+la incertidumbre no es la misma
+en función de la cantidad de casos que tengo
+pero eso
+lo contaremos en todo caso en las jornadas del año que viene
+lo vamos a empezar a estar aplicando
+aplicando a partir de marzo a brinco
+y después
+dicen cuánto tiempo le llevó
+todo este análisis ya me imagino
+que bueno todo el proceso estuvo en cinco años
+y me lo recuerdo
+desde el momento en el que empezamos a tener datos
+lo suficientemente granulares
+como para empezar a pensar en algo distinto
+hasta que tenemos el conjunto
+relevado de las 3.800 estaciones
+pasan cinco años
+después construir todos los modelos
+calibrarlos, probar
+la predicción, ponerlo en producción
+entre 6 y 9 meses
+bien y acá siempre
+lo que les gusta preguntar es
+¿cuáles fueron los problemas más
+grandes
+que se encontraron dentro del proceso?
+el conjunto de datos y dentro de ese
+los errores
+los errores tanto
+en lo que viene de información pública
+o sea yo conté algo
+a ver, alguno detalle no lo conté
+pero los volúmenes que uno usa
+son los volúmenes que están públicos
+informados por cada una de las estaciones
+a la Secretaría de Energía
+ese conjunto no viene limpio
+ese conjunto viene con un montón de
+errores
+hay que corregirlo
+hay un montón de reglas eurísticas
+porque son errores que uno se da cuenta
+entonces ella directamente aplica ciertas
+reglas como por ejemplo
+cargar litros en lugar de metros cúbicos
+y hay un montón de reglas estadísticas en términos de
+hay errores que se detectan
+aplicando series de tiempo diciendo
+no, si hubiese sido el valor real
+tendría que haber sido este otro
+entonces tenemos
+todo un conjunto muy grande de reglas
+de corrección para tratar
+esos volúmenes que están publicados
+en Secretaría de Energía
+ese es uno, el otro es
+cuando uno mira el conjunto de estaciones
+también que están en ese
+en ese dataset
+las estaciones no están bien en términos de
+cuál es la marca
+nosotros lo llamamos bandera pero cuál es la marca
+uno encuentra que dice que es una IPF
+pero no es una IPF o dice que es una oil
+pero no es una oil o dice que es una gel
+pero no es una gel y saber exactamente
+qué estación es requiere otro proceso
+que implica mantener un dataset actualizado
+barriendo información pública
+información también de Google Maps
+de cuáles son las estaciones y dónde están
+otra de las complejidades fue cuando mandamos
+a relevar las estaciones de servicio
+venía la información y teníamos que buscar la forma
+de auditar lo que venía
+entonces había también cierto
+conjunto de consistencia de reglas
+para ver si lo que estaba viendo estaba bien
+pero de vuelta
+lo más complejo por lejos
+es el conjunto de datos
+lo suficientemente bueno como para que el modelo
+pueda dar esos resultados
+bien
+y para ahí finalizando
+preguntan si
+se basan solamente en uno
+de los modelos o hacen alguna
+algún tipo de ponderación entre los modelos
+mencionados
+nos basamos básicamente
+el mejor resultado
+de todos lo obtenemos
+lo obtenemos hoy ponderando
+C50 con Random Forest
+aunque parezca raro
+porque no esperaría que fueran Exibus
+o que fueran la HBM
+que son los algoritmos
+más avanzados o incluso Cat Boost
+el mejor resultado lo tenemos
+haciendo promedios
+de
+C50 y Random Forest
+y haciendo algo
+promediando algo que no aclaré
+que es esa partición
+de mayor y menor
+la corremos para un lado y para el otro
+no solamente lo que es más de esto
+y menos de esto sino la corremos al revés
+y promedíamos las dos cosas
+bien y por último
+si tenés alguna impresión
+por qué los modelos
+de redes neuronales
+no fueron tan buenos
+como los que terminaron eligiendo
+si sospechar de algo algún norte
+puede haber
+a ver todavía no tengo una
+una noción
+del porqué matemático
+ahora desde el punto de vista empírico
+toda la experiencia de la gente
+que ya había trabajado con modelos
+con datos estructurados nos decía
+los árboles funcionan mejor
+las pruebas con otras cosas
+nos daba que funcionaban mejor
+cuando uno lee
+lo que
+escriben los campeones
+de las competencias de Kaggle
+dicen que cuando hay que trabajar
+en la que vienen conjuntos datos estructurados
+lo que mejor les funcionan son los árboles
+entonces de vuelta
+no te podría decir por qué desde el punto
+de vista matemático desde el punto de vista empírico
+para datos estructurados están funcionando
+mejor los árboles
+quiero creer que es por el tipo de
+de estructura de estructura matemática
+de la data
+más que
+más que del algoritmo
+y si había otra cosa había algo que si
+queríamos por lo cual si hubieran dado
+no digo
+igual
+tendría que haber dado muchísimo mejor
+redes neuronales
+si hubiesen dado igual también nos hubiésemos quedado con árboles
+árboles nos permitía
+tener un ranking
+estimado de la importancia relativa de variables
+incluso cuando usamos
+modelos de boosting
+el ranking no es perfecto es surge de un promedio
+pero nos permite decir
+esta variable es mucho más importante
+que esta otra
+que los modelos de redes neuronales
+es imposible
+por qué
+más allá de
+esto tiene otro spin off
+más allá de la predicción del volumen
+para cuando tenemos que construir una estación que no existe
+tener un ranking de variables importantes
+nos permite si la variable
+es modificable
+hay variables que no son modificables por ejemplo
+si dentro de esa importancia está la cantidad de metros cuadrados
+que tiene una estación
+y uno está hablando de una estación de ciudad
+que tiene dos mil metros cuadrados
+no va a tener más porque seguramente al lado hay un edificio
+un negocio
+pero si la variable fuera
+por ejemplo
+tener surtidores de
+lo que llamo soft tuples
+de cuatro picos por lado o sea de ocho picos
+ver sustenar surtidores quadruples que son de dos picos por lado
+uno tranquilamente lo que puede hacer es
+cambiar los surtidores para mejorar la venta
+de volumen
+esa es otra de las ventajas que nos daba los modelos de árboles
+bien
+bueno digo felicitaciones
+excelente la presentación
+muchísimas gracias
+bueno

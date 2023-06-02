@@ -1,0 +1,13980 @@
+1
+00:00:00,000 --> 00:00:02,880
+でした talking
+
+2
+00:00:02,880 --> 00:00:07,740
+música
+
+3
+00:00:07,740 --> 00:00:12,540
+música
+
+4
+00:00:12,540 --> 00:00:16,480
+música
+
+5
+00:00:16,480 --> 00:00:23,380
+música
+
+6
+00:00:23,380 --> 00:00:28,940
+música
+
+7
+00:00:28,940 --> 00:00:35,680
+música
+
+8
+00:00:35,680 --> 00:00:41,260
+música
+
+9
+00:00:41,260 --> 00:00:46,800
+música
+
+10
+00:00:46,800 --> 00:00:51,740
+música
+
+11
+00:00:51,740 --> 00:00:56,800
+música
+
+12
+00:00:56,800 --> 00:01:01,800
+música
+
+13
+00:01:01,800 --> 00:01:06,800
+música
+
+14
+00:01:06,800 --> 00:01:11,800
+música
+
+15
+00:01:11,800 --> 00:01:16,800
+música
+
+16
+00:01:16,800 --> 00:01:21,800
+música
+
+17
+00:01:21,800 --> 00:01:26,800
+música
+
+18
+00:01:26,800 --> 00:01:31,800
+música
+
+19
+00:01:31,800 --> 00:01:36,800
+música
+
+20
+00:01:36,800 --> 00:01:41,800
+música
+
+21
+00:01:41,800 --> 00:01:46,800
+música
+
+22
+00:01:46,800 --> 00:01:54,800
+música
+
+23
+00:01:54,800 --> 00:01:59,800
+música
+
+24
+00:01:59,800 --> 00:02:04,800
+música
+
+25
+00:02:04,800 --> 00:02:11,800
+Bueno, buenas tardes a todos. Bienvenidos a las
+
+26
+00:02:11,800 --> 00:02:18,800
+decimoseptimas jornadas de data mining y business intelligence
+
+27
+00:02:18,800 --> 00:02:28,800
+para recordarles un poco estas jornadas son parte de actividad curricular
+
+28
+00:02:28,800 --> 00:02:33,800
+de la maestría que son justamente unas materias que llaman casuística de implementación
+
+29
+00:02:33,800 --> 00:02:38,800
+el nombre indica que esto van a ser una serie de casos
+
+30
+00:02:38,800 --> 00:02:46,800
+la idea es que los casos sean presentados por quienes los llevaron a cabo
+
+31
+00:02:46,800 --> 00:02:54,800
+proyectos de ciencia de datos realizados en las empresas o en estas zonas de empresas más importantes del país
+
+32
+00:02:54,800 --> 00:03:02,800
+entonces ustedes los alumnos, los estudiantes de la maestría van a compartir justamente
+
+33
+00:03:02,800 --> 00:03:10,800
+esta experiencia con quienes bueno tienen bastante experiencia en el campo justamente de ciencia de datos
+
+34
+00:03:10,800 --> 00:03:17,800
+bueno quiero aprovechar para agradecer a todas las empresas que nos están apoyando
+
+35
+00:03:17,800 --> 00:03:24,800
+bueno esto empezó hace como indica el número de las jornadas hace 17 años
+
+36
+00:03:24,800 --> 00:03:32,800
+y muchas de las empresas han estado repitiendo siguen colaborando con nosotros en esta tarea
+
+37
+00:03:32,800 --> 00:03:42,800
+muchos de los de las personas que van a hacer las presentaciones también son viejos conocidos
+
+38
+00:03:42,800 --> 00:03:48,800
+así que también les agradezco la paciencia de seguir con nosotros
+
+39
+00:03:48,800 --> 00:03:59,800
+bueno vamos para no perder mucho más tiempo simplemente voy a numerar un poco quiénes son los que van a participar como oyentes
+
+40
+00:03:59,800 --> 00:04:10,800
+la base nuestra son los estudiantes tenemos un conjunto de estudiantes que corresponden a una edición presencial de la maestría
+
+41
+00:04:10,800 --> 00:04:18,800
+que son primer y segundo año otro grupo de alumnos corresponden a la edición virtual de la maestría están en primer año
+
+42
+00:04:18,800 --> 00:04:31,800
+empezaron en agosto y los alumnos de Rosario bueno donde tenemos también una nueva edición que empezó hace unos meses
+
+43
+00:04:31,800 --> 00:04:42,800
+y de alumnos que están en segundo año el total de los alumnos estimo que está en un número en este momento hay pocos participantes
+
+44
+00:04:42,800 --> 00:04:51,800
+pero el número cercano a los 250 este es una materia obligatoria no tendría que estar todos pero bueno
+
+45
+00:04:51,800 --> 00:05:00,800
+tenemos excepciones como en todos los casos bueno para no desplazarnos demasiado en el tiempo ya son las 14 07
+
+46
+00:05:00,800 --> 00:05:10,800
+vamos a invitar a nuestros amigos del mercado libre para presentar el tema que tienen preparado para hoy
+
+47
+00:05:10,800 --> 00:05:17,800
+que es data mesh van a presentar Ignacio Wainberg y Gabriel Noche
+
+48
+00:05:17,800 --> 00:05:25,800
+bueno pueden comenzar cuando gusten adelante
+
+49
+00:05:25,800 --> 00:05:33,800
+bueno muchas gracias gracias a todos por asistir por darnos este espacio
+
+50
+00:05:33,800 --> 00:05:42,800
+me presento mi nombre es Ignacio Wainberg trabajo en el equipo central core de data en el mercado libre en lo que es la vertical tech
+
+51
+00:05:42,800 --> 00:05:51,800
+llevando el equipo de data engineering y hoy me acompaña Gabriel Noche también del equipo de plataformas y servicios
+
+52
+00:05:51,800 --> 00:06:02,800
+y bueno venimos a contarles un poco cómo fue esta aventura podemos llamarlo de iniciarnos en algo es muy nuevo que se llama data mesh
+
+53
+00:06:02,800 --> 00:06:10,800
+si quieren podemos ya comenzar
+
+54
+00:06:10,800 --> 00:06:20,800
+esa es otra es de personalización
+
+55
+00:06:40,800 --> 00:07:05,800
+bueno
+
+56
+00:07:05,800 --> 00:07:11,800
+bueno por qué la llamamos la talla de la tamesh vainelli
+
+57
+00:07:11,800 --> 00:07:18,800
+la tamesh es un término por eso un concepto muy nuevo
+
+58
+00:07:18,800 --> 00:07:29,800
+y si ustedes buscan en internet o literatura no hay un libro de la chica que digamos acuñó el término
+
+59
+00:07:29,800 --> 00:07:34,800
+es algo como muy conceptual casi filosófico decimos a veces nosotros
+
+60
+00:07:34,800 --> 00:07:41,800
+entonces esta no es una charla sobre data mesh sobre el concepto de data mesh en sí
+
+61
+00:07:41,800 --> 00:07:50,800
+porque podríamos hacer horas y horas de charla sobre el mismo sino que es una charla sobre nuestra interpretación
+
+62
+00:07:50,800 --> 00:07:53,800
+y nuestra implementación de data mesh en mercado libre
+
+63
+00:07:53,800 --> 00:07:57,800
+pero bueno claro que para todos aquellos que no conocen de qué se trata
+
+64
+00:07:57,800 --> 00:08:02,800
+vamos a hacer una breve intro de qué es data mesh
+
+65
+00:08:02,800 --> 00:08:06,800
+así que si pasamos a la siguiente
+
+66
+00:08:06,800 --> 00:08:12,800
+formas de describirlo pueden haber muchas pero básicamente es un paradigma
+
+67
+00:08:12,800 --> 00:08:19,800
+es un nuevo paradigma que representa un cambio tanto tecnológico como cultural
+
+68
+00:08:19,800 --> 00:08:28,800
+y la idea de este cambio de paradigma es empoderar a distintos dominios dentro de la organización
+
+69
+00:08:28,800 --> 00:08:34,800
+a que tenga el control completo de todo el ciclo de vida de los datos
+
+70
+00:08:34,800 --> 00:08:40,800
+obviamente como decimos que también es un cambio tecnológico
+
+71
+00:08:41,800 --> 00:08:49,800
+con todas las herramientas y las bases y el gobierno para que eso suceda de una manera ordenada
+
+72
+00:08:49,800 --> 00:08:59,800
+pero al fin y al cabo el objetivo de esto de data mesh es hacer que todo lo que es el trabajo con datos
+
+73
+00:08:59,800 --> 00:09:05,800
+escale al ritmo que el negocio necesita de manera orgánica
+
+74
+00:09:06,800 --> 00:09:16,800
+ahora esto suena bastante dindo pero bueno vamos a repasar un poco por qué se plantea este cambio de paradigma
+
+75
+00:09:16,800 --> 00:09:18,800
+siguiente
+
+76
+00:09:21,800 --> 00:09:25,800
+esto creo que es una imagen conocida por muchos
+
+77
+00:09:25,800 --> 00:09:33,800
+es un modelito bastante es una atracción de la realidad en la que vemos dos planos de datos
+
+78
+00:09:33,800 --> 00:09:39,800
+a la izquierda no es el plano operacional es decir donde el dato nace y se origina en las organizaciones
+
+79
+00:09:39,800 --> 00:09:43,800
+que pueden llegar a hacer todos esos sistemas transaccionales
+
+80
+00:09:43,800 --> 00:09:53,800
+y a la derecha vemos el plano analítico donde en general los científicos de datos, los analítas y demás
+
+81
+00:09:53,800 --> 00:09:59,800
+hacen su trabajo con esos productos de datos que ya están disponibles ya se hacen un data warehouse en un data lake
+
+82
+00:09:59,800 --> 00:10:09,800
+¿Qué sucede en el medio? Necesitamos llevar esos datos del plano operacional modelarlos y disponibilizarlos
+
+83
+00:10:09,800 --> 00:10:16,800
+para ser explotados de la mejor forma posible a este otro plano analítico
+
+84
+00:10:16,800 --> 00:10:24,800
+entonces del lado izquierdo del plano operacional digamos a través de los años también fueron evolucionando
+
+85
+00:10:24,800 --> 00:10:28,800
+y cambiando los paradigmas de lo que son las sistemas y las aplicaciones
+
+86
+00:10:28,800 --> 00:10:35,800
+y muchos de ellos fueron haciendo un cambio de sistemas monolíticos a por ejemplo microservicios
+
+87
+00:10:35,800 --> 00:10:41,800
+en los que hoy en día son manejados por distintos dominios de la organización
+
+88
+00:10:41,800 --> 00:10:47,800
+por ejemplo les hablamos del mercado libre, hay aplicaciones que son del marketplace
+
+89
+00:10:47,800 --> 00:10:49,800
+que es lo que todos conocemos como mercado libre
+
+90
+00:10:50,800 --> 00:10:55,800
+pero también nosotros pensamos en el mercado libre como una empresa pero dentro de esa empresa hay muchas empresas
+
+91
+00:10:55,800 --> 00:10:59,800
+la parte del marketplace, la parte del mercado en videos
+
+92
+00:10:59,800 --> 00:11:03,800
+que es la empresa de logística y aún más grande de Latinoamérica bien día
+
+93
+00:11:03,800 --> 00:11:12,800
+la parte de fintech, de créditos, bueno cada uno de esos representan dominios o jerarquías de dominios dentro de la organización
+
+94
+00:11:12,800 --> 00:11:18,800
+y hoy en día son autónomos manejando sus propios microservicios, sus propias aplicaciones
+
+95
+00:11:18,800 --> 00:11:21,800
+en lo que sería ese plano que vemos al lado izquierdo
+
+96
+00:11:21,800 --> 00:11:27,800
+el lado derecho también esos dominios han ido generando autonomía
+
+97
+00:11:27,800 --> 00:11:31,800
+que tienen sus propios equipos de datos, ¿no?
+
+98
+00:11:31,800 --> 00:11:39,800
+pero qué sucede, en el medio todavía está manejado por un equipo central de datos
+
+99
+00:11:39,800 --> 00:11:43,800
+ese equipo que toma esos datos y lo lleva hasta el plano analítico
+
+100
+00:11:43,800 --> 00:11:50,800
+lo que coloquialmente se conoce como ETL, data engineer, se lo llamo últimamente
+
+101
+00:11:52,800 --> 00:11:55,800
+era manejado por un equipo monolítico
+
+102
+00:11:56,800 --> 00:11:58,800
+si vamos a la siguiente
+
+103
+00:12:01,800 --> 00:12:05,800
+ahora esta extracción que veíamos ante la realidad es un poquitito más
+
+104
+00:12:06,800 --> 00:12:12,800
+cercano a la realidad en lo que vemos en esta, ¿no?
+
+105
+00:12:12,800 --> 00:12:15,800
+a medida que crece el negocio y que crecen las necesidades
+
+106
+00:12:15,800 --> 00:12:20,800
+sobre todo en una empresa como Mercado Libre que es muy cambiante y todo el tiempo los modelos no son muy estables
+
+107
+00:12:20,800 --> 00:12:25,800
+todo el tiempo necesitamos medir nuevos productos, medir cosas nuevas que van cambiando
+
+108
+00:12:26,800 --> 00:12:32,800
+y a medida que crecen la cantidad como fue creciendo la cantidad exponencialmente de gente en Mercado Libre
+
+109
+00:12:32,800 --> 00:12:34,800
+de usuarios que necesitan acceso a información
+
+110
+00:12:34,800 --> 00:12:39,800
+ese equipo del medio que les contaba monolítico también creció exponencialmente
+
+111
+00:12:41,800 --> 00:12:44,800
+y eso hace que no escale, ¿no?
+
+112
+00:12:44,800 --> 00:12:50,800
+en dos años pasamos de tener un equipo central de data engineer de 6, 7 personas a 35
+
+113
+00:12:50,800 --> 00:12:53,800
+y hoy somos casi 50
+
+114
+00:12:54,800 --> 00:13:01,800
+no escala y por otro lado, si se fijan a la derecha también van a ver como esas marcas de ETL
+
+115
+00:13:01,800 --> 00:13:03,800
+¿Qué sucede?
+
+116
+00:13:03,800 --> 00:13:08,800
+Hay gente que así como está el dato en ese leico, en ese warehouse
+
+117
+00:13:08,800 --> 00:13:12,800
+tampoco le termina sirviendo del todo, entonces como le decía
+
+118
+00:13:12,800 --> 00:13:16,800
+hay equipos con skills de datos
+
+119
+00:13:16,800 --> 00:13:19,800
+que también hacen sus propios ETLs, ¿no?
+
+120
+00:13:19,800 --> 00:13:26,800
+pero ¿qué sucede? esos ETLs que hacen y esos productos de datos resultantes, esos ETLs
+
+121
+00:13:26,800 --> 00:13:29,800
+no se hacen de manera bastante informal, ¿no?
+
+122
+00:13:29,800 --> 00:13:32,800
+se hacen en algunos espacios llamados sandbox
+
+123
+00:13:33,800 --> 00:13:38,800
+sin las garantías necesarias, sin procesos de vacab, sin un catalogado
+
+124
+00:13:38,800 --> 00:13:43,800
+es decir, totalmente informal y cada uno manejando el lenguaje que le parece
+
+125
+00:13:45,800 --> 00:13:49,800
+entonces ahí es donde viene este concepto de mesh
+
+126
+00:13:50,800 --> 00:13:56,800
+a intentar distribuir estos cuello de botella, estos equipos monolíticos
+
+127
+00:13:56,800 --> 00:14:00,800
+y pereespecializados que están en el medio de estos dos planos, ¿no?
+
+128
+00:14:00,800 --> 00:14:03,800
+porque como habíamos dicho, a la izquierda tenemos dominios
+
+129
+00:14:03,800 --> 00:14:06,800
+por ejemplo, no sé, mercado crédito, ¿no?
+
+130
+00:14:06,800 --> 00:14:09,800
+y mercado crédito maneja sus aplicaciones en la izquierda
+
+131
+00:14:09,800 --> 00:14:15,800
+y mercado crédito tiene su equipo de la explotación de datos del lado derecho
+
+132
+00:14:15,800 --> 00:14:20,800
+pero tiene que pasar por ese embudo, por ese equipo monolítico
+
+133
+00:14:20,800 --> 00:14:24,800
+y ser priorizados en ese equipo monolítico del medio
+
+134
+00:14:24,800 --> 00:14:29,800
+entonces lo que viene a plantear data mesh es una arquitectura de datos distribuida
+
+135
+00:14:29,800 --> 00:14:35,800
+en la que también este dominio por ejemplo de credits
+
+136
+00:14:35,800 --> 00:14:38,800
+pueda manejar un equipo de data engineering
+
+137
+00:14:38,800 --> 00:14:41,800
+y pueda disponibilizar datos a toda la organización, ¿no?
+
+138
+00:14:41,800 --> 00:14:43,800
+si vemos la imagen siguiente
+
+139
+00:14:46,800 --> 00:14:50,800
+esto demuestra un poco a nivel gráfico de qué se trata
+
+140
+00:14:50,800 --> 00:14:54,800
+si se fijan ahí, están debajo los dos planos que viníamos hablando
+
+141
+00:14:54,800 --> 00:14:56,800
+de la operación alienalítica
+
+142
+00:14:56,800 --> 00:15:00,800
+y ya están unidos en esos diagramitas
+
+143
+00:15:00,800 --> 00:15:03,800
+que representan a un dominio de la organización, ¿no?
+
+144
+00:15:03,800 --> 00:15:05,800
+que puede ser mercado crédito
+
+145
+00:15:05,800 --> 00:15:09,800
+cualquier parte de fintech o de envíos
+
+146
+00:15:09,800 --> 00:15:11,800
+marketing
+
+147
+00:15:11,800 --> 00:15:14,800
+en cada organización van a ser realidades distintas, ¿no?
+
+148
+00:15:14,800 --> 00:15:17,800
+pero para que esto no los convierta
+
+149
+00:15:17,800 --> 00:15:20,800
+no volvamos muchísimos años atrás, ¿no?
+
+150
+00:15:20,800 --> 00:15:21,800
+a paradigmas anteriores
+
+151
+00:15:21,800 --> 00:15:26,800
+y en los que esto no se convierta en data martes en silos
+
+152
+00:15:26,800 --> 00:15:29,800
+la idea de esto es que puedan publicar
+
+153
+00:15:29,800 --> 00:15:32,800
+productos de datos en un mismo ecosistema
+
+154
+00:15:32,800 --> 00:15:34,800
+que esto esté unificado
+
+155
+00:15:34,800 --> 00:15:37,800
+de ahí viene la palabra data mesh, ¿no?
+
+156
+00:15:37,800 --> 00:15:39,800
+esa malla de datos
+
+157
+00:15:39,800 --> 00:15:43,800
+en los que cada uno de ellos va a representar un nodo
+
+158
+00:15:43,800 --> 00:15:45,800
+entonces para eso, para qué eso ocurra
+
+159
+00:15:45,800 --> 00:15:48,800
+necesitamos también tener políticas
+
+160
+00:15:48,800 --> 00:15:51,800
+necesitamos tener un gobierno federado
+
+161
+00:15:51,800 --> 00:15:53,800
+y algunos aspectos más
+
+162
+00:15:53,800 --> 00:15:55,800
+que los podemos ver en la siguiente
+
+163
+00:15:55,800 --> 00:15:58,800
+que hablan de
+
+164
+00:15:58,800 --> 00:16:00,800
+siguiendo por la teoría, ¿no?
+
+165
+00:16:00,800 --> 00:16:03,800
+los cuatro principios que plantea data mesh
+
+166
+00:16:03,800 --> 00:16:06,800
+el primero es una arquitectura
+
+167
+00:16:06,800 --> 00:16:08,800
+lo que se llama domain driven, ¿no?
+
+168
+00:16:08,800 --> 00:16:11,800
+es decir, basada en estos dominios
+
+169
+00:16:11,800 --> 00:16:14,800
+diseñado todo en base a estos dominios de la organización
+
+170
+00:16:14,800 --> 00:16:18,800
+la segunda es pensar los datos como un producto
+
+171
+00:16:18,800 --> 00:16:20,800
+y no como un subproducto, ¿no?
+
+172
+00:16:20,800 --> 00:16:23,800
+es decir, que el dato sea
+
+173
+00:16:23,800 --> 00:16:25,800
+un producto que ofrezcamos
+
+174
+00:16:25,800 --> 00:16:27,800
+y que hagamos
+
+175
+00:16:27,800 --> 00:16:30,800
+apliquemos ese famoso product thinking, ¿no?
+
+176
+00:16:30,800 --> 00:16:33,800
+y que otros dominios de la organización
+
+177
+00:16:33,800 --> 00:16:37,800
+o cualquier empleado de mercado libre
+
+178
+00:16:37,800 --> 00:16:39,800
+que necesita acceder a los datos
+
+179
+00:16:39,800 --> 00:16:41,800
+lo tratemos como a un cliente
+
+180
+00:16:41,800 --> 00:16:43,800
+entonces para eso
+
+181
+00:16:43,800 --> 00:16:46,800
+necesitamos que ese producto de datos
+
+182
+00:16:46,800 --> 00:16:48,800
+cumpla con determinadas cuestiones
+
+183
+00:16:48,800 --> 00:16:50,800
+y le hagamos un seguimiento debido
+
+184
+00:16:50,800 --> 00:16:52,800
+que luego Gaby va a hablar un poco de eso
+
+185
+00:16:52,800 --> 00:16:55,800
+por tercer lugar
+
+186
+00:16:55,800 --> 00:16:59,800
+tenemos que brindar una infraestructura self-service
+
+187
+00:16:59,800 --> 00:17:02,800
+y el objetivo de esto es
+
+188
+00:17:02,800 --> 00:17:04,800
+que estos dominios
+
+189
+00:17:04,800 --> 00:17:06,800
+tengan que tener los skills necesarios
+
+190
+00:17:06,800 --> 00:17:08,800
+para transformar los datos
+
+191
+00:17:08,800 --> 00:17:11,800
+pero que no necesiten administrar
+
+192
+00:17:11,800 --> 00:17:13,800
+su infraestructura
+
+193
+00:17:13,800 --> 00:17:16,800
+o estar preocupados por cosas de bajo nivel
+
+194
+00:17:16,800 --> 00:17:18,800
+y entonces de esa manera podríamos escalar
+
+195
+00:17:18,800 --> 00:17:20,800
+bastante mejor, no sé por ejemplo
+
+196
+00:17:20,800 --> 00:17:22,800
+que no tengan que preocuparse por
+
+197
+00:17:22,800 --> 00:17:24,800
+cómo administrar los backups
+
+198
+00:17:24,800 --> 00:17:27,800
+o cómo generar proyectos
+
+199
+00:17:27,800 --> 00:17:30,800
+dentro de lo que es el lay-couch
+
+200
+00:17:30,800 --> 00:17:32,800
+y por último
+
+201
+00:17:32,800 --> 00:17:34,800
+pero muy importante
+
+202
+00:17:34,800 --> 00:17:37,800
+es la parte del governance, ¿no?
+
+203
+00:17:37,800 --> 00:17:39,800
+porque como dijimos estos dominios
+
+204
+00:17:39,800 --> 00:17:41,800
+tienen que publicar
+
+205
+00:17:41,800 --> 00:17:43,800
+en un mismo ecosistema
+
+206
+00:17:43,800 --> 00:17:45,800
+hablar un mismo lenguaje
+
+207
+00:17:45,800 --> 00:17:47,800
+porque estos productos de datos
+
+208
+00:17:47,800 --> 00:17:49,800
+tienen que ser interoperables
+
+209
+00:17:49,800 --> 00:17:51,800
+hasta el momento los publicaba un equipo
+
+210
+00:17:51,800 --> 00:17:53,800
+que tenía sus buenas prácticas
+
+211
+00:17:53,800 --> 00:17:55,800
+ahora esas buenas prácticas al estar distribuidas
+
+212
+00:17:55,800 --> 00:17:57,800
+en muchos equipos
+
+213
+00:17:57,800 --> 00:17:59,800
+ahí viene un gran desafío
+
+214
+00:17:59,800 --> 00:18:01,800
+y ese desafío tiene que ser abordado
+
+215
+00:18:01,800 --> 00:18:03,800
+del lado del governance
+
+216
+00:18:03,800 --> 00:18:05,800
+siguiente
+
+217
+00:18:07,800 --> 00:18:09,800
+bueno entonces
+
+218
+00:18:09,800 --> 00:18:11,800
+vamos a ver un poco por qué
+
+219
+00:18:11,800 --> 00:18:13,800
+fuimos a hacer
+
+220
+00:18:13,800 --> 00:18:15,800
+este cambio de paradigma
+
+221
+00:18:15,800 --> 00:18:17,800
+en el mercado libre
+
+222
+00:18:17,800 --> 00:18:19,800
+que nos llegó a esa necesidad
+
+223
+00:18:19,800 --> 00:18:21,800
+un poco ya lo contamos
+
+224
+00:18:21,800 --> 00:18:23,800
+pero vamos a hacer un poquito de historia
+
+225
+00:18:23,800 --> 00:18:25,800
+hace ya algunos años
+
+226
+00:18:25,800 --> 00:18:27,800
+la imagen
+
+227
+00:18:27,800 --> 00:18:29,800
+de la izquierda muestra
+
+228
+00:18:29,800 --> 00:18:31,800
+un estadio
+
+229
+00:18:31,800 --> 00:18:33,800
+que podría decir de año
+
+230
+00:18:33,800 --> 00:18:35,800
+2014
+
+231
+00:18:35,800 --> 00:18:37,800
+en el que
+
+232
+00:18:37,800 --> 00:18:39,800
+los usuarios
+
+233
+00:18:39,800 --> 00:18:41,800
+encontraban este cuello
+
+234
+00:18:41,800 --> 00:18:43,800
+de botella que estamos hablando
+
+235
+00:18:43,800 --> 00:18:45,800
+pero no en esa
+
+236
+00:18:45,800 --> 00:18:47,800
+producción de datos
+
+237
+00:18:47,800 --> 00:18:49,800
+que conectan ambos planos
+
+238
+00:18:49,800 --> 00:18:51,800
+sino directamente en el consumo
+
+239
+00:18:51,800 --> 00:18:53,800
+había un equipo
+
+240
+00:18:53,800 --> 00:18:55,800
+de BI, clásico tradicional
+
+241
+00:18:55,800 --> 00:18:57,800
+y ese equipo de BI
+
+242
+00:18:57,800 --> 00:18:59,800
+en un momento comenzó
+
+243
+00:18:59,800 --> 00:19:01,800
+a no poder escalar
+
+244
+00:19:01,800 --> 00:19:03,800
+entonces empezó a llevar
+
+245
+00:19:03,800 --> 00:19:05,800
+a hacer un trabajo de transformación
+
+246
+00:19:07,800 --> 00:19:09,800
+para ir hacia
+
+247
+00:19:09,800 --> 00:19:11,800
+la imagen que viene a la derecha
+
+248
+00:19:11,800 --> 00:19:13,800
+en el que situamos al usuario
+
+249
+00:19:13,800 --> 00:19:15,800
+en el centro
+
+250
+00:19:15,800 --> 00:19:17,800
+hicimos cambios tecnológicos
+
+251
+00:19:17,800 --> 00:19:19,800
+pero acá también
+
+252
+00:19:19,800 --> 00:19:21,800
+un importante es el cambio cultural
+
+253
+00:19:21,800 --> 00:19:23,800
+para empoderar a sus usuarios
+
+254
+00:19:23,800 --> 00:19:25,800
+darle los skills necesarios
+
+255
+00:19:25,800 --> 00:19:27,800
+para que sean autónomos
+
+256
+00:19:27,800 --> 00:19:29,800
+para que puedan ellos mismos
+
+257
+00:19:29,800 --> 00:19:31,800
+ir a buscar la información
+
+258
+00:19:31,800 --> 00:19:33,800
+que tengan todas las herramientas necesarias
+
+259
+00:19:33,800 --> 00:19:35,800
+para que eso suceda
+
+260
+00:19:35,800 --> 00:19:37,800
+fue un camino
+
+261
+00:19:37,800 --> 00:19:39,800
+progresivo
+
+262
+00:19:39,800 --> 00:19:41,800
+de muchos años
+
+263
+00:19:41,800 --> 00:19:43,800
+y creemos que fuimos bastante
+
+264
+00:19:43,800 --> 00:19:45,800
+exitosos en eso
+
+265
+00:19:45,800 --> 00:19:47,800
+logramos una autonomía
+
+266
+00:19:47,800 --> 00:19:49,800
+de los usuarios en mercado libre
+
+267
+00:19:49,800 --> 00:19:51,800
+para el consumo de datos
+
+268
+00:19:51,800 --> 00:19:53,800
+pero como decíamos eso
+
+269
+00:19:53,800 --> 00:19:55,800
+el consumo de datos opera sobre
+
+270
+00:19:55,800 --> 00:19:57,800
+el plano que veíamos antes
+
+271
+00:19:57,800 --> 00:19:59,800
+analítico
+
+272
+00:19:59,800 --> 00:20:01,800
+tenemos la imagen siguiente
+
+273
+00:20:03,800 --> 00:20:05,800
+aún nos quedaba
+
+274
+00:20:05,800 --> 00:20:07,800
+este contexto actual
+
+275
+00:20:07,800 --> 00:20:09,800
+que es
+
+276
+00:20:09,800 --> 00:20:11,800
+en ese equipo que conecta
+
+277
+00:20:11,800 --> 00:20:13,800
+el plano de operación analítico
+
+278
+00:20:13,800 --> 00:20:15,800
+los datos ingenieros, LTL
+
+279
+00:20:15,800 --> 00:20:17,800
+seguía haciendo
+
+280
+00:20:17,800 --> 00:20:19,800
+monolítico
+
+281
+00:20:19,800 --> 00:20:21,800
+y como les conté antes
+
+282
+00:20:21,800 --> 00:20:23,800
+encontramos ahí un cuello de botella
+
+283
+00:20:23,800 --> 00:20:25,800
+ahí si
+
+284
+00:20:25,800 --> 00:20:27,800
+si se fijan en la imagen dice teradata
+
+285
+00:20:27,800 --> 00:20:29,800
+que veníamos trabajando con teradatas en muchos años
+
+286
+00:20:29,800 --> 00:20:31,800
+y justo
+
+287
+00:20:31,800 --> 00:20:33,800
+este cambio que planteamos
+
+288
+00:20:33,800 --> 00:20:35,800
+se dio de la mano de algunos cambios tecnológicos
+
+289
+00:20:35,800 --> 00:20:37,800
+que ya veníamos planteando
+
+290
+00:20:37,800 --> 00:20:39,800
+por ejemplo lo que es la migración a Bicueri
+
+291
+00:20:39,800 --> 00:20:41,800
+entonces este equipo
+
+292
+00:20:41,800 --> 00:20:43,800
+cuáles eran las desventajas
+
+293
+00:20:43,800 --> 00:20:45,800
+por qué lo convertían en un cuello de botella
+
+294
+00:20:45,800 --> 00:20:47,800
+aparte de esta escala que les venía comentando
+
+295
+00:20:47,800 --> 00:20:49,800
+tenía que ser un equipo hiper especializado
+
+296
+00:20:49,800 --> 00:20:51,800
+es decir tenía que haber gente
+
+297
+00:20:51,800 --> 00:20:53,800
+que se experta
+
+298
+00:20:53,800 --> 00:20:55,800
+en mercados millos
+
+299
+00:20:55,800 --> 00:20:57,800
+que se experta en lo que es fintech
+
+300
+00:20:57,800 --> 00:20:59,800
+que igual fintech dentro de fintech
+
+301
+00:20:59,800 --> 00:21:01,800
+también tenemos otros dominios
+
+302
+00:21:01,800 --> 00:21:03,800
+porque es fintech que podría ser una empresa aparte
+
+303
+00:21:03,800 --> 00:21:05,800
+es decir un equipo
+
+304
+00:21:05,800 --> 00:21:07,800
+con muy amplio scope
+
+305
+00:21:07,800 --> 00:21:09,800
+pero que también tiene que ser muy deep
+
+306
+00:21:09,800 --> 00:21:11,800
+en esos conocimientos de negocio
+
+307
+00:21:11,800 --> 00:21:13,800
+por lo tanto
+
+308
+00:21:13,800 --> 00:21:15,800
+representaba un cuello de botella
+
+309
+00:21:15,800 --> 00:21:17,800
+y
+
+310
+00:21:17,800 --> 00:21:19,800
+y ese cuello de botella también
+
+311
+00:21:19,800 --> 00:21:21,800
+generaba una incapacidad de escalar
+
+312
+00:21:21,800 --> 00:21:23,800
+orgánicamente con la
+
+313
+00:21:23,800 --> 00:21:25,800
+velocidad que el negocio necesitaba
+
+314
+00:21:25,800 --> 00:21:27,800
+entonces llegado
+
+315
+00:21:27,800 --> 00:21:29,800
+a este punto
+
+316
+00:21:29,800 --> 00:21:31,800
+y viendo el cambio que habíamos hecho
+
+317
+00:21:31,800 --> 00:21:33,800
+en lo que es el consumo de datos
+
+318
+00:21:33,800 --> 00:21:35,800
+nos dimos cuenta que estábamos
+
+319
+00:21:35,800 --> 00:21:37,800
+en un problema y que teníamos que generar algún cambio
+
+320
+00:21:37,800 --> 00:21:39,800
+seguimos la imagen siguiente
+
+321
+00:21:39,800 --> 00:21:41,800
+así nos sentíamos
+
+322
+00:21:41,800 --> 00:21:43,800
+y creo que
+
+323
+00:21:43,800 --> 00:21:45,800
+muchos entienden
+
+324
+00:21:45,800 --> 00:21:47,800
+lo que es
+
+325
+00:21:47,800 --> 00:21:49,800
+sentirse de esta manera
+
+326
+00:21:49,800 --> 00:21:51,800
+no solamente nosotros manejando
+
+327
+00:21:51,800 --> 00:21:53,800
+la información
+
+328
+00:21:53,800 --> 00:21:55,800
+sino los usuarios que querían consumir la información
+
+329
+00:21:55,800 --> 00:21:57,800
+no
+
+330
+00:21:57,800 --> 00:21:59,800
+ese cuello de botella
+
+331
+00:21:59,800 --> 00:22:01,800
+representaba estos embotellamientos
+
+332
+00:22:01,800 --> 00:22:03,800
+y que para nada son cómodos
+
+333
+00:22:03,800 --> 00:22:05,800
+ni ninguna organización pero sobre todo
+
+334
+00:22:05,800 --> 00:22:07,800
+en el mercado libre que es una empresa
+
+335
+00:22:07,800 --> 00:22:09,800
+que se mueve muy rápido
+
+336
+00:22:09,800 --> 00:22:11,800
+entonces cuando tuvimos
+
+337
+00:22:11,800 --> 00:22:13,800
+en esta situación dijimos
+
+338
+00:22:13,800 --> 00:22:15,800
+que bueno que sería
+
+339
+00:22:15,800 --> 00:22:17,800
+tener algo como la imagen
+
+340
+00:22:17,800 --> 00:22:19,800
+siguiente
+
+341
+00:22:19,800 --> 00:22:21,800
+esta independencia
+
+342
+00:22:21,800 --> 00:22:23,800
+esta autonomía
+
+343
+00:22:23,800 --> 00:22:25,800
+para la cual claro
+
+344
+00:22:25,800 --> 00:22:27,800
+para pasar de la imagen anterior a esta imagen
+
+345
+00:22:27,800 --> 00:22:29,800
+siguiente hay que hacer cambios culturales
+
+346
+00:22:29,800 --> 00:22:31,800
+pero también hay que construir
+
+347
+00:22:31,800 --> 00:22:33,800
+cosas y bastantes cosas
+
+348
+00:22:33,800 --> 00:22:35,800
+construir esta infraestructura
+
+349
+00:22:35,800 --> 00:22:37,800
+construir estas autopistas
+
+350
+00:22:37,800 --> 00:22:39,800
+para que los datos fluyan como deben fluir
+
+351
+00:22:39,800 --> 00:22:41,800
+así que ahora los voy a dejar
+
+352
+00:22:41,800 --> 00:22:43,800
+con Gaby que les va a contar un poco
+
+353
+00:22:43,800 --> 00:22:45,800
+que sí
+
+354
+00:22:45,800 --> 00:22:47,800
+Buenas tardes a todos
+
+355
+00:22:47,800 --> 00:22:49,800
+como les va
+
+356
+00:22:49,800 --> 00:22:51,800
+si podemos pasar a los siguientes slides
+
+357
+00:22:51,800 --> 00:22:53,800
+bueno la idea es contar un poco
+
+358
+00:22:53,800 --> 00:22:55,800
+que hicimos en base a lo que
+
+359
+00:22:55,800 --> 00:22:57,800
+a las problemáticas que fue levantando
+
+360
+00:22:57,800 --> 00:22:59,800
+o les fue comentando Nacho
+
+361
+00:22:59,800 --> 00:23:01,800
+y también un poco repasar lo que fue la teoría
+
+362
+00:23:01,800 --> 00:23:03,800
+y como lo llevamos adelante en la práctica
+
+363
+00:23:03,800 --> 00:23:05,800
+así que si podemos pasar a los siguientes slides
+
+364
+00:23:05,800 --> 00:23:07,800
+trabajamos sobre distintas verticales
+
+365
+00:23:07,800 --> 00:23:09,800
+vamos a mencionar las principales
+
+366
+00:23:09,800 --> 00:23:11,800
+para no entroentender que hicimos
+
+367
+00:23:11,800 --> 00:23:13,800
+conformamos un equipo multidisciplinario
+
+368
+00:23:13,800 --> 00:23:15,800
+y empezamos a primero tener definiciones
+
+369
+00:23:15,800 --> 00:23:17,800
+pero creo que es un producto de datos
+
+370
+00:23:17,800 --> 00:23:19,800
+bueno, un producto de datos es un set de datos
+
+371
+00:23:19,800 --> 00:23:21,800
+publicado para toda la compañía
+
+372
+00:23:21,800 --> 00:23:23,800
+generado por un dominio
+
+373
+00:23:23,800 --> 00:23:25,800
+estos datos tendría que estar lo suficientemente curado
+
+374
+00:23:25,800 --> 00:23:27,800
+tener una calidad adecuada
+
+375
+00:23:27,800 --> 00:23:29,800
+ser observable, ser descubrible
+
+376
+00:23:29,800 --> 00:23:31,800
+que eso lo vamos a ver más adelante
+
+377
+00:23:31,800 --> 00:23:33,800
+tener un acuerdo de esa idea de disponibilidad
+
+378
+00:23:33,800 --> 00:23:35,800
+de esa información en la tabla
+
+379
+00:23:35,800 --> 00:23:37,800
+y quizá lo suficientemente autodescriptivos
+
+380
+00:23:37,800 --> 00:23:39,800
+como vemos en la imagen de la derecha
+
+381
+00:23:39,800 --> 00:23:41,800
+tenemos un set de datos
+
+382
+00:23:41,800 --> 00:23:43,800
+donde abajo tenemos cierta información
+
+383
+00:23:43,800 --> 00:23:45,800
+como por ejemplo la cantidad de filas
+
+384
+00:23:45,800 --> 00:23:47,800
+que puede llegar a tener un data product
+
+385
+00:23:47,800 --> 00:23:49,800
+si hay duplicados, freshness
+
+386
+00:23:49,800 --> 00:23:51,800
+de la data
+
+387
+00:23:51,800 --> 00:23:53,800
+cuánto espacio en disco
+
+388
+00:23:53,800 --> 00:23:55,800
+puede llevar a ocupar el volumen
+
+389
+00:23:55,800 --> 00:23:57,800
+cuánto es el costo que
+
+390
+00:23:57,800 --> 00:23:59,800
+termina consumiendo este producto de datos
+
+391
+00:23:59,800 --> 00:24:01,800
+así que esta es una de las verticales
+
+392
+00:24:01,800 --> 00:24:03,800
+que estuvimos trabajando
+
+393
+00:24:03,800 --> 00:24:05,800
+si pasamos a los siguientes slides
+
+394
+00:24:05,800 --> 00:24:07,800
+podemos empezar a ver
+
+395
+00:24:07,800 --> 00:24:09,800
+el concepto de plataforma SerService
+
+396
+00:24:09,800 --> 00:24:11,800
+que mencionaba Nacho
+
+397
+00:24:11,800 --> 00:24:13,800
+un técnico sistema llamado DataSuite
+
+398
+00:24:13,800 --> 00:24:15,800
+que engloba un conjunto de herramientas
+
+399
+00:24:15,800 --> 00:24:17,800
+para data hecha
+
+400
+00:24:17,800 --> 00:24:19,800
+dentro del mercado libre
+
+401
+00:24:19,800 --> 00:24:21,800
+en el cual dijimos, bueno, estas herramientas
+
+402
+00:24:21,800 --> 00:24:23,800
+tienen, o sea, los usuarios que operan
+
+403
+00:24:23,800 --> 00:24:25,800
+estas herramientas requieren un nivel técnico
+
+404
+00:24:25,800 --> 00:24:27,800
+intermedio avanzado
+
+405
+00:24:27,800 --> 00:24:29,800
+necesitamos que todos nuestros usuarios
+
+406
+00:24:29,800 --> 00:24:31,800
+que quieran consumir o
+
+407
+00:24:31,800 --> 00:24:33,800
+producir la data puedan hacerlo
+
+408
+00:24:33,800 --> 00:24:35,800
+sin tener un skill técnico
+
+409
+00:24:35,800 --> 00:24:37,800
+de tan alto nivel
+
+410
+00:24:37,800 --> 00:24:39,800
+entonces agarramos todas las
+
+411
+00:24:39,800 --> 00:24:41,800
+herramientas que teníamos
+
+412
+00:24:41,800 --> 00:24:43,800
+dentro de lo que es DataSuite y empezamos
+
+413
+00:24:43,800 --> 00:24:45,800
+a evaluar qué cambios eran requeridos
+
+414
+00:24:45,800 --> 00:24:47,800
+dentro de estos cambios
+
+415
+00:24:47,800 --> 00:24:49,800
+vimos que necesitábamos definir
+
+416
+00:24:49,800 --> 00:24:51,800
+diferentes ambientes de trabajo
+
+417
+00:24:51,800 --> 00:24:53,800
+el desarrollo y la producción
+
+418
+00:24:53,800 --> 00:24:55,800
+hicimos un análisis de aquellos flujos
+
+419
+00:24:55,800 --> 00:24:57,800
+de ingesta que ya existían
+
+420
+00:24:57,800 --> 00:24:59,800
+y cuáles eran los más recurrentes dentro
+
+421
+00:24:59,800 --> 00:25:01,800
+del mercado libre desde que originó
+
+422
+00:25:01,800 --> 00:25:03,800
+mejor dicho, qué tecnología original
+
+423
+00:25:03,800 --> 00:25:05,800
+qué tecnología destino
+
+424
+00:25:05,800 --> 00:25:07,800
+con el objetivo de empezar a pensar
+
+425
+00:25:07,800 --> 00:25:09,800
+pipelines de datos simplificados
+
+426
+00:25:09,800 --> 00:25:11,800
+como le llamamos nosotros short steps
+
+427
+00:25:11,800 --> 00:25:13,800
+que se lo vamos a mostrar un poco más adelante
+
+428
+00:25:13,800 --> 00:25:15,800
+garantizar la seguridad
+
+429
+00:25:15,800 --> 00:25:17,800
+y el acceso a la información
+
+430
+00:25:17,800 --> 00:25:19,800
+y algo no menor en esta etapa
+
+431
+00:25:19,800 --> 00:25:21,800
+en donde todo el negocio
+
+432
+00:25:21,800 --> 00:25:23,800
+crece todo muy rápido es clave
+
+433
+00:25:23,800 --> 00:25:25,800
+garantizar que la capacidad de cómputo
+
+434
+00:25:25,800 --> 00:25:27,800
+esté distribuida para que no haya afectaciones
+
+435
+00:25:27,800 --> 00:25:29,800
+entre distintos procesos
+
+436
+00:25:29,800 --> 00:25:31,800
+en el día a día, y obviamente
+
+437
+00:25:31,800 --> 00:25:33,800
+como mencionan Nacho, todo esto
+
+438
+00:25:33,800 --> 00:25:35,800
+con una política de vacapi restor bajo el gobierno
+
+439
+00:25:35,800 --> 00:25:37,800
+del equipo de Data Engineer
+
+440
+00:25:37,800 --> 00:25:39,800
+que obviamente está definido para todos los dominios
+
+441
+00:25:39,800 --> 00:25:41,800
+si pasamos a la siguiente slide
+
+442
+00:25:41,800 --> 00:25:43,800
+podríamos ver
+
+443
+00:25:43,800 --> 00:25:45,800
+uno de los conceptos claves de lo que es DataMesh
+
+444
+00:25:45,800 --> 00:25:47,800
+que es Discoverability
+
+445
+00:25:47,800 --> 00:25:49,800
+que es el descubrimiento, todos los productos
+
+446
+00:25:49,800 --> 00:25:51,800
+de datos que van a ir generando los diferentes dominios
+
+447
+00:25:51,800 --> 00:25:53,800
+pensamos que tiene que estar disponible
+
+448
+00:25:53,800 --> 00:25:55,800
+para toda la organización y que puedan navegarlo
+
+449
+00:25:55,800 --> 00:25:57,800
+entonces
+
+450
+00:25:57,800 --> 00:25:59,800
+todas nuestras aplicaciones
+
+451
+00:25:59,800 --> 00:26:01,800
+que conforman el ecosistema de Data Suite
+
+452
+00:26:01,800 --> 00:26:03,800
+tienen que tener la suficiente inteligencia
+
+453
+00:26:03,800 --> 00:26:05,800
+para generar el linaje
+
+454
+00:26:05,800 --> 00:26:07,800
+de los distintos componentes
+
+455
+00:26:07,800 --> 00:26:09,800
+y poder almacenar la descripción
+
+456
+00:26:09,800 --> 00:26:11,800
+para que luego lo puedan explotar los distintos
+
+457
+00:26:11,800 --> 00:26:13,800
+usuarios del mercado libre
+
+458
+00:26:13,800 --> 00:26:15,800
+entonces cada objeto que conforma estos DataProduct
+
+459
+00:26:15,800 --> 00:26:17,800
+van a estar correctamente catalogado
+
+460
+00:26:17,800 --> 00:26:19,800
+van a estar
+
+461
+00:26:19,800 --> 00:26:21,800
+haciendo compliance con lo que es PII
+
+462
+00:26:21,800 --> 00:26:23,800
+que para nosotros es la gestión de los datos sensibles
+
+463
+00:26:23,800 --> 00:26:25,800
+obviamente
+
+464
+00:26:25,800 --> 00:26:27,800
+todo esto va a estar vinculado
+
+465
+00:26:27,800 --> 00:26:29,800
+con otra herramienta que le voy a contar a continuación
+
+466
+00:26:29,800 --> 00:26:31,800
+que te permite evaluar la integridad
+
+467
+00:26:31,800 --> 00:26:33,800
+de estos DataProducts
+
+468
+00:26:33,800 --> 00:26:35,800
+si pasamos a la siguiente slide
+
+469
+00:26:35,800 --> 00:26:37,800
+veamos lo que sería
+
+470
+00:26:37,800 --> 00:26:39,800
+Observability
+
+471
+00:26:39,800 --> 00:26:41,800
+que es Observability, bueno es la capacidad
+
+472
+00:26:41,800 --> 00:26:43,800
+de detectar anomalías en nuestros productos
+
+473
+00:26:43,800 --> 00:26:45,800
+de datos generados
+
+474
+00:26:45,800 --> 00:26:47,800
+esto es una herramienta que obviamente
+
+475
+00:26:47,800 --> 00:26:49,800
+es de un tercero que logramos incorporar
+
+476
+00:26:49,800 --> 00:26:51,800
+dentro de nuestra Suite que le vamos a contar
+
+477
+00:26:51,800 --> 00:26:53,800
+como lo hicimos pero básicamente
+
+478
+00:26:53,800 --> 00:26:55,800
+este patrón los permite entender
+
+479
+00:26:55,800 --> 00:26:57,800
+que nuestros productos de datos tienen
+
+480
+00:26:57,800 --> 00:26:59,800
+un estado y hay que monitorearlo correctamente
+
+481
+00:26:59,800 --> 00:27:01,800
+y alertar en el caso de que se encuentre
+
+482
+00:27:01,800 --> 00:27:03,800
+en alguna anomalía
+
+483
+00:27:03,800 --> 00:27:05,800
+como ven ahí podríamos
+
+484
+00:27:05,800 --> 00:27:07,800
+evaluar diferentes indicadores
+
+485
+00:27:07,800 --> 00:27:09,800
+por ejemplo cuántas tablas tiene un dominio
+
+486
+00:27:09,800 --> 00:27:11,800
+cuántas vista, la frescura
+
+487
+00:27:11,800 --> 00:27:13,800
+cuántas inconsistencias puede llegar a ver
+
+488
+00:27:13,800 --> 00:27:15,800
+y a su vez este tipo
+
+489
+00:27:15,800 --> 00:27:17,800
+de patrón nos permite ir incorporando
+
+490
+00:27:17,800 --> 00:27:19,800
+diferentes monitores
+
+491
+00:27:19,800 --> 00:27:21,800
+particulares en base al gobierno que le quisieramos
+
+492
+00:27:21,800 --> 00:27:23,800
+dar a todo nuestro dominio de DataMesh
+
+493
+00:27:23,800 --> 00:27:25,800
+si pasamos a la siguiente slide
+
+494
+00:27:25,800 --> 00:27:27,800
+podríamos ver
+
+495
+00:27:27,800 --> 00:27:29,800
+ya contarles un poco cómo es nuestro
+
+496
+00:27:29,800 --> 00:27:31,800
+estado real
+
+497
+00:27:31,800 --> 00:27:33,800
+pasamos de la teoría, le contamos
+
+498
+00:27:33,800 --> 00:27:35,800
+las iniciativas que abordamos
+
+499
+00:27:35,800 --> 00:27:37,800
+y bueno
+
+500
+00:27:37,800 --> 00:27:39,800
+nos sentamos y dijimos cómo hacemos
+
+501
+00:27:39,800 --> 00:27:41,800
+girar esta rueda, cómo hacemos para implementar
+
+502
+00:27:41,800 --> 00:27:43,800
+como saben DataMesh es orientado
+
+503
+00:27:43,800 --> 00:27:45,800
+dominio, buscamos
+
+504
+00:27:45,800 --> 00:27:47,800
+en distintas fuentes de data y dijimos
+
+505
+00:27:47,800 --> 00:27:49,800
+dominio para todos tiene
+
+506
+00:27:49,800 --> 00:27:51,800
+distintas aristas
+
+507
+00:27:51,800 --> 00:27:53,800
+definimos para lo que nosotros es un dominio
+
+508
+00:27:53,800 --> 00:27:55,800
+que es un dominio, es un equipo
+
+509
+00:27:55,800 --> 00:27:57,800
+un equipo de colaboradores
+
+510
+00:27:57,800 --> 00:27:59,800
+que está representado por un owner
+
+511
+00:27:59,800 --> 00:28:01,800
+ese owner es el responsable
+
+512
+00:28:01,800 --> 00:28:03,800
+de todo el equipo y de toda la infraestructura
+
+513
+00:28:03,800 --> 00:28:05,800
+que les voy a contar
+
+514
+00:28:05,800 --> 00:28:07,800
+ese equipo va a tener acceso
+
+515
+00:28:07,800 --> 00:28:09,800
+a esta herramienta Dataflow
+
+516
+00:28:09,800 --> 00:28:11,800
+que les comento que es nuestra herramienta pipeline
+
+517
+00:28:11,800 --> 00:28:13,800
+si alguien conoce Pentajo que me imagino que sí
+
+518
+00:28:13,800 --> 00:28:15,800
+es similar pero esto está evolucionado
+
+519
+00:28:15,800 --> 00:28:17,800
+para el mercado libre en base a las necesidades
+
+520
+00:28:17,800 --> 00:28:19,800
+prácticas que fuimos necesitando
+
+521
+00:28:19,800 --> 00:28:21,800
+Dataflow tiene el mismo nombre que la
+
+522
+00:28:21,800 --> 00:28:23,800
+herramienta de Google, no es la misma
+
+523
+00:28:23,800 --> 00:28:25,800
+que la herramienta de ChangeHouse
+
+524
+00:28:25,800 --> 00:28:27,800
+esta herramienta que te hace el pipeline
+
+525
+00:28:27,800 --> 00:28:29,800
+de datos, toma datos de origen
+
+526
+00:28:29,800 --> 00:28:31,800
+y la envía de un destino, notábamos
+
+527
+00:28:31,800 --> 00:28:33,800
+que tuviéramos que meterle cierta lógica
+
+528
+00:28:33,800 --> 00:28:35,800
+para simplificar
+
+529
+00:28:35,800 --> 00:28:37,800
+todo este proceso de ingesta así que
+
+530
+00:28:37,800 --> 00:28:39,800
+cuando un usuario se da de alta dentro
+
+531
+00:28:39,800 --> 00:28:41,800
+de un dominio, automáticamente tiene acceso
+
+532
+00:28:41,800 --> 00:28:43,800
+a esta herramienta con los flujos simplificados
+
+533
+00:28:43,800 --> 00:28:45,800
+todos los flujos que va generando
+
+534
+00:28:45,800 --> 00:28:47,800
+se terminan catalogando
+
+535
+00:28:47,800 --> 00:28:49,800
+en la herramienta DC que es Data Catalog
+
+536
+00:28:49,800 --> 00:28:51,800
+en nuestro catálogo hecho
+
+537
+00:28:51,800 --> 00:28:53,800
+dentro de Mercado Libre
+
+538
+00:28:53,800 --> 00:28:55,800
+ahora se los vamos a mostrar
+
+539
+00:28:55,800 --> 00:28:57,800
+y por último Montecar, lo que es esta
+
+540
+00:28:57,800 --> 00:28:59,800
+herramienta de mercado que
+
+541
+00:28:59,800 --> 00:29:01,800
+nosotros customizamos para poder
+
+542
+00:29:01,800 --> 00:29:03,800
+monitorar la seguridad de nuestros Data Pro
+
+543
+00:29:03,800 --> 00:29:05,800
+es parte de todo este ecosistema
+
+544
+00:29:05,800 --> 00:29:07,800
+que llamamos dominio
+
+545
+00:29:07,800 --> 00:29:09,800
+por debajo
+
+546
+00:29:09,800 --> 00:29:11,800
+tenemos todo lo que es un proyecto
+
+547
+00:29:11,800 --> 00:29:13,800
+en BigQuery para desarrollo y para producción
+
+548
+00:29:13,800 --> 00:29:15,800
+así que todo lo que es
+
+549
+00:29:15,800 --> 00:29:17,800
+DataMesh dentro de Mercado Libre
+
+550
+00:29:17,800 --> 00:29:19,800
+lo vamos a encontrar dentro
+
+551
+00:29:19,800 --> 00:29:21,800
+de nuestro Data Warehouse en BigQuery
+
+552
+00:29:21,800 --> 00:29:23,800
+si pasamos a la siguiente slide
+
+553
+00:29:23,800 --> 00:29:25,800
+podríamos ver el siguiente concepto
+
+554
+00:29:25,800 --> 00:29:27,800
+dijimos lo que era un dominio
+
+555
+00:29:27,800 --> 00:29:29,800
+ahora que es un DME
+
+556
+00:29:29,800 --> 00:29:31,800
+bueno es un DataMesh en Bironel
+
+557
+00:29:31,800 --> 00:29:33,800
+si bajamos un poquito más nos damos cuentas
+
+558
+00:29:33,800 --> 00:29:35,800
+de que necesitamos cierta infraestructura
+
+559
+00:29:35,800 --> 00:29:37,800
+como dije un equipo, un owner
+
+560
+00:29:37,800 --> 00:29:39,800
+y ya proyectos en BigQuery de desarrollo
+
+561
+00:29:39,800 --> 00:29:41,800
+y producción con una misma
+
+562
+00:29:41,800 --> 00:29:43,800
+estructura para todos los dominios
+
+563
+00:29:43,800 --> 00:29:45,800
+con diferentes dataset
+
+564
+00:29:45,800 --> 00:29:47,800
+staging, TBL
+
+565
+00:29:47,800 --> 00:29:49,800
+y FeedView
+
+566
+00:29:49,800 --> 00:29:51,800
+que es uno de esos dataset
+
+567
+00:29:51,800 --> 00:29:53,800
+bueno básicamente es el orden en el cual le vamos a dar
+
+568
+00:29:53,800 --> 00:29:55,800
+a todos nuestros dominios para que organizen su información
+
+569
+00:29:55,800 --> 00:29:57,800
+durante todo el ciclo
+
+570
+00:29:57,800 --> 00:29:59,800
+de vida de los datos
+
+571
+00:29:59,800 --> 00:30:01,800
+para los que no saben lo que es un feed
+
+572
+00:30:01,800 --> 00:30:03,800
+un feed es un tipo de tabla para
+
+573
+00:30:03,800 --> 00:30:05,800
+almacenar información que proviene
+
+574
+00:30:05,800 --> 00:30:07,800
+near real time o real time
+
+575
+00:30:07,800 --> 00:30:09,800
+de un tópico de informaciones
+
+576
+00:30:09,800 --> 00:30:11,800
+donde la estructura particular que tiene
+
+577
+00:30:11,800 --> 00:30:13,800
+es que tiene un identificador
+
+578
+00:30:13,800 --> 00:30:15,800
+de novedad
+
+579
+00:30:15,800 --> 00:30:17,800
+todo el mensaje y distintas columnas
+
+580
+00:30:17,800 --> 00:30:19,800
+de auditoría para saber la fecha, la hora
+
+581
+00:30:19,800 --> 00:30:21,800
+y el momento en el cual se recibió
+
+582
+00:30:21,800 --> 00:30:23,800
+esa novedad. A su vez dentro
+
+583
+00:30:23,800 --> 00:30:25,800
+de lo que es este en Bironel
+
+584
+00:30:25,800 --> 00:30:27,800
+le brindamos a los dominios un espacio
+
+585
+00:30:27,800 --> 00:30:29,800
+para almacenar su información
+
+586
+00:30:29,800 --> 00:30:31,800
+para cuando hace sus extractos y quisieran
+
+587
+00:30:31,800 --> 00:30:33,800
+dejarlo en un repository lo pueden hacer
+
+588
+00:30:33,800 --> 00:30:35,800
+los backup que ya le mencionamos anteriormente
+
+589
+00:30:35,800 --> 00:30:37,800
+y automáticamente se da de alta lo que es
+
+590
+00:30:37,800 --> 00:30:39,800
+una service account dentro
+
+591
+00:30:39,800 --> 00:30:41,800
+de lo que es Monte Carlo para garantizar
+
+592
+00:30:41,800 --> 00:30:43,800
+toda la salubridad
+
+593
+00:30:43,800 --> 00:30:45,800
+del Dataproduct. Si pasamos a la siguiente slide
+
+594
+00:30:47,800 --> 00:30:49,800
+podemos ver lo que es Data Integrity
+
+595
+00:30:49,800 --> 00:30:51,800
+para nosotros, que es Data Integrity
+
+596
+00:30:51,800 --> 00:30:53,800
+es una
+
+597
+00:30:53,800 --> 00:30:55,800
+solución de Data Observability
+
+598
+00:30:55,800 --> 00:30:57,800
+que nos permite
+
+599
+00:30:57,800 --> 00:30:59,800
+como les dije poder ir
+
+600
+00:30:59,800 --> 00:31:01,800
+evaluando la salud de cada
+
+601
+00:31:01,800 --> 00:31:03,800
+Dataproduct pero per se
+
+602
+00:31:03,800 --> 00:31:05,800
+implementar Monte Carlo solo no era
+
+603
+00:31:05,800 --> 00:31:07,800
+la solución era customizar
+
+604
+00:31:07,800 --> 00:31:09,800
+nuestros monitores para la necesidad
+
+605
+00:31:09,800 --> 00:31:11,800
+que teníamos dentro del mercado libre
+
+606
+00:31:11,800 --> 00:31:13,800
+como ven
+
+607
+00:31:13,800 --> 00:31:15,800
+ahí a la derecha vemos una imagen
+
+608
+00:31:15,800 --> 00:31:17,800
+por un lado tenemos Monte Carlo
+
+609
+00:31:17,800 --> 00:31:19,800
+que es la herramienta de tercero
+
+610
+00:31:19,800 --> 00:31:21,800
+pero por otro lado tenemos el Data Catal
+
+611
+00:31:21,800 --> 00:31:23,800
+que es nuestra herramienta particular
+
+612
+00:31:23,800 --> 00:31:25,800
+de catalogado de datos fíjense
+
+613
+00:31:25,800 --> 00:31:27,800
+como ensamblamos los indicadores
+
+614
+00:31:27,800 --> 00:31:29,800
+principales de Monte Carlo dentro de nuestra solución
+
+615
+00:31:29,800 --> 00:31:31,800
+para que cualquier usuario
+
+616
+00:31:31,800 --> 00:31:33,800
+que quiera acceder a una tabla pueda no solo
+
+617
+00:31:33,800 --> 00:31:35,800
+saber la descripción de la misma sino el estado
+
+618
+00:31:35,800 --> 00:31:37,800
+de la salud de ese producto de datos
+
+619
+00:31:37,800 --> 00:31:39,800
+obviamente todo lo que es Data Integrity
+
+620
+00:31:39,800 --> 00:31:41,800
+se crea un dominio dentro
+
+621
+00:31:41,800 --> 00:31:43,800
+de lo que es Data Mesh
+
+622
+00:31:43,800 --> 00:31:45,800
+si pasamos a la siguiente slide
+
+623
+00:31:47,800 --> 00:31:49,800
+Data Catalog como les mencioné
+
+624
+00:31:49,800 --> 00:31:51,800
+esta es una herramienta de Change House
+
+625
+00:31:51,800 --> 00:31:53,800
+en el cual nos permite navegar
+
+626
+00:31:53,800 --> 00:31:55,800
+sobre los diferentes Dataproduct
+
+627
+00:31:55,800 --> 00:31:57,800
+y componentes de data
+
+628
+00:31:57,800 --> 00:31:59,800
+que tenemos en el mercado libre
+
+629
+00:31:59,800 --> 00:32:01,800
+básicamente lo que te permite es
+
+630
+00:32:01,800 --> 00:32:03,800
+hacer una búsqueda y poder
+
+631
+00:32:03,800 --> 00:32:05,800
+indexar la información que uno siente
+
+632
+00:32:05,800 --> 00:32:07,800
+que es relevante para poder hacer
+
+633
+00:32:07,800 --> 00:32:09,800
+una búsqueda de datos o por ejemplo
+
+634
+00:32:09,800 --> 00:32:11,800
+responder a la pregunta de
+
+635
+00:32:11,800 --> 00:32:13,800
+existe una tabla que tenga tal dato
+
+636
+00:32:13,800 --> 00:32:15,800
+bueno uno lo puede explotar de esta manera
+
+637
+00:32:15,800 --> 00:32:17,800
+con esta herramienta
+
+638
+00:32:17,800 --> 00:32:19,800
+si pasamos a la siguiente slide
+
+639
+00:32:19,800 --> 00:32:21,800
+Dataflow como les comenté
+
+640
+00:32:21,800 --> 00:32:23,800
+era la herramienta que teníamos
+
+641
+00:32:23,800 --> 00:32:25,800
+ya hace más de 5 años
+
+642
+00:32:25,800 --> 00:32:27,800
+no hacía compliance
+
+643
+00:32:27,800 --> 00:32:29,800
+con el nuevo paradigma de Data Mesh
+
+644
+00:32:29,800 --> 00:32:31,800
+porque necesitábamos
+
+645
+00:32:31,800 --> 00:32:33,800
+skill demasiado técnicos o particulares
+
+646
+00:32:33,800 --> 00:32:35,800
+para poder operar la herramienta
+
+647
+00:32:35,800 --> 00:32:37,800
+que pensó es
+
+648
+00:32:37,800 --> 00:32:39,800
+simplifiquemos estos flujos de ingesta
+
+649
+00:32:39,800 --> 00:32:41,800
+dejémoslo a disposición de un usuario
+
+650
+00:32:41,800 --> 00:32:43,800
+y no solo eso
+
+651
+00:32:43,800 --> 00:32:45,800
+sino que lo que nosotros
+
+652
+00:32:45,800 --> 00:32:47,800
+entendíamos es que los pipeline de datos
+
+653
+00:32:47,800 --> 00:32:49,800
+no es Data Mesh
+
+654
+00:32:49,800 --> 00:32:51,800
+sino también poder gestionar todos los objetos
+
+655
+00:32:51,800 --> 00:32:53,800
+que forman
+
+656
+00:32:53,800 --> 00:32:55,800
+parte de este data por ejemplo las tablas
+
+657
+00:32:55,800 --> 00:32:57,800
+entonces generamos secciones de
+
+658
+00:32:57,800 --> 00:32:59,800
+poder administrar, crear
+
+659
+00:32:59,800 --> 00:33:01,800
+todo el ciclo de vida de una tabla
+
+660
+00:33:01,800 --> 00:33:03,800
+haciendo obviamente compliance
+
+661
+00:33:03,800 --> 00:33:05,800
+de las emocionalidades que te permite
+
+662
+00:33:05,800 --> 00:33:07,800
+BigQuery que no son pocas
+
+663
+00:33:07,800 --> 00:33:09,800
+entonces tuvimos que adaptar todas nuestras herramientas
+
+664
+00:33:09,800 --> 00:33:11,800
+por ejemplo ahí en la captura
+
+665
+00:33:11,800 --> 00:33:13,800
+se puede ver un poco de
+
+666
+00:33:13,800 --> 00:33:15,800
+tenemos la gestión de las tablas
+
+667
+00:33:15,800 --> 00:33:17,800
+tenemos los tiempos de expiración
+
+668
+00:33:17,800 --> 00:33:19,800
+tenemos un circuito de pasaje de producción
+
+669
+00:33:19,800 --> 00:33:21,800
+con su correspondiente aprobación
+
+670
+00:33:21,800 --> 00:33:23,800
+tenemos los distintos ambientes separados
+
+671
+00:33:23,800 --> 00:33:25,800
+y una vez que generas esas tablas
+
+672
+00:33:25,800 --> 00:33:27,800
+puedes generar ahí en la sección de allshops
+
+673
+00:33:27,800 --> 00:33:29,800
+puedes cargar de tus diferentes jobs
+
+674
+00:33:29,800 --> 00:33:31,800
+para que ingesten dentro de esa tabla
+
+675
+00:33:31,800 --> 00:33:33,800
+que pasamos a la siguiente slide
+
+676
+00:33:35,800 --> 00:33:37,800
+SDK Streaming, nosotros en Mercado Alí
+
+677
+00:33:37,800 --> 00:33:39,800
+tenemos particularmente
+
+678
+00:33:39,800 --> 00:33:41,800
+lo que es Batch y lo que es Real-Time
+
+679
+00:33:41,800 --> 00:33:43,800
+o Near Real-Time
+
+680
+00:33:43,800 --> 00:33:45,800
+la diferencia obviamente
+
+681
+00:33:45,800 --> 00:33:47,800
+está en que lo que es Near Real-Time y Real-Time
+
+682
+00:33:47,800 --> 00:33:49,800
+vienen de tópicos de novedades que nos
+
+683
+00:33:49,800 --> 00:33:51,800
+pushean los distintos unidades de negocio
+
+684
+00:33:51,800 --> 00:33:53,800
+por ejemplo Mercado Pado cuando alguien hace
+
+685
+00:33:53,800 --> 00:33:55,800
+una transacción nos notifican
+
+686
+00:33:55,800 --> 00:33:57,800
+alguna aplicación
+
+687
+00:33:57,800 --> 00:33:59,800
+para que nosotros ingestemos esa información
+
+688
+00:33:59,800 --> 00:34:01,800
+y la SDK Streaming
+
+689
+00:34:01,800 --> 00:34:03,800
+viene a Nase para Datamech
+
+690
+00:34:03,800 --> 00:34:05,800
+porque básicamente en Mercado Alí
+
+691
+00:34:05,800 --> 00:34:07,800
+había una aplicación en la cual
+
+692
+00:34:07,800 --> 00:34:09,800
+cuando los usuarios necesitaban
+
+693
+00:34:09,800 --> 00:34:11,800
+streamer información en Near Real-Time o Real-Time
+
+694
+00:34:11,800 --> 00:34:13,800
+tenía que suscribirse al producto
+
+695
+00:34:13,800 --> 00:34:15,800
+y básicamente compartía la misma infraestructura
+
+696
+00:34:15,800 --> 00:34:17,800
+todos los pipeline de datos de streaming
+
+697
+00:34:17,800 --> 00:34:19,800
+con esta nueva SDK
+
+698
+00:34:19,800 --> 00:34:21,800
+lo que hicimos fue tomar
+
+699
+00:34:21,800 --> 00:34:23,800
+las funcionalidades claves
+
+700
+00:34:23,800 --> 00:34:25,800
+de cada una de las soluciones
+
+701
+00:34:25,800 --> 00:34:27,800
+que teníamos de streaming de datos
+
+702
+00:34:27,800 --> 00:34:29,800
+de la SDK y dejarlos disponibles
+
+703
+00:34:29,800 --> 00:34:31,800
+para cada dominio para que lo pueda implementar
+
+704
+00:34:31,800 --> 00:34:33,800
+en cada uno de sus proyectos
+
+705
+00:34:33,800 --> 00:34:35,800
+garantizando así que utilizan
+
+706
+00:34:35,800 --> 00:34:37,800
+las funciones que están obviamente
+
+707
+00:34:37,800 --> 00:34:39,800
+controladas, reglamentadas
+
+708
+00:34:39,800 --> 00:34:41,800
+por el equipo de gobierno
+
+709
+00:34:41,800 --> 00:34:43,800
+y a su vez nos aseguramos de que cada vez
+
+710
+00:34:43,800 --> 00:34:45,800
+que hay alguien streamer información
+
+711
+00:34:45,800 --> 00:34:47,800
+la información esté
+
+712
+00:34:47,800 --> 00:34:49,800
+correctamente catalogada entre el tópico
+
+713
+00:34:49,800 --> 00:34:51,800
+de novedades y el destino de los datos
+
+714
+00:34:51,800 --> 00:34:53,800
+dicho esto
+
+715
+00:34:53,800 --> 00:34:55,800
+si pasamos a la siguiente slide
+
+716
+00:34:55,800 --> 00:34:57,800
+y vamos a empezar a ver lo que es un resumen
+
+717
+00:34:57,800 --> 00:34:59,800
+de lo que les contamos nosotros
+
+718
+00:34:59,800 --> 00:35:01,800
+en igual encontramos nuestra famosa
+
+719
+00:35:01,800 --> 00:35:03,800
+malla de datos, tenemos
+
+720
+00:35:03,800 --> 00:35:05,800
+ahí si ven el DMA-A, el DMA-B
+
+721
+00:35:05,800 --> 00:35:07,800
+el C y el Core
+
+722
+00:35:07,800 --> 00:35:09,800
+el Core es el equipo de gobierno
+
+723
+00:35:09,800 --> 00:35:11,800
+que no deja de ser un dominio más
+
+724
+00:35:11,800 --> 00:35:13,800
+vemos cómo los dominios se van comunicando
+
+725
+00:35:13,800 --> 00:35:15,800
+lateralmente entre ellos
+
+726
+00:35:15,800 --> 00:35:17,800
+pero la particularidad como dijo Nacho
+
+727
+00:35:17,800 --> 00:35:19,800
+que tenemos dentro de un mercado libre
+
+728
+00:35:19,800 --> 00:35:21,800
+es que tenemos un proyecto dedicado
+
+729
+00:35:21,800 --> 00:35:23,800
+en el cual se publica
+
+730
+00:35:23,800 --> 00:35:25,800
+información mediante una vista
+
+731
+00:35:25,800 --> 00:35:27,800
+para que cualquier usuario lo pueda consumir
+
+732
+00:35:27,800 --> 00:35:29,800
+eso lo pueden ver ahí
+
+733
+00:35:29,800 --> 00:35:31,800
+en la gráfica en el centro
+
+734
+00:35:31,800 --> 00:35:33,800
+con el logito de BigQuery
+
+735
+00:35:33,800 --> 00:35:35,800
+cada dominio genera sus datos product
+
+736
+00:35:35,800 --> 00:35:37,800
+pero lo deja disponible para todo mercado libre
+
+737
+00:35:37,800 --> 00:35:39,800
+como una capa única de ingreso
+
+738
+00:35:39,800 --> 00:35:41,800
+en ese proyecto de BigQuery
+
+739
+00:35:41,800 --> 00:35:43,800
+sin más
+
+740
+00:35:43,800 --> 00:35:45,800
+le contamos un poco de lo que fue la malla de datos
+
+741
+00:35:45,800 --> 00:35:47,800
+no sé si Nachito quiere algo aportar
+
+742
+00:35:47,800 --> 00:35:49,800
+en lo que fuimos comentando
+
+743
+00:35:49,800 --> 00:35:51,800
+si no abrimos el espacio de preguntas
+
+744
+00:35:51,800 --> 00:35:53,800
+y la respuesta para todos
+
+745
+00:35:53,800 --> 00:35:55,800
+de eso última parte
+
+746
+00:35:55,800 --> 00:35:57,800
+una de las cosas que nosotros pensamos
+
+747
+00:35:57,800 --> 00:35:59,800
+cuando pensamos resolver
+
+748
+00:35:59,800 --> 00:36:01,800
+y esta parte también de nuestra interpretación
+
+749
+00:36:01,800 --> 00:36:03,800
+nuestra implementación
+
+750
+00:36:03,800 --> 00:36:05,800
+es que cuando un usuario quiera consumir
+
+751
+00:36:05,800 --> 00:36:07,800
+esos datos de mercado libre
+
+752
+00:36:07,800 --> 00:36:09,800
+que vienen producidos totalmente descentralizados
+
+753
+00:36:09,800 --> 00:36:11,800
+de cualquier lado
+
+754
+00:36:11,800 --> 00:36:13,800
+era necesario
+
+755
+00:36:13,800 --> 00:36:15,800
+que para un usuario terrenal
+
+756
+00:36:15,800 --> 00:36:17,800
+que pide acceso a lo que es el Workhouse and Lay
+
+757
+00:36:17,800 --> 00:36:19,800
+en principio no necesites saber
+
+758
+00:36:19,800 --> 00:36:21,800
+que haya un single point of entry
+
+759
+00:36:21,800 --> 00:36:23,800
+y a partir de ahí
+
+760
+00:36:23,800 --> 00:36:25,800
+que pueda consumir todo el dato de la organización
+
+761
+00:36:25,800 --> 00:36:27,800
+luego si le interesa saber
+
+762
+00:36:27,800 --> 00:36:29,800
+si interesa contactarse con el loaner
+
+763
+00:36:29,800 --> 00:36:31,800
+para eso está la herramienta de catalogo de datos
+
+764
+00:36:31,800 --> 00:36:33,800
+pero fundamental era
+
+765
+00:36:33,800 --> 00:36:35,800
+garantizar también
+
+766
+00:36:35,800 --> 00:36:37,800
+ese único punto de entrada
+
+767
+00:36:37,800 --> 00:36:39,800
+y que conviva en el mismo ecosistema
+
+768
+00:36:43,800 --> 00:36:45,800
+y aclarado eso
+
+769
+00:36:45,800 --> 00:36:47,800
+fue una charla cortita
+
+770
+00:36:49,800 --> 00:36:51,800
+fue difícil resumir todo esto
+
+771
+00:36:51,800 --> 00:36:53,800
+en tan poco
+
+772
+00:36:53,800 --> 00:36:55,800
+son conceptos algunos complicados
+
+773
+00:36:55,800 --> 00:36:57,800
+así que
+
+774
+00:36:57,800 --> 00:36:59,800
+si tienen preguntas
+
+775
+00:36:59,800 --> 00:37:01,800
+acá estamos
+
+776
+00:37:05,800 --> 00:37:07,800
+acá tenemos
+
+777
+00:37:07,800 --> 00:37:09,800
+Gabriel
+
+778
+00:37:09,800 --> 00:37:11,800
+Ignacio
+
+779
+00:37:11,800 --> 00:37:13,800
+muchísimas gracias
+
+780
+00:37:13,800 --> 00:37:15,800
+su presentación ha sido excelente
+
+781
+00:37:15,800 --> 00:37:17,800
+enriquecedora
+
+782
+00:37:17,800 --> 00:37:19,800
+y ahí me imagino acá
+
+783
+00:37:19,800 --> 00:37:21,800
+que están llenos
+
+784
+00:37:21,800 --> 00:37:23,800
+han tenido muchísimos desafíos
+
+785
+00:37:23,800 --> 00:37:25,800
+porque la complejidad
+
+786
+00:37:25,800 --> 00:37:27,800
+que se está dando
+
+787
+00:37:27,800 --> 00:37:29,800
+podrían seleccionar uno
+
+788
+00:37:29,800 --> 00:37:31,800
+que realmente considerado
+
+789
+00:37:31,800 --> 00:37:33,800
+un verdadero desafío que les costó
+
+790
+00:37:33,800 --> 00:37:35,800
+y comentarnos lo por arriba
+
+791
+00:37:35,800 --> 00:37:37,800
+aunque sea pero para saber
+
+792
+00:37:37,800 --> 00:37:39,800
+el grado de
+
+793
+00:37:39,800 --> 00:37:41,800
+complejidad que tiene esto
+
+794
+00:37:41,800 --> 00:37:43,800
+yo tengo uno Nacho
+
+795
+00:37:43,800 --> 00:37:45,800
+disculpame que
+
+796
+00:37:45,800 --> 00:37:47,800
+pero creo que el primer escenario
+
+797
+00:37:47,800 --> 00:37:49,800
+fue cuando nos sentamos a definir los conceptos
+
+798
+00:37:49,800 --> 00:37:51,800
+y tuvimos que bajar a la práctica
+
+799
+00:37:51,800 --> 00:37:53,800
+es entender los diferentes casos de uso
+
+800
+00:37:53,800 --> 00:37:55,800
+y qué estamos dejando por fuera
+
+801
+00:37:55,800 --> 00:37:57,800
+y cómo implementar toda esta solución
+
+802
+00:37:57,800 --> 00:37:59,800
+sin saber
+
+803
+00:37:59,800 --> 00:38:01,800
+a veces uno
+
+804
+00:38:01,800 --> 00:38:03,800
+en la vista a muchos pies de altura es muy difícil
+
+805
+00:38:03,800 --> 00:38:05,800
+entender los distintos casos de uso por ejemplo
+
+806
+00:38:05,800 --> 00:38:07,800
+desde cómo declarar en una función
+
+807
+00:38:07,800 --> 00:38:09,800
+en cada equipo puntual
+
+808
+00:38:09,800 --> 00:38:11,800
+en Colombia
+
+809
+00:38:11,800 --> 00:38:13,800
+entonces el entender y el relevar
+
+810
+00:38:13,800 --> 00:38:15,800
+toda esa información creo que fue un gran desafío
+
+811
+00:38:15,800 --> 00:38:17,800
+y bueno creo que
+
+812
+00:38:17,800 --> 00:38:19,800
+no me lo voy a olvidar nunca
+
+813
+00:38:19,800 --> 00:38:21,800
+muy bien
+
+814
+00:38:23,800 --> 00:38:25,800
+honestía
+
+815
+00:38:25,800 --> 00:38:27,800
+a mí se me ocurre uno que
+
+816
+00:38:27,800 --> 00:38:29,800
+todavía hoy lo tenemos
+
+817
+00:38:29,800 --> 00:38:31,800
+como les decía Tamella es un término
+
+818
+00:38:31,800 --> 00:38:33,800
+un concepto muy nuevo
+
+819
+00:38:33,800 --> 00:38:35,800
+y casi toda
+
+820
+00:38:35,800 --> 00:38:37,800
+las referencias
+
+821
+00:38:37,800 --> 00:38:39,800
+la literatura, lo que se encuentra
+
+822
+00:38:39,800 --> 00:38:41,800
+cuando uno investiga
+
+823
+00:38:41,800 --> 00:38:43,800
+hablan de un
+
+824
+00:38:43,800 --> 00:38:45,800
+estadio ideal
+
+825
+00:38:45,800 --> 00:38:47,800
+de adónde habría que llegar
+
+826
+00:38:47,800 --> 00:38:49,800
+pero nadie comienza en esto
+
+827
+00:38:49,800 --> 00:38:51,800
+de cero
+
+828
+00:38:51,800 --> 00:38:53,800
+necesariamente un proceso de transformación
+
+829
+00:38:53,800 --> 00:38:55,800
+entonces una de las cosas más complicadas
+
+830
+00:38:55,800 --> 00:38:57,800
+para nosotros fue
+
+831
+00:38:57,800 --> 00:38:59,800
+no encontrar referencias porque no hay muchas implementaciones
+
+832
+00:38:59,800 --> 00:39:01,800
+de estas en el mundo
+
+833
+00:39:01,800 --> 00:39:03,800
+y tener que
+
+834
+00:39:03,800 --> 00:39:05,800
+está bueno aprender de los errores
+
+835
+00:39:05,800 --> 00:39:07,800
+de los demás
+
+836
+00:39:07,800 --> 00:39:09,800
+entonces queríamos ir a buscar esos
+
+837
+00:39:09,800 --> 00:39:11,800
+y no los encontramos
+
+838
+00:39:11,800 --> 00:39:13,800
+así que eso fue
+
+839
+00:39:13,800 --> 00:39:15,800
+también un proceso bastante difícil
+
+840
+00:39:15,800 --> 00:39:17,800
+ver cómo
+
+841
+00:39:17,800 --> 00:39:19,800
+creanear todo esto
+
+842
+00:39:19,800 --> 00:39:21,800
+por las nuestras
+
+843
+00:39:21,800 --> 00:39:23,800
+muy bien
+
+844
+00:39:23,800 --> 00:39:25,800
+acá tengo algunas preguntas más
+
+845
+00:39:25,800 --> 00:39:27,800
+cuando me pregunto Emiliano
+
+846
+00:39:27,800 --> 00:39:29,800
+cuando hablan de stream
+
+847
+00:39:29,800 --> 00:39:31,800
+y de datos
+
+848
+00:39:31,800 --> 00:39:33,800
+en SDK
+
+849
+00:39:33,800 --> 00:39:35,800
+quieren si pueden hacer una aclaración
+
+850
+00:39:35,800 --> 00:39:37,800
+ahí lo tomo yo
+
+851
+00:39:37,800 --> 00:39:39,800
+dentro del mercado libre
+
+852
+00:39:39,800 --> 00:39:41,800
+llamamos a lo que es streaming de datos
+
+853
+00:39:41,800 --> 00:39:43,800
+cuando la información se genera una velocidad
+
+854
+00:39:43,800 --> 00:39:45,800
+que se anilla real-time o real-time
+
+855
+00:39:45,800 --> 00:39:47,800
+y es necesario dejarlo en el warehouse con esa velocidad
+
+856
+00:39:47,800 --> 00:39:49,800
+por ejemplo todo evento que sucede
+
+857
+00:39:49,800 --> 00:39:51,800
+en una unidad de negocio
+
+858
+00:39:51,800 --> 00:39:53,800
+uno lo puede mandar al warehouse de dos maneras
+
+859
+00:39:53,800 --> 00:39:55,800
+medio anti-batch
+
+860
+00:39:55,800 --> 00:39:57,800
+corre un shop periódicamente croniado
+
+861
+00:39:57,800 --> 00:39:59,800
+en un periodo de tiempo o no
+
+862
+00:39:59,800 --> 00:40:01,800
+enviarla ni bien sucede la novedad
+
+863
+00:40:01,800 --> 00:40:03,800
+hacemos referencia al streaming de datos
+
+864
+00:40:03,800 --> 00:40:05,800
+a tomar esa información dentro un tópico de novedades
+
+865
+00:40:05,800 --> 00:40:07,800
+que podría ser lo voy a simplificar
+
+866
+00:40:07,800 --> 00:40:09,800
+si fuese colas mq
+
+867
+00:40:09,800 --> 00:40:11,800
+si fuese un sistema de cola
+
+868
+00:40:11,800 --> 00:40:13,800
+como rabit tendrías una novedad
+
+869
+00:40:13,800 --> 00:40:15,800
+la cual te suscribes y estás escuchando
+
+870
+00:40:15,800 --> 00:40:17,800
+constantemente la creación de esa novedad
+
+871
+00:40:17,800 --> 00:40:19,800
+una vez que esa novedad llega
+
+872
+00:40:19,800 --> 00:40:21,800
+la toma el equipo o en este caso la SDK
+
+873
+00:40:21,800 --> 00:40:23,800
+y la termina enviando lo que es
+
+874
+00:40:23,800 --> 00:40:25,800
+una tabla dentro del data warehouse
+
+875
+00:40:25,800 --> 00:40:27,800
+es más que nada un flujo de datos
+
+876
+00:40:27,800 --> 00:40:29,800
+de información en real-time o real-time
+
+877
+00:40:29,800 --> 00:40:31,800
+no sé si respondí la pregunta
+
+878
+00:40:31,800 --> 00:40:33,800
+y si no repregunta tranquilo
+
+879
+00:40:33,800 --> 00:40:35,800
+no perfecto se entendió muy bien
+
+880
+00:40:35,800 --> 00:40:37,800
+muchas gracias después
+
+881
+00:40:37,800 --> 00:40:39,800
+Florencia, primero felicita por la
+
+882
+00:40:39,800 --> 00:40:41,800
+presentación nos dice
+
+883
+00:40:41,800 --> 00:40:43,800
+que fue muy interesante
+
+884
+00:40:43,800 --> 00:40:45,800
+y nos hace una pregunta es
+
+885
+00:40:45,800 --> 00:40:47,800
+si hay integración entre
+
+886
+00:40:47,800 --> 00:40:49,800
+distintos dominios y fuese
+
+887
+00:40:49,800 --> 00:40:51,800
+necesario integrar
+
+888
+00:40:51,800 --> 00:40:53,800
+distintas áreas
+
+889
+00:40:53,800 --> 00:40:55,800
+como es ese proceso
+
+890
+00:40:55,800 --> 00:40:57,800
+si que debo y yo bajó
+
+891
+00:40:57,800 --> 00:40:59,800
+nacho como óqueta
+
+892
+00:40:59,800 --> 00:41:01,800
+por definición la idea
+
+893
+00:41:01,800 --> 00:41:03,800
+es que los dominios sean interoperables
+
+894
+00:41:03,800 --> 00:41:05,800
+que lo que publique un dominio puede hacer
+
+895
+00:41:05,800 --> 00:41:07,800
+un origen para lo que publica otro
+
+896
+00:41:07,800 --> 00:41:09,800
+o sea eso
+
+897
+00:41:09,800 --> 00:41:11,800
+es una necesidad debe ser así
+
+898
+00:41:11,800 --> 00:41:13,800
+no deben estar aislados
+
+899
+00:41:13,800 --> 00:41:15,800
+no sé si la pregunta
+
+900
+00:41:15,800 --> 00:41:17,800
+apuntaba ahí pero también
+
+901
+00:41:17,800 --> 00:41:19,800
+acaba de mencionar otra cosa
+
+902
+00:41:19,800 --> 00:41:21,800
+otra cuestión que es
+
+903
+00:41:21,800 --> 00:41:23,800
+los dominios tampoco van a ser estativos
+
+904
+00:41:23,800 --> 00:41:25,800
+las organizaciones son dinámicas
+
+905
+00:41:25,800 --> 00:41:27,800
+y las iniciativas
+
+906
+00:41:27,800 --> 00:41:29,800
+los productos o los equipos
+
+907
+00:41:29,800 --> 00:41:31,800
+en las organizaciones también son dinámicos
+
+908
+00:41:31,800 --> 00:41:33,800
+y van cambiando
+
+909
+00:41:33,800 --> 00:41:35,800
+también nosotros pensamos esto de manera orgánica
+
+910
+00:41:35,800 --> 00:41:37,800
+es decir hoy en día
+
+911
+00:41:37,800 --> 00:41:39,800
+podemos definir un dominio
+
+912
+00:41:39,800 --> 00:41:41,800
+y el día de mañana ese dominio se tiene que
+
+913
+00:41:41,800 --> 00:41:43,800
+explicar
+
+914
+00:41:43,800 --> 00:41:45,800
+va creciendo y ven la necesidad
+
+915
+00:41:45,800 --> 00:41:47,800
+de que ese dominio el día de mañana sean dos
+
+916
+00:41:47,800 --> 00:41:49,800
+o puede ser que dos dominios
+
+917
+00:41:49,800 --> 00:41:51,800
+el día de mañana se unan
+
+918
+00:41:51,800 --> 00:41:53,800
+eso
+
+919
+00:41:53,800 --> 00:41:55,800
+tiene más que ver con
+
+920
+00:41:55,800 --> 00:41:57,800
+la dinámica de la organización
+
+921
+00:41:57,800 --> 00:41:59,800
+de estos dominios pero en cuanto
+
+922
+00:41:59,800 --> 00:42:01,800
+a interoperabilidad
+
+923
+00:42:01,800 --> 00:42:03,800
+por definición deben ser todos interoperables
+
+924
+00:42:05,800 --> 00:42:07,800
+perfecto
+
+925
+00:42:07,800 --> 00:42:09,800
+después Marco nos pregunta
+
+926
+00:42:09,800 --> 00:42:11,800
+si la estructura
+
+927
+00:42:11,800 --> 00:42:13,800
+que fue construida es el 100%
+
+928
+00:42:13,800 --> 00:42:15,800
+self service
+
+929
+00:42:15,800 --> 00:42:17,800
+o hay que hacer algún tipo
+
+930
+00:42:17,800 --> 00:42:19,800
+de operatoria extra
+
+931
+00:42:21,800 --> 00:42:23,800
+dentro de
+
+932
+00:42:23,800 --> 00:42:25,800
+lo que es data mesh
+
+933
+00:42:25,800 --> 00:42:27,800
+hoy en día el equipo de data se vivía
+
+934
+00:42:27,800 --> 00:42:29,800
+dentro de mesh y fuera de mesh
+
+935
+00:42:29,800 --> 00:42:31,800
+estamos en un proceso de incorporación
+
+936
+00:42:31,800 --> 00:42:33,800
+de este nuevo paradigma
+
+937
+00:42:33,800 --> 00:42:35,800
+todo lo que está dentro de mesh tiene carácter
+
+938
+00:42:35,800 --> 00:42:37,800
+de self service
+
+939
+00:42:37,800 --> 00:42:39,800
+y se desarrolla y se piensa de esa manera
+
+940
+00:42:39,800 --> 00:42:41,800
+así que todas las soluciones que forman parte de mesh
+
+941
+00:42:41,800 --> 00:42:43,800
+tienen que tener
+
+942
+00:42:43,800 --> 00:42:45,800
+este carácter de self service
+
+943
+00:42:45,800 --> 00:42:47,800
+obviamente por debajo
+
+944
+00:42:47,800 --> 00:42:49,800
+no dejan de ser aplicaciones
+
+945
+00:42:49,800 --> 00:42:51,800
+de un tipo de soporte
+
+946
+00:42:51,800 --> 00:42:53,800
+que tenemos un equipo especializado
+
+947
+00:42:53,800 --> 00:42:55,800
+pero es más que nada
+
+948
+00:42:55,800 --> 00:42:57,800
+no soporte a la creación y el consumo
+
+949
+00:42:57,800 --> 00:42:59,800
+de los datos sino a la utilización de la herramienta
+
+950
+00:42:59,800 --> 00:43:01,800
+por si hay algún problema
+
+951
+00:43:01,800 --> 00:43:03,800
+bien muchas gracias
+
+952
+00:43:03,800 --> 00:43:05,800
+y por último nos preguntan
+
+953
+00:43:05,800 --> 00:43:07,800
+si herramientas del tipo
+
+954
+00:43:07,800 --> 00:43:09,800
+Kafka fueron usadas
+
+955
+00:43:09,800 --> 00:43:11,800
+o alguna tecnología particular
+
+956
+00:43:11,800 --> 00:43:13,800
+de cloud
+
+957
+00:43:13,800 --> 00:43:15,800
+todo lo que
+
+958
+00:43:15,800 --> 00:43:17,800
+van a ser
+
+959
+00:43:17,800 --> 00:43:19,800
+todo lo que corre dentro
+
+960
+00:43:19,800 --> 00:43:21,800
+de Mercado Libre
+
+961
+00:43:21,800 --> 00:43:23,800
+está bajo la gestión
+
+962
+00:43:23,800 --> 00:43:25,800
+de Fury que es una abstracción
+
+963
+00:43:25,800 --> 00:43:27,800
+nuestra de tecnologías puntuales
+
+964
+00:43:27,800 --> 00:43:29,800
+pero para responder puntualmente
+
+965
+00:43:29,800 --> 00:43:31,800
+tu pregunta nosotros utilizamos
+
+966
+00:43:31,800 --> 00:43:33,800
+lo que son tópicos de novedades
+
+967
+00:43:33,800 --> 00:43:35,800
+que no quiere decir que abajo
+
+968
+00:43:35,800 --> 00:43:37,800
+haya un Kafka pero básicamente
+
+969
+00:43:37,800 --> 00:43:39,800
+lo que viene a simular estos tópicos de novedades
+
+970
+00:43:39,800 --> 00:43:41,800
+es esa tecnología como un Rabbit MQ
+
+971
+00:43:41,800 --> 00:43:43,800
+es todo cloud
+
+972
+00:43:43,800 --> 00:43:45,800
+así que corresponde tu pregunta
+
+973
+00:43:45,800 --> 00:43:47,800
+y tenemos tecnología simil Kafka
+
+974
+00:43:47,800 --> 00:43:49,800
+creo que hay alguna parte de Kafka pero para nosotros es una abstracción
+
+975
+00:43:49,800 --> 00:43:51,800
+necesitamos suscribirnos
+
+976
+00:43:51,800 --> 00:43:53,800
+un tópico de novedades y eso está resuelto
+
+977
+00:43:53,800 --> 00:43:55,800
+y para complementarte
+
+978
+00:43:55,800 --> 00:43:57,800
+hoy
+
+979
+00:43:57,800 --> 00:43:59,800
+hoy
+
+980
+00:43:59,800 --> 00:44:01,800
+mesh
+
+981
+00:44:01,800 --> 00:44:03,800
+corre con la tecnología que tenemos
+
+982
+00:44:03,800 --> 00:44:05,800
+y
+
+983
+00:44:05,800 --> 00:44:07,800
+creo que nos fuimos favorecidos
+
+984
+00:44:07,800 --> 00:44:09,800
+cuando planteamos esto teníamos
+
+985
+00:44:09,800 --> 00:44:11,800
+bastantes cosas a favor
+
+986
+00:44:11,800 --> 00:44:13,800
+cambios tecnológicos que permitían que esto suceda
+
+987
+00:44:13,800 --> 00:44:15,800
+un montón de equipos fuera del equipo central
+
+988
+00:44:15,800 --> 00:44:17,800
+que ya estaban en equipos de negocio
+
+989
+00:44:17,800 --> 00:44:19,800
+con los skill necesarios
+
+990
+00:44:19,800 --> 00:44:21,800
+para que esto también suceda
+
+991
+00:44:21,800 --> 00:44:23,800
+de hecho había gente que nos venía y golpeaba la puerta
+
+992
+00:44:23,800 --> 00:44:25,800
+cuando puedo publicar datos
+
+993
+00:44:25,800 --> 00:44:27,800
+para todo mercado libre
+
+994
+00:44:27,800 --> 00:44:29,800
+pero esto no quiere decir
+
+995
+00:44:29,800 --> 00:44:31,800
+de que continuemos
+
+996
+00:44:31,800 --> 00:44:33,800
+de que no continuemos trabajando
+
+997
+00:44:33,800 --> 00:44:35,800
+continuamos trabajando muy fuertemente porque
+
+998
+00:44:35,800 --> 00:44:37,800
+las tecnologías
+
+999
+00:44:37,800 --> 00:44:39,800
+que tenemos que seguir integrando
+
+1000
+00:44:39,800 --> 00:44:41,800
+son diversas
+
+1001
+00:44:41,800 --> 00:44:43,800
+cintas, hoy como decía
+
+1002
+00:44:43,800 --> 00:44:45,800
+en lo que fue esta evolución
+
+1003
+00:44:45,800 --> 00:44:47,800
+de nuestra herramienta de pipelines
+
+1004
+00:44:47,800 --> 00:44:49,800
+pudimos simplificar
+
+1005
+00:44:49,800 --> 00:44:51,800
+varios de los flujos
+
+1006
+00:44:51,800 --> 00:44:53,800
+más utilizados
+
+1007
+00:44:53,800 --> 00:44:55,800
+pero hay otros flujos que todavía no tenemos contemplados
+
+1008
+00:44:55,800 --> 00:44:57,800
+y que estamos justamente pensando
+
+1009
+00:44:57,800 --> 00:44:59,800
+como lo podemos hacer lo más sencillo posible
+
+1010
+00:44:59,800 --> 00:45:01,800
+por lo tanto
+
+1011
+00:45:01,800 --> 00:45:03,800
+tecnologías sí que
+
+1012
+00:45:03,800 --> 00:45:05,800
+media es todo full cloud
+
+1013
+00:45:05,800 --> 00:45:07,800
+pero
+
+1014
+00:45:07,800 --> 00:45:09,800
+pero que las tecnologías también van a ir evolucionando
+
+1015
+00:45:09,800 --> 00:45:11,800
+a medida que veamos que sea necesario
+
+1016
+00:45:11,800 --> 00:45:13,800
+bien
+
+1017
+00:45:13,800 --> 00:45:15,800
+y también nos preguntan
+
+1018
+00:45:15,800 --> 00:45:17,800
+cuál fue el primer dominio
+
+1019
+00:45:17,800 --> 00:45:19,800
+que eligieron si tuvo alguna razón
+
+1020
+00:45:19,800 --> 00:45:21,800
+de ser por el cual lo eligieron
+
+1021
+00:45:21,800 --> 00:45:23,800
+y en qué porcentaje
+
+1022
+00:45:23,800 --> 00:45:25,800
+los dominios ya están siendo
+
+1023
+00:45:25,800 --> 00:45:27,800
+migrados
+
+1024
+00:45:27,800 --> 00:45:29,800
+a esta nueva modalidad
+
+1025
+00:45:29,800 --> 00:45:31,800
+empezamos con
+
+1026
+00:45:31,800 --> 00:45:33,800
+cuatro dominios
+
+1027
+00:45:35,800 --> 00:45:37,800
+pero el primero que tuvimos en mente
+
+1028
+00:45:37,800 --> 00:45:39,800
+es un dominio
+
+1029
+00:45:39,800 --> 00:45:41,800
+es un equipo de Mercado en BIOS
+
+1030
+00:45:41,800 --> 00:45:43,800
+que nosotros llamamos Shipping
+
+1031
+00:45:43,800 --> 00:45:45,800
+internamente
+
+1032
+00:45:45,800 --> 00:45:47,800
+porque fue la primera área de datos
+
+1033
+00:45:47,800 --> 00:45:49,800
+que se creó
+
+1034
+00:45:49,800 --> 00:45:51,800
+externa al área central
+
+1035
+00:45:51,800 --> 00:45:53,800
+entonces después de algunos años
+
+1036
+00:45:53,800 --> 00:45:55,800
+era un equipo
+
+1037
+00:45:55,800 --> 00:45:57,800
+que tenía un montón de responsabilidad
+
+1038
+00:45:57,800 --> 00:45:59,800
+dentro de todo lo que es Shipping
+
+1039
+00:45:59,800 --> 00:46:01,800
+venían trabajando de una manera
+
+1040
+00:46:01,800 --> 00:46:03,800
+ellos se enojarían si yo digo informal
+
+1041
+00:46:03,800 --> 00:46:05,800
+pero bueno en cuanto a garantías
+
+1042
+00:46:05,800 --> 00:46:07,800
+de infraestructura y demás
+
+1043
+00:46:07,800 --> 00:46:09,800
+era informal
+
+1044
+00:46:09,800 --> 00:46:11,800
+entonces
+
+1045
+00:46:11,800 --> 00:46:13,800
+vimos que era un equipo muy maduro
+
+1046
+00:46:13,800 --> 00:46:15,800
+con muchos skills
+
+1047
+00:46:15,800 --> 00:46:17,800
+con gente que sabía mucho
+
+1048
+00:46:17,800 --> 00:46:19,800
+y le faltaba un poco esa asistencia
+
+1049
+00:46:19,800 --> 00:46:21,800
+de infraestructura
+
+1050
+00:46:21,800 --> 00:46:23,800
+de plataforma
+
+1051
+00:46:23,800 --> 00:46:25,800
+de que nosotros los ayudemos con las herramientas necesarias
+
+1052
+00:46:25,800 --> 00:46:27,800
+para que sean dueños del ciclo con el día
+
+1053
+00:46:27,800 --> 00:46:29,800
+completo del dato
+
+1054
+00:46:29,800 --> 00:46:31,800
+así que por un lado
+
+1055
+00:46:31,800 --> 00:46:33,800
+ese fue el primero que se nos vino a la mente
+
+1056
+00:46:33,800 --> 00:46:35,800
+y de momento
+
+1057
+00:46:35,800 --> 00:46:37,800
+el estadio hoy es que no lo abrimos
+
+1058
+00:46:37,800 --> 00:46:39,800
+como decimos nosotros a mal abierto
+
+1059
+00:46:39,800 --> 00:46:41,800
+todavía no está abierto a que cualquiera
+
+1060
+00:46:41,800 --> 00:46:43,800
+que quiera un dominio lo pueda tener
+
+1061
+00:46:43,800 --> 00:46:45,800
+porque como les decía antes
+
+1062
+00:46:45,800 --> 00:46:47,800
+es un proceso de transformación en el que
+
+1063
+00:46:47,800 --> 00:46:49,800
+dijimos
+
+1064
+00:46:49,800 --> 00:46:51,800
+vamos a ir de a poco
+
+1065
+00:46:51,800 --> 00:46:53,800
+pasos seguros
+
+1066
+00:46:53,800 --> 00:46:55,800
+y quizás si nos demoramos
+
+1067
+00:46:55,800 --> 00:46:57,800
+un poco más
+
+1068
+00:46:57,800 --> 00:46:59,800
+pero tener el feedback más rico
+
+1069
+00:46:59,800 --> 00:47:01,800
+de estos primeros equipos
+
+1070
+00:47:01,800 --> 00:47:03,800
+con mucho más expertise
+
+1071
+00:47:03,800 --> 00:47:05,800
+para ver si le pifiamos en algo
+
+1072
+00:47:05,800 --> 00:47:07,800
+si hay algo que tenemos que ajustar
+
+1073
+00:47:07,800 --> 00:47:09,800
+que va a ser mucho más fácil ajustarlo
+
+1074
+00:47:09,800 --> 00:47:11,800
+para pocos dominios
+
+1075
+00:47:11,800 --> 00:47:13,800
+que pensar
+
+1076
+00:47:13,800 --> 00:47:15,800
+que nos equivocamos en hacerlo en el rollout
+
+1077
+00:47:15,800 --> 00:47:17,800
+antes de lo esperado
+
+1078
+00:47:17,800 --> 00:47:19,800
+por lo tanto ahora estamos con cuatro dominios
+
+1079
+00:47:19,800 --> 00:47:21,800
+ahora vamos a ir con una segunda wave
+
+1080
+00:47:21,800 --> 00:47:23,800
+en la que estamos evaluando si vamos a ir por cuatro más
+
+1081
+00:47:23,800 --> 00:47:25,800
+o creo que ya nos sentimos bastante confiados
+
+1082
+00:47:25,800 --> 00:47:27,800
+como para aumentar bastante el número
+
+1083
+00:47:27,800 --> 00:47:29,800
+y seguramente ya en el 2023
+
+1084
+00:47:29,800 --> 00:47:31,800
+ya sea maravilloso
+
+1085
+00:47:31,800 --> 00:47:33,800
+perfecto
+
+1086
+00:47:33,800 --> 00:47:35,800
+y en relación a eso
+
+1087
+00:47:35,800 --> 00:47:37,800
+si fue proceso
+
+1088
+00:47:37,800 --> 00:47:39,800
+de educación de los usuarios
+
+1089
+00:47:39,800 --> 00:47:41,800
+para este nuevo paradigma
+
+1090
+00:47:43,800 --> 00:47:45,800
+lo que hicimos fue
+
+1091
+00:47:45,800 --> 00:47:47,800
+trabajar por distintos frentes en workshop
+
+1092
+00:47:47,800 --> 00:47:49,800
+y acompañamiento
+
+1093
+00:47:49,800 --> 00:47:51,800
+básicamente estuvimos
+
+1094
+00:47:51,800 --> 00:47:53,800
+todo lo que fue el cu pasado haciendo formación
+
+1095
+00:47:53,800 --> 00:47:55,800
+y training de los equipos porque
+
+1096
+00:47:55,800 --> 00:47:57,800
+esto no es solamente
+
+1097
+00:47:57,800 --> 00:47:59,800
+un cambio técnico o de tool
+
+1098
+00:47:59,800 --> 00:48:01,800
+sino que es un cambio cultural
+
+1099
+00:48:01,800 --> 00:48:03,800
+entonces hay muchas preguntas
+
+1100
+00:48:03,800 --> 00:48:05,800
+porque es que tenemos que responder a veces
+
+1101
+00:48:05,800 --> 00:48:07,800
+y saciar dudas
+
+1102
+00:48:07,800 --> 00:48:09,800
+así que fuimos trabajando en diferentes workshops
+
+1103
+00:48:09,800 --> 00:48:11,800
+y obviamente
+
+1104
+00:48:11,800 --> 00:48:13,800
+en acompañamiento
+
+1105
+00:48:13,800 --> 00:48:15,800
+tengo 25 shop
+
+1106
+00:48:15,800 --> 00:48:17,800
+tengo 25 tablas
+
+1107
+00:48:17,800 --> 00:48:19,800
+te acompañamos en las primeras para que te sientas confiado
+
+1108
+00:48:19,800 --> 00:48:21,800
+y luego puedas seguir
+
+1109
+00:48:21,800 --> 00:48:23,800
+ese fue el proceso por lo menos que fuimos caminando hasta el momento
+
+1110
+00:48:23,800 --> 00:48:25,800
+y una pregunta
+
+1111
+00:48:25,800 --> 00:48:27,800
+o ir cerrando
+
+1112
+00:48:27,800 --> 00:48:29,800
+si se necesitaron
+
+1113
+00:48:29,800 --> 00:48:31,800
+para cada dominio data engineer
+
+1114
+00:48:31,800 --> 00:48:33,800
+particulares
+
+1115
+00:48:35,800 --> 00:48:37,800
+si
+
+1116
+00:48:37,800 --> 00:48:39,800
+pero no necesitamos contratar de momento
+
+1117
+00:48:39,800 --> 00:48:41,800
+justamente
+
+1118
+00:48:41,800 --> 00:48:43,800
+como decía antes
+
+1119
+00:48:43,800 --> 00:48:45,800
+tuvimos un viento que soplaba favor
+
+1120
+00:48:45,800 --> 00:48:47,800
+que era que ya había
+
+1121
+00:48:47,800 --> 00:48:49,800
+muchos data engineers
+
+1122
+00:48:49,800 --> 00:48:51,800
+en equipos que no eran los equipos
+
+1123
+00:48:51,800 --> 00:48:53,800
+el equipo central
+
+1124
+00:48:53,800 --> 00:48:55,800
+es una de las imágenes que mostramos
+
+1125
+00:48:55,800 --> 00:48:57,800
+en los que no había
+
+1126
+00:48:57,800 --> 00:48:59,800
+ETLs solamente
+
+1127
+00:48:59,800 --> 00:49:01,800
+en esa parte central
+
+1128
+00:49:01,800 --> 00:49:03,800
+sino que había ETLs
+
+1129
+00:49:03,800 --> 00:49:05,800
+ya sucediendo de manera informal en un montón de equipos
+
+1130
+00:49:05,800 --> 00:49:07,800
+por lo tanto
+
+1131
+00:49:07,800 --> 00:49:09,800
+al menos para los primeros dominios
+
+1132
+00:49:09,800 --> 00:49:11,800
+que están saliendo
+
+1133
+00:49:11,800 --> 00:49:13,800
+a implementar mesh
+
+1134
+00:49:13,800 --> 00:49:15,800
+no
+
+1135
+00:49:15,800 --> 00:49:17,800
+no está siendo necesario contratar data engineers
+
+1136
+00:49:17,800 --> 00:49:19,800
+porque ya tienen
+
+1137
+00:49:19,800 --> 00:49:21,800
+gente con skills de data engineer
+
+1138
+00:49:21,800 --> 00:49:23,800
+pero seguramente si
+
+1139
+00:49:23,800 --> 00:49:25,800
+para otros
+
+1140
+00:49:25,800 --> 00:49:27,800
+dominios a futuro
+
+1141
+00:49:27,800 --> 00:49:29,800
+que quieran tomar el control completo
+
+1142
+00:49:29,800 --> 00:49:31,800
+del ciclo de vía a los datos
+
+1143
+00:49:31,800 --> 00:49:33,800
+seguramente los vayan a necesitar
+
+1144
+00:49:33,800 --> 00:49:35,800
+y complementando lo que dijo Gaby
+
+1145
+00:49:35,800 --> 00:49:37,800
+otra parte que para nosotros es fundamental
+
+1146
+00:49:37,800 --> 00:49:39,800
+en lo que es el cambio cultural
+
+1147
+00:49:39,800 --> 00:49:41,800
+es que esto
+
+1148
+00:49:41,800 --> 00:49:43,800
+da mayor poder
+
+1149
+00:49:43,800 --> 00:49:45,800
+a estos equipos
+
+1150
+00:49:45,800 --> 00:49:47,800
+pero también creemos
+
+1151
+00:49:47,800 --> 00:49:49,800
+que el poder viene de la mano
+
+1152
+00:49:49,800 --> 00:49:51,800
+de mayor responsabilidad
+
+1153
+00:49:51,800 --> 00:49:53,800
+por lo tanto
+
+1154
+00:49:53,800 --> 00:49:55,800
+tenemos que asegurarnos
+
+1155
+00:49:55,800 --> 00:49:57,800
+nosotros como equipos central
+
+1156
+00:49:57,800 --> 00:49:59,800
+de que estos equipos
+
+1157
+00:49:59,800 --> 00:50:01,800
+actúen con responsabilidad
+
+1158
+00:50:01,800 --> 00:50:03,800
+y quedó justamente
+
+1159
+00:50:03,800 --> 00:50:05,800
+si hay algo que se rompe
+
+1160
+00:50:05,800 --> 00:50:07,800
+tengan gente con skills adecuados
+
+1161
+00:50:07,800 --> 00:50:09,800
+para poder arreglarlo
+
+1162
+00:50:09,800 --> 00:50:11,800
+bien y una pregunta
+
+1163
+00:50:11,800 --> 00:50:13,800
+parece que generó mucho interés
+
+1164
+00:50:13,800 --> 00:50:15,800
+la idea que presentaron
+
+1165
+00:50:15,800 --> 00:50:17,800
+y lo que preguntan es
+
+1166
+00:50:17,800 --> 00:50:19,800
+cómo pensarían ustedes
+
+1167
+00:50:19,800 --> 00:50:21,800
+cómo se podría empezar
+
+1168
+00:50:21,800 --> 00:50:23,800
+para hacer un data mesh
+
+1169
+00:50:23,800 --> 00:50:25,800
+desde cero
+
+1170
+00:50:25,800 --> 00:50:27,800
+sin herramientas propias
+
+1171
+00:50:27,800 --> 00:50:29,800
+de medio
+
+1172
+00:50:29,800 --> 00:50:31,800
+creo que
+
+1173
+00:50:31,800 --> 00:50:33,800
+en este primer paso
+
+1174
+00:50:33,800 --> 00:50:35,800
+antes de pensar en una herramienta pensaría
+
+1175
+00:50:35,800 --> 00:50:37,800
+en los diferentes escenarios
+
+1176
+00:50:37,800 --> 00:50:39,800
+que tenés que abordar para cubrir
+
+1177
+00:50:39,800 --> 00:50:41,800
+la observabilidad
+
+1178
+00:50:41,800 --> 00:50:43,800
+el descubrimiento, el catalogado, trazabilidad
+
+1179
+00:50:43,800 --> 00:50:45,800
+primero las necesidades
+
+1180
+00:50:45,800 --> 00:50:47,800
+para que imagino que cada empresa
+
+1181
+00:50:47,800 --> 00:50:49,800
+obviamente va a tener sus distintos niveles
+
+1182
+00:50:49,800 --> 00:50:51,800
+de madurez para afrontar esto
+
+1183
+00:50:51,800 --> 00:50:53,800
+primero entendería bien
+
+1184
+00:50:53,800 --> 00:50:55,800
+eso y luego empezaría a buscar
+
+1185
+00:50:55,800 --> 00:50:57,800
+herramientas que obviamente
+
+1186
+00:50:57,800 --> 00:50:59,800
+se puedan, ahí creo que decía un premis
+
+1187
+00:50:59,800 --> 00:51:01,800
+herramientas que se puedan adaptar
+
+1188
+00:51:01,800 --> 00:51:03,800
+a ese tipo de necesidad
+
+1189
+00:51:03,800 --> 00:51:05,800
+para mí hoy en día implementar mesh
+
+1190
+00:51:05,800 --> 00:51:07,800
+el problema no está tanto en las herramientas
+
+1191
+00:51:07,800 --> 00:51:09,800
+sino en cómo hacer una solución
+
+1192
+00:51:09,800 --> 00:51:11,800
+de negocio que escale en el tiempo
+
+1193
+00:51:11,800 --> 00:51:13,800
+y no sea demasiado costosa
+
+1194
+00:51:13,800 --> 00:51:15,800
+en el punto de vista, no sé, Nachito
+
+1195
+00:51:15,800 --> 00:51:17,800
+si, concuerdo
+
+1196
+00:51:17,800 --> 00:51:19,800
+creo que herramientas hay de sobra
+
+1197
+00:51:19,800 --> 00:51:21,800
+el tema es ver
+
+1198
+00:51:21,800 --> 00:51:23,800
+cómo se adapta mesh
+
+1199
+00:51:23,800 --> 00:51:25,800
+primero hay que ver si la organización lo necesita
+
+1200
+00:51:27,800 --> 00:51:29,800
+quizás no sea necesario
+
+1201
+00:51:29,800 --> 00:51:31,800
+pero en el caso que lo necesite
+
+1202
+00:51:31,800 --> 00:51:33,800
+hay que ver cómo se adapta mesh
+
+1203
+00:51:33,800 --> 00:51:35,800
+a la estructura que necesitan hacer
+
+1204
+00:51:37,800 --> 00:51:39,800
+no es descentralizar por descentralizar
+
+1205
+00:51:39,800 --> 00:51:41,800
+es descentralizar con un sentido
+
+1206
+00:51:41,800 --> 00:51:43,800
+de agilidad controlada
+
+1207
+00:51:43,800 --> 00:51:45,800
+tuvimos hace
+
+1208
+00:51:45,800 --> 00:51:47,800
+unas semanas una charla
+
+1209
+00:51:47,800 --> 00:51:49,800
+con una persona que fue la que implementó mesh
+
+1210
+00:51:49,800 --> 00:51:51,800
+en el New York Times
+
+1211
+00:51:51,800 --> 00:51:53,800
+y a diferencia de nosotros, ellos tenían
+
+1212
+00:51:53,800 --> 00:51:55,800
+muy poquitos dominios y con eso ya estaban bien
+
+1213
+00:51:55,800 --> 00:51:57,800
+nosotros
+
+1214
+00:51:57,800 --> 00:51:59,800
+tenemos la necesidad por cómo el mercado libre
+
+1215
+00:51:59,800 --> 00:52:01,800
+de tener un número
+
+1216
+00:52:01,800 --> 00:52:03,800
+muchísimo más grande de dominios
+
+1217
+00:52:03,800 --> 00:52:05,800
+entonces tenemos un desafío
+
+1218
+00:52:05,800 --> 00:52:07,800
+bastante mayor en lo que es Gobernate
+
+1219
+00:52:07,800 --> 00:52:09,800
+en lo que es herramientas para que eso sea un mismo ecosistema
+
+1220
+00:52:09,800 --> 00:52:11,800
+pero
+
+1221
+00:52:11,800 --> 00:52:13,800
+si yo concuerdo con lo que decía David
+
+1222
+00:52:13,800 --> 00:52:15,800
+no es tanto, creo que herramientas siempre se encuentran
+
+1223
+00:52:15,800 --> 00:52:17,800
+una forma de solucionar un problema
+
+1224
+00:52:17,800 --> 00:52:19,800
+con una herramienta, hay muchísimo
+
+1225
+00:52:19,800 --> 00:52:21,800
+dando vueltas por ahí en el mercado
+
+1226
+00:52:21,800 --> 00:52:23,800
+el desafío más grande
+
+1227
+00:52:23,800 --> 00:52:25,800
+es
+
+1228
+00:52:25,800 --> 00:52:27,800
+es cómo hacer
+
+1229
+00:52:27,800 --> 00:52:29,800
+cómo combinar todo esto junto
+
+1230
+00:52:29,800 --> 00:52:31,800
+para que realmente funcione
+
+1231
+00:52:33,800 --> 00:52:35,800
+bien
+
+1232
+00:52:35,800 --> 00:52:37,800
+muchísimas gracias, excelente
+
+1233
+00:52:37,800 --> 00:52:39,800
+la presentación
+
+1234
+00:52:39,800 --> 00:52:41,800
+Juan, adelante por favor
+
+1235
+00:52:41,800 --> 00:52:43,800
+bueno
+
+1236
+00:52:43,800 --> 00:52:45,800
+quería agradecerles
+
+1237
+00:52:45,800 --> 00:52:47,800
+especialmente a Gabriela Ignacio
+
+1238
+00:52:47,800 --> 00:52:49,800
+por esta presentación
+
+1239
+00:52:49,800 --> 00:52:51,800
+que no solamente ha sido
+
+1240
+00:52:51,800 --> 00:52:53,800
+una presentación
+
+1241
+00:52:53,800 --> 00:52:55,800
+extremadamente prolija
+
+1242
+00:52:55,800 --> 00:52:57,800
+didáctica
+
+1243
+00:52:57,800 --> 00:52:59,800
+lo importante
+
+1244
+00:52:59,800 --> 00:53:01,800
+para nosotros es que hayan compartido
+
+1245
+00:53:01,800 --> 00:53:03,800
+justamente la experiencia
+
+1246
+00:53:03,800 --> 00:53:05,800
+que han tenido ustedes
+
+1247
+00:53:05,800 --> 00:53:07,800
+la implementación
+
+1248
+00:53:07,800 --> 00:53:09,800
+de esta nueva idea
+
+1249
+00:53:09,800 --> 00:53:11,800
+de Meys como lo dijo
+
+1250
+00:53:11,800 --> 00:53:13,800
+muy bien Gabriel
+
+1251
+00:53:13,800 --> 00:53:15,800
+Ignacio
+
+1252
+00:53:15,800 --> 00:53:17,800
+esto es algo nuevo, no podemos encontrar
+
+1253
+00:53:17,800 --> 00:53:19,800
+muchos antecedentes
+
+1254
+00:53:19,800 --> 00:53:21,800
+incluso en el mundo
+
+1255
+00:53:21,800 --> 00:53:23,800
+así que
+
+1256
+00:53:23,800 --> 00:53:25,800
+esto es más que valioso para nosotros
+
+1257
+00:53:25,800 --> 00:53:27,800
+bueno muchísimas gracias
+
+1258
+00:53:27,800 --> 00:53:29,800
+de nuevo
+
+1259
+00:53:29,800 --> 00:53:31,800
+Gabriela Ignacio por su participación
+
+1260
+00:53:31,800 --> 00:53:33,800
+en esta jornada
+
+1261
+00:53:33,800 --> 00:53:35,800
+bueno vamos a hacer ahora
+
+1262
+00:53:35,800 --> 00:53:37,800
+un pequeño intervalo
+
+1263
+00:53:37,800 --> 00:53:39,800
+y
+
+1264
+00:53:39,800 --> 00:53:41,800
+empezamos de nuevo a las 15
+
+1265
+00:53:41,800 --> 00:53:43,800
+con la presentación de Panamérica
+
+1266
+00:53:43,800 --> 00:53:45,800
+bueno muchas gracias
+
+1267
+00:54:03,800 --> 00:54:05,800
+y
+
+1268
+00:54:33,800 --> 00:54:35,800
+gracias
+
+1269
+00:55:03,800 --> 00:55:05,800
+y
+
+1270
+00:55:33,800 --> 00:55:35,800
+y
+
+1271
+00:56:03,800 --> 00:56:05,800
+y
+
+1272
+00:56:33,800 --> 00:56:35,800
+y
+
+1273
+00:56:37,800 --> 00:56:39,800
+y
+
+1274
+00:56:39,800 --> 00:56:41,800
+y
+
+1275
+00:56:41,800 --> 00:56:43,800
+y
+
+1276
+00:56:43,800 --> 00:56:45,800
+y
+
+1277
+00:56:45,800 --> 00:56:47,800
+y
+
+1278
+00:56:47,800 --> 00:56:49,800
+y
+
+1279
+00:56:49,800 --> 00:56:51,800
+y
+
+1280
+00:56:51,800 --> 00:56:53,800
+y
+
+1281
+00:56:53,800 --> 00:56:55,800
+y
+
+1282
+00:56:55,800 --> 00:56:57,800
+y
+
+1283
+00:56:57,800 --> 00:56:59,800
+y
+
+1284
+00:56:59,800 --> 00:57:01,800
+y
+
+1285
+00:57:01,800 --> 00:57:03,800
+y
+
+1286
+00:57:05,800 --> 00:57:07,800
+y
+
+1287
+00:57:07,800 --> 00:57:09,800
+y
+
+1288
+00:57:09,800 --> 00:57:11,800
+y
+
+1289
+00:57:11,800 --> 00:57:13,800
+y
+
+1290
+00:57:13,800 --> 00:57:15,800
+y
+
+1291
+00:57:15,800 --> 00:57:17,800
+y
+
+1292
+00:57:17,800 --> 00:57:19,800
+y
+
+1293
+00:57:19,800 --> 00:57:21,800
+y
+
+1294
+00:57:21,800 --> 00:57:23,800
+y
+
+1295
+00:57:23,800 --> 00:57:25,800
+y
+
+1296
+00:57:25,800 --> 00:57:27,800
+y
+
+1297
+00:57:27,800 --> 00:57:29,800
+y
+
+1298
+00:57:29,800 --> 00:57:31,800
+y
+
+1299
+00:57:31,800 --> 00:57:33,800
+y
+
+1300
+00:57:33,800 --> 00:57:35,800
+y
+
+1301
+00:57:35,800 --> 00:57:37,800
+y
+
+1302
+00:57:37,800 --> 00:57:39,800
+y
+
+1303
+00:57:39,800 --> 00:57:41,800
+y
+
+1304
+00:57:41,800 --> 00:57:43,800
+y
+
+1305
+00:57:43,800 --> 00:57:45,800
+y
+
+1306
+00:57:45,800 --> 00:57:47,800
+y
+
+1307
+00:57:47,800 --> 00:57:49,800
+y
+
+1308
+00:57:51,800 --> 00:57:53,800
+y
+
+1309
+00:57:53,800 --> 00:57:55,800
+y
+
+1310
+00:57:55,800 --> 00:57:57,800
+y
+
+1311
+00:57:57,800 --> 00:57:59,800
+y
+
+1312
+00:57:59,800 --> 00:58:01,800
+y
+
+1313
+00:58:01,800 --> 00:58:03,800
+y
+
+1314
+00:58:03,800 --> 00:58:05,800
+y
+
+1315
+00:58:09,800 --> 00:58:11,800
+y
+
+1316
+00:58:11,800 --> 00:58:13,800
+y
+
+1317
+00:58:13,800 --> 00:58:15,800
+y
+
+1318
+00:58:15,800 --> 00:58:17,800
+y
+
+1319
+00:58:17,800 --> 00:58:19,800
+y
+
+1320
+00:58:19,800 --> 00:58:21,800
+y
+
+1321
+00:58:21,800 --> 00:58:23,800
+y
+
+1322
+00:58:23,800 --> 00:58:25,800
+y
+
+1323
+00:58:25,800 --> 00:58:27,800
+y
+
+1324
+00:58:27,800 --> 00:58:29,800
+y
+
+1325
+00:58:29,800 --> 00:58:31,800
+y
+
+1326
+00:58:31,800 --> 00:58:33,800
+y
+
+1327
+00:58:33,800 --> 00:58:35,800
+y
+
+1328
+00:58:35,800 --> 00:58:37,800
+y
+
+1329
+00:58:37,800 --> 00:58:39,800
+y
+
+1330
+00:58:39,800 --> 00:58:41,800
+y
+
+1331
+00:58:41,800 --> 00:58:43,800
+y
+
+1332
+00:58:43,800 --> 00:58:45,800
+y
+
+1333
+00:58:45,800 --> 00:58:47,800
+y
+
+1334
+00:58:47,800 --> 00:58:49,800
+y
+
+1335
+00:58:49,800 --> 00:58:51,800
+y
+
+1336
+00:58:51,800 --> 00:58:53,800
+y
+
+1337
+00:58:53,800 --> 00:58:55,800
+y
+
+1338
+00:58:55,800 --> 00:58:57,800
+y
+
+1339
+00:58:57,800 --> 00:58:59,800
+y
+
+1340
+00:58:59,800 --> 00:59:01,800
+y
+
+1341
+00:59:01,800 --> 00:59:03,800
+y
+
+1342
+00:59:03,800 --> 00:59:05,800
+y
+
+1343
+00:59:05,800 --> 00:59:07,800
+y
+
+1344
+00:59:07,800 --> 00:59:09,800
+y
+
+1345
+00:59:09,800 --> 00:59:11,800
+y
+
+1346
+00:59:11,800 --> 00:59:13,800
+y
+
+1347
+00:59:13,800 --> 00:59:15,800
+y
+
+1348
+00:59:15,800 --> 00:59:17,800
+y
+
+1349
+00:59:19,800 --> 00:59:21,800
+y
+
+1350
+00:59:21,800 --> 00:59:23,800
+y
+
+1351
+00:59:23,800 --> 00:59:25,800
+y
+
+1352
+00:59:25,800 --> 00:59:27,800
+y
+
+1353
+00:59:27,800 --> 00:59:29,800
+y
+
+1354
+00:59:29,800 --> 00:59:33,800
+y
+
+1355
+00:59:33,800 --> 00:59:35,800
+y
+
+1356
+00:59:35,800 --> 00:59:37,800
+y
+
+1357
+00:59:37,800 --> 00:59:39,800
+y
+
+1358
+00:59:39,800 --> 00:59:41,800
+y
+
+1359
+00:59:41,800 --> 00:59:43,800
+y
+
+1360
+00:59:43,800 --> 00:59:45,800
+y
+
+1361
+00:59:45,800 --> 00:59:47,800
+y
+
+1362
+00:59:47,800 --> 00:59:49,800
+y
+
+1363
+00:59:49,800 --> 00:59:51,800
+y
+
+1364
+00:59:51,800 --> 00:59:53,800
+y
+
+1365
+00:59:53,800 --> 00:59:55,800
+y
+
+1366
+00:59:55,800 --> 00:59:57,800
+y
+
+1367
+00:59:57,800 --> 01:00:01,800
+y
+
+1368
+01:00:01,800 --> 01:00:03,800
+y
+
+1369
+01:00:03,800 --> 01:00:05,800
+y
+
+1370
+01:00:05,800 --> 01:00:07,800
+y
+
+1371
+01:00:07,800 --> 01:00:09,800
+y
+
+1372
+01:00:09,800 --> 01:00:11,800
+y
+
+1373
+01:00:11,800 --> 01:00:13,800
+y
+
+1374
+01:00:13,800 --> 01:00:15,800
+y
+
+1375
+01:00:15,800 --> 01:00:17,800
+y
+
+1376
+01:00:17,800 --> 01:00:19,800
+y
+
+1377
+01:00:19,800 --> 01:00:21,800
+y
+
+1378
+01:00:21,800 --> 01:00:23,800
+y
+
+1379
+01:00:23,800 --> 01:00:25,800
+y
+
+1380
+01:00:25,800 --> 01:00:27,800
+y
+
+1381
+01:00:27,800 --> 01:00:29,800
+y
+
+1382
+01:00:29,800 --> 01:00:31,800
+y
+
+1383
+01:00:31,800 --> 01:00:33,800
+y
+
+1384
+01:00:33,800 --> 01:00:35,800
+y
+
+1385
+01:00:35,800 --> 01:00:37,800
+y
+
+1386
+01:00:37,800 --> 01:00:39,800
+y
+
+1387
+01:00:39,800 --> 01:00:41,800
+y
+
+1388
+01:00:43,800 --> 01:00:45,800
+y
+
+1389
+01:00:45,800 --> 01:00:47,800
+y
+
+1390
+01:00:47,800 --> 01:00:49,800
+y
+
+1391
+01:00:49,800 --> 01:00:51,800
+y
+
+1392
+01:00:51,800 --> 01:00:53,800
+y
+
+1393
+01:00:53,800 --> 01:00:55,800
+y
+
+1394
+01:00:55,800 --> 01:00:57,800
+y
+
+1395
+01:00:57,800 --> 01:00:59,800
+y
+
+1396
+01:00:59,800 --> 01:01:01,800
+y
+
+1397
+01:01:01,800 --> 01:01:03,800
+y
+
+1398
+01:01:03,800 --> 01:01:05,800
+y
+
+1399
+01:01:05,800 --> 01:01:07,800
+y
+
+1400
+01:01:07,800 --> 01:01:09,800
+y
+
+1401
+01:01:11,800 --> 01:01:13,800
+y
+
+1402
+01:01:13,800 --> 01:01:15,800
+y
+
+1403
+01:01:15,800 --> 01:01:17,800
+y
+
+1404
+01:01:17,800 --> 01:01:21,800
+y
+
+1405
+01:01:21,800 --> 01:01:23,800
+y
+
+1406
+01:01:23,800 --> 01:01:25,800
+y
+
+1407
+01:01:25,800 --> 01:01:27,800
+y
+
+1408
+01:01:27,800 --> 01:01:29,800
+y
+
+1409
+01:01:29,800 --> 01:01:31,800
+y
+
+1410
+01:01:31,800 --> 01:01:33,800
+y
+
+1411
+01:01:33,800 --> 01:01:35,800
+y
+
+1412
+01:01:35,800 --> 01:01:37,800
+y
+
+1413
+01:01:37,800 --> 01:01:39,800
+y
+
+1414
+01:01:39,800 --> 01:01:41,800
+y
+
+1415
+01:01:41,800 --> 01:01:45,800
+y
+
+1416
+01:01:45,800 --> 01:01:47,800
+y
+
+1417
+01:01:47,800 --> 01:01:49,800
+y
+
+1418
+01:01:49,800 --> 01:01:51,800
+y
+
+1419
+01:01:51,800 --> 01:01:53,800
+y
+
+1420
+01:01:53,800 --> 01:01:55,800
+y
+
+1421
+01:01:55,800 --> 01:01:57,800
+y
+
+1422
+01:01:57,800 --> 01:01:59,800
+y
+
+1423
+01:01:59,800 --> 01:02:01,800
+y
+
+1424
+01:02:01,800 --> 01:02:03,800
+y
+
+1425
+01:02:03,800 --> 01:02:05,800
+y
+
+1426
+01:02:05,800 --> 01:02:07,800
+y
+
+1427
+01:02:07,800 --> 01:02:09,800
+y
+
+1428
+01:02:09,800 --> 01:02:13,800
+y
+
+1429
+01:02:13,800 --> 01:02:15,800
+y
+
+1430
+01:02:15,800 --> 01:02:17,800
+y
+
+1431
+01:02:17,800 --> 01:02:19,800
+y
+
+1432
+01:02:19,800 --> 01:02:21,800
+y
+
+1433
+01:02:21,800 --> 01:02:23,800
+y
+
+1434
+01:02:23,800 --> 01:02:25,800
+y
+
+1435
+01:02:25,800 --> 01:02:27,800
+y
+
+1436
+01:02:27,800 --> 01:02:29,800
+y
+
+1437
+01:02:29,800 --> 01:02:31,800
+y
+
+1438
+01:02:31,800 --> 01:02:33,800
+y
+
+1439
+01:02:33,800 --> 01:02:35,800
+y
+
+1440
+01:02:35,800 --> 01:02:37,800
+y
+
+1441
+01:02:37,800 --> 01:02:39,800
+y
+
+1442
+01:02:39,800 --> 01:02:41,800
+y
+
+1443
+01:02:41,800 --> 01:02:43,800
+y
+
+1444
+01:02:43,800 --> 01:02:45,800
+y
+
+1445
+01:02:45,800 --> 01:02:49,800
+y
+
+1446
+01:02:49,800 --> 01:02:51,800
+y
+
+1447
+01:02:51,800 --> 01:02:53,800
+y
+
+1448
+01:02:53,800 --> 01:02:55,800
+y
+
+1449
+01:02:55,800 --> 01:02:57,800
+y
+
+1450
+01:02:57,800 --> 01:02:59,800
+y
+
+1451
+01:02:59,800 --> 01:03:01,800
+y
+
+1452
+01:03:01,800 --> 01:03:03,800
+y
+
+1453
+01:03:03,800 --> 01:03:05,800
+y
+
+1454
+01:03:05,800 --> 01:03:07,800
+y
+
+1455
+01:03:07,800 --> 01:03:09,800
+y
+
+1456
+01:03:09,800 --> 01:03:11,800
+y
+
+1457
+01:03:11,800 --> 01:03:13,800
+y
+
+1458
+01:03:13,800 --> 01:03:15,800
+y
+
+1459
+01:03:15,800 --> 01:03:17,800
+y
+
+1460
+01:03:17,800 --> 01:03:19,800
+y
+
+1461
+01:03:19,800 --> 01:03:21,800
+y
+
+1462
+01:03:21,800 --> 01:03:23,800
+y
+
+1463
+01:03:23,800 --> 01:03:25,800
+y
+
+1464
+01:03:25,800 --> 01:03:27,800
+y
+
+1465
+01:03:27,800 --> 01:03:29,800
+y
+
+1466
+01:03:31,800 --> 01:03:33,800
+y
+
+1467
+01:03:33,800 --> 01:03:35,800
+y
+
+1468
+01:03:35,800 --> 01:03:37,800
+y
+
+1469
+01:03:37,800 --> 01:03:39,800
+y
+
+1470
+01:03:39,800 --> 01:03:41,800
+y
+
+1471
+01:03:41,800 --> 01:03:43,800
+y
+
+1472
+01:03:43,800 --> 01:03:45,800
+y
+
+1473
+01:03:45,800 --> 01:03:47,800
+y
+
+1474
+01:03:47,800 --> 01:03:49,800
+y
+
+1475
+01:03:49,800 --> 01:03:51,800
+y
+
+1476
+01:03:51,800 --> 01:03:53,800
+y
+
+1477
+01:03:53,800 --> 01:03:55,800
+y
+
+1478
+01:03:55,800 --> 01:03:57,800
+y
+
+1479
+01:03:59,800 --> 01:04:01,800
+y
+
+1480
+01:04:01,800 --> 01:04:03,800
+y
+
+1481
+01:04:03,800 --> 01:04:05,800
+y
+
+1482
+01:04:05,800 --> 01:04:07,800
+y
+
+1483
+01:04:07,800 --> 01:04:09,800
+y
+
+1484
+01:04:09,800 --> 01:04:11,800
+y
+
+1485
+01:04:11,800 --> 01:04:13,800
+y
+
+1486
+01:04:13,800 --> 01:04:15,800
+y
+
+1487
+01:04:15,800 --> 01:04:17,800
+y
+
+1488
+01:04:17,800 --> 01:04:19,800
+y
+
+1489
+01:04:19,800 --> 01:04:21,800
+y
+
+1490
+01:04:21,800 --> 01:04:23,800
+y
+
+1491
+01:04:23,800 --> 01:04:25,800
+y
+
+1492
+01:04:27,800 --> 01:04:29,800
+y
+
+1493
+01:04:29,800 --> 01:04:31,800
+y
+
+1494
+01:04:31,800 --> 01:04:33,800
+y
+
+1495
+01:04:33,800 --> 01:04:35,800
+y
+
+1496
+01:04:35,800 --> 01:04:37,800
+y
+
+1497
+01:04:37,800 --> 01:04:41,800
+y
+
+1498
+01:04:41,800 --> 01:04:43,800
+y
+
+1499
+01:04:43,800 --> 01:04:45,800
+y
+
+1500
+01:04:45,800 --> 01:04:47,800
+y
+
+1501
+01:04:47,800 --> 01:04:49,800
+y
+
+1502
+01:04:49,800 --> 01:04:51,800
+y
+
+1503
+01:04:51,800 --> 01:04:53,800
+y
+
+1504
+01:04:53,800 --> 01:04:55,800
+y
+
+1505
+01:04:55,800 --> 01:04:57,800
+y
+
+1506
+01:04:57,800 --> 01:04:59,800
+y
+
+1507
+01:04:59,800 --> 01:05:01,800
+y
+
+1508
+01:05:01,800 --> 01:05:05,800
+y
+
+1509
+01:05:05,800 --> 01:05:07,800
+y
+
+1510
+01:05:07,800 --> 01:05:09,800
+y
+
+1511
+01:05:09,800 --> 01:05:11,800
+y
+
+1512
+01:05:11,800 --> 01:05:13,800
+y
+
+1513
+01:05:13,800 --> 01:05:15,800
+y
+
+1514
+01:05:15,800 --> 01:05:17,800
+y
+
+1515
+01:05:17,800 --> 01:05:19,800
+y
+
+1516
+01:05:19,800 --> 01:05:21,800
+y
+
+1517
+01:05:21,800 --> 01:05:23,800
+y
+
+1518
+01:05:23,800 --> 01:05:25,800
+y
+
+1519
+01:05:25,800 --> 01:05:27,800
+y
+
+1520
+01:05:27,800 --> 01:05:29,800
+y
+
+1521
+01:05:29,800 --> 01:05:31,800
+y
+
+1522
+01:05:31,800 --> 01:05:33,800
+y
+
+1523
+01:05:33,800 --> 01:05:35,800
+y
+
+1524
+01:05:35,800 --> 01:05:37,800
+y
+
+1525
+01:05:37,800 --> 01:05:39,800
+y
+
+1526
+01:05:39,800 --> 01:05:41,800
+y
+
+1527
+01:05:43,800 --> 01:05:45,800
+y
+
+1528
+01:05:45,800 --> 01:05:47,800
+y
+
+1529
+01:05:47,800 --> 01:05:49,800
+y
+
+1530
+01:05:49,800 --> 01:05:51,800
+y
+
+1531
+01:05:51,800 --> 01:05:53,800
+y
+
+1532
+01:05:53,800 --> 01:05:55,800
+y
+
+1533
+01:05:55,800 --> 01:05:57,800
+y
+
+1534
+01:05:57,800 --> 01:05:59,800
+y
+
+1535
+01:05:59,800 --> 01:06:01,800
+y
+
+1536
+01:06:01,800 --> 01:06:03,800
+y
+
+1537
+01:06:03,800 --> 01:06:05,800
+y
+
+1538
+01:06:07,800 --> 01:06:09,800
+y
+
+1539
+01:06:09,800 --> 01:06:11,800
+y
+
+1540
+01:06:11,800 --> 01:06:13,800
+y
+
+1541
+01:06:13,800 --> 01:06:15,800
+y
+
+1542
+01:06:15,800 --> 01:06:17,800
+y
+
+1543
+01:06:17,800 --> 01:06:19,800
+y
+
+1544
+01:06:19,800 --> 01:06:21,800
+y
+
+1545
+01:06:21,800 --> 01:06:23,800
+y
+
+1546
+01:06:23,800 --> 01:06:25,800
+y
+
+1547
+01:06:25,800 --> 01:06:27,800
+y
+
+1548
+01:06:27,800 --> 01:06:29,800
+y
+
+1549
+01:06:29,800 --> 01:06:31,800
+y
+
+1550
+01:06:31,800 --> 01:06:33,800
+y
+
+1551
+01:06:33,800 --> 01:06:35,800
+y
+
+1552
+01:06:35,800 --> 01:06:37,800
+y
+
+1553
+01:06:37,800 --> 01:06:39,800
+y
+
+1554
+01:06:39,800 --> 01:06:41,800
+y
+
+1555
+01:06:43,800 --> 01:06:45,800
+y
+
+1556
+01:06:45,800 --> 01:06:47,800
+y
+
+1557
+01:06:47,800 --> 01:06:49,800
+y
+
+1558
+01:06:49,800 --> 01:06:51,800
+y
+
+1559
+01:06:51,800 --> 01:06:53,800
+y
+
+1560
+01:06:53,800 --> 01:06:55,800
+y
+
+1561
+01:06:55,800 --> 01:06:57,800
+y
+
+1562
+01:06:57,800 --> 01:06:59,800
+y
+
+1563
+01:06:59,800 --> 01:07:01,800
+y
+
+1564
+01:07:01,800 --> 01:07:03,800
+y
+
+1565
+01:07:03,800 --> 01:07:05,800
+y
+
+1566
+01:07:05,800 --> 01:07:07,800
+y
+
+1567
+01:07:07,800 --> 01:07:09,800
+y
+
+1568
+01:07:09,800 --> 01:07:11,800
+y
+
+1569
+01:07:11,800 --> 01:07:13,800
+y
+
+1570
+01:07:15,800 --> 01:07:17,800
+y
+
+1571
+01:07:17,800 --> 01:07:19,800
+y
+
+1572
+01:07:19,800 --> 01:07:21,800
+y
+
+1573
+01:07:21,800 --> 01:07:23,800
+y
+
+1574
+01:07:23,800 --> 01:07:25,800
+y
+
+1575
+01:07:25,800 --> 01:07:29,800
+y
+
+1576
+01:07:29,800 --> 01:07:31,800
+y
+
+1577
+01:07:31,800 --> 01:07:33,800
+y
+
+1578
+01:07:33,800 --> 01:07:35,800
+y
+
+1579
+01:07:35,800 --> 01:07:37,800
+y
+
+1580
+01:07:37,800 --> 01:07:39,800
+y
+
+1581
+01:07:39,800 --> 01:07:41,800
+y
+
+1582
+01:07:41,800 --> 01:07:43,800
+y
+
+1583
+01:07:43,800 --> 01:07:45,800
+y
+
+1584
+01:07:45,800 --> 01:07:47,800
+y
+
+1585
+01:07:47,800 --> 01:07:49,800
+y
+
+1586
+01:07:49,800 --> 01:07:51,800
+y
+
+1587
+01:07:51,800 --> 01:07:53,800
+y
+
+1588
+01:07:53,800 --> 01:07:57,800
+y
+
+1589
+01:07:57,800 --> 01:07:59,800
+y
+
+1590
+01:07:59,800 --> 01:08:01,800
+y
+
+1591
+01:08:01,800 --> 01:08:03,800
+y
+
+1592
+01:08:03,800 --> 01:08:05,800
+y
+
+1593
+01:08:05,800 --> 01:08:07,800
+y
+
+1594
+01:08:07,800 --> 01:08:09,800
+y
+
+1595
+01:08:09,800 --> 01:08:11,800
+y
+
+1596
+01:08:11,800 --> 01:08:13,800
+y
+
+1597
+01:08:13,800 --> 01:08:15,800
+y
+
+1598
+01:08:15,800 --> 01:08:17,800
+y
+
+1599
+01:08:17,800 --> 01:08:19,800
+y
+
+1600
+01:08:19,800 --> 01:08:21,800
+y
+
+1601
+01:08:21,800 --> 01:08:23,800
+y
+
+1602
+01:08:23,800 --> 01:08:25,800
+y
+
+1603
+01:08:25,800 --> 01:08:27,800
+y
+
+1604
+01:08:27,800 --> 01:08:29,800
+y
+
+1605
+01:08:29,800 --> 01:08:31,800
+y
+
+1606
+01:08:31,800 --> 01:08:33,800
+y
+
+1607
+01:08:33,800 --> 01:08:35,800
+y
+
+1608
+01:08:35,800 --> 01:08:37,800
+y
+
+1609
+01:08:39,800 --> 01:08:41,800
+y
+
+1610
+01:08:41,800 --> 01:08:43,800
+y
+
+1611
+01:08:43,800 --> 01:08:45,800
+y
+
+1612
+01:08:45,800 --> 01:08:47,800
+y
+
+1613
+01:08:47,800 --> 01:08:49,800
+y
+
+1614
+01:08:49,800 --> 01:08:51,800
+y
+
+1615
+01:08:51,800 --> 01:08:53,800
+y
+
+1616
+01:08:53,800 --> 01:08:55,800
+y
+
+1617
+01:08:55,800 --> 01:08:57,800
+y
+
+1618
+01:08:57,800 --> 01:08:59,800
+y
+
+1619
+01:08:59,800 --> 01:09:01,800
+y
+
+1620
+01:09:03,800 --> 01:09:05,800
+y
+
+1621
+01:09:05,800 --> 01:09:07,800
+y
+
+1622
+01:09:07,800 --> 01:09:09,800
+y
+
+1623
+01:09:09,800 --> 01:09:11,800
+y
+
+1624
+01:09:11,800 --> 01:09:13,800
+y
+
+1625
+01:09:13,800 --> 01:09:15,800
+y
+
+1626
+01:09:15,800 --> 01:09:17,800
+y
+
+1627
+01:09:17,800 --> 01:09:19,800
+y
+
+1628
+01:09:19,800 --> 01:09:21,800
+y
+
+1629
+01:09:21,800 --> 01:09:23,800
+y
+
+1630
+01:09:23,800 --> 01:09:25,800
+y
+
+1631
+01:09:25,800 --> 01:09:27,800
+y
+
+1632
+01:09:27,800 --> 01:09:29,800
+y
+
+1633
+01:09:29,800 --> 01:09:31,800
+y
+
+1634
+01:09:31,800 --> 01:09:33,800
+y
+
+1635
+01:09:35,800 --> 01:09:37,800
+y
+
+1636
+01:09:37,800 --> 01:09:39,800
+y
+
+1637
+01:09:39,800 --> 01:09:41,800
+y
+
+1638
+01:09:41,800 --> 01:09:43,800
+y
+
+1639
+01:09:43,800 --> 01:09:45,800
+y
+
+1640
+01:09:45,800 --> 01:09:47,800
+y
+
+1641
+01:09:47,800 --> 01:09:49,800
+y
+
+1642
+01:09:49,800 --> 01:09:51,800
+y
+
+1643
+01:09:51,800 --> 01:09:53,800
+y
+
+1644
+01:09:53,800 --> 01:09:55,800
+y
+
+1645
+01:09:55,800 --> 01:09:57,800
+y
+
+1646
+01:09:57,800 --> 01:09:59,800
+y
+
+1647
+01:09:59,800 --> 01:10:01,800
+y
+
+1648
+01:10:03,800 --> 01:10:05,800
+y
+
+1649
+01:10:05,800 --> 01:10:07,800
+y
+
+1650
+01:10:07,800 --> 01:10:09,800
+y
+
+1651
+01:10:09,800 --> 01:10:11,800
+y
+
+1652
+01:10:11,800 --> 01:10:13,800
+y
+
+1653
+01:10:13,800 --> 01:10:17,800
+y
+
+1654
+01:10:17,800 --> 01:10:19,800
+y
+
+1655
+01:10:19,800 --> 01:10:21,800
+y
+
+1656
+01:10:21,800 --> 01:10:23,800
+y
+
+1657
+01:10:23,800 --> 01:10:25,800
+y
+
+1658
+01:10:25,800 --> 01:10:27,800
+y
+
+1659
+01:10:27,800 --> 01:10:29,800
+y
+
+1660
+01:10:29,800 --> 01:10:31,800
+y
+
+1661
+01:10:31,800 --> 01:10:33,800
+y
+
+1662
+01:10:33,800 --> 01:10:35,800
+y
+
+1663
+01:10:35,800 --> 01:10:37,800
+y
+
+1664
+01:10:37,800 --> 01:10:39,800
+y
+
+1665
+01:10:39,800 --> 01:10:41,800
+y
+
+1666
+01:10:41,800 --> 01:10:45,800
+y
+
+1667
+01:10:45,800 --> 01:10:47,800
+y
+
+1668
+01:10:47,800 --> 01:10:49,800
+y
+
+1669
+01:10:49,800 --> 01:10:51,800
+y
+
+1670
+01:10:51,800 --> 01:10:53,800
+y
+
+1671
+01:10:53,800 --> 01:10:55,800
+y
+
+1672
+01:10:55,800 --> 01:10:57,800
+y
+
+1673
+01:10:57,800 --> 01:10:59,800
+y
+
+1674
+01:10:59,800 --> 01:11:01,800
+y
+
+1675
+01:11:01,800 --> 01:11:03,800
+y
+
+1676
+01:11:03,800 --> 01:11:05,800
+y
+
+1677
+01:11:05,800 --> 01:11:07,800
+y
+
+1678
+01:11:07,800 --> 01:11:09,800
+y
+
+1679
+01:11:09,800 --> 01:11:13,800
+y
+
+1680
+01:11:13,800 --> 01:11:15,800
+y
+
+1681
+01:11:15,800 --> 01:11:17,800
+y
+
+1682
+01:11:17,800 --> 01:11:19,800
+y
+
+1683
+01:11:19,800 --> 01:11:21,800
+y
+
+1684
+01:11:21,800 --> 01:11:23,800
+y
+
+1685
+01:11:23,800 --> 01:11:25,800
+y
+
+1686
+01:11:25,800 --> 01:11:27,800
+y
+
+1687
+01:11:27,800 --> 01:11:29,800
+y
+
+1688
+01:11:29,800 --> 01:11:31,800
+y
+
+1689
+01:11:31,800 --> 01:11:33,800
+y
+
+1690
+01:11:33,800 --> 01:11:35,800
+y
+
+1691
+01:11:35,800 --> 01:11:37,800
+y
+
+1692
+01:11:37,800 --> 01:11:39,800
+y
+
+1693
+01:11:39,800 --> 01:11:41,800
+y
+
+1694
+01:11:43,800 --> 01:11:45,800
+y
+
+1695
+01:11:45,800 --> 01:11:47,800
+y
+
+1696
+01:11:47,800 --> 01:11:49,800
+y
+
+1697
+01:11:49,800 --> 01:11:51,800
+y
+
+1698
+01:11:51,800 --> 01:11:53,800
+y
+
+1699
+01:11:53,800 --> 01:11:55,800
+y
+
+1700
+01:11:55,800 --> 01:11:57,800
+y
+
+1701
+01:11:57,800 --> 01:11:59,800
+y
+
+1702
+01:11:59,800 --> 01:12:01,800
+y
+
+1703
+01:12:01,800 --> 01:12:03,800
+y
+
+1704
+01:12:03,800 --> 01:12:05,800
+y
+
+1705
+01:12:05,800 --> 01:12:07,800
+y
+
+1706
+01:12:07,800 --> 01:12:09,800
+y
+
+1707
+01:12:09,800 --> 01:12:11,800
+y
+
+1708
+01:12:11,800 --> 01:12:13,800
+y
+
+1709
+01:12:13,800 --> 01:12:15,800
+y
+
+1710
+01:12:15,800 --> 01:12:17,800
+y
+
+1711
+01:12:17,800 --> 01:12:19,800
+y
+
+1712
+01:12:19,800 --> 01:12:21,800
+y
+
+1713
+01:12:23,800 --> 01:12:25,800
+y
+
+1714
+01:12:25,800 --> 01:12:27,800
+y
+
+1715
+01:12:27,800 --> 01:12:29,800
+y
+
+1716
+01:12:29,800 --> 01:12:31,800
+y
+
+1717
+01:12:31,800 --> 01:12:33,800
+y
+
+1718
+01:12:33,800 --> 01:12:35,800
+y
+
+1719
+01:12:35,800 --> 01:12:37,800
+y
+
+1720
+01:12:37,800 --> 01:12:39,800
+y
+
+1721
+01:12:39,800 --> 01:12:41,800
+y
+
+1722
+01:12:41,800 --> 01:12:43,800
+y
+
+1723
+01:12:43,800 --> 01:12:45,800
+y
+
+1724
+01:12:45,800 --> 01:12:47,800
+y
+
+1725
+01:12:47,800 --> 01:12:49,800
+y
+
+1726
+01:12:51,800 --> 01:12:53,800
+y
+
+1727
+01:12:53,800 --> 01:12:55,800
+y
+
+1728
+01:12:55,800 --> 01:12:57,800
+y
+
+1729
+01:12:57,800 --> 01:12:59,800
+y
+
+1730
+01:12:59,800 --> 01:13:01,800
+y
+
+1731
+01:13:01,800 --> 01:13:05,800
+y
+
+1732
+01:13:05,800 --> 01:13:07,800
+y
+
+1733
+01:13:07,800 --> 01:13:09,800
+y
+
+1734
+01:13:09,800 --> 01:13:11,800
+y
+
+1735
+01:13:11,800 --> 01:13:13,800
+y
+
+1736
+01:13:13,800 --> 01:13:15,800
+y
+
+1737
+01:13:15,800 --> 01:13:17,800
+y
+
+1738
+01:13:17,800 --> 01:13:19,800
+y
+
+1739
+01:13:19,800 --> 01:13:21,800
+y
+
+1740
+01:13:21,800 --> 01:13:23,800
+y
+
+1741
+01:13:23,800 --> 01:13:25,800
+y
+
+1742
+01:13:25,800 --> 01:13:27,800
+y
+
+1743
+01:13:27,800 --> 01:13:29,800
+y
+
+1744
+01:13:29,800 --> 01:13:31,800
+y
+
+1745
+01:13:31,800 --> 01:13:33,800
+y
+
+1746
+01:13:33,800 --> 01:13:35,800
+y
+
+1747
+01:13:35,800 --> 01:13:37,800
+y
+
+1748
+01:13:37,800 --> 01:13:39,800
+y
+
+1749
+01:13:39,800 --> 01:13:41,800
+y
+
+1750
+01:13:41,800 --> 01:13:43,800
+y
+
+1751
+01:13:43,800 --> 01:13:45,800
+y
+
+1752
+01:13:47,800 --> 01:13:49,800
+y
+
+1753
+01:13:49,800 --> 01:13:51,800
+y
+
+1754
+01:13:51,800 --> 01:13:53,800
+y
+
+1755
+01:13:53,800 --> 01:13:55,800
+y
+
+1756
+01:13:55,800 --> 01:13:57,800
+y
+
+1757
+01:13:57,800 --> 01:13:59,800
+y
+
+1758
+01:13:59,800 --> 01:14:01,800
+y
+
+1759
+01:14:01,800 --> 01:14:03,800
+y
+
+1760
+01:14:03,800 --> 01:14:05,800
+y
+
+1761
+01:14:05,800 --> 01:14:07,800
+y
+
+1762
+01:14:07,800 --> 01:14:09,800
+y
+
+1763
+01:14:09,800 --> 01:14:11,800
+y
+
+1764
+01:14:11,800 --> 01:14:13,800
+y
+
+1765
+01:14:15,800 --> 01:14:17,800
+y
+
+1766
+01:14:17,800 --> 01:14:19,800
+y
+
+1767
+01:14:19,800 --> 01:14:21,800
+y
+
+1768
+01:14:21,800 --> 01:14:23,800
+y
+
+1769
+01:14:23,800 --> 01:14:25,800
+y
+
+1770
+01:14:25,800 --> 01:14:27,800
+y
+
+1771
+01:14:27,800 --> 01:14:29,800
+y
+
+1772
+01:14:29,800 --> 01:14:31,800
+y
+
+1773
+01:14:31,800 --> 01:14:33,800
+y
+
+1774
+01:14:33,800 --> 01:14:35,800
+y
+
+1775
+01:14:35,800 --> 01:14:37,800
+y
+
+1776
+01:14:37,800 --> 01:14:39,800
+y
+
+1777
+01:14:39,800 --> 01:14:41,800
+y
+
+1778
+01:14:43,800 --> 01:14:45,800
+y
+
+1779
+01:14:45,800 --> 01:14:47,800
+y
+
+1780
+01:14:47,800 --> 01:14:49,800
+y
+
+1781
+01:14:49,800 --> 01:14:51,800
+y
+
+1782
+01:14:51,800 --> 01:14:53,800
+y
+
+1783
+01:14:53,800 --> 01:14:55,800
+y
+
+1784
+01:14:55,800 --> 01:14:57,800
+y
+
+1785
+01:14:57,800 --> 01:14:59,800
+y
+
+1786
+01:14:59,800 --> 01:15:01,800
+y
+
+1787
+01:15:01,800 --> 01:15:03,800
+y
+
+1788
+01:15:03,800 --> 01:15:05,800
+y
+
+1789
+01:15:05,800 --> 01:15:07,800
+y
+
+1790
+01:15:07,800 --> 01:15:09,800
+y
+
+1791
+01:15:11,800 --> 01:15:13,800
+y
+
+1792
+01:15:13,800 --> 01:15:15,800
+y
+
+1793
+01:15:15,800 --> 01:15:17,800
+y
+
+1794
+01:15:17,800 --> 01:15:19,800
+y
+
+1795
+01:15:19,800 --> 01:15:21,800
+y
+
+1796
+01:15:21,800 --> 01:15:23,800
+y
+
+1797
+01:15:25,800 --> 01:15:27,800
+y
+
+1798
+01:15:27,800 --> 01:15:29,800
+y
+
+1799
+01:15:29,800 --> 01:15:31,800
+y
+
+1800
+01:15:31,800 --> 01:15:33,800
+y
+
+1801
+01:15:33,800 --> 01:15:35,800
+y
+
+1802
+01:15:35,800 --> 01:15:37,800
+y
+
+1803
+01:15:37,800 --> 01:15:39,800
+y
+
+1804
+01:15:39,800 --> 01:15:41,800
+y
+
+1805
+01:15:41,800 --> 01:15:43,800
+y
+
+1806
+01:15:43,800 --> 01:15:45,800
+y
+
+1807
+01:15:45,800 --> 01:15:47,800
+y
+
+1808
+01:15:47,800 --> 01:15:49,800
+y
+
+1809
+01:15:49,800 --> 01:15:51,800
+y
+
+1810
+01:15:51,800 --> 01:15:53,800
+y
+
+1811
+01:15:53,800 --> 01:15:55,800
+y
+
+1812
+01:15:55,800 --> 01:15:57,800
+y
+
+1813
+01:15:57,800 --> 01:15:59,800
+y
+
+1814
+01:15:59,800 --> 01:16:01,800
+y
+
+1815
+01:16:01,800 --> 01:16:03,800
+y
+
+1816
+01:16:03,800 --> 01:16:05,800
+y
+
+1817
+01:16:07,800 --> 01:16:09,800
+y
+
+1818
+01:16:09,800 --> 01:16:11,800
+y
+
+1819
+01:16:11,800 --> 01:16:13,800
+y
+
+1820
+01:16:13,800 --> 01:16:15,800
+y
+
+1821
+01:16:17,800 --> 01:16:19,800
+y
+
+1822
+01:16:19,800 --> 01:16:21,800
+y
+
+1823
+01:16:21,800 --> 01:16:23,800
+y
+
+1824
+01:16:23,800 --> 01:16:25,800
+y
+
+1825
+01:16:25,800 --> 01:16:27,800
+y
+
+1826
+01:16:27,800 --> 01:16:29,800
+y
+
+1827
+01:16:29,800 --> 01:16:31,800
+y
+
+1828
+01:16:31,800 --> 01:16:33,800
+y
+
+1829
+01:16:33,800 --> 01:16:35,800
+y
+
+1830
+01:16:35,800 --> 01:16:37,800
+y
+
+1831
+01:16:37,800 --> 01:16:39,800
+y
+
+1832
+01:16:39,800 --> 01:16:41,800
+y
+
+1833
+01:16:41,800 --> 01:16:43,800
+y
+
+1834
+01:16:43,800 --> 01:16:45,800
+y
+
+1835
+01:16:45,800 --> 01:16:47,800
+y
+
+1836
+01:16:47,800 --> 01:16:49,800
+y
+
+1837
+01:16:49,800 --> 01:16:51,800
+y
+
+1838
+01:16:51,800 --> 01:16:53,800
+y
+
+1839
+01:16:53,800 --> 01:16:55,800
+y
+
+1840
+01:16:55,800 --> 01:16:57,800
+y
+
+1841
+01:16:57,800 --> 01:16:59,800
+y
+
+1842
+01:16:59,800 --> 01:17:01,800
+y
+
+1843
+01:17:03,800 --> 01:17:05,800
+y
+
+1844
+01:17:05,800 --> 01:17:07,800
+y
+
+1845
+01:17:07,800 --> 01:17:09,800
+y
+
+1846
+01:17:11,800 --> 01:17:13,800
+y
+
+1847
+01:17:13,800 --> 01:17:15,800
+y
+
+1848
+01:17:15,800 --> 01:17:17,800
+y
+
+1849
+01:17:17,800 --> 01:17:19,800
+y
+
+1850
+01:17:19,800 --> 01:17:21,800
+y
+
+1851
+01:17:21,800 --> 01:17:23,800
+y
+
+1852
+01:17:23,800 --> 01:17:25,800
+y
+
+1853
+01:17:25,800 --> 01:17:27,800
+y
+
+1854
+01:17:27,800 --> 01:17:29,800
+y
+
+1855
+01:17:29,800 --> 01:17:31,800
+y
+
+1856
+01:17:31,800 --> 01:17:33,800
+y
+
+1857
+01:17:33,800 --> 01:17:35,800
+y
+
+1858
+01:17:35,800 --> 01:17:37,800
+y
+
+1859
+01:17:37,800 --> 01:17:39,800
+y
+
+1860
+01:17:39,800 --> 01:17:41,800
+y
+
+1861
+01:17:41,800 --> 01:17:43,800
+y
+
+1862
+01:17:43,800 --> 01:17:45,800
+y
+
+1863
+01:17:45,800 --> 01:17:47,800
+y
+
+1864
+01:17:47,800 --> 01:17:49,800
+y
+
+1865
+01:17:49,800 --> 01:17:51,800
+y
+
+1866
+01:17:51,800 --> 01:17:53,800
+y
+
+1867
+01:17:53,800 --> 01:17:55,800
+y
+
+1868
+01:17:55,800 --> 01:17:57,800
+y
+
+1869
+01:17:59,800 --> 01:18:01,800
+y
+
+1870
+01:18:01,800 --> 01:18:03,800
+y
+
+1871
+01:18:03,800 --> 01:18:05,800
+y
+
+1872
+01:18:05,800 --> 01:18:07,800
+y
+
+1873
+01:18:07,800 --> 01:18:09,800
+y
+
+1874
+01:18:09,800 --> 01:18:11,800
+y
+
+1875
+01:18:11,800 --> 01:18:13,800
+y
+
+1876
+01:18:13,800 --> 01:18:15,800
+y
+
+1877
+01:18:15,800 --> 01:18:17,800
+y
+
+1878
+01:18:17,800 --> 01:18:19,800
+y
+
+1879
+01:18:19,800 --> 01:18:21,800
+y
+
+1880
+01:18:21,800 --> 01:18:23,800
+y
+
+1881
+01:18:25,800 --> 01:18:27,800
+y
+
+1882
+01:18:27,800 --> 01:18:29,800
+y
+
+1883
+01:18:29,800 --> 01:18:31,800
+y
+
+1884
+01:18:31,800 --> 01:18:33,800
+y
+
+1885
+01:18:33,800 --> 01:18:35,800
+y
+
+1886
+01:18:35,800 --> 01:18:37,800
+y
+
+1887
+01:18:37,800 --> 01:18:39,800
+y
+
+1888
+01:18:39,800 --> 01:18:41,800
+y
+
+1889
+01:18:41,800 --> 01:18:43,800
+y
+
+1890
+01:18:43,800 --> 01:18:45,800
+y
+
+1891
+01:18:45,800 --> 01:18:47,800
+y
+
+1892
+01:18:47,800 --> 01:18:49,800
+y
+
+1893
+01:18:49,800 --> 01:18:51,800
+y
+
+1894
+01:18:51,800 --> 01:18:53,800
+y
+
+1895
+01:18:55,800 --> 01:18:57,800
+y
+
+1896
+01:18:57,800 --> 01:18:59,800
+y
+
+1897
+01:18:59,800 --> 01:19:01,800
+y
+
+1898
+01:19:01,800 --> 01:19:03,800
+y
+
+1899
+01:19:03,800 --> 01:19:05,800
+y
+
+1900
+01:19:07,800 --> 01:19:09,800
+y
+
+1901
+01:19:09,800 --> 01:19:11,800
+y
+
+1902
+01:19:11,800 --> 01:19:13,800
+y
+
+1903
+01:19:13,800 --> 01:19:15,800
+y
+
+1904
+01:19:15,800 --> 01:19:17,800
+y
+
+1905
+01:19:17,800 --> 01:19:19,800
+y
+
+1906
+01:19:19,800 --> 01:19:21,800
+y
+
+1907
+01:19:21,800 --> 01:19:23,800
+y
+
+1908
+01:19:23,800 --> 01:19:25,800
+y
+
+1909
+01:19:25,800 --> 01:19:27,800
+y
+
+1910
+01:19:27,800 --> 01:19:29,800
+y
+
+1911
+01:19:29,800 --> 01:19:31,800
+y
+
+1912
+01:19:31,800 --> 01:19:33,800
+y
+
+1913
+01:19:33,800 --> 01:19:35,800
+y
+
+1914
+01:19:35,800 --> 01:19:37,800
+y
+
+1915
+01:19:37,800 --> 01:19:39,800
+y
+
+1916
+01:19:39,800 --> 01:19:41,800
+y
+
+1917
+01:19:41,800 --> 01:19:43,800
+y
+
+1918
+01:19:43,800 --> 01:19:45,800
+y
+
+1919
+01:19:45,800 --> 01:19:47,800
+y
+
+1920
+01:19:47,800 --> 01:19:49,800
+y
+
+1921
+01:19:51,800 --> 01:19:53,800
+y
+
+1922
+01:19:53,800 --> 01:19:55,800
+y
+
+1923
+01:19:55,800 --> 01:19:57,800
+y
+
+1924
+01:19:57,800 --> 01:19:59,800
+y
+
+1925
+01:19:59,800 --> 01:20:01,800
+y
+
+1926
+01:20:01,800 --> 01:20:03,800
+y
+
+1927
+01:20:03,800 --> 01:20:05,800
+y
+
+1928
+01:20:05,800 --> 01:20:07,800
+y
+
+1929
+01:20:07,800 --> 01:20:09,800
+y
+
+1930
+01:20:09,800 --> 01:20:11,800
+y
+
+1931
+01:20:11,800 --> 01:20:13,800
+y
+
+1932
+01:20:13,800 --> 01:20:15,800
+y
+
+1933
+01:20:15,800 --> 01:20:17,800
+y
+
+1934
+01:20:19,800 --> 01:20:21,800
+y
+
+1935
+01:20:21,800 --> 01:20:23,800
+y
+
+1936
+01:20:23,800 --> 01:20:25,800
+y
+
+1937
+01:20:25,800 --> 01:20:27,800
+y
+
+1938
+01:20:27,800 --> 01:20:29,800
+y
+
+1939
+01:20:31,800 --> 01:20:33,800
+y
+
+1940
+01:20:33,800 --> 01:20:35,800
+y
+
+1941
+01:20:35,800 --> 01:20:37,800
+y
+
+1942
+01:20:37,800 --> 01:20:39,800
+y
+
+1943
+01:20:39,800 --> 01:20:41,800
+y
+
+1944
+01:20:41,800 --> 01:20:43,800
+y
+
+1945
+01:20:43,800 --> 01:20:45,800
+y
+
+1946
+01:20:45,800 --> 01:20:47,800
+y
+
+1947
+01:20:47,800 --> 01:20:49,800
+y
+
+1948
+01:20:49,800 --> 01:20:51,800
+y
+
+1949
+01:20:51,800 --> 01:20:53,800
+y
+
+1950
+01:20:53,800 --> 01:20:55,800
+y
+
+1951
+01:20:55,800 --> 01:20:57,800
+y
+
+1952
+01:20:57,800 --> 01:20:59,800
+y
+
+1953
+01:20:59,800 --> 01:21:01,800
+y
+
+1954
+01:21:01,800 --> 01:21:03,800
+y
+
+1955
+01:21:03,800 --> 01:21:05,800
+y
+
+1956
+01:21:05,800 --> 01:21:07,800
+y
+
+1957
+01:21:07,800 --> 01:21:09,800
+y
+
+1958
+01:21:09,800 --> 01:21:11,800
+y
+
+1959
+01:21:11,800 --> 01:21:13,800
+y
+
+1960
+01:21:15,800 --> 01:21:17,800
+y
+
+1961
+01:21:17,800 --> 01:21:19,800
+y
+
+1962
+01:21:19,800 --> 01:21:21,800
+y
+
+1963
+01:21:21,800 --> 01:21:23,800
+y
+
+1964
+01:21:23,800 --> 01:21:25,800
+y
+
+1965
+01:21:25,800 --> 01:21:27,800
+y
+
+1966
+01:21:27,800 --> 01:21:29,800
+y
+
+1967
+01:21:31,800 --> 01:21:33,800
+y
+
+1968
+01:21:33,800 --> 01:21:35,800
+y
+
+1969
+01:21:35,800 --> 01:21:37,800
+y
+
+1970
+01:21:37,800 --> 01:21:39,800
+y
+
+1971
+01:21:39,800 --> 01:21:41,800
+y
+
+1972
+01:21:41,800 --> 01:21:43,800
+y
+
+1973
+01:21:43,800 --> 01:21:45,800
+y
+
+1974
+01:21:45,800 --> 01:21:47,800
+y
+
+1975
+01:21:47,800 --> 01:21:49,800
+y
+
+1976
+01:21:49,800 --> 01:21:51,800
+y
+
+1977
+01:21:51,800 --> 01:21:53,800
+y
+
+1978
+01:21:53,800 --> 01:21:55,800
+y
+
+1979
+01:21:55,800 --> 01:21:57,800
+y
+
+1980
+01:21:57,800 --> 01:21:59,800
+y
+
+1981
+01:21:59,800 --> 01:22:01,800
+y
+
+1982
+01:22:03,800 --> 01:22:05,800
+y
+
+1983
+01:22:05,800 --> 01:22:07,800
+y
+
+1984
+01:22:07,800 --> 01:22:09,800
+y
+
+1985
+01:22:09,800 --> 01:22:11,800
+y
+
+1986
+01:22:11,800 --> 01:22:13,800
+y
+
+1987
+01:22:13,800 --> 01:22:15,800
+y
+
+1988
+01:22:15,800 --> 01:22:17,800
+y
+
+1989
+01:22:17,800 --> 01:22:19,800
+y
+
+1990
+01:22:19,800 --> 01:22:21,800
+y
+
+1991
+01:22:21,800 --> 01:22:23,800
+y
+
+1992
+01:22:23,800 --> 01:22:25,800
+y
+
+1993
+01:22:27,800 --> 01:22:29,800
+y
+
+1994
+01:22:29,800 --> 01:22:31,800
+y
+
+1995
+01:22:31,800 --> 01:22:33,800
+y
+
+1996
+01:22:33,800 --> 01:22:35,800
+y
+
+1997
+01:22:35,800 --> 01:22:37,800
+y
+
+1998
+01:22:37,800 --> 01:22:39,800
+y
+
+1999
+01:22:39,800 --> 01:22:41,800
+y
+
+2000
+01:22:41,800 --> 01:22:43,800
+y
+
+2001
+01:22:43,800 --> 01:22:45,800
+y
+
+2002
+01:22:45,800 --> 01:22:47,800
+y
+
+2003
+01:22:47,800 --> 01:22:49,800
+y
+
+2004
+01:22:49,800 --> 01:22:53,800
+y
+
+2005
+01:22:53,800 --> 01:22:55,800
+y
+
+2006
+01:22:55,800 --> 01:22:57,800
+y
+
+2007
+01:22:57,800 --> 01:22:59,800
+y
+
+2008
+01:22:59,800 --> 01:23:01,800
+y
+
+2009
+01:23:01,800 --> 01:23:03,800
+y
+
+2010
+01:23:03,800 --> 01:23:05,800
+y
+
+2011
+01:23:05,800 --> 01:23:07,800
+y
+
+2012
+01:23:07,800 --> 01:23:09,800
+y
+
+2013
+01:23:09,800 --> 01:23:11,800
+y
+
+2014
+01:23:11,800 --> 01:23:13,800
+y
+
+2015
+01:23:13,800 --> 01:23:15,800
+y
+
+2016
+01:23:15,800 --> 01:23:17,800
+y
+
+2017
+01:23:17,800 --> 01:23:19,800
+y
+
+2018
+01:23:19,800 --> 01:23:21,800
+y
+
+2019
+01:23:21,800 --> 01:23:23,800
+y
+
+2020
+01:23:23,800 --> 01:23:25,800
+y
+
+2021
+01:23:25,800 --> 01:23:27,800
+y
+
+2022
+01:23:27,800 --> 01:23:29,800
+y
+
+2023
+01:23:29,800 --> 01:23:31,800
+y
+
+2024
+01:23:31,800 --> 01:23:33,800
+y
+
+2025
+01:23:35,800 --> 01:23:37,800
+y
+
+2026
+01:23:37,800 --> 01:23:39,800
+y
+
+2027
+01:23:39,800 --> 01:23:41,800
+y
+
+2028
+01:23:41,800 --> 01:23:43,800
+y
+
+2029
+01:23:43,800 --> 01:23:45,800
+y
+
+2030
+01:23:45,800 --> 01:23:47,800
+y
+
+2031
+01:23:47,800 --> 01:23:49,800
+y
+
+2032
+01:23:49,800 --> 01:23:51,800
+y
+
+2033
+01:23:51,800 --> 01:23:53,800
+y
+
+2034
+01:23:53,800 --> 01:23:55,800
+y
+
+2035
+01:23:55,800 --> 01:23:57,800
+y
+
+2036
+01:23:57,800 --> 01:23:59,800
+y
+
+2037
+01:23:59,800 --> 01:24:01,800
+y
+
+2038
+01:24:03,800 --> 01:24:05,800
+y
+
+2039
+01:24:05,800 --> 01:24:07,800
+y
+
+2040
+01:24:07,800 --> 01:24:09,800
+y
+
+2041
+01:24:09,800 --> 01:24:11,800
+y
+
+2042
+01:24:11,800 --> 01:24:13,800
+y
+
+2043
+01:24:13,800 --> 01:24:15,800
+y
+
+2044
+01:24:15,800 --> 01:24:17,800
+y
+
+2045
+01:24:17,800 --> 01:24:19,800
+y
+
+2046
+01:24:19,800 --> 01:24:21,800
+y
+
+2047
+01:24:21,800 --> 01:24:23,800
+y
+
+2048
+01:24:23,800 --> 01:24:25,800
+y
+
+2049
+01:24:25,800 --> 01:24:27,800
+y
+
+2050
+01:24:27,800 --> 01:24:29,800
+y
+
+2051
+01:24:31,800 --> 01:24:33,800
+y
+
+2052
+01:24:33,800 --> 01:24:35,800
+y
+
+2053
+01:24:35,800 --> 01:24:37,800
+y
+
+2054
+01:24:37,800 --> 01:24:39,800
+y
+
+2055
+01:24:39,800 --> 01:24:41,800
+y
+
+2056
+01:24:41,800 --> 01:24:43,800
+y
+
+2057
+01:24:43,800 --> 01:24:45,800
+y
+
+2058
+01:24:45,800 --> 01:24:47,800
+y
+
+2059
+01:24:47,800 --> 01:24:49,800
+y
+
+2060
+01:24:49,800 --> 01:24:51,800
+y
+
+2061
+01:24:51,800 --> 01:24:53,800
+y
+
+2062
+01:24:53,800 --> 01:24:55,800
+y
+
+2063
+01:24:55,800 --> 01:24:57,800
+y
+
+2064
+01:24:59,800 --> 01:25:01,800
+y
+
+2065
+01:25:01,800 --> 01:25:03,800
+y
+
+2066
+01:25:03,800 --> 01:25:05,800
+y
+
+2067
+01:25:05,800 --> 01:25:07,800
+y
+
+2068
+01:25:07,800 --> 01:25:09,800
+y
+
+2069
+01:25:09,800 --> 01:25:13,800
+y
+
+2070
+01:25:13,800 --> 01:25:15,800
+y
+
+2071
+01:25:15,800 --> 01:25:17,800
+y
+
+2072
+01:25:17,800 --> 01:25:19,800
+y
+
+2073
+01:25:19,800 --> 01:25:21,800
+y
+
+2074
+01:25:21,800 --> 01:25:23,800
+y
+
+2075
+01:25:23,800 --> 01:25:25,800
+y
+
+2076
+01:25:25,800 --> 01:25:27,800
+y
+
+2077
+01:25:27,800 --> 01:25:29,800
+y
+
+2078
+01:25:29,800 --> 01:25:31,800
+y
+
+2079
+01:25:31,800 --> 01:25:33,800
+y
+
+2080
+01:25:33,800 --> 01:25:35,800
+y
+
+2081
+01:25:35,800 --> 01:25:37,800
+y
+
+2082
+01:25:37,800 --> 01:25:41,800
+y
+
+2083
+01:25:41,800 --> 01:25:43,800
+y
+
+2084
+01:25:43,800 --> 01:25:45,800
+y
+
+2085
+01:25:45,800 --> 01:25:47,800
+y
+
+2086
+01:25:47,800 --> 01:25:49,800
+y
+
+2087
+01:25:49,800 --> 01:25:51,800
+y
+
+2088
+01:25:51,800 --> 01:25:53,800
+y
+
+2089
+01:25:53,800 --> 01:25:55,800
+y
+
+2090
+01:25:55,800 --> 01:25:57,800
+y
+
+2091
+01:25:57,800 --> 01:25:59,800
+y
+
+2092
+01:25:59,800 --> 01:26:01,800
+y
+
+2093
+01:26:01,800 --> 01:26:03,800
+y
+
+2094
+01:26:03,800 --> 01:26:05,800
+y
+
+2095
+01:26:05,800 --> 01:26:07,800
+y
+
+2096
+01:26:07,800 --> 01:26:09,800
+y
+
+2097
+01:26:09,800 --> 01:26:11,800
+y
+
+2098
+01:26:11,800 --> 01:26:13,800
+y
+
+2099
+01:26:13,800 --> 01:26:15,800
+y
+
+2100
+01:26:15,800 --> 01:26:17,800
+y
+
+2101
+01:26:17,800 --> 01:26:19,800
+y
+
+2102
+01:26:19,800 --> 01:26:21,800
+y
+
+2103
+01:26:23,800 --> 01:26:25,800
+y
+
+2104
+01:26:25,800 --> 01:26:27,800
+y
+
+2105
+01:26:27,800 --> 01:26:29,800
+y
+
+2106
+01:26:29,800 --> 01:26:31,800
+y
+
+2107
+01:26:31,800 --> 01:26:33,800
+y
+
+2108
+01:26:33,800 --> 01:26:35,800
+y
+
+2109
+01:26:37,800 --> 01:26:39,800
+y
+
+2110
+01:26:39,800 --> 01:26:41,800
+y
+
+2111
+01:26:41,800 --> 01:26:43,800
+y
+
+2112
+01:26:43,800 --> 01:26:45,800
+y
+
+2113
+01:26:45,800 --> 01:26:47,800
+y
+
+2114
+01:26:47,800 --> 01:26:49,800
+y
+
+2115
+01:26:49,800 --> 01:26:51,800
+y
+
+2116
+01:26:51,800 --> 01:26:53,800
+y
+
+2117
+01:26:53,800 --> 01:26:55,800
+y
+
+2118
+01:26:55,800 --> 01:26:57,800
+y
+
+2119
+01:26:57,800 --> 01:26:59,800
+y
+
+2120
+01:26:59,800 --> 01:27:01,800
+y
+
+2121
+01:27:01,800 --> 01:27:05,800
+y
+
+2122
+01:27:05,800 --> 01:27:07,800
+y
+
+2123
+01:27:07,800 --> 01:27:09,800
+y
+
+2124
+01:27:09,800 --> 01:27:11,800
+y
+
+2125
+01:27:11,800 --> 01:27:13,800
+y
+
+2126
+01:27:13,800 --> 01:27:15,800
+y
+
+2127
+01:27:15,800 --> 01:27:17,800
+y
+
+2128
+01:27:17,800 --> 01:27:19,800
+y
+
+2129
+01:27:19,800 --> 01:27:21,800
+y
+
+2130
+01:27:21,800 --> 01:27:23,800
+y
+
+2131
+01:27:23,800 --> 01:27:25,800
+y
+
+2132
+01:27:25,800 --> 01:27:27,800
+y
+
+2133
+01:27:27,800 --> 01:27:29,800
+y
+
+2134
+01:27:29,800 --> 01:27:31,800
+y
+
+2135
+01:27:31,800 --> 01:27:33,800
+y
+
+2136
+01:27:33,800 --> 01:27:35,800
+y
+
+2137
+01:27:35,800 --> 01:27:37,800
+y
+
+2138
+01:27:37,800 --> 01:27:39,800
+y
+
+2139
+01:27:39,800 --> 01:27:41,800
+y
+
+2140
+01:27:41,800 --> 01:27:43,800
+y
+
+2141
+01:27:43,800 --> 01:27:45,800
+y
+
+2142
+01:27:47,800 --> 01:27:49,800
+y
+
+2143
+01:27:49,800 --> 01:27:51,800
+y
+
+2144
+01:27:51,800 --> 01:27:53,800
+y
+
+2145
+01:27:53,800 --> 01:27:55,800
+y
+
+2146
+01:27:55,800 --> 01:27:57,800
+y
+
+2147
+01:27:57,800 --> 01:27:59,800
+y
+
+2148
+01:27:59,800 --> 01:28:01,800
+y
+
+2149
+01:28:01,800 --> 01:28:03,800
+y
+
+2150
+01:28:03,800 --> 01:28:05,800
+y
+
+2151
+01:28:05,800 --> 01:28:07,800
+y
+
+2152
+01:28:07,800 --> 01:28:09,800
+y
+
+2153
+01:28:09,800 --> 01:28:11,800
+y
+
+2154
+01:28:11,800 --> 01:28:13,800
+y
+
+2155
+01:28:15,800 --> 01:28:17,800
+y
+
+2156
+01:28:17,800 --> 01:28:19,800
+y
+
+2157
+01:28:19,800 --> 01:28:21,800
+y
+
+2158
+01:28:21,800 --> 01:28:23,800
+y
+
+2159
+01:28:23,800 --> 01:28:25,800
+y
+
+2160
+01:28:25,800 --> 01:28:27,800
+y
+
+2161
+01:28:27,800 --> 01:28:29,800
+y
+
+2162
+01:28:29,800 --> 01:28:31,800
+y
+
+2163
+01:28:31,800 --> 01:28:33,800
+y
+
+2164
+01:28:33,800 --> 01:28:35,800
+y
+
+2165
+01:28:35,800 --> 01:28:37,800
+y
+
+2166
+01:28:37,800 --> 01:28:39,800
+y
+
+2167
+01:28:39,800 --> 01:28:41,800
+y
+
+2168
+01:28:43,800 --> 01:28:45,800
+y
+
+2169
+01:28:45,800 --> 01:28:47,800
+y
+
+2170
+01:28:47,800 --> 01:28:49,800
+y
+
+2171
+01:28:49,800 --> 01:28:51,800
+y
+
+2172
+01:28:51,800 --> 01:28:53,800
+y
+
+2173
+01:28:53,800 --> 01:28:55,800
+y
+
+2174
+01:28:55,800 --> 01:28:57,800
+y
+
+2175
+01:28:57,800 --> 01:28:59,800
+y
+
+2176
+01:28:59,800 --> 01:29:01,800
+y
+
+2177
+01:29:01,800 --> 01:29:03,800
+y
+
+2178
+01:29:03,800 --> 01:29:05,800
+y
+
+2179
+01:29:05,800 --> 01:29:07,800
+y
+
+2180
+01:29:07,800 --> 01:29:09,800
+y
+
+2181
+01:29:11,800 --> 01:29:13,800
+y
+
+2182
+01:29:13,800 --> 01:29:15,800
+y
+
+2183
+01:29:15,800 --> 01:29:17,800
+y
+
+2184
+01:29:17,800 --> 01:29:19,800
+y
+
+2185
+01:29:19,800 --> 01:29:21,800
+y
+
+2186
+01:29:21,800 --> 01:29:25,800
+y
+
+2187
+01:29:25,800 --> 01:29:27,800
+y
+
+2188
+01:29:27,800 --> 01:29:29,800
+y
+
+2189
+01:29:29,800 --> 01:29:31,800
+y
+
+2190
+01:29:31,800 --> 01:29:33,800
+y
+
+2191
+01:29:33,800 --> 01:29:35,800
+y
+
+2192
+01:29:35,800 --> 01:29:37,800
+y
+
+2193
+01:29:37,800 --> 01:29:39,800
+y
+
+2194
+01:29:39,800 --> 01:29:41,800
+y
+
+2195
+01:29:41,800 --> 01:29:43,800
+y
+
+2196
+01:29:43,800 --> 01:29:45,800
+y
+
+2197
+01:29:45,800 --> 01:29:47,800
+y
+
+2198
+01:29:47,800 --> 01:29:49,800
+y
+
+2199
+01:29:49,800 --> 01:29:53,800
+y
+
+2200
+01:29:53,800 --> 01:29:55,800
+y
+
+2201
+01:29:55,800 --> 01:29:57,800
+y
+
+2202
+01:29:57,800 --> 01:29:59,800
+y
+
+2203
+01:29:59,800 --> 01:30:01,800
+y
+
+2204
+01:30:01,800 --> 01:30:03,800
+y
+
+2205
+01:30:03,800 --> 01:30:05,800
+y
+
+2206
+01:30:05,800 --> 01:30:07,800
+y
+
+2207
+01:30:07,800 --> 01:30:09,800
+y
+
+2208
+01:30:09,800 --> 01:30:11,800
+y
+
+2209
+01:30:13,800 --> 01:30:15,800
+y
+
+2210
+01:30:15,800 --> 01:30:17,800
+y
+
+2211
+01:30:17,800 --> 01:30:19,800
+y
+
+2212
+01:30:19,800 --> 01:30:21,800
+y
+
+2213
+01:30:21,800 --> 01:30:23,800
+y
+
+2214
+01:30:23,800 --> 01:30:25,800
+y
+
+2215
+01:30:25,800 --> 01:30:27,800
+y
+
+2216
+01:30:27,800 --> 01:30:29,800
+y
+
+2217
+01:30:29,800 --> 01:30:31,800
+y
+
+2218
+01:30:31,800 --> 01:30:33,800
+y
+
+2219
+01:30:33,800 --> 01:30:35,800
+y
+
+2220
+01:30:35,800 --> 01:30:37,800
+y
+
+2221
+01:30:37,800 --> 01:30:39,800
+y
+
+2222
+01:30:41,800 --> 01:30:43,800
+y
+
+2223
+01:30:43,800 --> 01:30:45,800
+y
+
+2224
+01:30:45,800 --> 01:30:47,800
+y
+
+2225
+01:30:47,800 --> 01:30:49,800
+y
+
+2226
+01:30:49,800 --> 01:30:51,800
+y
+
+2227
+01:30:51,800 --> 01:30:53,800
+y
+
+2228
+01:30:53,800 --> 01:30:55,800
+y
+
+2229
+01:30:55,800 --> 01:30:57,800
+y
+
+2230
+01:30:57,800 --> 01:30:59,800
+y
+
+2231
+01:30:59,800 --> 01:31:01,800
+y
+
+2232
+01:31:01,800 --> 01:31:03,800
+y
+
+2233
+01:31:03,800 --> 01:31:05,800
+y
+
+2234
+01:31:05,800 --> 01:31:07,800
+y
+
+2235
+01:31:07,800 --> 01:31:09,800
+y
+
+2236
+01:31:09,800 --> 01:31:11,800
+y
+
+2237
+01:31:11,800 --> 01:31:13,800
+y
+
+2238
+01:31:13,800 --> 01:31:15,800
+y
+
+2239
+01:31:15,800 --> 01:31:17,800
+y
+
+2240
+01:31:17,800 --> 01:31:19,800
+y
+
+2241
+01:31:19,800 --> 01:31:21,800
+y
+
+2242
+01:31:21,800 --> 01:31:23,800
+y
+
+2243
+01:31:23,800 --> 01:31:25,800
+y
+
+2244
+01:31:25,800 --> 01:31:27,800
+y
+
+2245
+01:31:27,800 --> 01:31:29,800
+y
+
+2246
+01:31:31,800 --> 01:31:33,800
+y
+
+2247
+01:31:33,800 --> 01:31:35,800
+y
+
+2248
+01:31:35,800 --> 01:31:37,800
+y
+
+2249
+01:31:37,800 --> 01:31:39,800
+y
+
+2250
+01:31:39,800 --> 01:31:41,800
+y
+
+2251
+01:31:41,800 --> 01:31:45,800
+y
+
+2252
+01:31:45,800 --> 01:31:47,800
+y
+
+2253
+01:31:47,800 --> 01:31:49,800
+y
+
+2254
+01:31:49,800 --> 01:31:51,800
+y
+
+2255
+01:31:51,800 --> 01:31:53,800
+y
+
+2256
+01:31:53,800 --> 01:31:55,800
+y
+
+2257
+01:31:55,800 --> 01:31:57,800
+y
+
+2258
+01:31:57,800 --> 01:31:59,800
+y
+
+2259
+01:31:59,800 --> 01:32:01,800
+y
+
+2260
+01:32:01,800 --> 01:32:03,800
+y
+
+2261
+01:32:03,800 --> 01:32:05,800
+y
+
+2262
+01:32:05,800 --> 01:32:07,800
+y
+
+2263
+01:32:07,800 --> 01:32:09,800
+y
+
+2264
+01:32:09,800 --> 01:32:13,800
+y
+
+2265
+01:32:13,800 --> 01:32:15,800
+y
+
+2266
+01:32:15,800 --> 01:32:17,800
+y
+
+2267
+01:32:17,800 --> 01:32:19,800
+y
+
+2268
+01:32:19,800 --> 01:32:21,800
+y
+
+2269
+01:32:21,800 --> 01:32:23,800
+y
+
+2270
+01:32:23,800 --> 01:32:25,800
+y
+
+2271
+01:32:25,800 --> 01:32:27,800
+y
+
+2272
+01:32:27,800 --> 01:32:29,800
+y
+
+2273
+01:32:29,800 --> 01:32:31,800
+y
+
+2274
+01:32:31,800 --> 01:32:33,800
+y
+
+2275
+01:32:33,800 --> 01:32:35,800
+y
+
+2276
+01:32:35,800 --> 01:32:37,800
+y
+
+2277
+01:32:37,800 --> 01:32:39,800
+y
+
+2278
+01:32:39,800 --> 01:32:41,800
+y
+
+2279
+01:32:41,800 --> 01:32:43,800
+y
+
+2280
+01:32:43,800 --> 01:32:45,800
+y
+
+2281
+01:32:45,800 --> 01:32:47,800
+y
+
+2282
+01:32:47,800 --> 01:32:49,800
+y
+
+2283
+01:32:49,800 --> 01:32:51,800
+y
+
+2284
+01:32:51,800 --> 01:32:53,800
+y
+
+2285
+01:32:55,800 --> 01:32:57,800
+y
+
+2286
+01:32:57,800 --> 01:32:59,800
+y
+
+2287
+01:32:59,800 --> 01:33:01,800
+y
+
+2288
+01:33:01,800 --> 01:33:03,800
+y
+
+2289
+01:33:03,800 --> 01:33:05,800
+y
+
+2290
+01:33:05,800 --> 01:33:07,800
+y
+
+2291
+01:33:07,800 --> 01:33:09,800
+y
+
+2292
+01:33:09,800 --> 01:33:11,800
+y
+
+2293
+01:33:11,800 --> 01:33:13,800
+y
+
+2294
+01:33:13,800 --> 01:33:15,800
+y
+
+2295
+01:33:15,800 --> 01:33:17,800
+y
+
+2296
+01:33:17,800 --> 01:33:19,800
+y
+
+2297
+01:33:19,800 --> 01:33:21,800
+y
+
+2298
+01:33:23,800 --> 01:33:25,800
+y
+
+2299
+01:33:25,800 --> 01:33:27,800
+y
+
+2300
+01:33:27,800 --> 01:33:29,800
+y
+
+2301
+01:33:29,800 --> 01:33:31,800
+y
+
+2302
+01:33:31,800 --> 01:33:33,800
+y
+
+2303
+01:33:33,800 --> 01:33:37,800
+y
+
+2304
+01:33:37,800 --> 01:33:39,800
+y
+
+2305
+01:33:39,800 --> 01:33:41,800
+y
+
+2306
+01:33:41,800 --> 01:33:43,800
+y
+
+2307
+01:33:43,800 --> 01:33:45,800
+y
+
+2308
+01:33:45,800 --> 01:33:47,800
+y
+
+2309
+01:33:47,800 --> 01:33:49,800
+y
+
+2310
+01:33:49,800 --> 01:33:51,800
+y
+
+2311
+01:33:51,800 --> 01:33:53,800
+y
+
+2312
+01:33:53,800 --> 01:33:55,800
+y
+
+2313
+01:33:55,800 --> 01:33:57,800
+y
+
+2314
+01:33:57,800 --> 01:33:59,800
+y
+
+2315
+01:33:59,800 --> 01:34:01,800
+y
+
+2316
+01:34:01,800 --> 01:34:03,800
+y
+
+2317
+01:34:03,800 --> 01:34:05,800
+y
+
+2318
+01:34:05,800 --> 01:34:07,800
+y
+
+2319
+01:34:07,800 --> 01:34:09,800
+y
+
+2320
+01:34:09,800 --> 01:34:11,800
+y
+
+2321
+01:34:11,800 --> 01:34:13,800
+y
+
+2322
+01:34:13,800 --> 01:34:15,800
+y
+
+2323
+01:34:15,800 --> 01:34:17,800
+y
+
+2324
+01:34:19,800 --> 01:34:21,800
+y
+
+2325
+01:34:21,800 --> 01:34:23,800
+y
+
+2326
+01:34:23,800 --> 01:34:25,800
+y
+
+2327
+01:34:25,800 --> 01:34:27,800
+y
+
+2328
+01:34:27,800 --> 01:34:29,800
+y
+
+2329
+01:34:29,800 --> 01:34:31,800
+y
+
+2330
+01:34:31,800 --> 01:34:33,800
+y
+
+2331
+01:34:33,800 --> 01:34:35,800
+y
+
+2332
+01:34:35,800 --> 01:34:37,800
+y
+
+2333
+01:34:37,800 --> 01:34:39,800
+y
+
+2334
+01:34:39,800 --> 01:34:41,800
+y
+
+2335
+01:34:41,800 --> 01:34:43,800
+y
+
+2336
+01:34:43,800 --> 01:34:45,800
+y
+
+2337
+01:34:47,800 --> 01:34:49,800
+y
+
+2338
+01:34:49,800 --> 01:34:51,800
+y
+
+2339
+01:34:51,800 --> 01:34:53,800
+y
+
+2340
+01:34:53,800 --> 01:34:57,800
+y
+
+2341
+01:34:57,800 --> 01:34:59,800
+y
+
+2342
+01:34:59,800 --> 01:35:01,800
+y
+
+2343
+01:35:01,800 --> 01:35:03,800
+y
+
+2344
+01:35:03,800 --> 01:35:05,800
+y
+
+2345
+01:35:05,800 --> 01:35:07,800
+y
+
+2346
+01:35:07,800 --> 01:35:09,800
+y
+
+2347
+01:35:09,800 --> 01:35:11,800
+y
+
+2348
+01:35:11,800 --> 01:35:13,800
+y
+
+2349
+01:35:13,800 --> 01:35:15,800
+y
+
+2350
+01:35:15,800 --> 01:35:17,800
+y
+
+2351
+01:35:17,800 --> 01:35:19,800
+y
+
+2352
+01:35:19,800 --> 01:35:21,800
+y
+
+2353
+01:35:21,800 --> 01:35:23,800
+y
+
+2354
+01:35:23,800 --> 01:35:25,800
+y
+
+2355
+01:35:25,800 --> 01:35:27,800
+y
+
+2356
+01:35:27,800 --> 01:35:29,800
+y
+
+2357
+01:35:29,800 --> 01:35:31,800
+y
+
+2358
+01:35:31,800 --> 01:35:33,800
+y
+
+2359
+01:35:33,800 --> 01:35:35,800
+y
+
+2360
+01:35:35,800 --> 01:35:37,800
+y
+
+2361
+01:35:37,800 --> 01:35:39,800
+y
+
+2362
+01:35:39,800 --> 01:35:41,800
+y
+
+2363
+01:35:43,800 --> 01:35:45,800
+y
+
+2364
+01:35:45,800 --> 01:35:47,800
+y
+
+2365
+01:35:47,800 --> 01:35:49,800
+y
+
+2366
+01:35:49,800 --> 01:35:51,800
+y
+
+2367
+01:35:51,800 --> 01:35:53,800
+y
+
+2368
+01:35:53,800 --> 01:35:55,800
+y
+
+2369
+01:35:55,800 --> 01:35:57,800
+y
+
+2370
+01:35:57,800 --> 01:35:59,800
+y
+
+2371
+01:35:59,800 --> 01:36:01,800
+y
+
+2372
+01:36:01,800 --> 01:36:03,800
+y
+
+2373
+01:36:03,800 --> 01:36:05,800
+y
+
+2374
+01:36:05,800 --> 01:36:07,800
+y
+
+2375
+01:36:07,800 --> 01:36:09,800
+y
+
+2376
+01:36:11,800 --> 01:36:13,800
+y
+
+2377
+01:36:13,800 --> 01:36:15,800
+y
+
+2378
+01:36:15,800 --> 01:36:17,800
+y
+
+2379
+01:36:17,800 --> 01:36:19,800
+y
+
+2380
+01:36:19,800 --> 01:36:21,800
+y
+
+2381
+01:36:21,800 --> 01:36:25,800
+y
+
+2382
+01:36:25,800 --> 01:36:27,800
+y
+
+2383
+01:36:27,800 --> 01:36:29,800
+y
+
+2384
+01:36:29,800 --> 01:36:31,800
+y
+
+2385
+01:36:31,800 --> 01:36:33,800
+y
+
+2386
+01:36:33,800 --> 01:36:35,800
+y
+
+2387
+01:36:35,800 --> 01:36:37,800
+y
+
+2388
+01:36:37,800 --> 01:36:39,800
+y
+
+2389
+01:36:39,800 --> 01:36:41,800
+y
+
+2390
+01:36:41,800 --> 01:36:43,800
+y
+
+2391
+01:36:43,800 --> 01:36:45,800
+y
+
+2392
+01:36:45,800 --> 01:36:47,800
+y
+
+2393
+01:36:47,800 --> 01:36:49,800
+y
+
+2394
+01:36:49,800 --> 01:36:51,800
+y
+
+2395
+01:36:51,800 --> 01:36:53,800
+y
+
+2396
+01:36:53,800 --> 01:36:55,800
+y
+
+2397
+01:36:55,800 --> 01:36:57,800
+y
+
+2398
+01:36:57,800 --> 01:36:59,800
+y
+
+2399
+01:36:59,800 --> 01:37:01,800
+y
+
+2400
+01:37:03,800 --> 01:37:05,800
+y
+
+2401
+01:37:05,800 --> 01:37:07,800
+y
+
+2402
+01:37:07,800 --> 01:37:09,800
+y
+
+2403
+01:37:09,800 --> 01:37:11,800
+y
+
+2404
+01:37:11,800 --> 01:37:13,800
+y
+
+2405
+01:37:13,800 --> 01:37:15,800
+y
+
+2406
+01:37:15,800 --> 01:37:17,800
+y
+
+2407
+01:37:17,800 --> 01:37:19,800
+y
+
+2408
+01:37:19,800 --> 01:37:21,800
+y
+
+2409
+01:37:23,800 --> 01:37:25,800
+y
+
+2410
+01:37:25,800 --> 01:37:27,800
+y
+
+2411
+01:37:27,800 --> 01:37:29,800
+y
+
+2412
+01:37:29,800 --> 01:37:31,800
+y
+
+2413
+01:37:31,800 --> 01:37:33,800
+y
+
+2414
+01:37:33,800 --> 01:37:35,800
+y
+
+2415
+01:37:35,800 --> 01:37:37,800
+y
+
+2416
+01:37:37,800 --> 01:37:39,800
+y
+
+2417
+01:37:39,800 --> 01:37:41,800
+y
+
+2418
+01:37:41,800 --> 01:37:43,800
+y
+
+2419
+01:37:45,800 --> 01:37:47,800
+y
+
+2420
+01:37:47,800 --> 01:37:49,800
+y
+
+2421
+01:37:49,800 --> 01:37:51,800
+y
+
+2422
+01:37:51,800 --> 01:37:53,800
+y
+
+2423
+01:37:53,800 --> 01:37:55,800
+y
+
+2424
+01:37:55,800 --> 01:37:57,800
+y
+
+2425
+01:37:57,800 --> 01:37:59,800
+y
+
+2426
+01:37:59,800 --> 01:38:01,800
+y
+
+2427
+01:38:01,800 --> 01:38:03,800
+y
+
+2428
+01:38:03,800 --> 01:38:05,800
+y
+
+2429
+01:38:05,800 --> 01:38:07,800
+y
+
+2430
+01:38:07,800 --> 01:38:09,800
+y
+
+2431
+01:38:09,800 --> 01:38:11,800
+y
+
+2432
+01:38:11,800 --> 01:38:13,800
+y
+
+2433
+01:38:13,800 --> 01:38:15,800
+y
+
+2434
+01:38:15,800 --> 01:38:17,800
+y
+
+2435
+01:38:17,800 --> 01:38:19,800
+y
+
+2436
+01:38:19,800 --> 01:38:23,800
+y
+
+2437
+01:38:23,800 --> 01:38:25,800
+y
+
+2438
+01:38:25,800 --> 01:38:27,800
+y
+
+2439
+01:38:27,800 --> 01:38:29,800
+y
+
+2440
+01:38:29,800 --> 01:38:31,800
+y
+
+2441
+01:38:31,800 --> 01:38:33,800
+y
+
+2442
+01:38:33,800 --> 01:38:35,800
+y
+
+2443
+01:38:35,800 --> 01:38:37,800
+y
+
+2444
+01:38:37,800 --> 01:38:39,800
+y
+
+2445
+01:38:39,800 --> 01:38:41,800
+y
+
+2446
+01:38:41,800 --> 01:38:43,800
+y
+
+2447
+01:38:43,800 --> 01:38:45,800
+y
+
+2448
+01:38:45,800 --> 01:38:47,800
+y
+
+2449
+01:38:47,800 --> 01:38:49,800
+y
+
+2450
+01:38:49,800 --> 01:38:51,800
+y
+
+2451
+01:38:51,800 --> 01:38:53,800
+y
+
+2452
+01:38:53,800 --> 01:38:55,800
+y
+
+2453
+01:38:57,800 --> 01:38:59,800
+y
+
+2454
+01:38:59,800 --> 01:39:01,800
+y
+
+2455
+01:39:01,800 --> 01:39:03,800
+y
+
+2456
+01:39:03,800 --> 01:39:05,800
+y
+
+2457
+01:39:05,800 --> 01:39:07,800
+y
+
+2458
+01:39:07,800 --> 01:39:09,800
+y
+
+2459
+01:39:09,800 --> 01:39:11,800
+y
+
+2460
+01:39:11,800 --> 01:39:13,800
+y
+
+2461
+01:39:13,800 --> 01:39:15,800
+y
+
+2462
+01:39:15,800 --> 01:39:17,800
+y
+
+2463
+01:39:17,800 --> 01:39:19,800
+y
+
+2464
+01:39:19,800 --> 01:39:21,800
+y
+
+2465
+01:39:21,800 --> 01:39:23,800
+y
+
+2466
+01:39:23,800 --> 01:39:25,800
+y
+
+2467
+01:39:25,800 --> 01:39:27,800
+y
+
+2468
+01:39:27,800 --> 01:39:29,800
+y
+
+2469
+01:39:29,800 --> 01:39:31,800
+y
+
+2470
+01:39:31,800 --> 01:39:33,800
+y
+
+2471
+01:39:33,800 --> 01:39:35,800
+y
+
+2472
+01:39:35,800 --> 01:39:37,800
+y
+
+2473
+01:39:37,800 --> 01:39:39,800
+y
+
+2474
+01:39:39,800 --> 01:39:41,800
+y
+
+2475
+01:39:41,800 --> 01:39:43,800
+y
+
+2476
+01:39:43,800 --> 01:39:45,800
+y
+
+2477
+01:39:45,800 --> 01:39:47,800
+y
+
+2478
+01:39:47,800 --> 01:39:49,800
+y
+
+2479
+01:39:49,800 --> 01:39:51,800
+y
+
+2480
+01:39:53,800 --> 01:39:55,800
+y
+
+2481
+01:39:55,800 --> 01:39:57,800
+y
+
+2482
+01:39:57,800 --> 01:39:59,800
+y
+
+2483
+01:39:59,800 --> 01:40:01,800
+y
+
+2484
+01:40:01,800 --> 01:40:03,800
+y
+
+2485
+01:40:03,800 --> 01:40:05,800
+y
+
+2486
+01:40:05,800 --> 01:40:07,800
+y
+
+2487
+01:40:07,800 --> 01:40:09,800
+y
+
+2488
+01:40:09,800 --> 01:40:11,800
+y
+
+2489
+01:40:11,800 --> 01:40:13,800
+y
+
+2490
+01:40:13,800 --> 01:40:15,800
+y
+
+2491
+01:40:15,800 --> 01:40:17,800
+y
+
+2492
+01:40:17,800 --> 01:40:19,800
+y
+
+2493
+01:40:21,800 --> 01:40:23,800
+y
+
+2494
+01:40:23,800 --> 01:40:25,800
+y
+
+2495
+01:40:25,800 --> 01:40:27,800
+y
+
+2496
+01:40:27,800 --> 01:40:29,800
+y
+
+2497
+01:40:29,800 --> 01:40:31,800
+y
+
+2498
+01:40:31,800 --> 01:40:33,800
+y
+
+2499
+01:40:33,800 --> 01:40:35,800
+y
+
+2500
+01:40:37,800 --> 01:40:39,800
+y
+
+2501
+01:40:39,800 --> 01:40:41,800
+y
+
+2502
+01:40:41,800 --> 01:40:43,800
+y
+
+2503
+01:40:43,800 --> 01:40:45,800
+y
+
+2504
+01:40:45,800 --> 01:40:47,800
+y
+
+2505
+01:40:47,800 --> 01:40:49,800
+y
+
+2506
+01:40:49,800 --> 01:40:51,800
+y
+
+2507
+01:40:51,800 --> 01:40:53,800
+y
+
+2508
+01:40:53,800 --> 01:40:55,800
+y
+
+2509
+01:40:55,800 --> 01:40:57,800
+y
+
+2510
+01:40:57,800 --> 01:40:59,800
+y
+
+2511
+01:40:59,800 --> 01:41:01,800
+y
+
+2512
+01:41:01,800 --> 01:41:03,800
+y
+
+2513
+01:41:03,800 --> 01:41:05,800
+y
+
+2514
+01:41:05,800 --> 01:41:07,800
+y
+
+2515
+01:41:07,800 --> 01:41:09,800
+y
+
+2516
+01:41:09,800 --> 01:41:11,800
+y
+
+2517
+01:41:11,800 --> 01:41:13,800
+y
+
+2518
+01:41:13,800 --> 01:41:15,800
+y
+
+2519
+01:41:15,800 --> 01:41:17,800
+y
+
+2520
+01:41:17,800 --> 01:41:19,800
+y
+
+2521
+01:41:19,800 --> 01:41:21,800
+y
+
+2522
+01:41:21,800 --> 01:41:23,800
+y
+
+2523
+01:41:23,800 --> 01:41:25,800
+y
+
+2524
+01:41:25,800 --> 01:41:27,800
+y
+
+2525
+01:41:27,800 --> 01:41:29,800
+y
+
+2526
+01:41:29,800 --> 01:41:31,800
+y
+
+2527
+01:41:31,800 --> 01:41:33,800
+y
+
+2528
+01:41:33,800 --> 01:41:35,800
+y
+
+2529
+01:41:35,800 --> 01:41:37,800
+y
+
+2530
+01:41:37,800 --> 01:41:39,800
+y
+
+2531
+01:41:39,800 --> 01:41:41,800
+y
+
+2532
+01:41:43,800 --> 01:41:45,800
+y
+
+2533
+01:41:45,800 --> 01:41:47,800
+y
+
+2534
+01:41:47,800 --> 01:41:49,800
+y
+
+2535
+01:41:49,800 --> 01:41:51,800
+y
+
+2536
+01:41:51,800 --> 01:41:53,800
+y
+
+2537
+01:41:53,800 --> 01:41:55,800
+y
+
+2538
+01:41:55,800 --> 01:41:57,800
+y
+
+2539
+01:41:57,800 --> 01:41:59,800
+y
+
+2540
+01:41:59,800 --> 01:42:01,800
+y
+
+2541
+01:42:01,800 --> 01:42:03,800
+y
+
+2542
+01:42:03,800 --> 01:42:05,800
+y
+
+2543
+01:42:05,800 --> 01:42:07,800
+y
+
+2544
+01:42:09,800 --> 01:42:11,800
+y
+
+2545
+01:42:11,800 --> 01:42:13,800
+y
+
+2546
+01:42:13,800 --> 01:42:15,800
+y
+
+2547
+01:42:15,800 --> 01:42:17,800
+y
+
+2548
+01:42:17,800 --> 01:42:19,800
+y
+
+2549
+01:42:19,800 --> 01:42:21,800
+y
+
+2550
+01:42:21,800 --> 01:42:23,800
+y
+
+2551
+01:42:23,800 --> 01:42:25,800
+y
+
+2552
+01:42:25,800 --> 01:42:27,800
+y
+
+2553
+01:42:27,800 --> 01:42:29,800
+y
+
+2554
+01:42:29,800 --> 01:42:31,800
+y
+
+2555
+01:42:31,800 --> 01:42:33,800
+y
+
+2556
+01:42:33,800 --> 01:42:35,800
+y
+
+2557
+01:42:35,800 --> 01:42:37,800
+y
+
+2558
+01:42:37,800 --> 01:42:39,800
+y
+
+2559
+01:42:39,800 --> 01:42:41,800
+y
+
+2560
+01:42:41,800 --> 01:42:43,800
+y
+
+2561
+01:42:43,800 --> 01:42:45,800
+y
+
+2562
+01:42:45,800 --> 01:42:47,800
+y
+
+2563
+01:42:47,800 --> 01:42:49,800
+y
+
+2564
+01:42:49,800 --> 01:42:51,800
+y
+
+2565
+01:42:51,800 --> 01:42:53,800
+y
+
+2566
+01:42:53,800 --> 01:42:55,800
+y
+
+2567
+01:42:55,800 --> 01:42:57,800
+y
+
+2568
+01:42:57,800 --> 01:42:59,800
+y
+
+2569
+01:42:59,800 --> 01:43:01,800
+y
+
+2570
+01:43:01,800 --> 01:43:03,800
+y
+
+2571
+01:43:05,800 --> 01:43:07,800
+y
+
+2572
+01:43:07,800 --> 01:43:09,800
+y
+
+2573
+01:43:09,800 --> 01:43:11,800
+y
+
+2574
+01:43:11,800 --> 01:43:13,800
+y
+
+2575
+01:43:13,800 --> 01:43:15,800
+y
+
+2576
+01:43:15,800 --> 01:43:17,800
+y
+
+2577
+01:43:17,800 --> 01:43:19,800
+y
+
+2578
+01:43:19,800 --> 01:43:21,800
+y
+
+2579
+01:43:21,800 --> 01:43:23,800
+y
+
+2580
+01:43:23,800 --> 01:43:25,800
+y
+
+2581
+01:43:25,800 --> 01:43:27,800
+y
+
+2582
+01:43:27,800 --> 01:43:29,800
+y
+
+2583
+01:43:29,800 --> 01:43:31,800
+y
+
+2584
+01:43:31,800 --> 01:43:33,800
+y
+
+2585
+01:43:33,800 --> 01:43:35,800
+y
+
+2586
+01:43:37,800 --> 01:43:39,800
+y
+
+2587
+01:43:39,800 --> 01:43:41,800
+y
+
+2588
+01:43:41,800 --> 01:43:43,800
+y
+
+2589
+01:43:43,800 --> 01:43:45,800
+y
+
+2590
+01:43:45,800 --> 01:43:47,800
+y
+
+2591
+01:43:47,800 --> 01:43:49,800
+y
+
+2592
+01:43:49,800 --> 01:43:51,800
+y
+
+2593
+01:43:51,800 --> 01:43:53,800
+y
+
+2594
+01:43:53,800 --> 01:43:55,800
+y
+
+2595
+01:43:55,800 --> 01:43:57,800
+y
+
+2596
+01:43:57,800 --> 01:43:59,800
+y
+
+2597
+01:43:59,800 --> 01:44:01,800
+y
+
+2598
+01:44:01,800 --> 01:44:03,800
+y
+
+2599
+01:44:03,800 --> 01:44:05,800
+y
+
+2600
+01:44:05,800 --> 01:44:07,800
+y
+
+2601
+01:44:07,800 --> 01:44:09,800
+y
+
+2602
+01:44:09,800 --> 01:44:11,800
+y
+
+2603
+01:44:11,800 --> 01:44:13,800
+y
+
+2604
+01:44:13,800 --> 01:44:15,800
+y
+
+2605
+01:44:15,800 --> 01:44:17,800
+y
+
+2606
+01:44:17,800 --> 01:44:19,800
+y
+
+2607
+01:44:19,800 --> 01:44:21,800
+y
+
+2608
+01:44:23,800 --> 01:44:25,800
+y
+
+2609
+01:44:25,800 --> 01:44:27,800
+y
+
+2610
+01:44:27,800 --> 01:44:29,800
+y
+
+2611
+01:44:29,800 --> 01:44:31,800
+y
+
+2612
+01:44:31,800 --> 01:44:33,800
+y
+
+2613
+01:44:33,800 --> 01:44:35,800
+y
+
+2614
+01:44:35,800 --> 01:44:37,800
+y
+
+2615
+01:44:37,800 --> 01:44:39,800
+y
+
+2616
+01:44:39,800 --> 01:44:41,800
+y
+
+2617
+01:44:41,800 --> 01:44:43,800
+y
+
+2618
+01:44:43,800 --> 01:44:45,800
+y
+
+2619
+01:44:45,800 --> 01:44:47,800
+y
+
+2620
+01:44:47,800 --> 01:44:49,800
+y
+
+2621
+01:44:49,800 --> 01:44:51,800
+y
+
+2622
+01:44:51,800 --> 01:44:53,800
+y
+
+2623
+01:44:53,800 --> 01:44:55,800
+y
+
+2624
+01:44:55,800 --> 01:44:57,800
+y
+
+2625
+01:44:57,800 --> 01:44:59,800
+y
+
+2626
+01:44:59,800 --> 01:45:01,800
+y
+
+2627
+01:45:01,800 --> 01:45:03,800
+y
+
+2628
+01:45:03,800 --> 01:45:05,800
+y
+
+2629
+01:45:05,800 --> 01:45:07,800
+y
+
+2630
+01:45:09,800 --> 01:45:11,800
+y
+
+2631
+01:45:11,800 --> 01:45:13,800
+y
+
+2632
+01:45:13,800 --> 01:45:15,800
+y
+
+2633
+01:45:15,800 --> 01:45:17,800
+y
+
+2634
+01:45:17,800 --> 01:45:19,800
+y
+
+2635
+01:45:19,800 --> 01:45:21,800
+y
+
+2636
+01:45:21,800 --> 01:45:23,800
+y
+
+2637
+01:45:23,800 --> 01:45:25,800
+y
+
+2638
+01:45:25,800 --> 01:45:27,800
+y
+
+2639
+01:45:27,800 --> 01:45:29,800
+y
+
+2640
+01:45:29,800 --> 01:45:31,800
+y
+
+2641
+01:45:31,800 --> 01:45:33,800
+y
+
+2642
+01:45:33,800 --> 01:45:35,800
+y
+
+2643
+01:45:35,800 --> 01:45:37,800
+y
+
+2644
+01:45:37,800 --> 01:45:39,800
+y
+
+2645
+01:45:39,800 --> 01:45:41,800
+y
+
+2646
+01:45:41,800 --> 01:45:43,800
+y
+
+2647
+01:45:43,800 --> 01:45:45,800
+y
+
+2648
+01:45:45,800 --> 01:45:47,800
+y
+
+2649
+01:45:49,800 --> 01:45:51,800
+y
+
+2650
+01:45:51,800 --> 01:45:53,800
+y
+
+2651
+01:45:53,800 --> 01:45:55,800
+y
+
+2652
+01:45:55,800 --> 01:45:57,800
+y
+
+2653
+01:45:57,800 --> 01:45:59,800
+y
+
+2654
+01:45:59,800 --> 01:46:01,800
+y
+
+2655
+01:46:01,800 --> 01:46:03,800
+y
+
+2656
+01:46:03,800 --> 01:46:05,800
+y
+
+2657
+01:46:05,800 --> 01:46:07,800
+y
+
+2658
+01:46:07,800 --> 01:46:09,800
+y
+
+2659
+01:46:09,800 --> 01:46:11,800
+y
+
+2660
+01:46:11,800 --> 01:46:13,800
+y
+
+2661
+01:46:13,800 --> 01:46:15,800
+y
+
+2662
+01:46:15,800 --> 01:46:17,800
+y
+
+2663
+01:46:17,800 --> 01:46:19,800
+y
+
+2664
+01:46:19,800 --> 01:46:21,800
+y
+
+2665
+01:46:21,800 --> 01:46:23,800
+y
+
+2666
+01:46:23,800 --> 01:46:25,800
+y
+
+2667
+01:46:25,800 --> 01:46:27,800
+y
+
+2668
+01:46:27,800 --> 01:46:29,800
+y
+
+2669
+01:46:29,800 --> 01:46:31,800
+y
+
+2670
+01:46:31,800 --> 01:46:33,800
+y
+
+2671
+01:46:33,800 --> 01:46:35,800
+y
+
+2672
+01:46:35,800 --> 01:46:37,800
+y
+
+2673
+01:46:39,800 --> 01:46:41,800
+y
+
+2674
+01:46:41,800 --> 01:46:43,800
+y
+
+2675
+01:46:43,800 --> 01:46:45,800
+y
+
+2676
+01:46:45,800 --> 01:46:47,800
+y
+
+2677
+01:46:47,800 --> 01:46:49,800
+y
+
+2678
+01:46:49,800 --> 01:46:51,800
+y
+
+2679
+01:46:51,800 --> 01:46:53,800
+y
+
+2680
+01:46:53,800 --> 01:46:55,800
+y
+
+2681
+01:46:55,800 --> 01:46:57,800
+y
+
+2682
+01:46:57,800 --> 01:46:59,800
+y
+
+2683
+01:46:59,800 --> 01:47:01,800
+y
+
+2684
+01:47:01,800 --> 01:47:03,800
+y
+
+2685
+01:47:03,800 --> 01:47:05,800
+y
+
+2686
+01:47:05,800 --> 01:47:07,800
+y
+
+2687
+01:47:07,800 --> 01:47:09,800
+y
+
+2688
+01:47:11,800 --> 01:47:13,800
+y
+
+2689
+01:47:13,800 --> 01:47:15,800
+y
+
+2690
+01:47:15,800 --> 01:47:17,800
+y
+
+2691
+01:47:17,800 --> 01:47:19,800
+y
+
+2692
+01:47:19,800 --> 01:47:21,800
+y
+
+2693
+01:47:21,800 --> 01:47:23,800
+y
+
+2694
+01:47:23,800 --> 01:47:25,800
+y
+
+2695
+01:47:25,800 --> 01:47:27,800
+y
+
+2696
+01:47:27,800 --> 01:47:29,800
+y
+
+2697
+01:47:29,800 --> 01:47:31,800
+y
+
+2698
+01:47:31,800 --> 01:47:33,800
+y
+
+2699
+01:47:35,800 --> 01:47:37,800
+y
+
+2700
+01:47:37,800 --> 01:47:39,800
+y
+
+2701
+01:47:39,800 --> 01:47:41,800
+y
+
+2702
+01:47:41,800 --> 01:47:43,800
+y
+
+2703
+01:47:43,800 --> 01:47:45,800
+y
+
+2704
+01:47:45,800 --> 01:47:47,800
+y
+
+2705
+01:47:47,800 --> 01:47:49,800
+y
+
+2706
+01:47:49,800 --> 01:47:51,800
+y
+
+2707
+01:47:51,800 --> 01:47:53,800
+y
+
+2708
+01:47:53,800 --> 01:47:55,800
+y
+
+2709
+01:47:55,800 --> 01:47:57,800
+y
+
+2710
+01:47:57,800 --> 01:47:59,800
+y
+
+2711
+01:47:59,800 --> 01:48:01,800
+y
+
+2712
+01:48:01,800 --> 01:48:03,800
+y
+
+2713
+01:48:03,800 --> 01:48:05,800
+y
+
+2714
+01:48:05,800 --> 01:48:07,800
+y
+
+2715
+01:48:07,800 --> 01:48:09,800
+y
+
+2716
+01:48:09,800 --> 01:48:11,800
+y
+
+2717
+01:48:11,800 --> 01:48:13,800
+y
+
+2718
+01:48:13,800 --> 01:48:15,800
+y
+
+2719
+01:48:15,800 --> 01:48:17,800
+y
+
+2720
+01:48:17,800 --> 01:48:19,800
+y
+
+2721
+01:48:19,800 --> 01:48:21,800
+y
+
+2722
+01:48:21,800 --> 01:48:23,800
+y
+
+2723
+01:48:23,800 --> 01:48:25,800
+y
+
+2724
+01:48:25,800 --> 01:48:27,800
+y
+
+2725
+01:48:27,800 --> 01:48:29,800
+y
+
+2726
+01:48:29,800 --> 01:48:31,800
+y
+
+2727
+01:48:33,800 --> 01:48:35,800
+y
+
+2728
+01:48:35,800 --> 01:48:37,800
+y
+
+2729
+01:48:37,800 --> 01:48:39,800
+y
+
+2730
+01:48:39,800 --> 01:48:41,800
+y
+
+2731
+01:48:41,800 --> 01:48:43,800
+y
+
+2732
+01:48:43,800 --> 01:48:45,800
+y
+
+2733
+01:48:45,800 --> 01:48:47,800
+y
+
+2734
+01:48:49,800 --> 01:48:51,800
+y
+
+2735
+01:48:51,800 --> 01:48:53,800
+y
+
+2736
+01:48:53,800 --> 01:48:55,800
+y
+
+2737
+01:48:55,800 --> 01:48:57,800
+y
+
+2738
+01:48:57,800 --> 01:48:59,800
+y
+
+2739
+01:48:59,800 --> 01:49:01,800
+y
+
+2740
+01:49:01,800 --> 01:49:03,800
+y
+
+2741
+01:49:03,800 --> 01:49:05,800
+y
+
+2742
+01:49:05,800 --> 01:49:07,800
+y
+
+2743
+01:49:07,800 --> 01:49:09,800
+y
+
+2744
+01:49:09,800 --> 01:49:11,800
+y
+
+2745
+01:49:11,800 --> 01:49:13,800
+y
+
+2746
+01:49:13,800 --> 01:49:15,800
+y
+
+2747
+01:49:15,800 --> 01:49:17,800
+y
+
+2748
+01:49:17,800 --> 01:49:19,800
+y
+
+2749
+01:49:19,800 --> 01:49:21,800
+y
+
+2750
+01:49:21,800 --> 01:49:23,800
+y
+
+2751
+01:49:23,800 --> 01:49:25,800
+y
+
+2752
+01:49:25,800 --> 01:49:27,800
+y
+
+2753
+01:49:27,800 --> 01:49:29,800
+y
+
+2754
+01:49:29,800 --> 01:49:31,800
+y
+
+2755
+01:49:31,800 --> 01:49:33,800
+y
+
+2756
+01:49:33,800 --> 01:49:35,800
+y
+
+2757
+01:49:37,800 --> 01:49:39,800
+y
+
+2758
+01:49:39,800 --> 01:49:41,800
+y
+
+2759
+01:49:41,800 --> 01:49:43,800
+y
+
+2760
+01:49:43,800 --> 01:49:45,800
+y
+
+2761
+01:49:45,800 --> 01:49:47,800
+y
+
+2762
+01:49:47,800 --> 01:49:49,800
+y
+
+2763
+01:49:49,800 --> 01:49:51,800
+y
+
+2764
+01:49:51,800 --> 01:49:53,800
+y
+
+2765
+01:49:53,800 --> 01:49:55,800
+y
+
+2766
+01:49:55,800 --> 01:49:57,800
+y
+
+2767
+01:49:57,800 --> 01:49:59,800
+y
+
+2768
+01:49:59,800 --> 01:50:01,800
+y
+
+2769
+01:50:01,800 --> 01:50:03,800
+y
+
+2770
+01:50:03,800 --> 01:50:05,800
+y
+
+2771
+01:50:05,800 --> 01:50:07,800
+y
+
+2772
+01:50:07,800 --> 01:50:09,800
+y
+
+2773
+01:50:09,800 --> 01:50:11,800
+y
+
+2774
+01:50:11,800 --> 01:50:13,800
+y
+
+2775
+01:50:13,800 --> 01:50:15,800
+y
+
+2776
+01:50:15,800 --> 01:50:17,800
+y
+
+2777
+01:50:17,800 --> 01:50:19,800
+y
+
+2778
+01:50:19,800 --> 01:50:21,800
+y
+
+2779
+01:50:23,800 --> 01:50:25,800
+y
+
+2780
+01:50:25,800 --> 01:50:27,800
+y
+
+2781
+01:50:27,800 --> 01:50:29,800
+y
+
+2782
+01:50:29,800 --> 01:50:31,800
+y
+
+2783
+01:50:31,800 --> 01:50:33,800
+y
+
+2784
+01:50:33,800 --> 01:50:35,800
+y
+
+2785
+01:50:35,800 --> 01:50:37,800
+y
+
+2786
+01:50:37,800 --> 01:50:39,800
+y
+
+2787
+01:50:39,800 --> 01:50:41,800
+y
+
+2788
+01:50:41,800 --> 01:50:43,800
+y
+
+2789
+01:50:43,800 --> 01:50:45,800
+y
+
+2790
+01:50:47,800 --> 01:50:49,800
+y
+
+2791
+01:50:49,800 --> 01:50:51,800
+y
+
+2792
+01:50:51,800 --> 01:50:53,800
+y
+
+2793
+01:50:53,800 --> 01:50:55,800
+y
+
+2794
+01:50:55,800 --> 01:50:57,800
+y
+
+2795
+01:50:57,800 --> 01:50:59,800
+y
+
+2796
+01:50:59,800 --> 01:51:01,800
+y
+
+2797
+01:51:01,800 --> 01:51:03,800
+y
+
+2798
+01:51:03,800 --> 01:51:05,800
+y
+
+2799
+01:51:07,800 --> 01:51:09,800
+y
+
+2800
+01:51:09,800 --> 01:51:11,800
+y
+
+2801
+01:51:11,800 --> 01:51:13,800
+y
+
+2802
+01:51:13,800 --> 01:51:15,800
+y
+
+2803
+01:51:15,800 --> 01:51:17,800
+y
+
+2804
+01:51:17,800 --> 01:51:19,800
+y
+
+2805
+01:51:19,800 --> 01:51:21,800
+y
+
+2806
+01:51:21,800 --> 01:51:23,800
+y
+
+2807
+01:51:23,800 --> 01:51:25,800
+y
+
+2808
+01:51:25,800 --> 01:51:27,800
+y
+
+2809
+01:51:27,800 --> 01:51:29,800
+y
+
+2810
+01:51:29,800 --> 01:51:31,800
+y
+
+2811
+01:51:31,800 --> 01:51:33,800
+y
+
+2812
+01:51:33,800 --> 01:51:35,800
+y
+
+2813
+01:51:35,800 --> 01:51:37,800
+y
+
+2814
+01:51:37,800 --> 01:51:39,800
+y
+
+2815
+01:51:39,800 --> 01:51:41,800
+y
+
+2816
+01:51:41,800 --> 01:51:43,800
+y
+
+2817
+01:51:43,800 --> 01:51:45,800
+y
+
+2818
+01:51:45,800 --> 01:51:47,800
+y
+
+2819
+01:51:47,800 --> 01:51:49,800
+y
+
+2820
+01:51:49,800 --> 01:51:51,800
+y
+
+2821
+01:51:51,800 --> 01:51:53,800
+y
+
+2822
+01:51:53,800 --> 01:51:55,800
+y
+
+2823
+01:51:55,800 --> 01:51:57,800
+y
+
+2824
+01:51:57,800 --> 01:51:59,800
+y
+
+2825
+01:51:59,800 --> 01:52:01,800
+y
+
+2826
+01:52:01,800 --> 01:52:03,800
+y
+
+2827
+01:52:03,800 --> 01:52:05,800
+y
+
+2828
+01:52:05,800 --> 01:52:07,800
+y
+
+2829
+01:52:07,800 --> 01:52:09,800
+y
+
+2830
+01:52:09,800 --> 01:52:11,800
+y
+
+2831
+01:52:11,800 --> 01:52:13,800
+y
+
+2832
+01:52:13,800 --> 01:52:15,800
+y
+
+2833
+01:52:15,800 --> 01:52:17,800
+y
+
+2834
+01:52:17,800 --> 01:52:19,800
+y
+
+2835
+01:52:19,800 --> 01:52:21,800
+y
+
+2836
+01:52:21,800 --> 01:52:23,800
+y
+
+2837
+01:52:23,800 --> 01:52:25,800
+y
+
+2838
+01:52:25,800 --> 01:52:27,800
+y
+
+2839
+01:52:27,800 --> 01:52:29,800
+y
+
+2840
+01:52:29,800 --> 01:52:31,800
+y
+
+2841
+01:52:31,800 --> 01:52:33,800
+y
+
+2842
+01:52:33,800 --> 01:52:35,800
+y
+
+2843
+01:52:35,800 --> 01:52:37,800
+y
+
+2844
+01:52:39,800 --> 01:52:41,800
+y
+
+2845
+01:52:41,800 --> 01:52:43,800
+y
+
+2846
+01:52:43,800 --> 01:52:45,800
+y
+
+2847
+01:52:45,800 --> 01:52:47,800
+y
+
+2848
+01:52:47,800 --> 01:52:49,800
+y
+
+2849
+01:52:49,800 --> 01:52:51,800
+y
+
+2850
+01:52:51,800 --> 01:52:53,800
+y
+
+2851
+01:52:53,800 --> 01:52:55,800
+y
+
+2852
+01:52:55,800 --> 01:52:57,800
+y
+
+2853
+01:52:57,800 --> 01:52:59,800
+y
+
+2854
+01:52:59,800 --> 01:53:01,800
+y
+
+2855
+01:53:01,800 --> 01:53:03,800
+y
+
+2856
+01:53:05,800 --> 01:53:07,800
+y
+
+2857
+01:53:07,800 --> 01:53:09,800
+y
+
+2858
+01:53:09,800 --> 01:53:11,800
+y
+
+2859
+01:53:11,800 --> 01:53:13,800
+y
+
+2860
+01:53:13,800 --> 01:53:15,800
+y
+
+2861
+01:53:15,800 --> 01:53:17,800
+y
+
+2862
+01:53:17,800 --> 01:53:19,800
+y
+
+2863
+01:53:19,800 --> 01:53:21,800
+y
+
+2864
+01:53:23,800 --> 01:53:25,800
+y
+
+2865
+01:53:25,800 --> 01:53:27,800
+y
+
+2866
+01:53:27,800 --> 01:53:29,800
+y
+
+2867
+01:53:29,800 --> 01:53:31,800
+y
+
+2868
+01:53:31,800 --> 01:53:33,800
+y
+
+2869
+01:53:33,800 --> 01:53:35,800
+y
+
+2870
+01:53:35,800 --> 01:53:37,800
+y
+
+2871
+01:53:37,800 --> 01:53:39,800
+y
+
+2872
+01:53:39,800 --> 01:53:41,800
+y
+
+2873
+01:53:41,800 --> 01:53:43,800
+y
+
+2874
+01:53:43,800 --> 01:53:45,800
+y
+
+2875
+01:53:45,800 --> 01:53:47,800
+y
+
+2876
+01:53:47,800 --> 01:53:49,800
+y
+
+2877
+01:53:49,800 --> 01:53:51,800
+y
+
+2878
+01:53:51,800 --> 01:53:53,800
+y
+
+2879
+01:53:53,800 --> 01:53:55,800
+y
+
+2880
+01:53:55,800 --> 01:53:57,800
+y
+
+2881
+01:53:57,800 --> 01:53:59,800
+y
+
+2882
+01:53:59,800 --> 01:54:01,800
+y
+
+2883
+01:54:01,800 --> 01:54:03,800
+y
+
+2884
+01:54:03,800 --> 01:54:05,800
+y
+
+2885
+01:54:07,800 --> 01:54:09,800
+y
+
+2886
+01:54:09,800 --> 01:54:11,800
+y
+
+2887
+01:54:11,800 --> 01:54:13,800
+y
+
+2888
+01:54:13,800 --> 01:54:15,800
+y
+
+2889
+01:54:15,800 --> 01:54:17,800
+y
+
+2890
+01:54:17,800 --> 01:54:19,800
+y
+
+2891
+01:54:19,800 --> 01:54:21,800
+y
+
+2892
+01:54:21,800 --> 01:54:23,800
+y
+
+2893
+01:54:23,800 --> 01:54:25,800
+y
+
+2894
+01:54:25,800 --> 01:54:27,800
+y
+
+2895
+01:54:27,800 --> 01:54:29,800
+y
+
+2896
+01:54:29,800 --> 01:54:31,800
+y
+
+2897
+01:54:31,800 --> 01:54:33,800
+y
+
+2898
+01:54:33,800 --> 01:54:35,800
+y
+
+2899
+01:54:35,800 --> 01:54:37,800
+y
+
+2900
+01:54:37,800 --> 01:54:39,800
+y
+
+2901
+01:54:39,800 --> 01:54:41,800
+y
+
+2902
+01:54:41,800 --> 01:54:43,800
+y
+
+2903
+01:54:43,800 --> 01:54:45,800
+y
+
+2904
+01:54:45,800 --> 01:54:47,800
+y
+
+2905
+01:54:47,800 --> 01:54:49,800
+y
+
+2906
+01:54:49,800 --> 01:54:51,800
+y
+
+2907
+01:54:53,800 --> 01:54:55,800
+y
+
+2908
+01:54:55,800 --> 01:54:57,800
+y
+
+2909
+01:54:57,800 --> 01:54:59,800
+y
+
+2910
+01:54:59,800 --> 01:55:01,800
+y
+
+2911
+01:55:01,800 --> 01:55:03,800
+y
+
+2912
+01:55:03,800 --> 01:55:05,800
+y
+
+2913
+01:55:05,800 --> 01:55:07,800
+y
+
+2914
+01:55:07,800 --> 01:55:09,800
+y
+
+2915
+01:55:09,800 --> 01:55:11,800
+y
+
+2916
+01:55:11,800 --> 01:55:13,800
+y
+
+2917
+01:55:13,800 --> 01:55:15,800
+y
+
+2918
+01:55:15,800 --> 01:55:17,800
+y
+
+2919
+01:55:17,800 --> 01:55:19,800
+y
+
+2920
+01:55:19,800 --> 01:55:21,800
+y
+
+2921
+01:55:21,800 --> 01:55:23,800
+y
+
+2922
+01:55:23,800 --> 01:55:25,800
+y
+
+2923
+01:55:25,800 --> 01:55:27,800
+y
+
+2924
+01:55:27,800 --> 01:55:29,800
+y
+
+2925
+01:55:29,800 --> 01:55:31,800
+y
+
+2926
+01:55:31,800 --> 01:55:33,800
+y
+
+2927
+01:55:35,800 --> 01:55:37,800
+y
+
+2928
+01:55:37,800 --> 01:55:39,800
+y
+
+2929
+01:55:39,800 --> 01:55:41,800
+y
+
+2930
+01:55:41,800 --> 01:55:43,800
+y
+
+2931
+01:55:43,800 --> 01:55:45,800
+y
+
+2932
+01:55:45,800 --> 01:55:47,800
+y
+
+2933
+01:55:47,800 --> 01:55:49,800
+y
+
+2934
+01:55:49,800 --> 01:55:51,800
+y
+
+2935
+01:55:51,800 --> 01:55:53,800
+y
+
+2936
+01:55:53,800 --> 01:55:55,800
+y
+
+2937
+01:55:55,800 --> 01:55:57,800
+y
+
+2938
+01:55:57,800 --> 01:55:59,800
+y
+
+2939
+01:55:59,800 --> 01:56:01,800
+y
+
+2940
+01:56:01,800 --> 01:56:03,800
+y
+
+2941
+01:56:03,800 --> 01:56:05,800
+y
+
+2942
+01:56:05,800 --> 01:56:07,800
+y
+
+2943
+01:56:07,800 --> 01:56:09,800
+y
+
+2944
+01:56:09,800 --> 01:56:11,800
+y
+
+2945
+01:56:11,800 --> 01:56:13,800
+y
+
+2946
+01:56:13,800 --> 01:56:15,800
+y
+
+2947
+01:56:15,800 --> 01:56:17,800
+y
+
+2948
+01:56:19,800 --> 01:56:21,800
+y
+
+2949
+01:56:21,800 --> 01:56:23,800
+y
+
+2950
+01:56:23,800 --> 01:56:25,800
+y
+
+2951
+01:56:25,800 --> 01:56:27,800
+y
+
+2952
+01:56:27,800 --> 01:56:29,800
+y
+
+2953
+01:56:29,800 --> 01:56:31,800
+y
+
+2954
+01:56:31,800 --> 01:56:33,800
+y
+
+2955
+01:56:33,800 --> 01:56:35,800
+y
+
+2956
+01:56:35,800 --> 01:56:37,800
+y
+
+2957
+01:56:37,800 --> 01:56:39,800
+y
+
+2958
+01:56:39,800 --> 01:56:41,800
+y
+
+2959
+01:56:41,800 --> 01:56:43,800
+y
+
+2960
+01:56:43,800 --> 01:56:45,800
+y
+
+2961
+01:56:47,800 --> 01:56:49,800
+y
+
+2962
+01:56:49,800 --> 01:56:51,800
+y
+
+2963
+01:56:51,800 --> 01:56:53,800
+y
+
+2964
+01:56:53,800 --> 01:56:55,800
+y
+
+2965
+01:56:55,800 --> 01:56:57,800
+y
+
+2966
+01:56:57,800 --> 01:56:59,800
+y
+
+2967
+01:56:59,800 --> 01:57:01,800
+y
+
+2968
+01:57:01,800 --> 01:57:03,800
+y
+
+2969
+01:57:03,800 --> 01:57:05,800
+y
+
+2970
+01:57:05,800 --> 01:57:07,800
+y
+
+2971
+01:57:09,800 --> 01:57:11,800
+y
+
+2972
+01:57:11,800 --> 01:57:13,800
+y
+
+2973
+01:57:13,800 --> 01:57:15,800
+y
+
+2974
+01:57:15,800 --> 01:57:17,800
+y
+
+2975
+01:57:17,800 --> 01:57:19,800
+y
+
+2976
+01:57:19,800 --> 01:57:21,800
+y
+
+2977
+01:57:21,800 --> 01:57:23,800
+y
+
+2978
+01:57:23,800 --> 01:57:25,800
+y
+
+2979
+01:57:25,800 --> 01:57:27,800
+y
+
+2980
+01:57:27,800 --> 01:57:29,800
+y
+
+2981
+01:57:29,800 --> 01:57:31,800
+y
+
+2982
+01:57:31,800 --> 01:57:33,800
+y
+
+2983
+01:57:33,800 --> 01:57:35,800
+y
+
+2984
+01:57:35,800 --> 01:57:37,800
+y
+
+2985
+01:57:37,800 --> 01:57:39,800
+y
+
+2986
+01:57:39,800 --> 01:57:41,800
+y
+
+2987
+01:57:41,800 --> 01:57:43,800
+y
+
+2988
+01:57:43,800 --> 01:57:45,800
+y
+
+2989
+01:57:45,800 --> 01:57:47,800
+y
+
+2990
+01:57:47,800 --> 01:57:49,800
+y
+
+2991
+01:57:51,800 --> 01:57:53,800
+y
+
+2992
+01:57:53,800 --> 01:57:55,800
+y
+
+2993
+01:57:55,800 --> 01:57:57,800
+y
+
+2994
+01:57:57,800 --> 01:57:59,800
+y
+
+2995
+01:57:59,800 --> 01:58:01,800
+y
+
+2996
+01:58:01,800 --> 01:58:03,800
+y
+
+2997
+01:58:03,800 --> 01:58:05,800
+y
+
+2998
+01:58:05,800 --> 01:58:07,800
+y
+
+2999
+01:58:07,800 --> 01:58:09,800
+y
+
+3000
+01:58:09,800 --> 01:58:11,800
+y
+
+3001
+01:58:11,800 --> 01:58:13,800
+y
+
+3002
+01:58:13,800 --> 01:58:15,800
+y
+
+3003
+01:58:15,800 --> 01:58:17,800
+y
+
+3004
+01:58:17,800 --> 01:58:19,800
+y
+
+3005
+01:58:21,800 --> 01:58:23,800
+y
+
+3006
+01:58:23,800 --> 01:58:25,800
+y
+
+3007
+01:58:25,800 --> 01:58:27,800
+y
+
+3008
+01:58:27,800 --> 01:58:29,800
+y
+
+3009
+01:58:29,800 --> 01:58:31,800
+y
+
+3010
+01:58:31,800 --> 01:58:33,800
+y
+
+3011
+01:58:33,800 --> 01:58:35,800
+y
+
+3012
+01:58:35,800 --> 01:58:37,800
+y
+
+3013
+01:58:37,800 --> 01:58:39,800
+y
+
+3014
+01:58:39,800 --> 01:58:41,800
+y
+
+3015
+01:58:41,800 --> 01:58:43,800
+y
+
+3016
+01:58:43,800 --> 01:58:45,800
+y
+
+3017
+01:58:47,800 --> 01:58:49,800
+y
+
+3018
+01:58:49,800 --> 01:58:51,800
+y
+
+3019
+01:58:51,800 --> 01:58:53,800
+y
+
+3020
+01:58:53,800 --> 01:58:55,800
+y
+
+3021
+01:58:55,800 --> 01:58:57,800
+y
+
+3022
+01:58:57,800 --> 01:58:59,800
+y
+
+3023
+01:58:59,800 --> 01:59:01,800
+y
+
+3024
+01:59:01,800 --> 01:59:03,800
+y
+
+3025
+01:59:03,800 --> 01:59:05,800
+y
+
+3026
+01:59:05,800 --> 01:59:07,800
+y
+
+3027
+01:59:07,800 --> 01:59:09,800
+y
+
+3028
+01:59:09,800 --> 01:59:11,800
+y
+
+3029
+01:59:11,800 --> 01:59:13,800
+y
+
+3030
+01:59:13,800 --> 01:59:15,800
+y
+
+3031
+01:59:19,800 --> 01:59:21,800
+y
+
+3032
+01:59:21,800 --> 01:59:23,800
+y
+
+3033
+01:59:23,800 --> 01:59:25,800
+y
+
+3034
+01:59:25,800 --> 01:59:27,800
+y
+
+3035
+01:59:27,800 --> 01:59:29,800
+y
+
+3036
+01:59:29,800 --> 01:59:31,800
+y
+
+3037
+01:59:31,800 --> 01:59:33,800
+y
+
+3038
+01:59:33,800 --> 01:59:35,800
+y
+
+3039
+01:59:35,800 --> 01:59:37,800
+y
+
+3040
+01:59:37,800 --> 01:59:39,800
+y
+
+3041
+01:59:39,800 --> 01:59:41,800
+y
+
+3042
+01:59:41,800 --> 01:59:43,800
+y
+
+3043
+01:59:43,800 --> 01:59:47,800
+y
+
+3044
+01:59:47,800 --> 01:59:49,800
+y
+
+3045
+01:59:49,800 --> 01:59:51,800
+y
+
+3046
+01:59:51,800 --> 01:59:53,800
+y
+
+3047
+01:59:53,800 --> 01:59:55,800
+y
+
+3048
+01:59:55,800 --> 01:59:57,800
+y
+
+3049
+01:59:57,800 --> 01:59:59,800
+y
+
+3050
+01:59:59,800 --> 02:00:01,800
+y
+
+3051
+02:00:01,800 --> 02:00:03,800
+y
+
+3052
+02:00:03,800 --> 02:00:05,800
+y
+
+3053
+02:00:05,800 --> 02:00:07,800
+y
+
+3054
+02:00:07,800 --> 02:00:09,800
+y
+
+3055
+02:00:09,800 --> 02:00:11,800
+y
+
+3056
+02:00:11,800 --> 02:00:13,800
+y
+
+3057
+02:00:13,800 --> 02:00:15,800
+y
+
+3058
+02:00:15,800 --> 02:00:17,800
+y
+
+3059
+02:00:17,800 --> 02:00:19,800
+y
+
+3060
+02:00:19,800 --> 02:00:21,800
+y
+
+3061
+02:00:21,800 --> 02:00:23,800
+y
+
+3062
+02:00:23,800 --> 02:00:25,800
+y
+
+3063
+02:00:25,800 --> 02:00:27,800
+y
+
+3064
+02:00:27,800 --> 02:00:31,800
+y
+
+3065
+02:00:31,800 --> 02:00:33,800
+y
+
+3066
+02:00:33,800 --> 02:00:35,800
+y
+
+3067
+02:00:35,800 --> 02:00:37,800
+y
+
+3068
+02:00:37,800 --> 02:00:39,800
+y
+
+3069
+02:00:39,800 --> 02:00:43,800
+y
+
+3070
+02:00:43,800 --> 02:00:45,800
+y
+
+3071
+02:00:45,800 --> 02:00:47,800
+y
+
+3072
+02:00:47,800 --> 02:00:49,800
+y
+
+3073
+02:00:49,800 --> 02:00:51,800
+y
+
+3074
+02:00:51,800 --> 02:00:53,800
+y
+
+3075
+02:00:53,800 --> 02:00:55,800
+y
+
+3076
+02:00:55,800 --> 02:00:57,800
+y
+
+3077
+02:00:57,800 --> 02:00:59,800
+y
+
+3078
+02:00:59,800 --> 02:01:01,800
+y
+
+3079
+02:01:01,800 --> 02:01:03,800
+y
+
+3080
+02:01:03,800 --> 02:01:05,800
+y
+
+3081
+02:01:05,800 --> 02:01:07,800
+y
+
+3082
+02:01:07,800 --> 02:01:11,800
+y
+
+3083
+02:01:11,800 --> 02:01:13,800
+y
+
+3084
+02:01:13,800 --> 02:01:15,800
+y
+
+3085
+02:01:15,800 --> 02:01:17,800
+y
+
+3086
+02:01:17,800 --> 02:01:19,800
+y
+
+3087
+02:01:19,800 --> 02:01:21,800
+y
+
+3088
+02:01:21,800 --> 02:01:23,800
+y
+
+3089
+02:01:23,800 --> 02:01:25,800
+y
+
+3090
+02:01:25,800 --> 02:01:27,800
+y
+
+3091
+02:01:27,800 --> 02:01:29,800
+y
+
+3092
+02:01:29,800 --> 02:01:31,800
+y
+
+3093
+02:01:31,800 --> 02:01:33,800
+y
+
+3094
+02:01:33,800 --> 02:01:35,800
+y
+
+3095
+02:01:35,800 --> 02:01:39,800
+y
+
+3096
+02:01:39,800 --> 02:01:41,800
+y
+
+3097
+02:01:41,800 --> 02:01:43,800
+y
+
+3098
+02:01:43,800 --> 02:01:45,800
+y
+
+3099
+02:01:45,800 --> 02:01:47,800
+y
+
+3100
+02:01:47,800 --> 02:01:49,800
+y
+
+3101
+02:01:49,800 --> 02:01:51,800
+y
+
+3102
+02:01:51,800 --> 02:01:53,800
+y
+
+3103
+02:01:53,800 --> 02:01:55,800
+y
+
+3104
+02:01:55,800 --> 02:01:57,800
+y
+
+3105
+02:01:57,800 --> 02:01:59,800
+y
+
+3106
+02:01:59,800 --> 02:02:01,800
+y
+
+3107
+02:02:01,800 --> 02:02:03,800
+y
+
+3108
+02:02:05,800 --> 02:02:07,800
+y
+
+3109
+02:02:07,800 --> 02:02:09,800
+y
+
+3110
+02:02:09,800 --> 02:02:11,800
+y
+
+3111
+02:02:11,800 --> 02:02:13,800
+y
+
+3112
+02:02:13,800 --> 02:02:15,800
+y
+
+3113
+02:02:15,800 --> 02:02:17,800
+y
+
+3114
+02:02:17,800 --> 02:02:19,800
+y
+
+3115
+02:02:19,800 --> 02:02:21,800
+y
+
+3116
+02:02:21,800 --> 02:02:23,800
+y
+
+3117
+02:02:23,800 --> 02:02:25,800
+y
+
+3118
+02:02:25,800 --> 02:02:27,800
+y
+
+3119
+02:02:27,800 --> 02:02:29,800
+y
+
+3120
+02:02:29,800 --> 02:02:31,800
+y
+
+3121
+02:02:31,800 --> 02:02:35,800
+y
+
+3122
+02:02:35,800 --> 02:02:37,800
+y
+
+3123
+02:02:37,800 --> 02:02:39,800
+y
+
+3124
+02:02:39,800 --> 02:02:41,800
+y
+
+3125
+02:02:41,800 --> 02:02:43,800
+y
+
+3126
+02:02:43,800 --> 02:02:45,800
+y
+
+3127
+02:02:45,800 --> 02:02:47,800
+y
+
+3128
+02:02:47,800 --> 02:02:49,800
+y
+
+3129
+02:02:49,800 --> 02:02:51,800
+y
+
+3130
+02:02:51,800 --> 02:02:53,800
+y
+
+3131
+02:02:53,800 --> 02:02:55,800
+y
+
+3132
+02:02:55,800 --> 02:02:57,800
+y
+
+3133
+02:02:57,800 --> 02:02:59,800
+y
+
+3134
+02:02:59,800 --> 02:03:03,800
+y
+
+3135
+02:03:03,800 --> 02:03:05,800
+y
+
+3136
+02:03:05,800 --> 02:03:07,800
+y
+
+3137
+02:03:07,800 --> 02:03:09,800
+y
+
+3138
+02:03:09,800 --> 02:03:11,800
+y
+
+3139
+02:03:11,800 --> 02:03:13,800
+y
+
+3140
+02:03:13,800 --> 02:03:15,800
+y
+
+3141
+02:03:15,800 --> 02:03:17,800
+y
+
+3142
+02:03:17,800 --> 02:03:19,800
+y
+
+3143
+02:03:19,800 --> 02:03:21,800
+y
+
+3144
+02:03:21,800 --> 02:03:23,800
+y
+
+3145
+02:03:23,800 --> 02:03:25,800
+y
+
+3146
+02:03:25,800 --> 02:03:27,800
+y
+
+3147
+02:03:27,800 --> 02:03:31,800
+y
+
+3148
+02:03:31,800 --> 02:03:33,800
+y
+
+3149
+02:03:33,800 --> 02:03:35,800
+y
+
+3150
+02:03:35,800 --> 02:03:37,800
+y
+
+3151
+02:03:37,800 --> 02:03:39,800
+y
+
+3152
+02:03:39,800 --> 02:03:41,800
+y
+
+3153
+02:03:41,800 --> 02:03:43,800
+y
+
+3154
+02:03:43,800 --> 02:03:45,800
+y
+
+3155
+02:03:45,800 --> 02:03:47,800
+y
+
+3156
+02:03:47,800 --> 02:03:49,800
+y
+
+3157
+02:03:49,800 --> 02:03:51,800
+y
+
+3158
+02:03:51,800 --> 02:03:53,800
+y
+
+3159
+02:03:53,800 --> 02:03:55,800
+y
+
+3160
+02:03:55,800 --> 02:03:57,800
+y
+
+3161
+02:03:57,800 --> 02:03:59,800
+y
+
+3162
+02:03:59,800 --> 02:04:01,800
+y
+
+3163
+02:04:01,800 --> 02:04:03,800
+y
+
+3164
+02:04:03,800 --> 02:04:05,800
+y
+
+3165
+02:04:05,800 --> 02:04:07,800
+y
+
+3166
+02:04:07,800 --> 02:04:09,800
+y
+
+3167
+02:04:09,800 --> 02:04:11,800
+y
+
+3168
+02:04:11,800 --> 02:04:15,800
+y
+
+3169
+02:04:15,800 --> 02:04:17,800
+y
+
+3170
+02:04:17,800 --> 02:04:19,800
+y
+
+3171
+02:04:19,800 --> 02:04:21,800
+y
+
+3172
+02:04:21,800 --> 02:04:23,800
+y
+
+3173
+02:04:23,800 --> 02:04:27,800
+y
+
+3174
+02:04:27,800 --> 02:04:29,800
+y
+
+3175
+02:04:29,800 --> 02:04:31,800
+y
+
+3176
+02:04:31,800 --> 02:04:33,800
+y
+
+3177
+02:04:33,800 --> 02:04:35,800
+y
+
+3178
+02:04:35,800 --> 02:04:37,800
+y
+
+3179
+02:04:37,800 --> 02:04:39,800
+y
+
+3180
+02:04:39,800 --> 02:04:41,800
+y
+
+3181
+02:04:41,800 --> 02:04:43,800
+y
+
+3182
+02:04:43,800 --> 02:04:45,800
+y
+
+3183
+02:04:45,800 --> 02:04:47,800
+y
+
+3184
+02:04:47,800 --> 02:04:49,800
+y
+
+3185
+02:04:49,800 --> 02:04:51,800
+y
+
+3186
+02:04:51,800 --> 02:04:53,800
+y
+
+3187
+02:04:53,800 --> 02:04:55,800
+y
+
+3188
+02:04:55,800 --> 02:04:57,800
+y
+
+3189
+02:04:57,800 --> 02:04:59,800
+y
+
+3190
+02:04:59,800 --> 02:05:01,800
+y
+
+3191
+02:05:01,800 --> 02:05:03,800
+y
+
+3192
+02:05:03,800 --> 02:05:05,800
+y
+
+3193
+02:05:05,800 --> 02:05:07,800
+y
+
+3194
+02:05:09,800 --> 02:05:11,800
+y
+
+3195
+02:05:11,800 --> 02:05:13,800
+y
+
+3196
+02:05:13,800 --> 02:05:15,800
+y
+
+3197
+02:05:15,800 --> 02:05:17,800
+y
+
+3198
+02:05:17,800 --> 02:05:19,800
+y
+
+3199
+02:05:19,800 --> 02:05:21,800
+y
+
+3200
+02:05:21,800 --> 02:05:23,800
+y
+
+3201
+02:05:23,800 --> 02:05:25,800
+y
+
+3202
+02:05:25,800 --> 02:05:27,800
+y
+
+3203
+02:05:27,800 --> 02:05:29,800
+y
+
+3204
+02:05:29,800 --> 02:05:31,800
+y
+
+3205
+02:05:31,800 --> 02:05:33,800
+y
+
+3206
+02:05:33,800 --> 02:05:35,800
+y
+
+3207
+02:05:37,800 --> 02:05:39,800
+y
+
+3208
+02:05:39,800 --> 02:05:41,800
+y
+
+3209
+02:05:41,800 --> 02:05:43,800
+y
+
+3210
+02:05:43,800 --> 02:05:45,800
+y
+
+3211
+02:05:45,800 --> 02:05:47,800
+y
+
+3212
+02:05:47,800 --> 02:05:51,800
+y
+
+3213
+02:05:51,800 --> 02:05:53,800
+y
+
+3214
+02:05:53,800 --> 02:05:55,800
+y
+
+3215
+02:05:55,800 --> 02:05:57,800
+y
+
+3216
+02:05:57,800 --> 02:05:59,800
+y
+
+3217
+02:05:59,800 --> 02:06:01,800
+y
+
+3218
+02:06:01,800 --> 02:06:03,800
+y
+
+3219
+02:06:03,800 --> 02:06:05,800
+y
+
+3220
+02:06:05,800 --> 02:06:07,800
+y
+
+3221
+02:06:07,800 --> 02:06:09,800
+y
+
+3222
+02:06:09,800 --> 02:06:11,800
+y
+
+3223
+02:06:11,800 --> 02:06:13,800
+y
+
+3224
+02:06:13,800 --> 02:06:15,800
+y
+
+3225
+02:06:15,800 --> 02:06:19,800
+y
+
+3226
+02:06:19,800 --> 02:06:21,800
+y
+
+3227
+02:06:21,800 --> 02:06:23,800
+y
+
+3228
+02:06:23,800 --> 02:06:25,800
+y
+
+3229
+02:06:25,800 --> 02:06:27,800
+y
+
+3230
+02:06:27,800 --> 02:06:29,800
+y
+
+3231
+02:06:29,800 --> 02:06:31,800
+y
+
+3232
+02:06:31,800 --> 02:06:33,800
+y
+
+3233
+02:06:33,800 --> 02:06:35,800
+y
+
+3234
+02:06:35,800 --> 02:06:37,800
+y
+
+3235
+02:06:37,800 --> 02:06:39,800
+y
+
+3236
+02:06:39,800 --> 02:06:41,800
+y
+
+3237
+02:06:41,800 --> 02:06:43,800
+y
+
+3238
+02:06:43,800 --> 02:06:47,800
+y
+
+3239
+02:06:47,800 --> 02:06:49,800
+y
+
+3240
+02:06:49,800 --> 02:06:51,800
+y
+
+3241
+02:06:51,800 --> 02:06:53,800
+y
+
+3242
+02:06:53,800 --> 02:06:55,800
+y
+
+3243
+02:06:55,800 --> 02:06:57,800
+y
+
+3244
+02:06:57,800 --> 02:06:59,800
+y
+
+3245
+02:06:59,800 --> 02:07:01,800
+y
+
+3246
+02:07:01,800 --> 02:07:03,800
+y
+
+3247
+02:07:03,800 --> 02:07:05,800
+y
+
+3248
+02:07:05,800 --> 02:07:07,800
+y
+
+3249
+02:07:07,800 --> 02:07:09,800
+y
+
+3250
+02:07:09,800 --> 02:07:11,800
+y
+
+3251
+02:07:11,800 --> 02:07:13,800
+y
+
+3252
+02:07:13,800 --> 02:07:15,800
+y
+
+3253
+02:07:15,800 --> 02:07:17,800
+y
+
+3254
+02:07:17,800 --> 02:07:19,800
+y
+
+3255
+02:07:19,800 --> 02:07:21,800
+y
+
+3256
+02:07:21,800 --> 02:07:23,800
+y
+
+3257
+02:07:23,800 --> 02:07:25,800
+y
+
+3258
+02:07:25,800 --> 02:07:27,800
+y
+
+3259
+02:07:29,800 --> 02:07:31,800
+y
+
+3260
+02:07:31,800 --> 02:07:33,800
+y
+
+3261
+02:07:33,800 --> 02:07:35,800
+y
+
+3262
+02:07:35,800 --> 02:07:37,800
+y
+
+3263
+02:07:37,800 --> 02:07:39,800
+y
+
+3264
+02:07:39,800 --> 02:07:41,800
+y
+
+3265
+02:07:41,800 --> 02:07:43,800
+y
+
+3266
+02:07:43,800 --> 02:07:45,800
+y
+
+3267
+02:07:45,800 --> 02:07:47,800
+y
+
+3268
+02:07:47,800 --> 02:07:49,800
+y
+
+3269
+02:07:49,800 --> 02:07:51,800
+y
+
+3270
+02:07:51,800 --> 02:07:53,800
+y
+
+3271
+02:07:53,800 --> 02:07:55,800
+y
+
+3272
+02:07:57,800 --> 02:07:59,800
+y
+
+3273
+02:07:59,800 --> 02:08:01,800
+y
+
+3274
+02:08:01,800 --> 02:08:03,800
+y
+
+3275
+02:08:03,800 --> 02:08:05,800
+y
+
+3276
+02:08:05,800 --> 02:08:07,800
+y
+
+3277
+02:08:07,800 --> 02:08:09,800
+y
+
+3278
+02:08:09,800 --> 02:08:11,800
+y
+
+3279
+02:08:11,800 --> 02:08:13,800
+y
+
+3280
+02:08:13,800 --> 02:08:15,800
+y
+
+3281
+02:08:15,800 --> 02:08:17,800
+y
+
+3282
+02:08:17,800 --> 02:08:19,800
+y
+
+3283
+02:08:19,800 --> 02:08:21,800
+y
+
+3284
+02:08:21,800 --> 02:08:23,800
+y
+
+3285
+02:08:25,800 --> 02:08:27,800
+y
+
+3286
+02:08:27,800 --> 02:08:29,800
+y
+
+3287
+02:08:29,800 --> 02:08:31,800
+y
+
+3288
+02:08:31,800 --> 02:08:33,800
+y
+
+3289
+02:08:33,800 --> 02:08:35,800
+y
+
+3290
+02:08:35,800 --> 02:08:37,800
+y
+
+3291
+02:08:37,800 --> 02:08:39,800
+y
+
+3292
+02:08:39,800 --> 02:08:41,800
+y
+
+3293
+02:08:41,800 --> 02:08:43,800
+y
+
+3294
+02:08:43,800 --> 02:08:45,800
+y
+
+3295
+02:08:45,800 --> 02:08:47,800
+y
+
+3296
+02:08:47,800 --> 02:08:49,800
+y
+
+3297
+02:08:49,800 --> 02:08:51,800
+y
+
+3298
+02:08:53,800 --> 02:08:55,800
+y
+
+3299
+02:08:55,800 --> 02:08:57,800
+y
+
+3300
+02:08:57,800 --> 02:08:59,800
+y
+
+3301
+02:08:59,800 --> 02:09:01,800
+y
+
+3302
+02:09:01,800 --> 02:09:03,800
+y
+
+3303
+02:09:03,800 --> 02:09:07,800
+y
+
+3304
+02:09:07,800 --> 02:09:09,800
+y
+
+3305
+02:09:09,800 --> 02:09:11,800
+y
+
+3306
+02:09:11,800 --> 02:09:13,800
+y
+
+3307
+02:09:13,800 --> 02:09:15,800
+y
+
+3308
+02:09:15,800 --> 02:09:17,800
+y
+
+3309
+02:09:17,800 --> 02:09:19,800
+y
+
+3310
+02:09:19,800 --> 02:09:21,800
+y
+
+3311
+02:09:21,800 --> 02:09:23,800
+y
+
+3312
+02:09:23,800 --> 02:09:25,800
+y
+
+3313
+02:09:25,800 --> 02:09:27,800
+y
+
+3314
+02:09:27,800 --> 02:09:29,800
+y
+
+3315
+02:09:29,800 --> 02:09:31,800
+y
+
+3316
+02:09:31,800 --> 02:09:33,800
+y
+
+3317
+02:09:33,800 --> 02:09:35,800
+y
+
+3318
+02:09:35,800 --> 02:09:37,800
+y
+
+3319
+02:09:37,800 --> 02:09:39,800
+y
+
+3320
+02:09:41,800 --> 02:09:43,800
+y
+
+3321
+02:09:43,800 --> 02:09:45,800
+y
+
+3322
+02:09:45,800 --> 02:09:47,800
+y
+
+3323
+02:09:47,800 --> 02:09:49,800
+y
+
+3324
+02:09:49,800 --> 02:09:51,800
+y
+
+3325
+02:09:51,800 --> 02:09:53,800
+y
+
+3326
+02:09:53,800 --> 02:09:55,800
+y
+
+3327
+02:09:55,800 --> 02:09:57,800
+y
+
+3328
+02:09:57,800 --> 02:09:59,800
+y
+
+3329
+02:09:59,800 --> 02:10:01,800
+y
+
+3330
+02:10:01,800 --> 02:10:03,800
+y
+
+3331
+02:10:03,800 --> 02:10:05,800
+y
+
+3332
+02:10:05,800 --> 02:10:07,800
+y
+
+3333
+02:10:07,800 --> 02:10:09,800
+y
+
+3334
+02:10:09,800 --> 02:10:11,800
+y
+
+3335
+02:10:11,800 --> 02:10:13,800
+y
+
+3336
+02:10:13,800 --> 02:10:15,800
+y
+
+3337
+02:10:17,800 --> 02:10:19,800
+y
+
+3338
+02:10:19,800 --> 02:10:21,800
+y
+
+3339
+02:10:21,800 --> 02:10:23,800
+y
+
+3340
+02:10:23,800 --> 02:10:25,800
+y
+
+3341
+02:10:25,800 --> 02:10:27,800
+y
+
+3342
+02:10:27,800 --> 02:10:29,800
+y
+
+3343
+02:10:29,800 --> 02:10:31,800
+y
+
+3344
+02:10:31,800 --> 02:10:33,800
+y
+
+3345
+02:10:33,800 --> 02:10:35,800
+y
+
+3346
+02:10:35,800 --> 02:10:37,800
+y
+
+3347
+02:10:37,800 --> 02:10:39,800
+y
+
+3348
+02:10:39,800 --> 02:10:41,800
+y
+
+3349
+02:10:41,800 --> 02:10:43,800
+y
+
+3350
+02:10:45,800 --> 02:10:47,800
+y
+
+3351
+02:10:47,800 --> 02:10:49,800
+y
+
+3352
+02:10:51,800 --> 02:10:53,800
+y
+
+3353
+02:10:53,800 --> 02:10:55,800
+y
+
+3354
+02:10:55,800 --> 02:10:57,800
+y
+
+3355
+02:10:57,800 --> 02:10:59,800
+y
+
+3356
+02:10:59,800 --> 02:11:01,800
+y
+
+3357
+02:11:01,800 --> 02:11:03,800
+y
+
+3358
+02:11:03,800 --> 02:11:05,800
+y
+
+3359
+02:11:05,800 --> 02:11:07,800
+y
+
+3360
+02:11:07,800 --> 02:11:09,800
+y
+
+3361
+02:11:09,800 --> 02:11:11,800
+y
+
+3362
+02:11:11,800 --> 02:11:13,800
+y
+
+3363
+02:11:13,800 --> 02:11:15,800
+y
+
+3364
+02:11:15,800 --> 02:11:17,800
+y
+
+3365
+02:11:17,800 --> 02:11:19,800
+y
+
+3366
+02:11:19,800 --> 02:11:21,800
+y
+
+3367
+02:11:23,800 --> 02:11:25,800
+y
+
+3368
+02:11:25,800 --> 02:11:27,800
+y
+
+3369
+02:11:27,800 --> 02:11:29,800
+y
+
+3370
+02:11:29,800 --> 02:11:31,800
+y
+
+3371
+02:11:31,800 --> 02:11:33,800
+y
+
+3372
+02:11:33,800 --> 02:11:35,800
+y
+
+3373
+02:11:35,800 --> 02:11:37,800
+y
+
+3374
+02:11:37,800 --> 02:11:39,800
+y
+
+3375
+02:11:39,800 --> 02:11:41,800
+y
+
+3376
+02:11:41,800 --> 02:11:43,800
+y
+
+3377
+02:11:43,800 --> 02:11:45,800
+y
+
+3378
+02:11:45,800 --> 02:11:47,800
+y
+
+3379
+02:11:47,800 --> 02:11:49,800
+y
+
+3380
+02:11:49,800 --> 02:11:51,800
+y
+
+3381
+02:11:51,800 --> 02:11:53,800
+y
+
+3382
+02:11:53,800 --> 02:11:55,800
+y
+
+3383
+02:11:55,800 --> 02:11:57,800
+y
+
+3384
+02:11:57,800 --> 02:11:59,800
+y
+
+3385
+02:11:59,800 --> 02:12:01,800
+y
+
+3386
+02:12:01,800 --> 02:12:03,800
+y
+
+3387
+02:12:03,800 --> 02:12:05,800
+y
+
+3388
+02:12:05,800 --> 02:12:07,800
+y
+
+3389
+02:12:09,800 --> 02:12:11,800
+y
+
+3390
+02:12:11,800 --> 02:12:13,800
+y
+
+3391
+02:12:13,800 --> 02:12:15,800
+y
+
+3392
+02:12:15,800 --> 02:12:17,800
+y
+
+3393
+02:12:19,800 --> 02:12:21,800
+y
+
+3394
+02:12:21,800 --> 02:12:23,800
+y
+
+3395
+02:12:23,800 --> 02:12:25,800
+y
+
+3396
+02:12:25,800 --> 02:12:27,800
+y
+
+3397
+02:12:27,800 --> 02:12:29,800
+y
+
+3398
+02:12:29,800 --> 02:12:31,800
+y
+
+3399
+02:12:31,800 --> 02:12:33,800
+y
+
+3400
+02:12:33,800 --> 02:12:35,800
+y
+
+3401
+02:12:35,800 --> 02:12:37,800
+y
+
+3402
+02:12:37,800 --> 02:12:39,800
+y
+
+3403
+02:12:39,800 --> 02:12:41,800
+y
+
+3404
+02:12:41,800 --> 02:12:43,800
+y
+
+3405
+02:12:43,800 --> 02:12:45,800
+y
+
+3406
+02:12:45,800 --> 02:12:47,800
+y
+
+3407
+02:12:47,800 --> 02:12:49,800
+y
+
+3408
+02:12:49,800 --> 02:12:51,800
+y
+
+3409
+02:12:51,800 --> 02:12:53,800
+y
+
+3410
+02:12:53,800 --> 02:12:55,800
+y
+
+3411
+02:12:55,800 --> 02:12:57,800
+y
+
+3412
+02:12:57,800 --> 02:12:59,800
+y
+
+3413
+02:12:59,800 --> 02:13:01,800
+y
+
+3414
+02:13:01,800 --> 02:13:03,800
+y
+
+3415
+02:13:05,800 --> 02:13:07,800
+y
+
+3416
+02:13:07,800 --> 02:13:09,800
+y
+
+3417
+02:13:09,800 --> 02:13:11,800
+y
+
+3418
+02:13:11,800 --> 02:13:13,800
+y
+
+3419
+02:13:13,800 --> 02:13:15,800
+y
+
+3420
+02:13:15,800 --> 02:13:17,800
+y
+
+3421
+02:13:17,800 --> 02:13:19,800
+y
+
+3422
+02:13:19,800 --> 02:13:21,800
+y
+
+3423
+02:13:21,800 --> 02:13:23,800
+y
+
+3424
+02:13:23,800 --> 02:13:25,800
+y
+
+3425
+02:13:25,800 --> 02:13:27,800
+y
+
+3426
+02:13:27,800 --> 02:13:29,800
+y
+
+3427
+02:13:29,800 --> 02:13:31,800
+y
+
+3428
+02:13:33,800 --> 02:13:35,800
+y
+
+3429
+02:13:35,800 --> 02:13:37,800
+y
+
+3430
+02:13:39,800 --> 02:13:41,800
+y
+
+3431
+02:13:41,800 --> 02:13:43,800
+y
+
+3432
+02:13:43,800 --> 02:13:45,800
+y
+
+3433
+02:13:45,800 --> 02:13:47,800
+y
+
+3434
+02:13:47,800 --> 02:13:49,800
+y
+
+3435
+02:13:49,800 --> 02:13:51,800
+y
+
+3436
+02:13:51,800 --> 02:13:53,800
+y
+
+3437
+02:13:53,800 --> 02:13:55,800
+y
+
+3438
+02:13:55,800 --> 02:13:57,800
+y
+
+3439
+02:13:57,800 --> 02:13:59,800
+y
+
+3440
+02:13:59,800 --> 02:14:01,800
+y
+
+3441
+02:14:01,800 --> 02:14:03,800
+y
+
+3442
+02:14:03,800 --> 02:14:05,800
+y
+
+3443
+02:14:05,800 --> 02:14:07,800
+y
+
+3444
+02:14:07,800 --> 02:14:09,800
+y
+
+3445
+02:14:11,800 --> 02:14:13,800
+y
+
+3446
+02:14:13,800 --> 02:14:15,800
+y
+
+3447
+02:14:15,800 --> 02:14:17,800
+y
+
+3448
+02:14:17,800 --> 02:14:19,800
+y
+
+3449
+02:14:19,800 --> 02:14:21,800
+y
+
+3450
+02:14:21,800 --> 02:14:23,800
+y
+
+3451
+02:14:23,800 --> 02:14:25,800
+y
+
+3452
+02:14:25,800 --> 02:14:27,800
+y
+
+3453
+02:14:27,800 --> 02:14:29,800
+y
+
+3454
+02:14:29,800 --> 02:14:31,800
+y
+
+3455
+02:14:31,800 --> 02:14:33,800
+y
+
+3456
+02:14:33,800 --> 02:14:35,800
+y
+
+3457
+02:14:35,800 --> 02:14:37,800
+y
+
+3458
+02:14:37,800 --> 02:14:39,800
+y
+
+3459
+02:14:39,800 --> 02:14:41,800
+y
+
+3460
+02:14:41,800 --> 02:14:43,800
+y
+
+3461
+02:14:43,800 --> 02:14:45,800
+y
+
+3462
+02:14:45,800 --> 02:14:47,800
+y
+
+3463
+02:14:47,800 --> 02:14:49,800
+y
+
+3464
+02:14:49,800 --> 02:14:51,800
+y
+
+3465
+02:14:51,800 --> 02:14:53,800
+y
+
+3466
+02:14:53,800 --> 02:14:55,800
+y
+
+3467
+02:14:57,800 --> 02:14:59,800
+y
+
+3468
+02:14:59,800 --> 02:15:01,800
+y
+
+3469
+02:15:01,800 --> 02:15:03,800
+y
+
+3470
+02:15:03,800 --> 02:15:05,800
+y
+
+3471
+02:15:05,800 --> 02:15:07,800
+y
+
+3472
+02:15:07,800 --> 02:15:09,800
+y
+
+3473
+02:15:09,800 --> 02:15:11,800
+y
+
+3474
+02:15:11,800 --> 02:15:13,800
+y
+
+3475
+02:15:13,800 --> 02:15:15,800
+y
+
+3476
+02:15:15,800 --> 02:15:17,800
+y
+
+3477
+02:15:17,800 --> 02:15:19,800
+y
+
+3478
+02:15:19,800 --> 02:15:21,800
+y
+
+3479
+02:15:21,800 --> 02:15:23,800
+y
+
+3480
+02:15:25,800 --> 02:15:27,800
+y
+
+3481
+02:15:27,800 --> 02:15:29,800
+y
+
+3482
+02:15:29,800 --> 02:15:31,800
+y
+
+3483
+02:15:31,800 --> 02:15:33,800
+y
+
+3484
+02:15:33,800 --> 02:15:35,800
+y
+
+3485
+02:15:35,800 --> 02:15:37,800
+y
+
+3486
+02:15:37,800 --> 02:15:39,800
+y
+
+3487
+02:15:39,800 --> 02:15:41,800
+y
+
+3488
+02:15:41,800 --> 02:15:43,800
+y
+
+3489
+02:15:43,800 --> 02:15:45,800
+y
+
+3490
+02:15:45,800 --> 02:15:47,800
+y
+
+3491
+02:15:47,800 --> 02:15:49,800
+y
+
+3492
+02:15:49,800 --> 02:15:51,800
+y
+
+3493
+02:15:53,800 --> 02:15:55,800
+y
+
+3494
+02:15:55,800 --> 02:15:57,800
+y
+
+3495
+02:15:59,800 --> 02:16:01,800
+y
+

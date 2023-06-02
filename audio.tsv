@@ -1,0 +1,3496 @@
+start	end	text
+0	2880	でした talking
+2880	7740	música
+7740	12540	música
+12540	16480	música
+16480	23380	música
+23380	28940	música
+28940	35680	música
+35680	41260	música
+41260	46800	música
+46800	51740	música
+51740	56800	música
+56800	61800	música
+61800	66800	música
+66800	71800	música
+71800	76800	música
+76800	81800	música
+81800	86800	música
+86800	91800	música
+91800	96800	música
+96800	101800	música
+101800	106800	música
+106800	114800	música
+114800	119800	música
+119800	124800	música
+124800	131800	Bueno, buenas tardes a todos. Bienvenidos a las
+131800	138800	decimoseptimas jornadas de data mining y business intelligence
+138800	148800	para recordarles un poco estas jornadas son parte de actividad curricular
+148800	153800	de la maestría que son justamente unas materias que llaman casuística de implementación
+153800	158800	el nombre indica que esto van a ser una serie de casos
+158800	166800	la idea es que los casos sean presentados por quienes los llevaron a cabo
+166800	174800	proyectos de ciencia de datos realizados en las empresas o en estas zonas de empresas más importantes del país
+174800	182800	entonces ustedes los alumnos, los estudiantes de la maestría van a compartir justamente
+182800	190800	esta experiencia con quienes bueno tienen bastante experiencia en el campo justamente de ciencia de datos
+190800	197800	bueno quiero aprovechar para agradecer a todas las empresas que nos están apoyando
+197800	204800	bueno esto empezó hace como indica el número de las jornadas hace 17 años
+204800	212800	y muchas de las empresas han estado repitiendo siguen colaborando con nosotros en esta tarea
+212800	222800	muchos de los de las personas que van a hacer las presentaciones también son viejos conocidos
+222800	228800	así que también les agradezco la paciencia de seguir con nosotros
+228800	239800	bueno vamos para no perder mucho más tiempo simplemente voy a numerar un poco quiénes son los que van a participar como oyentes
+239800	250800	la base nuestra son los estudiantes tenemos un conjunto de estudiantes que corresponden a una edición presencial de la maestría
+250800	258800	que son primer y segundo año otro grupo de alumnos corresponden a la edición virtual de la maestría están en primer año
+258800	271800	empezaron en agosto y los alumnos de Rosario bueno donde tenemos también una nueva edición que empezó hace unos meses
+271800	282800	y de alumnos que están en segundo año el total de los alumnos estimo que está en un número en este momento hay pocos participantes
+282800	291800	pero el número cercano a los 250 este es una materia obligatoria no tendría que estar todos pero bueno
+291800	300800	tenemos excepciones como en todos los casos bueno para no desplazarnos demasiado en el tiempo ya son las 14 07
+300800	310800	vamos a invitar a nuestros amigos del mercado libre para presentar el tema que tienen preparado para hoy
+310800	317800	que es data mesh van a presentar Ignacio Wainberg y Gabriel Noche
+317800	325800	bueno pueden comenzar cuando gusten adelante
+325800	333800	bueno muchas gracias gracias a todos por asistir por darnos este espacio
+333800	342800	me presento mi nombre es Ignacio Wainberg trabajo en el equipo central core de data en el mercado libre en lo que es la vertical tech
+342800	351800	llevando el equipo de data engineering y hoy me acompaña Gabriel Noche también del equipo de plataformas y servicios
+351800	362800	y bueno venimos a contarles un poco cómo fue esta aventura podemos llamarlo de iniciarnos en algo es muy nuevo que se llama data mesh
+362800	370800	si quieren podemos ya comenzar
+370800	380800	esa es otra es de personalización
+400800	425800	bueno
+425800	431800	bueno por qué la llamamos la talla de la tamesh vainelli
+431800	438800	la tamesh es un término por eso un concepto muy nuevo
+438800	449800	y si ustedes buscan en internet o literatura no hay un libro de la chica que digamos acuñó el término
+449800	454800	es algo como muy conceptual casi filosófico decimos a veces nosotros
+454800	461800	entonces esta no es una charla sobre data mesh sobre el concepto de data mesh en sí
+461800	470800	porque podríamos hacer horas y horas de charla sobre el mismo sino que es una charla sobre nuestra interpretación
+470800	473800	y nuestra implementación de data mesh en mercado libre
+473800	477800	pero bueno claro que para todos aquellos que no conocen de qué se trata
+477800	482800	vamos a hacer una breve intro de qué es data mesh
+482800	486800	así que si pasamos a la siguiente
+486800	492800	formas de describirlo pueden haber muchas pero básicamente es un paradigma
+492800	499800	es un nuevo paradigma que representa un cambio tanto tecnológico como cultural
+499800	508800	y la idea de este cambio de paradigma es empoderar a distintos dominios dentro de la organización
+508800	514800	a que tenga el control completo de todo el ciclo de vida de los datos
+514800	520800	obviamente como decimos que también es un cambio tecnológico
+521800	529800	con todas las herramientas y las bases y el gobierno para que eso suceda de una manera ordenada
+529800	539800	pero al fin y al cabo el objetivo de esto de data mesh es hacer que todo lo que es el trabajo con datos
+539800	545800	escale al ritmo que el negocio necesita de manera orgánica
+546800	556800	ahora esto suena bastante dindo pero bueno vamos a repasar un poco por qué se plantea este cambio de paradigma
+556800	558800	siguiente
+561800	565800	esto creo que es una imagen conocida por muchos
+565800	573800	es un modelito bastante es una atracción de la realidad en la que vemos dos planos de datos
+573800	579800	a la izquierda no es el plano operacional es decir donde el dato nace y se origina en las organizaciones
+579800	583800	que pueden llegar a hacer todos esos sistemas transaccionales
+583800	593800	y a la derecha vemos el plano analítico donde en general los científicos de datos, los analítas y demás
+593800	599800	hacen su trabajo con esos productos de datos que ya están disponibles ya se hacen un data warehouse en un data lake
+599800	609800	¿Qué sucede en el medio? Necesitamos llevar esos datos del plano operacional modelarlos y disponibilizarlos
+609800	616800	para ser explotados de la mejor forma posible a este otro plano analítico
+616800	624800	entonces del lado izquierdo del plano operacional digamos a través de los años también fueron evolucionando
+624800	628800	y cambiando los paradigmas de lo que son las sistemas y las aplicaciones
+628800	635800	y muchos de ellos fueron haciendo un cambio de sistemas monolíticos a por ejemplo microservicios
+635800	641800	en los que hoy en día son manejados por distintos dominios de la organización
+641800	647800	por ejemplo les hablamos del mercado libre, hay aplicaciones que son del marketplace
+647800	649800	que es lo que todos conocemos como mercado libre
+650800	655800	pero también nosotros pensamos en el mercado libre como una empresa pero dentro de esa empresa hay muchas empresas
+655800	659800	la parte del marketplace, la parte del mercado en videos
+659800	663800	que es la empresa de logística y aún más grande de Latinoamérica bien día
+663800	672800	la parte de fintech, de créditos, bueno cada uno de esos representan dominios o jerarquías de dominios dentro de la organización
+672800	678800	y hoy en día son autónomos manejando sus propios microservicios, sus propias aplicaciones
+678800	681800	en lo que sería ese plano que vemos al lado izquierdo
+681800	687800	el lado derecho también esos dominios han ido generando autonomía
+687800	691800	que tienen sus propios equipos de datos, ¿no?
+691800	699800	pero qué sucede, en el medio todavía está manejado por un equipo central de datos
+699800	703800	ese equipo que toma esos datos y lo lleva hasta el plano analítico
+703800	710800	lo que coloquialmente se conoce como ETL, data engineer, se lo llamo últimamente
+712800	715800	era manejado por un equipo monolítico
+716800	718800	si vamos a la siguiente
+721800	725800	ahora esta extracción que veíamos ante la realidad es un poquitito más
+726800	732800	cercano a la realidad en lo que vemos en esta, ¿no?
+732800	735800	a medida que crece el negocio y que crecen las necesidades
+735800	740800	sobre todo en una empresa como Mercado Libre que es muy cambiante y todo el tiempo los modelos no son muy estables
+740800	745800	todo el tiempo necesitamos medir nuevos productos, medir cosas nuevas que van cambiando
+746800	752800	y a medida que crecen la cantidad como fue creciendo la cantidad exponencialmente de gente en Mercado Libre
+752800	754800	de usuarios que necesitan acceso a información
+754800	759800	ese equipo del medio que les contaba monolítico también creció exponencialmente
+761800	764800	y eso hace que no escale, ¿no?
+764800	770800	en dos años pasamos de tener un equipo central de data engineer de 6, 7 personas a 35
+770800	773800	y hoy somos casi 50
+774800	781800	no escala y por otro lado, si se fijan a la derecha también van a ver como esas marcas de ETL
+781800	783800	¿Qué sucede?
+783800	788800	Hay gente que así como está el dato en ese leico, en ese warehouse
+788800	792800	tampoco le termina sirviendo del todo, entonces como le decía
+792800	796800	hay equipos con skills de datos
+796800	799800	que también hacen sus propios ETLs, ¿no?
+799800	806800	pero ¿qué sucede? esos ETLs que hacen y esos productos de datos resultantes, esos ETLs
+806800	809800	no se hacen de manera bastante informal, ¿no?
+809800	812800	se hacen en algunos espacios llamados sandbox
+813800	818800	sin las garantías necesarias, sin procesos de vacab, sin un catalogado
+818800	823800	es decir, totalmente informal y cada uno manejando el lenguaje que le parece
+825800	829800	entonces ahí es donde viene este concepto de mesh
+830800	836800	a intentar distribuir estos cuello de botella, estos equipos monolíticos
+836800	840800	y pereespecializados que están en el medio de estos dos planos, ¿no?
+840800	843800	porque como habíamos dicho, a la izquierda tenemos dominios
+843800	846800	por ejemplo, no sé, mercado crédito, ¿no?
+846800	849800	y mercado crédito maneja sus aplicaciones en la izquierda
+849800	855800	y mercado crédito tiene su equipo de la explotación de datos del lado derecho
+855800	860800	pero tiene que pasar por ese embudo, por ese equipo monolítico
+860800	864800	y ser priorizados en ese equipo monolítico del medio
+864800	869800	entonces lo que viene a plantear data mesh es una arquitectura de datos distribuida
+869800	875800	en la que también este dominio por ejemplo de credits
+875800	878800	pueda manejar un equipo de data engineering
+878800	881800	y pueda disponibilizar datos a toda la organización, ¿no?
+881800	883800	si vemos la imagen siguiente
+886800	890800	esto demuestra un poco a nivel gráfico de qué se trata
+890800	894800	si se fijan ahí, están debajo los dos planos que viníamos hablando
+894800	896800	de la operación alienalítica
+896800	900800	y ya están unidos en esos diagramitas
+900800	903800	que representan a un dominio de la organización, ¿no?
+903800	905800	que puede ser mercado crédito
+905800	909800	cualquier parte de fintech o de envíos
+909800	911800	marketing
+911800	914800	en cada organización van a ser realidades distintas, ¿no?
+914800	917800	pero para que esto no los convierta
+917800	920800	no volvamos muchísimos años atrás, ¿no?
+920800	921800	a paradigmas anteriores
+921800	926800	y en los que esto no se convierta en data martes en silos
+926800	929800	la idea de esto es que puedan publicar
+929800	932800	productos de datos en un mismo ecosistema
+932800	934800	que esto esté unificado
+934800	937800	de ahí viene la palabra data mesh, ¿no?
+937800	939800	esa malla de datos
+939800	943800	en los que cada uno de ellos va a representar un nodo
+943800	945800	entonces para eso, para qué eso ocurra
+945800	948800	necesitamos también tener políticas
+948800	951800	necesitamos tener un gobierno federado
+951800	953800	y algunos aspectos más
+953800	955800	que los podemos ver en la siguiente
+955800	958800	que hablan de
+958800	960800	siguiendo por la teoría, ¿no?
+960800	963800	los cuatro principios que plantea data mesh
+963800	966800	el primero es una arquitectura
+966800	968800	lo que se llama domain driven, ¿no?
+968800	971800	es decir, basada en estos dominios
+971800	974800	diseñado todo en base a estos dominios de la organización
+974800	978800	la segunda es pensar los datos como un producto
+978800	980800	y no como un subproducto, ¿no?
+980800	983800	es decir, que el dato sea
+983800	985800	un producto que ofrezcamos
+985800	987800	y que hagamos
+987800	990800	apliquemos ese famoso product thinking, ¿no?
+990800	993800	y que otros dominios de la organización
+993800	997800	o cualquier empleado de mercado libre
+997800	999800	que necesita acceder a los datos
+999800	1001800	lo tratemos como a un cliente
+1001800	1003800	entonces para eso
+1003800	1006800	necesitamos que ese producto de datos
+1006800	1008800	cumpla con determinadas cuestiones
+1008800	1010800	y le hagamos un seguimiento debido
+1010800	1012800	que luego Gaby va a hablar un poco de eso
+1012800	1015800	por tercer lugar
+1015800	1019800	tenemos que brindar una infraestructura self-service
+1019800	1022800	y el objetivo de esto es
+1022800	1024800	que estos dominios
+1024800	1026800	tengan que tener los skills necesarios
+1026800	1028800	para transformar los datos
+1028800	1031800	pero que no necesiten administrar
+1031800	1033800	su infraestructura
+1033800	1036800	o estar preocupados por cosas de bajo nivel
+1036800	1038800	y entonces de esa manera podríamos escalar
+1038800	1040800	bastante mejor, no sé por ejemplo
+1040800	1042800	que no tengan que preocuparse por
+1042800	1044800	cómo administrar los backups
+1044800	1047800	o cómo generar proyectos
+1047800	1050800	dentro de lo que es el lay-couch
+1050800	1052800	y por último
+1052800	1054800	pero muy importante
+1054800	1057800	es la parte del governance, ¿no?
+1057800	1059800	porque como dijimos estos dominios
+1059800	1061800	tienen que publicar
+1061800	1063800	en un mismo ecosistema
+1063800	1065800	hablar un mismo lenguaje
+1065800	1067800	porque estos productos de datos
+1067800	1069800	tienen que ser interoperables
+1069800	1071800	hasta el momento los publicaba un equipo
+1071800	1073800	que tenía sus buenas prácticas
+1073800	1075800	ahora esas buenas prácticas al estar distribuidas
+1075800	1077800	en muchos equipos
+1077800	1079800	ahí viene un gran desafío
+1079800	1081800	y ese desafío tiene que ser abordado
+1081800	1083800	del lado del governance
+1083800	1085800	siguiente
+1087800	1089800	bueno entonces
+1089800	1091800	vamos a ver un poco por qué
+1091800	1093800	fuimos a hacer
+1093800	1095800	este cambio de paradigma
+1095800	1097800	en el mercado libre
+1097800	1099800	que nos llegó a esa necesidad
+1099800	1101800	un poco ya lo contamos
+1101800	1103800	pero vamos a hacer un poquito de historia
+1103800	1105800	hace ya algunos años
+1105800	1107800	la imagen
+1107800	1109800	de la izquierda muestra
+1109800	1111800	un estadio
+1111800	1113800	que podría decir de año
+1113800	1115800	2014
+1115800	1117800	en el que
+1117800	1119800	los usuarios
+1119800	1121800	encontraban este cuello
+1121800	1123800	de botella que estamos hablando
+1123800	1125800	pero no en esa
+1125800	1127800	producción de datos
+1127800	1129800	que conectan ambos planos
+1129800	1131800	sino directamente en el consumo
+1131800	1133800	había un equipo
+1133800	1135800	de BI, clásico tradicional
+1135800	1137800	y ese equipo de BI
+1137800	1139800	en un momento comenzó
+1139800	1141800	a no poder escalar
+1141800	1143800	entonces empezó a llevar
+1143800	1145800	a hacer un trabajo de transformación
+1147800	1149800	para ir hacia
+1149800	1151800	la imagen que viene a la derecha
+1151800	1153800	en el que situamos al usuario
+1153800	1155800	en el centro
+1155800	1157800	hicimos cambios tecnológicos
+1157800	1159800	pero acá también
+1159800	1161800	un importante es el cambio cultural
+1161800	1163800	para empoderar a sus usuarios
+1163800	1165800	darle los skills necesarios
+1165800	1167800	para que sean autónomos
+1167800	1169800	para que puedan ellos mismos
+1169800	1171800	ir a buscar la información
+1171800	1173800	que tengan todas las herramientas necesarias
+1173800	1175800	para que eso suceda
+1175800	1177800	fue un camino
+1177800	1179800	progresivo
+1179800	1181800	de muchos años
+1181800	1183800	y creemos que fuimos bastante
+1183800	1185800	exitosos en eso
+1185800	1187800	logramos una autonomía
+1187800	1189800	de los usuarios en mercado libre
+1189800	1191800	para el consumo de datos
+1191800	1193800	pero como decíamos eso
+1193800	1195800	el consumo de datos opera sobre
+1195800	1197800	el plano que veíamos antes
+1197800	1199800	analítico
+1199800	1201800	tenemos la imagen siguiente
+1203800	1205800	aún nos quedaba
+1205800	1207800	este contexto actual
+1207800	1209800	que es
+1209800	1211800	en ese equipo que conecta
+1211800	1213800	el plano de operación analítico
+1213800	1215800	los datos ingenieros, LTL
+1215800	1217800	seguía haciendo
+1217800	1219800	monolítico
+1219800	1221800	y como les conté antes
+1221800	1223800	encontramos ahí un cuello de botella
+1223800	1225800	ahí si
+1225800	1227800	si se fijan en la imagen dice teradata
+1227800	1229800	que veníamos trabajando con teradatas en muchos años
+1229800	1231800	y justo
+1231800	1233800	este cambio que planteamos
+1233800	1235800	se dio de la mano de algunos cambios tecnológicos
+1235800	1237800	que ya veníamos planteando
+1237800	1239800	por ejemplo lo que es la migración a Bicueri
+1239800	1241800	entonces este equipo
+1241800	1243800	cuáles eran las desventajas
+1243800	1245800	por qué lo convertían en un cuello de botella
+1245800	1247800	aparte de esta escala que les venía comentando
+1247800	1249800	tenía que ser un equipo hiper especializado
+1249800	1251800	es decir tenía que haber gente
+1251800	1253800	que se experta
+1253800	1255800	en mercados millos
+1255800	1257800	que se experta en lo que es fintech
+1257800	1259800	que igual fintech dentro de fintech
+1259800	1261800	también tenemos otros dominios
+1261800	1263800	porque es fintech que podría ser una empresa aparte
+1263800	1265800	es decir un equipo
+1265800	1267800	con muy amplio scope
+1267800	1269800	pero que también tiene que ser muy deep
+1269800	1271800	en esos conocimientos de negocio
+1271800	1273800	por lo tanto
+1273800	1275800	representaba un cuello de botella
+1275800	1277800	y
+1277800	1279800	y ese cuello de botella también
+1279800	1281800	generaba una incapacidad de escalar
+1281800	1283800	orgánicamente con la
+1283800	1285800	velocidad que el negocio necesitaba
+1285800	1287800	entonces llegado
+1287800	1289800	a este punto
+1289800	1291800	y viendo el cambio que habíamos hecho
+1291800	1293800	en lo que es el consumo de datos
+1293800	1295800	nos dimos cuenta que estábamos
+1295800	1297800	en un problema y que teníamos que generar algún cambio
+1297800	1299800	seguimos la imagen siguiente
+1299800	1301800	así nos sentíamos
+1301800	1303800	y creo que
+1303800	1305800	muchos entienden
+1305800	1307800	lo que es
+1307800	1309800	sentirse de esta manera
+1309800	1311800	no solamente nosotros manejando
+1311800	1313800	la información
+1313800	1315800	sino los usuarios que querían consumir la información
+1315800	1317800	no
+1317800	1319800	ese cuello de botella
+1319800	1321800	representaba estos embotellamientos
+1321800	1323800	y que para nada son cómodos
+1323800	1325800	ni ninguna organización pero sobre todo
+1325800	1327800	en el mercado libre que es una empresa
+1327800	1329800	que se mueve muy rápido
+1329800	1331800	entonces cuando tuvimos
+1331800	1333800	en esta situación dijimos
+1333800	1335800	que bueno que sería
+1335800	1337800	tener algo como la imagen
+1337800	1339800	siguiente
+1339800	1341800	esta independencia
+1341800	1343800	esta autonomía
+1343800	1345800	para la cual claro
+1345800	1347800	para pasar de la imagen anterior a esta imagen
+1347800	1349800	siguiente hay que hacer cambios culturales
+1349800	1351800	pero también hay que construir
+1351800	1353800	cosas y bastantes cosas
+1353800	1355800	construir esta infraestructura
+1355800	1357800	construir estas autopistas
+1357800	1359800	para que los datos fluyan como deben fluir
+1359800	1361800	así que ahora los voy a dejar
+1361800	1363800	con Gaby que les va a contar un poco
+1363800	1365800	que sí
+1365800	1367800	Buenas tardes a todos
+1367800	1369800	como les va
+1369800	1371800	si podemos pasar a los siguientes slides
+1371800	1373800	bueno la idea es contar un poco
+1373800	1375800	que hicimos en base a lo que
+1375800	1377800	a las problemáticas que fue levantando
+1377800	1379800	o les fue comentando Nacho
+1379800	1381800	y también un poco repasar lo que fue la teoría
+1381800	1383800	y como lo llevamos adelante en la práctica
+1383800	1385800	así que si podemos pasar a los siguientes slides
+1385800	1387800	trabajamos sobre distintas verticales
+1387800	1389800	vamos a mencionar las principales
+1389800	1391800	para no entroentender que hicimos
+1391800	1393800	conformamos un equipo multidisciplinario
+1393800	1395800	y empezamos a primero tener definiciones
+1395800	1397800	pero creo que es un producto de datos
+1397800	1399800	bueno, un producto de datos es un set de datos
+1399800	1401800	publicado para toda la compañía
+1401800	1403800	generado por un dominio
+1403800	1405800	estos datos tendría que estar lo suficientemente curado
+1405800	1407800	tener una calidad adecuada
+1407800	1409800	ser observable, ser descubrible
+1409800	1411800	que eso lo vamos a ver más adelante
+1411800	1413800	tener un acuerdo de esa idea de disponibilidad
+1413800	1415800	de esa información en la tabla
+1415800	1417800	y quizá lo suficientemente autodescriptivos
+1417800	1419800	como vemos en la imagen de la derecha
+1419800	1421800	tenemos un set de datos
+1421800	1423800	donde abajo tenemos cierta información
+1423800	1425800	como por ejemplo la cantidad de filas
+1425800	1427800	que puede llegar a tener un data product
+1427800	1429800	si hay duplicados, freshness
+1429800	1431800	de la data
+1431800	1433800	cuánto espacio en disco
+1433800	1435800	puede llevar a ocupar el volumen
+1435800	1437800	cuánto es el costo que
+1437800	1439800	termina consumiendo este producto de datos
+1439800	1441800	así que esta es una de las verticales
+1441800	1443800	que estuvimos trabajando
+1443800	1445800	si pasamos a los siguientes slides
+1445800	1447800	podemos empezar a ver
+1447800	1449800	el concepto de plataforma SerService
+1449800	1451800	que mencionaba Nacho
+1451800	1453800	un técnico sistema llamado DataSuite
+1453800	1455800	que engloba un conjunto de herramientas
+1455800	1457800	para data hecha
+1457800	1459800	dentro del mercado libre
+1459800	1461800	en el cual dijimos, bueno, estas herramientas
+1461800	1463800	tienen, o sea, los usuarios que operan
+1463800	1465800	estas herramientas requieren un nivel técnico
+1465800	1467800	intermedio avanzado
+1467800	1469800	necesitamos que todos nuestros usuarios
+1469800	1471800	que quieran consumir o
+1471800	1473800	producir la data puedan hacerlo
+1473800	1475800	sin tener un skill técnico
+1475800	1477800	de tan alto nivel
+1477800	1479800	entonces agarramos todas las
+1479800	1481800	herramientas que teníamos
+1481800	1483800	dentro de lo que es DataSuite y empezamos
+1483800	1485800	a evaluar qué cambios eran requeridos
+1485800	1487800	dentro de estos cambios
+1487800	1489800	vimos que necesitábamos definir
+1489800	1491800	diferentes ambientes de trabajo
+1491800	1493800	el desarrollo y la producción
+1493800	1495800	hicimos un análisis de aquellos flujos
+1495800	1497800	de ingesta que ya existían
+1497800	1499800	y cuáles eran los más recurrentes dentro
+1499800	1501800	del mercado libre desde que originó
+1501800	1503800	mejor dicho, qué tecnología original
+1503800	1505800	qué tecnología destino
+1505800	1507800	con el objetivo de empezar a pensar
+1507800	1509800	pipelines de datos simplificados
+1509800	1511800	como le llamamos nosotros short steps
+1511800	1513800	que se lo vamos a mostrar un poco más adelante
+1513800	1515800	garantizar la seguridad
+1515800	1517800	y el acceso a la información
+1517800	1519800	y algo no menor en esta etapa
+1519800	1521800	en donde todo el negocio
+1521800	1523800	crece todo muy rápido es clave
+1523800	1525800	garantizar que la capacidad de cómputo
+1525800	1527800	esté distribuida para que no haya afectaciones
+1527800	1529800	entre distintos procesos
+1529800	1531800	en el día a día, y obviamente
+1531800	1533800	como mencionan Nacho, todo esto
+1533800	1535800	con una política de vacapi restor bajo el gobierno
+1535800	1537800	del equipo de Data Engineer
+1537800	1539800	que obviamente está definido para todos los dominios
+1539800	1541800	si pasamos a la siguiente slide
+1541800	1543800	podríamos ver
+1543800	1545800	uno de los conceptos claves de lo que es DataMesh
+1545800	1547800	que es Discoverability
+1547800	1549800	que es el descubrimiento, todos los productos
+1549800	1551800	de datos que van a ir generando los diferentes dominios
+1551800	1553800	pensamos que tiene que estar disponible
+1553800	1555800	para toda la organización y que puedan navegarlo
+1555800	1557800	entonces
+1557800	1559800	todas nuestras aplicaciones
+1559800	1561800	que conforman el ecosistema de Data Suite
+1561800	1563800	tienen que tener la suficiente inteligencia
+1563800	1565800	para generar el linaje
+1565800	1567800	de los distintos componentes
+1567800	1569800	y poder almacenar la descripción
+1569800	1571800	para que luego lo puedan explotar los distintos
+1571800	1573800	usuarios del mercado libre
+1573800	1575800	entonces cada objeto que conforma estos DataProduct
+1575800	1577800	van a estar correctamente catalogado
+1577800	1579800	van a estar
+1579800	1581800	haciendo compliance con lo que es PII
+1581800	1583800	que para nosotros es la gestión de los datos sensibles
+1583800	1585800	obviamente
+1585800	1587800	todo esto va a estar vinculado
+1587800	1589800	con otra herramienta que le voy a contar a continuación
+1589800	1591800	que te permite evaluar la integridad
+1591800	1593800	de estos DataProducts
+1593800	1595800	si pasamos a la siguiente slide
+1595800	1597800	veamos lo que sería
+1597800	1599800	Observability
+1599800	1601800	que es Observability, bueno es la capacidad
+1601800	1603800	de detectar anomalías en nuestros productos
+1603800	1605800	de datos generados
+1605800	1607800	esto es una herramienta que obviamente
+1607800	1609800	es de un tercero que logramos incorporar
+1609800	1611800	dentro de nuestra Suite que le vamos a contar
+1611800	1613800	como lo hicimos pero básicamente
+1613800	1615800	este patrón los permite entender
+1615800	1617800	que nuestros productos de datos tienen
+1617800	1619800	un estado y hay que monitorearlo correctamente
+1619800	1621800	y alertar en el caso de que se encuentre
+1621800	1623800	en alguna anomalía
+1623800	1625800	como ven ahí podríamos
+1625800	1627800	evaluar diferentes indicadores
+1627800	1629800	por ejemplo cuántas tablas tiene un dominio
+1629800	1631800	cuántas vista, la frescura
+1631800	1633800	cuántas inconsistencias puede llegar a ver
+1633800	1635800	y a su vez este tipo
+1635800	1637800	de patrón nos permite ir incorporando
+1637800	1639800	diferentes monitores
+1639800	1641800	particulares en base al gobierno que le quisieramos
+1641800	1643800	dar a todo nuestro dominio de DataMesh
+1643800	1645800	si pasamos a la siguiente slide
+1645800	1647800	podríamos ver
+1647800	1649800	ya contarles un poco cómo es nuestro
+1649800	1651800	estado real
+1651800	1653800	pasamos de la teoría, le contamos
+1653800	1655800	las iniciativas que abordamos
+1655800	1657800	y bueno
+1657800	1659800	nos sentamos y dijimos cómo hacemos
+1659800	1661800	girar esta rueda, cómo hacemos para implementar
+1661800	1663800	como saben DataMesh es orientado
+1663800	1665800	dominio, buscamos
+1665800	1667800	en distintas fuentes de data y dijimos
+1667800	1669800	dominio para todos tiene
+1669800	1671800	distintas aristas
+1671800	1673800	definimos para lo que nosotros es un dominio
+1673800	1675800	que es un dominio, es un equipo
+1675800	1677800	un equipo de colaboradores
+1677800	1679800	que está representado por un owner
+1679800	1681800	ese owner es el responsable
+1681800	1683800	de todo el equipo y de toda la infraestructura
+1683800	1685800	que les voy a contar
+1685800	1687800	ese equipo va a tener acceso
+1687800	1689800	a esta herramienta Dataflow
+1689800	1691800	que les comento que es nuestra herramienta pipeline
+1691800	1693800	si alguien conoce Pentajo que me imagino que sí
+1693800	1695800	es similar pero esto está evolucionado
+1695800	1697800	para el mercado libre en base a las necesidades
+1697800	1699800	prácticas que fuimos necesitando
+1699800	1701800	Dataflow tiene el mismo nombre que la
+1701800	1703800	herramienta de Google, no es la misma
+1703800	1705800	que la herramienta de ChangeHouse
+1705800	1707800	esta herramienta que te hace el pipeline
+1707800	1709800	de datos, toma datos de origen
+1709800	1711800	y la envía de un destino, notábamos
+1711800	1713800	que tuviéramos que meterle cierta lógica
+1713800	1715800	para simplificar
+1715800	1717800	todo este proceso de ingesta así que
+1717800	1719800	cuando un usuario se da de alta dentro
+1719800	1721800	de un dominio, automáticamente tiene acceso
+1721800	1723800	a esta herramienta con los flujos simplificados
+1723800	1725800	todos los flujos que va generando
+1725800	1727800	se terminan catalogando
+1727800	1729800	en la herramienta DC que es Data Catalog
+1729800	1731800	en nuestro catálogo hecho
+1731800	1733800	dentro de Mercado Libre
+1733800	1735800	ahora se los vamos a mostrar
+1735800	1737800	y por último Montecar, lo que es esta
+1737800	1739800	herramienta de mercado que
+1739800	1741800	nosotros customizamos para poder
+1741800	1743800	monitorar la seguridad de nuestros Data Pro
+1743800	1745800	es parte de todo este ecosistema
+1745800	1747800	que llamamos dominio
+1747800	1749800	por debajo
+1749800	1751800	tenemos todo lo que es un proyecto
+1751800	1753800	en BigQuery para desarrollo y para producción
+1753800	1755800	así que todo lo que es
+1755800	1757800	DataMesh dentro de Mercado Libre
+1757800	1759800	lo vamos a encontrar dentro
+1759800	1761800	de nuestro Data Warehouse en BigQuery
+1761800	1763800	si pasamos a la siguiente slide
+1763800	1765800	podríamos ver el siguiente concepto
+1765800	1767800	dijimos lo que era un dominio
+1767800	1769800	ahora que es un DME
+1769800	1771800	bueno es un DataMesh en Bironel
+1771800	1773800	si bajamos un poquito más nos damos cuentas
+1773800	1775800	de que necesitamos cierta infraestructura
+1775800	1777800	como dije un equipo, un owner
+1777800	1779800	y ya proyectos en BigQuery de desarrollo
+1779800	1781800	y producción con una misma
+1781800	1783800	estructura para todos los dominios
+1783800	1785800	con diferentes dataset
+1785800	1787800	staging, TBL
+1787800	1789800	y FeedView
+1789800	1791800	que es uno de esos dataset
+1791800	1793800	bueno básicamente es el orden en el cual le vamos a dar
+1793800	1795800	a todos nuestros dominios para que organizen su información
+1795800	1797800	durante todo el ciclo
+1797800	1799800	de vida de los datos
+1799800	1801800	para los que no saben lo que es un feed
+1801800	1803800	un feed es un tipo de tabla para
+1803800	1805800	almacenar información que proviene
+1805800	1807800	near real time o real time
+1807800	1809800	de un tópico de informaciones
+1809800	1811800	donde la estructura particular que tiene
+1811800	1813800	es que tiene un identificador
+1813800	1815800	de novedad
+1815800	1817800	todo el mensaje y distintas columnas
+1817800	1819800	de auditoría para saber la fecha, la hora
+1819800	1821800	y el momento en el cual se recibió
+1821800	1823800	esa novedad. A su vez dentro
+1823800	1825800	de lo que es este en Bironel
+1825800	1827800	le brindamos a los dominios un espacio
+1827800	1829800	para almacenar su información
+1829800	1831800	para cuando hace sus extractos y quisieran
+1831800	1833800	dejarlo en un repository lo pueden hacer
+1833800	1835800	los backup que ya le mencionamos anteriormente
+1835800	1837800	y automáticamente se da de alta lo que es
+1837800	1839800	una service account dentro
+1839800	1841800	de lo que es Monte Carlo para garantizar
+1841800	1843800	toda la salubridad
+1843800	1845800	del Dataproduct. Si pasamos a la siguiente slide
+1847800	1849800	podemos ver lo que es Data Integrity
+1849800	1851800	para nosotros, que es Data Integrity
+1851800	1853800	es una
+1853800	1855800	solución de Data Observability
+1855800	1857800	que nos permite
+1857800	1859800	como les dije poder ir
+1859800	1861800	evaluando la salud de cada
+1861800	1863800	Dataproduct pero per se
+1863800	1865800	implementar Monte Carlo solo no era
+1865800	1867800	la solución era customizar
+1867800	1869800	nuestros monitores para la necesidad
+1869800	1871800	que teníamos dentro del mercado libre
+1871800	1873800	como ven
+1873800	1875800	ahí a la derecha vemos una imagen
+1875800	1877800	por un lado tenemos Monte Carlo
+1877800	1879800	que es la herramienta de tercero
+1879800	1881800	pero por otro lado tenemos el Data Catal
+1881800	1883800	que es nuestra herramienta particular
+1883800	1885800	de catalogado de datos fíjense
+1885800	1887800	como ensamblamos los indicadores
+1887800	1889800	principales de Monte Carlo dentro de nuestra solución
+1889800	1891800	para que cualquier usuario
+1891800	1893800	que quiera acceder a una tabla pueda no solo
+1893800	1895800	saber la descripción de la misma sino el estado
+1895800	1897800	de la salud de ese producto de datos
+1897800	1899800	obviamente todo lo que es Data Integrity
+1899800	1901800	se crea un dominio dentro
+1901800	1903800	de lo que es Data Mesh
+1903800	1905800	si pasamos a la siguiente slide
+1907800	1909800	Data Catalog como les mencioné
+1909800	1911800	esta es una herramienta de Change House
+1911800	1913800	en el cual nos permite navegar
+1913800	1915800	sobre los diferentes Dataproduct
+1915800	1917800	y componentes de data
+1917800	1919800	que tenemos en el mercado libre
+1919800	1921800	básicamente lo que te permite es
+1921800	1923800	hacer una búsqueda y poder
+1923800	1925800	indexar la información que uno siente
+1925800	1927800	que es relevante para poder hacer
+1927800	1929800	una búsqueda de datos o por ejemplo
+1929800	1931800	responder a la pregunta de
+1931800	1933800	existe una tabla que tenga tal dato
+1933800	1935800	bueno uno lo puede explotar de esta manera
+1935800	1937800	con esta herramienta
+1937800	1939800	si pasamos a la siguiente slide
+1939800	1941800	Dataflow como les comenté
+1941800	1943800	era la herramienta que teníamos
+1943800	1945800	ya hace más de 5 años
+1945800	1947800	no hacía compliance
+1947800	1949800	con el nuevo paradigma de Data Mesh
+1949800	1951800	porque necesitábamos
+1951800	1953800	skill demasiado técnicos o particulares
+1953800	1955800	para poder operar la herramienta
+1955800	1957800	que pensó es
+1957800	1959800	simplifiquemos estos flujos de ingesta
+1959800	1961800	dejémoslo a disposición de un usuario
+1961800	1963800	y no solo eso
+1963800	1965800	sino que lo que nosotros
+1965800	1967800	entendíamos es que los pipeline de datos
+1967800	1969800	no es Data Mesh
+1969800	1971800	sino también poder gestionar todos los objetos
+1971800	1973800	que forman
+1973800	1975800	parte de este data por ejemplo las tablas
+1975800	1977800	entonces generamos secciones de
+1977800	1979800	poder administrar, crear
+1979800	1981800	todo el ciclo de vida de una tabla
+1981800	1983800	haciendo obviamente compliance
+1983800	1985800	de las emocionalidades que te permite
+1985800	1987800	BigQuery que no son pocas
+1987800	1989800	entonces tuvimos que adaptar todas nuestras herramientas
+1989800	1991800	por ejemplo ahí en la captura
+1991800	1993800	se puede ver un poco de
+1993800	1995800	tenemos la gestión de las tablas
+1995800	1997800	tenemos los tiempos de expiración
+1997800	1999800	tenemos un circuito de pasaje de producción
+1999800	2001800	con su correspondiente aprobación
+2001800	2003800	tenemos los distintos ambientes separados
+2003800	2005800	y una vez que generas esas tablas
+2005800	2007800	puedes generar ahí en la sección de allshops
+2007800	2009800	puedes cargar de tus diferentes jobs
+2009800	2011800	para que ingesten dentro de esa tabla
+2011800	2013800	que pasamos a la siguiente slide
+2015800	2017800	SDK Streaming, nosotros en Mercado Alí
+2017800	2019800	tenemos particularmente
+2019800	2021800	lo que es Batch y lo que es Real-Time
+2021800	2023800	o Near Real-Time
+2023800	2025800	la diferencia obviamente
+2025800	2027800	está en que lo que es Near Real-Time y Real-Time
+2027800	2029800	vienen de tópicos de novedades que nos
+2029800	2031800	pushean los distintos unidades de negocio
+2031800	2033800	por ejemplo Mercado Pado cuando alguien hace
+2033800	2035800	una transacción nos notifican
+2035800	2037800	alguna aplicación
+2037800	2039800	para que nosotros ingestemos esa información
+2039800	2041800	y la SDK Streaming
+2041800	2043800	viene a Nase para Datamech
+2043800	2045800	porque básicamente en Mercado Alí
+2045800	2047800	había una aplicación en la cual
+2047800	2049800	cuando los usuarios necesitaban
+2049800	2051800	streamer información en Near Real-Time o Real-Time
+2051800	2053800	tenía que suscribirse al producto
+2053800	2055800	y básicamente compartía la misma infraestructura
+2055800	2057800	todos los pipeline de datos de streaming
+2057800	2059800	con esta nueva SDK
+2059800	2061800	lo que hicimos fue tomar
+2061800	2063800	las funcionalidades claves
+2063800	2065800	de cada una de las soluciones
+2065800	2067800	que teníamos de streaming de datos
+2067800	2069800	de la SDK y dejarlos disponibles
+2069800	2071800	para cada dominio para que lo pueda implementar
+2071800	2073800	en cada uno de sus proyectos
+2073800	2075800	garantizando así que utilizan
+2075800	2077800	las funciones que están obviamente
+2077800	2079800	controladas, reglamentadas
+2079800	2081800	por el equipo de gobierno
+2081800	2083800	y a su vez nos aseguramos de que cada vez
+2083800	2085800	que hay alguien streamer información
+2085800	2087800	la información esté
+2087800	2089800	correctamente catalogada entre el tópico
+2089800	2091800	de novedades y el destino de los datos
+2091800	2093800	dicho esto
+2093800	2095800	si pasamos a la siguiente slide
+2095800	2097800	y vamos a empezar a ver lo que es un resumen
+2097800	2099800	de lo que les contamos nosotros
+2099800	2101800	en igual encontramos nuestra famosa
+2101800	2103800	malla de datos, tenemos
+2103800	2105800	ahí si ven el DMA-A, el DMA-B
+2105800	2107800	el C y el Core
+2107800	2109800	el Core es el equipo de gobierno
+2109800	2111800	que no deja de ser un dominio más
+2111800	2113800	vemos cómo los dominios se van comunicando
+2113800	2115800	lateralmente entre ellos
+2115800	2117800	pero la particularidad como dijo Nacho
+2117800	2119800	que tenemos dentro de un mercado libre
+2119800	2121800	es que tenemos un proyecto dedicado
+2121800	2123800	en el cual se publica
+2123800	2125800	información mediante una vista
+2125800	2127800	para que cualquier usuario lo pueda consumir
+2127800	2129800	eso lo pueden ver ahí
+2129800	2131800	en la gráfica en el centro
+2131800	2133800	con el logito de BigQuery
+2133800	2135800	cada dominio genera sus datos product
+2135800	2137800	pero lo deja disponible para todo mercado libre
+2137800	2139800	como una capa única de ingreso
+2139800	2141800	en ese proyecto de BigQuery
+2141800	2143800	sin más
+2143800	2145800	le contamos un poco de lo que fue la malla de datos
+2145800	2147800	no sé si Nachito quiere algo aportar
+2147800	2149800	en lo que fuimos comentando
+2149800	2151800	si no abrimos el espacio de preguntas
+2151800	2153800	y la respuesta para todos
+2153800	2155800	de eso última parte
+2155800	2157800	una de las cosas que nosotros pensamos
+2157800	2159800	cuando pensamos resolver
+2159800	2161800	y esta parte también de nuestra interpretación
+2161800	2163800	nuestra implementación
+2163800	2165800	es que cuando un usuario quiera consumir
+2165800	2167800	esos datos de mercado libre
+2167800	2169800	que vienen producidos totalmente descentralizados
+2169800	2171800	de cualquier lado
+2171800	2173800	era necesario
+2173800	2175800	que para un usuario terrenal
+2175800	2177800	que pide acceso a lo que es el Workhouse and Lay
+2177800	2179800	en principio no necesites saber
+2179800	2181800	que haya un single point of entry
+2181800	2183800	y a partir de ahí
+2183800	2185800	que pueda consumir todo el dato de la organización
+2185800	2187800	luego si le interesa saber
+2187800	2189800	si interesa contactarse con el loaner
+2189800	2191800	para eso está la herramienta de catalogo de datos
+2191800	2193800	pero fundamental era
+2193800	2195800	garantizar también
+2195800	2197800	ese único punto de entrada
+2197800	2199800	y que conviva en el mismo ecosistema
+2203800	2205800	y aclarado eso
+2205800	2207800	fue una charla cortita
+2209800	2211800	fue difícil resumir todo esto
+2211800	2213800	en tan poco
+2213800	2215800	son conceptos algunos complicados
+2215800	2217800	así que
+2217800	2219800	si tienen preguntas
+2219800	2221800	acá estamos
+2225800	2227800	acá tenemos
+2227800	2229800	Gabriel
+2229800	2231800	Ignacio
+2231800	2233800	muchísimas gracias
+2233800	2235800	su presentación ha sido excelente
+2235800	2237800	enriquecedora
+2237800	2239800	y ahí me imagino acá
+2239800	2241800	que están llenos
+2241800	2243800	han tenido muchísimos desafíos
+2243800	2245800	porque la complejidad
+2245800	2247800	que se está dando
+2247800	2249800	podrían seleccionar uno
+2249800	2251800	que realmente considerado
+2251800	2253800	un verdadero desafío que les costó
+2253800	2255800	y comentarnos lo por arriba
+2255800	2257800	aunque sea pero para saber
+2257800	2259800	el grado de
+2259800	2261800	complejidad que tiene esto
+2261800	2263800	yo tengo uno Nacho
+2263800	2265800	disculpame que
+2265800	2267800	pero creo que el primer escenario
+2267800	2269800	fue cuando nos sentamos a definir los conceptos
+2269800	2271800	y tuvimos que bajar a la práctica
+2271800	2273800	es entender los diferentes casos de uso
+2273800	2275800	y qué estamos dejando por fuera
+2275800	2277800	y cómo implementar toda esta solución
+2277800	2279800	sin saber
+2279800	2281800	a veces uno
+2281800	2283800	en la vista a muchos pies de altura es muy difícil
+2283800	2285800	entender los distintos casos de uso por ejemplo
+2285800	2287800	desde cómo declarar en una función
+2287800	2289800	en cada equipo puntual
+2289800	2291800	en Colombia
+2291800	2293800	entonces el entender y el relevar
+2293800	2295800	toda esa información creo que fue un gran desafío
+2295800	2297800	y bueno creo que
+2297800	2299800	no me lo voy a olvidar nunca
+2299800	2301800	muy bien
+2303800	2305800	honestía
+2305800	2307800	a mí se me ocurre uno que
+2307800	2309800	todavía hoy lo tenemos
+2309800	2311800	como les decía Tamella es un término
+2311800	2313800	un concepto muy nuevo
+2313800	2315800	y casi toda
+2315800	2317800	las referencias
+2317800	2319800	la literatura, lo que se encuentra
+2319800	2321800	cuando uno investiga
+2321800	2323800	hablan de un
+2323800	2325800	estadio ideal
+2325800	2327800	de adónde habría que llegar
+2327800	2329800	pero nadie comienza en esto
+2329800	2331800	de cero
+2331800	2333800	necesariamente un proceso de transformación
+2333800	2335800	entonces una de las cosas más complicadas
+2335800	2337800	para nosotros fue
+2337800	2339800	no encontrar referencias porque no hay muchas implementaciones
+2339800	2341800	de estas en el mundo
+2341800	2343800	y tener que
+2343800	2345800	está bueno aprender de los errores
+2345800	2347800	de los demás
+2347800	2349800	entonces queríamos ir a buscar esos
+2349800	2351800	y no los encontramos
+2351800	2353800	así que eso fue
+2353800	2355800	también un proceso bastante difícil
+2355800	2357800	ver cómo
+2357800	2359800	creanear todo esto
+2359800	2361800	por las nuestras
+2361800	2363800	muy bien
+2363800	2365800	acá tengo algunas preguntas más
+2365800	2367800	cuando me pregunto Emiliano
+2367800	2369800	cuando hablan de stream
+2369800	2371800	y de datos
+2371800	2373800	en SDK
+2373800	2375800	quieren si pueden hacer una aclaración
+2375800	2377800	ahí lo tomo yo
+2377800	2379800	dentro del mercado libre
+2379800	2381800	llamamos a lo que es streaming de datos
+2381800	2383800	cuando la información se genera una velocidad
+2383800	2385800	que se anilla real-time o real-time
+2385800	2387800	y es necesario dejarlo en el warehouse con esa velocidad
+2387800	2389800	por ejemplo todo evento que sucede
+2389800	2391800	en una unidad de negocio
+2391800	2393800	uno lo puede mandar al warehouse de dos maneras
+2393800	2395800	medio anti-batch
+2395800	2397800	corre un shop periódicamente croniado
+2397800	2399800	en un periodo de tiempo o no
+2399800	2401800	enviarla ni bien sucede la novedad
+2401800	2403800	hacemos referencia al streaming de datos
+2403800	2405800	a tomar esa información dentro un tópico de novedades
+2405800	2407800	que podría ser lo voy a simplificar
+2407800	2409800	si fuese colas mq
+2409800	2411800	si fuese un sistema de cola
+2411800	2413800	como rabit tendrías una novedad
+2413800	2415800	la cual te suscribes y estás escuchando
+2415800	2417800	constantemente la creación de esa novedad
+2417800	2419800	una vez que esa novedad llega
+2419800	2421800	la toma el equipo o en este caso la SDK
+2421800	2423800	y la termina enviando lo que es
+2423800	2425800	una tabla dentro del data warehouse
+2425800	2427800	es más que nada un flujo de datos
+2427800	2429800	de información en real-time o real-time
+2429800	2431800	no sé si respondí la pregunta
+2431800	2433800	y si no repregunta tranquilo
+2433800	2435800	no perfecto se entendió muy bien
+2435800	2437800	muchas gracias después
+2437800	2439800	Florencia, primero felicita por la
+2439800	2441800	presentación nos dice
+2441800	2443800	que fue muy interesante
+2443800	2445800	y nos hace una pregunta es
+2445800	2447800	si hay integración entre
+2447800	2449800	distintos dominios y fuese
+2449800	2451800	necesario integrar
+2451800	2453800	distintas áreas
+2453800	2455800	como es ese proceso
+2455800	2457800	si que debo y yo bajó
+2457800	2459800	nacho como óqueta
+2459800	2461800	por definición la idea
+2461800	2463800	es que los dominios sean interoperables
+2463800	2465800	que lo que publique un dominio puede hacer
+2465800	2467800	un origen para lo que publica otro
+2467800	2469800	o sea eso
+2469800	2471800	es una necesidad debe ser así
+2471800	2473800	no deben estar aislados
+2473800	2475800	no sé si la pregunta
+2475800	2477800	apuntaba ahí pero también
+2477800	2479800	acaba de mencionar otra cosa
+2479800	2481800	otra cuestión que es
+2481800	2483800	los dominios tampoco van a ser estativos
+2483800	2485800	las organizaciones son dinámicas
+2485800	2487800	y las iniciativas
+2487800	2489800	los productos o los equipos
+2489800	2491800	en las organizaciones también son dinámicos
+2491800	2493800	y van cambiando
+2493800	2495800	también nosotros pensamos esto de manera orgánica
+2495800	2497800	es decir hoy en día
+2497800	2499800	podemos definir un dominio
+2499800	2501800	y el día de mañana ese dominio se tiene que
+2501800	2503800	explicar
+2503800	2505800	va creciendo y ven la necesidad
+2505800	2507800	de que ese dominio el día de mañana sean dos
+2507800	2509800	o puede ser que dos dominios
+2509800	2511800	el día de mañana se unan
+2511800	2513800	eso
+2513800	2515800	tiene más que ver con
+2515800	2517800	la dinámica de la organización
+2517800	2519800	de estos dominios pero en cuanto
+2519800	2521800	a interoperabilidad
+2521800	2523800	por definición deben ser todos interoperables
+2525800	2527800	perfecto
+2527800	2529800	después Marco nos pregunta
+2529800	2531800	si la estructura
+2531800	2533800	que fue construida es el 100%
+2533800	2535800	self service
+2535800	2537800	o hay que hacer algún tipo
+2537800	2539800	de operatoria extra
+2541800	2543800	dentro de
+2543800	2545800	lo que es data mesh
+2545800	2547800	hoy en día el equipo de data se vivía
+2547800	2549800	dentro de mesh y fuera de mesh
+2549800	2551800	estamos en un proceso de incorporación
+2551800	2553800	de este nuevo paradigma
+2553800	2555800	todo lo que está dentro de mesh tiene carácter
+2555800	2557800	de self service
+2557800	2559800	y se desarrolla y se piensa de esa manera
+2559800	2561800	así que todas las soluciones que forman parte de mesh
+2561800	2563800	tienen que tener
+2563800	2565800	este carácter de self service
+2565800	2567800	obviamente por debajo
+2567800	2569800	no dejan de ser aplicaciones
+2569800	2571800	de un tipo de soporte
+2571800	2573800	que tenemos un equipo especializado
+2573800	2575800	pero es más que nada
+2575800	2577800	no soporte a la creación y el consumo
+2577800	2579800	de los datos sino a la utilización de la herramienta
+2579800	2581800	por si hay algún problema
+2581800	2583800	bien muchas gracias
+2583800	2585800	y por último nos preguntan
+2585800	2587800	si herramientas del tipo
+2587800	2589800	Kafka fueron usadas
+2589800	2591800	o alguna tecnología particular
+2591800	2593800	de cloud
+2593800	2595800	todo lo que
+2595800	2597800	van a ser
+2597800	2599800	todo lo que corre dentro
+2599800	2601800	de Mercado Libre
+2601800	2603800	está bajo la gestión
+2603800	2605800	de Fury que es una abstracción
+2605800	2607800	nuestra de tecnologías puntuales
+2607800	2609800	pero para responder puntualmente
+2609800	2611800	tu pregunta nosotros utilizamos
+2611800	2613800	lo que son tópicos de novedades
+2613800	2615800	que no quiere decir que abajo
+2615800	2617800	haya un Kafka pero básicamente
+2617800	2619800	lo que viene a simular estos tópicos de novedades
+2619800	2621800	es esa tecnología como un Rabbit MQ
+2621800	2623800	es todo cloud
+2623800	2625800	así que corresponde tu pregunta
+2625800	2627800	y tenemos tecnología simil Kafka
+2627800	2629800	creo que hay alguna parte de Kafka pero para nosotros es una abstracción
+2629800	2631800	necesitamos suscribirnos
+2631800	2633800	un tópico de novedades y eso está resuelto
+2633800	2635800	y para complementarte
+2635800	2637800	hoy
+2637800	2639800	hoy
+2639800	2641800	mesh
+2641800	2643800	corre con la tecnología que tenemos
+2643800	2645800	y
+2645800	2647800	creo que nos fuimos favorecidos
+2647800	2649800	cuando planteamos esto teníamos
+2649800	2651800	bastantes cosas a favor
+2651800	2653800	cambios tecnológicos que permitían que esto suceda
+2653800	2655800	un montón de equipos fuera del equipo central
+2655800	2657800	que ya estaban en equipos de negocio
+2657800	2659800	con los skill necesarios
+2659800	2661800	para que esto también suceda
+2661800	2663800	de hecho había gente que nos venía y golpeaba la puerta
+2663800	2665800	cuando puedo publicar datos
+2665800	2667800	para todo mercado libre
+2667800	2669800	pero esto no quiere decir
+2669800	2671800	de que continuemos
+2671800	2673800	de que no continuemos trabajando
+2673800	2675800	continuamos trabajando muy fuertemente porque
+2675800	2677800	las tecnologías
+2677800	2679800	que tenemos que seguir integrando
+2679800	2681800	son diversas
+2681800	2683800	cintas, hoy como decía
+2683800	2685800	en lo que fue esta evolución
+2685800	2687800	de nuestra herramienta de pipelines
+2687800	2689800	pudimos simplificar
+2689800	2691800	varios de los flujos
+2691800	2693800	más utilizados
+2693800	2695800	pero hay otros flujos que todavía no tenemos contemplados
+2695800	2697800	y que estamos justamente pensando
+2697800	2699800	como lo podemos hacer lo más sencillo posible
+2699800	2701800	por lo tanto
+2701800	2703800	tecnologías sí que
+2703800	2705800	media es todo full cloud
+2705800	2707800	pero
+2707800	2709800	pero que las tecnologías también van a ir evolucionando
+2709800	2711800	a medida que veamos que sea necesario
+2711800	2713800	bien
+2713800	2715800	y también nos preguntan
+2715800	2717800	cuál fue el primer dominio
+2717800	2719800	que eligieron si tuvo alguna razón
+2719800	2721800	de ser por el cual lo eligieron
+2721800	2723800	y en qué porcentaje
+2723800	2725800	los dominios ya están siendo
+2725800	2727800	migrados
+2727800	2729800	a esta nueva modalidad
+2729800	2731800	empezamos con
+2731800	2733800	cuatro dominios
+2735800	2737800	pero el primero que tuvimos en mente
+2737800	2739800	es un dominio
+2739800	2741800	es un equipo de Mercado en BIOS
+2741800	2743800	que nosotros llamamos Shipping
+2743800	2745800	internamente
+2745800	2747800	porque fue la primera área de datos
+2747800	2749800	que se creó
+2749800	2751800	externa al área central
+2751800	2753800	entonces después de algunos años
+2753800	2755800	era un equipo
+2755800	2757800	que tenía un montón de responsabilidad
+2757800	2759800	dentro de todo lo que es Shipping
+2759800	2761800	venían trabajando de una manera
+2761800	2763800	ellos se enojarían si yo digo informal
+2763800	2765800	pero bueno en cuanto a garantías
+2765800	2767800	de infraestructura y demás
+2767800	2769800	era informal
+2769800	2771800	entonces
+2771800	2773800	vimos que era un equipo muy maduro
+2773800	2775800	con muchos skills
+2775800	2777800	con gente que sabía mucho
+2777800	2779800	y le faltaba un poco esa asistencia
+2779800	2781800	de infraestructura
+2781800	2783800	de plataforma
+2783800	2785800	de que nosotros los ayudemos con las herramientas necesarias
+2785800	2787800	para que sean dueños del ciclo con el día
+2787800	2789800	completo del dato
+2789800	2791800	así que por un lado
+2791800	2793800	ese fue el primero que se nos vino a la mente
+2793800	2795800	y de momento
+2795800	2797800	el estadio hoy es que no lo abrimos
+2797800	2799800	como decimos nosotros a mal abierto
+2799800	2801800	todavía no está abierto a que cualquiera
+2801800	2803800	que quiera un dominio lo pueda tener
+2803800	2805800	porque como les decía antes
+2805800	2807800	es un proceso de transformación en el que
+2807800	2809800	dijimos
+2809800	2811800	vamos a ir de a poco
+2811800	2813800	pasos seguros
+2813800	2815800	y quizás si nos demoramos
+2815800	2817800	un poco más
+2817800	2819800	pero tener el feedback más rico
+2819800	2821800	de estos primeros equipos
+2821800	2823800	con mucho más expertise
+2823800	2825800	para ver si le pifiamos en algo
+2825800	2827800	si hay algo que tenemos que ajustar
+2827800	2829800	que va a ser mucho más fácil ajustarlo
+2829800	2831800	para pocos dominios
+2831800	2833800	que pensar
+2833800	2835800	que nos equivocamos en hacerlo en el rollout
+2835800	2837800	antes de lo esperado
+2837800	2839800	por lo tanto ahora estamos con cuatro dominios
+2839800	2841800	ahora vamos a ir con una segunda wave
+2841800	2843800	en la que estamos evaluando si vamos a ir por cuatro más
+2843800	2845800	o creo que ya nos sentimos bastante confiados
+2845800	2847800	como para aumentar bastante el número
+2847800	2849800	y seguramente ya en el 2023
+2849800	2851800	ya sea maravilloso
+2851800	2853800	perfecto
+2853800	2855800	y en relación a eso
+2855800	2857800	si fue proceso
+2857800	2859800	de educación de los usuarios
+2859800	2861800	para este nuevo paradigma
+2863800	2865800	lo que hicimos fue
+2865800	2867800	trabajar por distintos frentes en workshop
+2867800	2869800	y acompañamiento
+2869800	2871800	básicamente estuvimos
+2871800	2873800	todo lo que fue el cu pasado haciendo formación
+2873800	2875800	y training de los equipos porque
+2875800	2877800	esto no es solamente
+2877800	2879800	un cambio técnico o de tool
+2879800	2881800	sino que es un cambio cultural
+2881800	2883800	entonces hay muchas preguntas
+2883800	2885800	porque es que tenemos que responder a veces
+2885800	2887800	y saciar dudas
+2887800	2889800	así que fuimos trabajando en diferentes workshops
+2889800	2891800	y obviamente
+2891800	2893800	en acompañamiento
+2893800	2895800	tengo 25 shop
+2895800	2897800	tengo 25 tablas
+2897800	2899800	te acompañamos en las primeras para que te sientas confiado
+2899800	2901800	y luego puedas seguir
+2901800	2903800	ese fue el proceso por lo menos que fuimos caminando hasta el momento
+2903800	2905800	y una pregunta
+2905800	2907800	o ir cerrando
+2907800	2909800	si se necesitaron
+2909800	2911800	para cada dominio data engineer
+2911800	2913800	particulares
+2915800	2917800	si
+2917800	2919800	pero no necesitamos contratar de momento
+2919800	2921800	justamente
+2921800	2923800	como decía antes
+2923800	2925800	tuvimos un viento que soplaba favor
+2925800	2927800	que era que ya había
+2927800	2929800	muchos data engineers
+2929800	2931800	en equipos que no eran los equipos
+2931800	2933800	el equipo central
+2933800	2935800	es una de las imágenes que mostramos
+2935800	2937800	en los que no había
+2937800	2939800	ETLs solamente
+2939800	2941800	en esa parte central
+2941800	2943800	sino que había ETLs
+2943800	2945800	ya sucediendo de manera informal en un montón de equipos
+2945800	2947800	por lo tanto
+2947800	2949800	al menos para los primeros dominios
+2949800	2951800	que están saliendo
+2951800	2953800	a implementar mesh
+2953800	2955800	no
+2955800	2957800	no está siendo necesario contratar data engineers
+2957800	2959800	porque ya tienen
+2959800	2961800	gente con skills de data engineer
+2961800	2963800	pero seguramente si
+2963800	2965800	para otros
+2965800	2967800	dominios a futuro
+2967800	2969800	que quieran tomar el control completo
+2969800	2971800	del ciclo de vía a los datos
+2971800	2973800	seguramente los vayan a necesitar
+2973800	2975800	y complementando lo que dijo Gaby
+2975800	2977800	otra parte que para nosotros es fundamental
+2977800	2979800	en lo que es el cambio cultural
+2979800	2981800	es que esto
+2981800	2983800	da mayor poder
+2983800	2985800	a estos equipos
+2985800	2987800	pero también creemos
+2987800	2989800	que el poder viene de la mano
+2989800	2991800	de mayor responsabilidad
+2991800	2993800	por lo tanto
+2993800	2995800	tenemos que asegurarnos
+2995800	2997800	nosotros como equipos central
+2997800	2999800	de que estos equipos
+2999800	3001800	actúen con responsabilidad
+3001800	3003800	y quedó justamente
+3003800	3005800	si hay algo que se rompe
+3005800	3007800	tengan gente con skills adecuados
+3007800	3009800	para poder arreglarlo
+3009800	3011800	bien y una pregunta
+3011800	3013800	parece que generó mucho interés
+3013800	3015800	la idea que presentaron
+3015800	3017800	y lo que preguntan es
+3017800	3019800	cómo pensarían ustedes
+3019800	3021800	cómo se podría empezar
+3021800	3023800	para hacer un data mesh
+3023800	3025800	desde cero
+3025800	3027800	sin herramientas propias
+3027800	3029800	de medio
+3029800	3031800	creo que
+3031800	3033800	en este primer paso
+3033800	3035800	antes de pensar en una herramienta pensaría
+3035800	3037800	en los diferentes escenarios
+3037800	3039800	que tenés que abordar para cubrir
+3039800	3041800	la observabilidad
+3041800	3043800	el descubrimiento, el catalogado, trazabilidad
+3043800	3045800	primero las necesidades
+3045800	3047800	para que imagino que cada empresa
+3047800	3049800	obviamente va a tener sus distintos niveles
+3049800	3051800	de madurez para afrontar esto
+3051800	3053800	primero entendería bien
+3053800	3055800	eso y luego empezaría a buscar
+3055800	3057800	herramientas que obviamente
+3057800	3059800	se puedan, ahí creo que decía un premis
+3059800	3061800	herramientas que se puedan adaptar
+3061800	3063800	a ese tipo de necesidad
+3063800	3065800	para mí hoy en día implementar mesh
+3065800	3067800	el problema no está tanto en las herramientas
+3067800	3069800	sino en cómo hacer una solución
+3069800	3071800	de negocio que escale en el tiempo
+3071800	3073800	y no sea demasiado costosa
+3073800	3075800	en el punto de vista, no sé, Nachito
+3075800	3077800	si, concuerdo
+3077800	3079800	creo que herramientas hay de sobra
+3079800	3081800	el tema es ver
+3081800	3083800	cómo se adapta mesh
+3083800	3085800	primero hay que ver si la organización lo necesita
+3087800	3089800	quizás no sea necesario
+3089800	3091800	pero en el caso que lo necesite
+3091800	3093800	hay que ver cómo se adapta mesh
+3093800	3095800	a la estructura que necesitan hacer
+3097800	3099800	no es descentralizar por descentralizar
+3099800	3101800	es descentralizar con un sentido
+3101800	3103800	de agilidad controlada
+3103800	3105800	tuvimos hace
+3105800	3107800	unas semanas una charla
+3107800	3109800	con una persona que fue la que implementó mesh
+3109800	3111800	en el New York Times
+3111800	3113800	y a diferencia de nosotros, ellos tenían
+3113800	3115800	muy poquitos dominios y con eso ya estaban bien
+3115800	3117800	nosotros
+3117800	3119800	tenemos la necesidad por cómo el mercado libre
+3119800	3121800	de tener un número
+3121800	3123800	muchísimo más grande de dominios
+3123800	3125800	entonces tenemos un desafío
+3125800	3127800	bastante mayor en lo que es Gobernate
+3127800	3129800	en lo que es herramientas para que eso sea un mismo ecosistema
+3129800	3131800	pero
+3131800	3133800	si yo concuerdo con lo que decía David
+3133800	3135800	no es tanto, creo que herramientas siempre se encuentran
+3135800	3137800	una forma de solucionar un problema
+3137800	3139800	con una herramienta, hay muchísimo
+3139800	3141800	dando vueltas por ahí en el mercado
+3141800	3143800	el desafío más grande
+3143800	3145800	es
+3145800	3147800	es cómo hacer
+3147800	3149800	cómo combinar todo esto junto
+3149800	3151800	para que realmente funcione
+3153800	3155800	bien
+3155800	3157800	muchísimas gracias, excelente
+3157800	3159800	la presentación
+3159800	3161800	Juan, adelante por favor
+3161800	3163800	bueno
+3163800	3165800	quería agradecerles
+3165800	3167800	especialmente a Gabriela Ignacio
+3167800	3169800	por esta presentación
+3169800	3171800	que no solamente ha sido
+3171800	3173800	una presentación
+3173800	3175800	extremadamente prolija
+3175800	3177800	didáctica
+3177800	3179800	lo importante
+3179800	3181800	para nosotros es que hayan compartido
+3181800	3183800	justamente la experiencia
+3183800	3185800	que han tenido ustedes
+3185800	3187800	la implementación
+3187800	3189800	de esta nueva idea
+3189800	3191800	de Meys como lo dijo
+3191800	3193800	muy bien Gabriel
+3193800	3195800	Ignacio
+3195800	3197800	esto es algo nuevo, no podemos encontrar
+3197800	3199800	muchos antecedentes
+3199800	3201800	incluso en el mundo
+3201800	3203800	así que
+3203800	3205800	esto es más que valioso para nosotros
+3205800	3207800	bueno muchísimas gracias
+3207800	3209800	de nuevo
+3209800	3211800	Gabriela Ignacio por su participación
+3211800	3213800	en esta jornada
+3213800	3215800	bueno vamos a hacer ahora
+3215800	3217800	un pequeño intervalo
+3217800	3219800	y
+3219800	3221800	empezamos de nuevo a las 15
+3221800	3223800	con la presentación de Panamérica
+3223800	3225800	bueno muchas gracias
+3243800	3245800	y
+3273800	3275800	gracias
+3303800	3305800	y
+3333800	3335800	y
+3363800	3365800	y
+3393800	3395800	y
+3397800	3399800	y
+3399800	3401800	y
+3401800	3403800	y
+3403800	3405800	y
+3405800	3407800	y
+3407800	3409800	y
+3409800	3411800	y
+3411800	3413800	y
+3413800	3415800	y
+3415800	3417800	y
+3417800	3419800	y
+3419800	3421800	y
+3421800	3423800	y
+3425800	3427800	y
+3427800	3429800	y
+3429800	3431800	y
+3431800	3433800	y
+3433800	3435800	y
+3435800	3437800	y
+3437800	3439800	y
+3439800	3441800	y
+3441800	3443800	y
+3443800	3445800	y
+3445800	3447800	y
+3447800	3449800	y
+3449800	3451800	y
+3451800	3453800	y
+3453800	3455800	y
+3455800	3457800	y
+3457800	3459800	y
+3459800	3461800	y
+3461800	3463800	y
+3463800	3465800	y
+3465800	3467800	y
+3467800	3469800	y
+3471800	3473800	y
+3473800	3475800	y
+3475800	3477800	y
+3477800	3479800	y
+3479800	3481800	y
+3481800	3483800	y
+3483800	3485800	y
+3489800	3491800	y
+3491800	3493800	y
+3493800	3495800	y
+3495800	3497800	y
+3497800	3499800	y
+3499800	3501800	y
+3501800	3503800	y
+3503800	3505800	y
+3505800	3507800	y
+3507800	3509800	y
+3509800	3511800	y
+3511800	3513800	y
+3513800	3515800	y
+3515800	3517800	y
+3517800	3519800	y
+3519800	3521800	y
+3521800	3523800	y
+3523800	3525800	y
+3525800	3527800	y
+3527800	3529800	y
+3529800	3531800	y
+3531800	3533800	y
+3533800	3535800	y
+3535800	3537800	y
+3537800	3539800	y
+3539800	3541800	y
+3541800	3543800	y
+3543800	3545800	y
+3545800	3547800	y
+3547800	3549800	y
+3549800	3551800	y
+3551800	3553800	y
+3553800	3555800	y
+3555800	3557800	y
+3559800	3561800	y
+3561800	3563800	y
+3563800	3565800	y
+3565800	3567800	y
+3567800	3569800	y
+3569800	3573800	y
+3573800	3575800	y
+3575800	3577800	y
+3577800	3579800	y
+3579800	3581800	y
+3581800	3583800	y
+3583800	3585800	y
+3585800	3587800	y
+3587800	3589800	y
+3589800	3591800	y
+3591800	3593800	y
+3593800	3595800	y
+3595800	3597800	y
+3597800	3601800	y
+3601800	3603800	y
+3603800	3605800	y
+3605800	3607800	y
+3607800	3609800	y
+3609800	3611800	y
+3611800	3613800	y
+3613800	3615800	y
+3615800	3617800	y
+3617800	3619800	y
+3619800	3621800	y
+3621800	3623800	y
+3623800	3625800	y
+3625800	3627800	y
+3627800	3629800	y
+3629800	3631800	y
+3631800	3633800	y
+3633800	3635800	y
+3635800	3637800	y
+3637800	3639800	y
+3639800	3641800	y
+3643800	3645800	y
+3645800	3647800	y
+3647800	3649800	y
+3649800	3651800	y
+3651800	3653800	y
+3653800	3655800	y
+3655800	3657800	y
+3657800	3659800	y
+3659800	3661800	y
+3661800	3663800	y
+3663800	3665800	y
+3665800	3667800	y
+3667800	3669800	y
+3671800	3673800	y
+3673800	3675800	y
+3675800	3677800	y
+3677800	3681800	y
+3681800	3683800	y
+3683800	3685800	y
+3685800	3687800	y
+3687800	3689800	y
+3689800	3691800	y
+3691800	3693800	y
+3693800	3695800	y
+3695800	3697800	y
+3697800	3699800	y
+3699800	3701800	y
+3701800	3705800	y
+3705800	3707800	y
+3707800	3709800	y
+3709800	3711800	y
+3711800	3713800	y
+3713800	3715800	y
+3715800	3717800	y
+3717800	3719800	y
+3719800	3721800	y
+3721800	3723800	y
+3723800	3725800	y
+3725800	3727800	y
+3727800	3729800	y
+3729800	3733800	y
+3733800	3735800	y
+3735800	3737800	y
+3737800	3739800	y
+3739800	3741800	y
+3741800	3743800	y
+3743800	3745800	y
+3745800	3747800	y
+3747800	3749800	y
+3749800	3751800	y
+3751800	3753800	y
+3753800	3755800	y
+3755800	3757800	y
+3757800	3759800	y
+3759800	3761800	y
+3761800	3763800	y
+3763800	3765800	y
+3765800	3769800	y
+3769800	3771800	y
+3771800	3773800	y
+3773800	3775800	y
+3775800	3777800	y
+3777800	3779800	y
+3779800	3781800	y
+3781800	3783800	y
+3783800	3785800	y
+3785800	3787800	y
+3787800	3789800	y
+3789800	3791800	y
+3791800	3793800	y
+3793800	3795800	y
+3795800	3797800	y
+3797800	3799800	y
+3799800	3801800	y
+3801800	3803800	y
+3803800	3805800	y
+3805800	3807800	y
+3807800	3809800	y
+3811800	3813800	y
+3813800	3815800	y
+3815800	3817800	y
+3817800	3819800	y
+3819800	3821800	y
+3821800	3823800	y
+3823800	3825800	y
+3825800	3827800	y
+3827800	3829800	y
+3829800	3831800	y
+3831800	3833800	y
+3833800	3835800	y
+3835800	3837800	y
+3839800	3841800	y
+3841800	3843800	y
+3843800	3845800	y
+3845800	3847800	y
+3847800	3849800	y
+3849800	3851800	y
+3851800	3853800	y
+3853800	3855800	y
+3855800	3857800	y
+3857800	3859800	y
+3859800	3861800	y
+3861800	3863800	y
+3863800	3865800	y
+3867800	3869800	y
+3869800	3871800	y
+3871800	3873800	y
+3873800	3875800	y
+3875800	3877800	y
+3877800	3881800	y
+3881800	3883800	y
+3883800	3885800	y
+3885800	3887800	y
+3887800	3889800	y
+3889800	3891800	y
+3891800	3893800	y
+3893800	3895800	y
+3895800	3897800	y
+3897800	3899800	y
+3899800	3901800	y
+3901800	3905800	y
+3905800	3907800	y
+3907800	3909800	y
+3909800	3911800	y
+3911800	3913800	y
+3913800	3915800	y
+3915800	3917800	y
+3917800	3919800	y
+3919800	3921800	y
+3921800	3923800	y
+3923800	3925800	y
+3925800	3927800	y
+3927800	3929800	y
+3929800	3931800	y
+3931800	3933800	y
+3933800	3935800	y
+3935800	3937800	y
+3937800	3939800	y
+3939800	3941800	y
+3943800	3945800	y
+3945800	3947800	y
+3947800	3949800	y
+3949800	3951800	y
+3951800	3953800	y
+3953800	3955800	y
+3955800	3957800	y
+3957800	3959800	y
+3959800	3961800	y
+3961800	3963800	y
+3963800	3965800	y
+3967800	3969800	y
+3969800	3971800	y
+3971800	3973800	y
+3973800	3975800	y
+3975800	3977800	y
+3977800	3979800	y
+3979800	3981800	y
+3981800	3983800	y
+3983800	3985800	y
+3985800	3987800	y
+3987800	3989800	y
+3989800	3991800	y
+3991800	3993800	y
+3993800	3995800	y
+3995800	3997800	y
+3997800	3999800	y
+3999800	4001800	y
+4003800	4005800	y
+4005800	4007800	y
+4007800	4009800	y
+4009800	4011800	y
+4011800	4013800	y
+4013800	4015800	y
+4015800	4017800	y
+4017800	4019800	y
+4019800	4021800	y
+4021800	4023800	y
+4023800	4025800	y
+4025800	4027800	y
+4027800	4029800	y
+4029800	4031800	y
+4031800	4033800	y
+4035800	4037800	y
+4037800	4039800	y
+4039800	4041800	y
+4041800	4043800	y
+4043800	4045800	y
+4045800	4049800	y
+4049800	4051800	y
+4051800	4053800	y
+4053800	4055800	y
+4055800	4057800	y
+4057800	4059800	y
+4059800	4061800	y
+4061800	4063800	y
+4063800	4065800	y
+4065800	4067800	y
+4067800	4069800	y
+4069800	4071800	y
+4071800	4073800	y
+4073800	4077800	y
+4077800	4079800	y
+4079800	4081800	y
+4081800	4083800	y
+4083800	4085800	y
+4085800	4087800	y
+4087800	4089800	y
+4089800	4091800	y
+4091800	4093800	y
+4093800	4095800	y
+4095800	4097800	y
+4097800	4099800	y
+4099800	4101800	y
+4101800	4103800	y
+4103800	4105800	y
+4105800	4107800	y
+4107800	4109800	y
+4109800	4111800	y
+4111800	4113800	y
+4113800	4115800	y
+4115800	4117800	y
+4119800	4121800	y
+4121800	4123800	y
+4123800	4125800	y
+4125800	4127800	y
+4127800	4129800	y
+4129800	4131800	y
+4131800	4133800	y
+4133800	4135800	y
+4135800	4137800	y
+4137800	4139800	y
+4139800	4141800	y
+4143800	4145800	y
+4145800	4147800	y
+4147800	4149800	y
+4149800	4151800	y
+4151800	4153800	y
+4153800	4155800	y
+4155800	4157800	y
+4157800	4159800	y
+4159800	4161800	y
+4161800	4163800	y
+4163800	4165800	y
+4165800	4167800	y
+4167800	4169800	y
+4169800	4171800	y
+4171800	4173800	y
+4175800	4177800	y
+4177800	4179800	y
+4179800	4181800	y
+4181800	4183800	y
+4183800	4185800	y
+4185800	4187800	y
+4187800	4189800	y
+4189800	4191800	y
+4191800	4193800	y
+4193800	4195800	y
+4195800	4197800	y
+4197800	4199800	y
+4199800	4201800	y
+4203800	4205800	y
+4205800	4207800	y
+4207800	4209800	y
+4209800	4211800	y
+4211800	4213800	y
+4213800	4217800	y
+4217800	4219800	y
+4219800	4221800	y
+4221800	4223800	y
+4223800	4225800	y
+4225800	4227800	y
+4227800	4229800	y
+4229800	4231800	y
+4231800	4233800	y
+4233800	4235800	y
+4235800	4237800	y
+4237800	4239800	y
+4239800	4241800	y
+4241800	4245800	y
+4245800	4247800	y
+4247800	4249800	y
+4249800	4251800	y
+4251800	4253800	y
+4253800	4255800	y
+4255800	4257800	y
+4257800	4259800	y
+4259800	4261800	y
+4261800	4263800	y
+4263800	4265800	y
+4265800	4267800	y
+4267800	4269800	y
+4269800	4273800	y
+4273800	4275800	y
+4275800	4277800	y
+4277800	4279800	y
+4279800	4281800	y
+4281800	4283800	y
+4283800	4285800	y
+4285800	4287800	y
+4287800	4289800	y
+4289800	4291800	y
+4291800	4293800	y
+4293800	4295800	y
+4295800	4297800	y
+4297800	4299800	y
+4299800	4301800	y
+4303800	4305800	y
+4305800	4307800	y
+4307800	4309800	y
+4309800	4311800	y
+4311800	4313800	y
+4313800	4315800	y
+4315800	4317800	y
+4317800	4319800	y
+4319800	4321800	y
+4321800	4323800	y
+4323800	4325800	y
+4325800	4327800	y
+4327800	4329800	y
+4329800	4331800	y
+4331800	4333800	y
+4333800	4335800	y
+4335800	4337800	y
+4337800	4339800	y
+4339800	4341800	y
+4343800	4345800	y
+4345800	4347800	y
+4347800	4349800	y
+4349800	4351800	y
+4351800	4353800	y
+4353800	4355800	y
+4355800	4357800	y
+4357800	4359800	y
+4359800	4361800	y
+4361800	4363800	y
+4363800	4365800	y
+4365800	4367800	y
+4367800	4369800	y
+4371800	4373800	y
+4373800	4375800	y
+4375800	4377800	y
+4377800	4379800	y
+4379800	4381800	y
+4381800	4385800	y
+4385800	4387800	y
+4387800	4389800	y
+4389800	4391800	y
+4391800	4393800	y
+4393800	4395800	y
+4395800	4397800	y
+4397800	4399800	y
+4399800	4401800	y
+4401800	4403800	y
+4403800	4405800	y
+4405800	4407800	y
+4407800	4409800	y
+4409800	4411800	y
+4411800	4413800	y
+4413800	4415800	y
+4415800	4417800	y
+4417800	4419800	y
+4419800	4421800	y
+4421800	4423800	y
+4423800	4425800	y
+4427800	4429800	y
+4429800	4431800	y
+4431800	4433800	y
+4433800	4435800	y
+4435800	4437800	y
+4437800	4439800	y
+4439800	4441800	y
+4441800	4443800	y
+4443800	4445800	y
+4445800	4447800	y
+4447800	4449800	y
+4449800	4451800	y
+4451800	4453800	y
+4455800	4457800	y
+4457800	4459800	y
+4459800	4461800	y
+4461800	4463800	y
+4463800	4465800	y
+4465800	4467800	y
+4467800	4469800	y
+4469800	4471800	y
+4471800	4473800	y
+4473800	4475800	y
+4475800	4477800	y
+4477800	4479800	y
+4479800	4481800	y
+4483800	4485800	y
+4485800	4487800	y
+4487800	4489800	y
+4489800	4491800	y
+4491800	4493800	y
+4493800	4495800	y
+4495800	4497800	y
+4497800	4499800	y
+4499800	4501800	y
+4501800	4503800	y
+4503800	4505800	y
+4505800	4507800	y
+4507800	4509800	y
+4511800	4513800	y
+4513800	4515800	y
+4515800	4517800	y
+4517800	4519800	y
+4519800	4521800	y
+4521800	4523800	y
+4525800	4527800	y
+4527800	4529800	y
+4529800	4531800	y
+4531800	4533800	y
+4533800	4535800	y
+4535800	4537800	y
+4537800	4539800	y
+4539800	4541800	y
+4541800	4543800	y
+4543800	4545800	y
+4545800	4547800	y
+4547800	4549800	y
+4549800	4551800	y
+4551800	4553800	y
+4553800	4555800	y
+4555800	4557800	y
+4557800	4559800	y
+4559800	4561800	y
+4561800	4563800	y
+4563800	4565800	y
+4567800	4569800	y
+4569800	4571800	y
+4571800	4573800	y
+4573800	4575800	y
+4577800	4579800	y
+4579800	4581800	y
+4581800	4583800	y
+4583800	4585800	y
+4585800	4587800	y
+4587800	4589800	y
+4589800	4591800	y
+4591800	4593800	y
+4593800	4595800	y
+4595800	4597800	y
+4597800	4599800	y
+4599800	4601800	y
+4601800	4603800	y
+4603800	4605800	y
+4605800	4607800	y
+4607800	4609800	y
+4609800	4611800	y
+4611800	4613800	y
+4613800	4615800	y
+4615800	4617800	y
+4617800	4619800	y
+4619800	4621800	y
+4623800	4625800	y
+4625800	4627800	y
+4627800	4629800	y
+4631800	4633800	y
+4633800	4635800	y
+4635800	4637800	y
+4637800	4639800	y
+4639800	4641800	y
+4641800	4643800	y
+4643800	4645800	y
+4645800	4647800	y
+4647800	4649800	y
+4649800	4651800	y
+4651800	4653800	y
+4653800	4655800	y
+4655800	4657800	y
+4657800	4659800	y
+4659800	4661800	y
+4661800	4663800	y
+4663800	4665800	y
+4665800	4667800	y
+4667800	4669800	y
+4669800	4671800	y
+4671800	4673800	y
+4673800	4675800	y
+4675800	4677800	y
+4679800	4681800	y
+4681800	4683800	y
+4683800	4685800	y
+4685800	4687800	y
+4687800	4689800	y
+4689800	4691800	y
+4691800	4693800	y
+4693800	4695800	y
+4695800	4697800	y
+4697800	4699800	y
+4699800	4701800	y
+4701800	4703800	y
+4705800	4707800	y
+4707800	4709800	y
+4709800	4711800	y
+4711800	4713800	y
+4713800	4715800	y
+4715800	4717800	y
+4717800	4719800	y
+4719800	4721800	y
+4721800	4723800	y
+4723800	4725800	y
+4725800	4727800	y
+4727800	4729800	y
+4729800	4731800	y
+4731800	4733800	y
+4735800	4737800	y
+4737800	4739800	y
+4739800	4741800	y
+4741800	4743800	y
+4743800	4745800	y
+4747800	4749800	y
+4749800	4751800	y
+4751800	4753800	y
+4753800	4755800	y
+4755800	4757800	y
+4757800	4759800	y
+4759800	4761800	y
+4761800	4763800	y
+4763800	4765800	y
+4765800	4767800	y
+4767800	4769800	y
+4769800	4771800	y
+4771800	4773800	y
+4773800	4775800	y
+4775800	4777800	y
+4777800	4779800	y
+4779800	4781800	y
+4781800	4783800	y
+4783800	4785800	y
+4785800	4787800	y
+4787800	4789800	y
+4791800	4793800	y
+4793800	4795800	y
+4795800	4797800	y
+4797800	4799800	y
+4799800	4801800	y
+4801800	4803800	y
+4803800	4805800	y
+4805800	4807800	y
+4807800	4809800	y
+4809800	4811800	y
+4811800	4813800	y
+4813800	4815800	y
+4815800	4817800	y
+4819800	4821800	y
+4821800	4823800	y
+4823800	4825800	y
+4825800	4827800	y
+4827800	4829800	y
+4831800	4833800	y
+4833800	4835800	y
+4835800	4837800	y
+4837800	4839800	y
+4839800	4841800	y
+4841800	4843800	y
+4843800	4845800	y
+4845800	4847800	y
+4847800	4849800	y
+4849800	4851800	y
+4851800	4853800	y
+4853800	4855800	y
+4855800	4857800	y
+4857800	4859800	y
+4859800	4861800	y
+4861800	4863800	y
+4863800	4865800	y
+4865800	4867800	y
+4867800	4869800	y
+4869800	4871800	y
+4871800	4873800	y
+4875800	4877800	y
+4877800	4879800	y
+4879800	4881800	y
+4881800	4883800	y
+4883800	4885800	y
+4885800	4887800	y
+4887800	4889800	y
+4891800	4893800	y
+4893800	4895800	y
+4895800	4897800	y
+4897800	4899800	y
+4899800	4901800	y
+4901800	4903800	y
+4903800	4905800	y
+4905800	4907800	y
+4907800	4909800	y
+4909800	4911800	y
+4911800	4913800	y
+4913800	4915800	y
+4915800	4917800	y
+4917800	4919800	y
+4919800	4921800	y
+4923800	4925800	y
+4925800	4927800	y
+4927800	4929800	y
+4929800	4931800	y
+4931800	4933800	y
+4933800	4935800	y
+4935800	4937800	y
+4937800	4939800	y
+4939800	4941800	y
+4941800	4943800	y
+4943800	4945800	y
+4947800	4949800	y
+4949800	4951800	y
+4951800	4953800	y
+4953800	4955800	y
+4955800	4957800	y
+4957800	4959800	y
+4959800	4961800	y
+4961800	4963800	y
+4963800	4965800	y
+4965800	4967800	y
+4967800	4969800	y
+4969800	4973800	y
+4973800	4975800	y
+4975800	4977800	y
+4977800	4979800	y
+4979800	4981800	y
+4981800	4983800	y
+4983800	4985800	y
+4985800	4987800	y
+4987800	4989800	y
+4989800	4991800	y
+4991800	4993800	y
+4993800	4995800	y
+4995800	4997800	y
+4997800	4999800	y
+4999800	5001800	y
+5001800	5003800	y
+5003800	5005800	y
+5005800	5007800	y
+5007800	5009800	y
+5009800	5011800	y
+5011800	5013800	y
+5015800	5017800	y
+5017800	5019800	y
+5019800	5021800	y
+5021800	5023800	y
+5023800	5025800	y
+5025800	5027800	y
+5027800	5029800	y
+5029800	5031800	y
+5031800	5033800	y
+5033800	5035800	y
+5035800	5037800	y
+5037800	5039800	y
+5039800	5041800	y
+5043800	5045800	y
+5045800	5047800	y
+5047800	5049800	y
+5049800	5051800	y
+5051800	5053800	y
+5053800	5055800	y
+5055800	5057800	y
+5057800	5059800	y
+5059800	5061800	y
+5061800	5063800	y
+5063800	5065800	y
+5065800	5067800	y
+5067800	5069800	y
+5071800	5073800	y
+5073800	5075800	y
+5075800	5077800	y
+5077800	5079800	y
+5079800	5081800	y
+5081800	5083800	y
+5083800	5085800	y
+5085800	5087800	y
+5087800	5089800	y
+5089800	5091800	y
+5091800	5093800	y
+5093800	5095800	y
+5095800	5097800	y
+5099800	5101800	y
+5101800	5103800	y
+5103800	5105800	y
+5105800	5107800	y
+5107800	5109800	y
+5109800	5113800	y
+5113800	5115800	y
+5115800	5117800	y
+5117800	5119800	y
+5119800	5121800	y
+5121800	5123800	y
+5123800	5125800	y
+5125800	5127800	y
+5127800	5129800	y
+5129800	5131800	y
+5131800	5133800	y
+5133800	5135800	y
+5135800	5137800	y
+5137800	5141800	y
+5141800	5143800	y
+5143800	5145800	y
+5145800	5147800	y
+5147800	5149800	y
+5149800	5151800	y
+5151800	5153800	y
+5153800	5155800	y
+5155800	5157800	y
+5157800	5159800	y
+5159800	5161800	y
+5161800	5163800	y
+5163800	5165800	y
+5165800	5167800	y
+5167800	5169800	y
+5169800	5171800	y
+5171800	5173800	y
+5173800	5175800	y
+5175800	5177800	y
+5177800	5179800	y
+5179800	5181800	y
+5183800	5185800	y
+5185800	5187800	y
+5187800	5189800	y
+5189800	5191800	y
+5191800	5193800	y
+5193800	5195800	y
+5197800	5199800	y
+5199800	5201800	y
+5201800	5203800	y
+5203800	5205800	y
+5205800	5207800	y
+5207800	5209800	y
+5209800	5211800	y
+5211800	5213800	y
+5213800	5215800	y
+5215800	5217800	y
+5217800	5219800	y
+5219800	5221800	y
+5221800	5225800	y
+5225800	5227800	y
+5227800	5229800	y
+5229800	5231800	y
+5231800	5233800	y
+5233800	5235800	y
+5235800	5237800	y
+5237800	5239800	y
+5239800	5241800	y
+5241800	5243800	y
+5243800	5245800	y
+5245800	5247800	y
+5247800	5249800	y
+5249800	5251800	y
+5251800	5253800	y
+5253800	5255800	y
+5255800	5257800	y
+5257800	5259800	y
+5259800	5261800	y
+5261800	5263800	y
+5263800	5265800	y
+5267800	5269800	y
+5269800	5271800	y
+5271800	5273800	y
+5273800	5275800	y
+5275800	5277800	y
+5277800	5279800	y
+5279800	5281800	y
+5281800	5283800	y
+5283800	5285800	y
+5285800	5287800	y
+5287800	5289800	y
+5289800	5291800	y
+5291800	5293800	y
+5295800	5297800	y
+5297800	5299800	y
+5299800	5301800	y
+5301800	5303800	y
+5303800	5305800	y
+5305800	5307800	y
+5307800	5309800	y
+5309800	5311800	y
+5311800	5313800	y
+5313800	5315800	y
+5315800	5317800	y
+5317800	5319800	y
+5319800	5321800	y
+5323800	5325800	y
+5325800	5327800	y
+5327800	5329800	y
+5329800	5331800	y
+5331800	5333800	y
+5333800	5335800	y
+5335800	5337800	y
+5337800	5339800	y
+5339800	5341800	y
+5341800	5343800	y
+5343800	5345800	y
+5345800	5347800	y
+5347800	5349800	y
+5351800	5353800	y
+5353800	5355800	y
+5355800	5357800	y
+5357800	5359800	y
+5359800	5361800	y
+5361800	5365800	y
+5365800	5367800	y
+5367800	5369800	y
+5369800	5371800	y
+5371800	5373800	y
+5373800	5375800	y
+5375800	5377800	y
+5377800	5379800	y
+5379800	5381800	y
+5381800	5383800	y
+5383800	5385800	y
+5385800	5387800	y
+5387800	5389800	y
+5389800	5393800	y
+5393800	5395800	y
+5395800	5397800	y
+5397800	5399800	y
+5399800	5401800	y
+5401800	5403800	y
+5403800	5405800	y
+5405800	5407800	y
+5407800	5409800	y
+5409800	5411800	y
+5413800	5415800	y
+5415800	5417800	y
+5417800	5419800	y
+5419800	5421800	y
+5421800	5423800	y
+5423800	5425800	y
+5425800	5427800	y
+5427800	5429800	y
+5429800	5431800	y
+5431800	5433800	y
+5433800	5435800	y
+5435800	5437800	y
+5437800	5439800	y
+5441800	5443800	y
+5443800	5445800	y
+5445800	5447800	y
+5447800	5449800	y
+5449800	5451800	y
+5451800	5453800	y
+5453800	5455800	y
+5455800	5457800	y
+5457800	5459800	y
+5459800	5461800	y
+5461800	5463800	y
+5463800	5465800	y
+5465800	5467800	y
+5467800	5469800	y
+5469800	5471800	y
+5471800	5473800	y
+5473800	5475800	y
+5475800	5477800	y
+5477800	5479800	y
+5479800	5481800	y
+5481800	5483800	y
+5483800	5485800	y
+5485800	5487800	y
+5487800	5489800	y
+5491800	5493800	y
+5493800	5495800	y
+5495800	5497800	y
+5497800	5499800	y
+5499800	5501800	y
+5501800	5505800	y
+5505800	5507800	y
+5507800	5509800	y
+5509800	5511800	y
+5511800	5513800	y
+5513800	5515800	y
+5515800	5517800	y
+5517800	5519800	y
+5519800	5521800	y
+5521800	5523800	y
+5523800	5525800	y
+5525800	5527800	y
+5527800	5529800	y
+5529800	5533800	y
+5533800	5535800	y
+5535800	5537800	y
+5537800	5539800	y
+5539800	5541800	y
+5541800	5543800	y
+5543800	5545800	y
+5545800	5547800	y
+5547800	5549800	y
+5549800	5551800	y
+5551800	5553800	y
+5553800	5555800	y
+5555800	5557800	y
+5557800	5559800	y
+5559800	5561800	y
+5561800	5563800	y
+5563800	5565800	y
+5565800	5567800	y
+5567800	5569800	y
+5569800	5571800	y
+5571800	5573800	y
+5575800	5577800	y
+5577800	5579800	y
+5579800	5581800	y
+5581800	5583800	y
+5583800	5585800	y
+5585800	5587800	y
+5587800	5589800	y
+5589800	5591800	y
+5591800	5593800	y
+5593800	5595800	y
+5595800	5597800	y
+5597800	5599800	y
+5599800	5601800	y
+5603800	5605800	y
+5605800	5607800	y
+5607800	5609800	y
+5609800	5611800	y
+5611800	5613800	y
+5613800	5617800	y
+5617800	5619800	y
+5619800	5621800	y
+5621800	5623800	y
+5623800	5625800	y
+5625800	5627800	y
+5627800	5629800	y
+5629800	5631800	y
+5631800	5633800	y
+5633800	5635800	y
+5635800	5637800	y
+5637800	5639800	y
+5639800	5641800	y
+5641800	5643800	y
+5643800	5645800	y
+5645800	5647800	y
+5647800	5649800	y
+5649800	5651800	y
+5651800	5653800	y
+5653800	5655800	y
+5655800	5657800	y
+5659800	5661800	y
+5661800	5663800	y
+5663800	5665800	y
+5665800	5667800	y
+5667800	5669800	y
+5669800	5671800	y
+5671800	5673800	y
+5673800	5675800	y
+5675800	5677800	y
+5677800	5679800	y
+5679800	5681800	y
+5681800	5683800	y
+5683800	5685800	y
+5687800	5689800	y
+5689800	5691800	y
+5691800	5693800	y
+5693800	5697800	y
+5697800	5699800	y
+5699800	5701800	y
+5701800	5703800	y
+5703800	5705800	y
+5705800	5707800	y
+5707800	5709800	y
+5709800	5711800	y
+5711800	5713800	y
+5713800	5715800	y
+5715800	5717800	y
+5717800	5719800	y
+5719800	5721800	y
+5721800	5723800	y
+5723800	5725800	y
+5725800	5727800	y
+5727800	5729800	y
+5729800	5731800	y
+5731800	5733800	y
+5733800	5735800	y
+5735800	5737800	y
+5737800	5739800	y
+5739800	5741800	y
+5743800	5745800	y
+5745800	5747800	y
+5747800	5749800	y
+5749800	5751800	y
+5751800	5753800	y
+5753800	5755800	y
+5755800	5757800	y
+5757800	5759800	y
+5759800	5761800	y
+5761800	5763800	y
+5763800	5765800	y
+5765800	5767800	y
+5767800	5769800	y
+5771800	5773800	y
+5773800	5775800	y
+5775800	5777800	y
+5777800	5779800	y
+5779800	5781800	y
+5781800	5785800	y
+5785800	5787800	y
+5787800	5789800	y
+5789800	5791800	y
+5791800	5793800	y
+5793800	5795800	y
+5795800	5797800	y
+5797800	5799800	y
+5799800	5801800	y
+5801800	5803800	y
+5803800	5805800	y
+5805800	5807800	y
+5807800	5809800	y
+5809800	5811800	y
+5811800	5813800	y
+5813800	5815800	y
+5815800	5817800	y
+5817800	5819800	y
+5819800	5821800	y
+5823800	5825800	y
+5825800	5827800	y
+5827800	5829800	y
+5829800	5831800	y
+5831800	5833800	y
+5833800	5835800	y
+5835800	5837800	y
+5837800	5839800	y
+5839800	5841800	y
+5843800	5845800	y
+5845800	5847800	y
+5847800	5849800	y
+5849800	5851800	y
+5851800	5853800	y
+5853800	5855800	y
+5855800	5857800	y
+5857800	5859800	y
+5859800	5861800	y
+5861800	5863800	y
+5865800	5867800	y
+5867800	5869800	y
+5869800	5871800	y
+5871800	5873800	y
+5873800	5875800	y
+5875800	5877800	y
+5877800	5879800	y
+5879800	5881800	y
+5881800	5883800	y
+5883800	5885800	y
+5885800	5887800	y
+5887800	5889800	y
+5889800	5891800	y
+5891800	5893800	y
+5893800	5895800	y
+5895800	5897800	y
+5897800	5899800	y
+5899800	5903800	y
+5903800	5905800	y
+5905800	5907800	y
+5907800	5909800	y
+5909800	5911800	y
+5911800	5913800	y
+5913800	5915800	y
+5915800	5917800	y
+5917800	5919800	y
+5919800	5921800	y
+5921800	5923800	y
+5923800	5925800	y
+5925800	5927800	y
+5927800	5929800	y
+5929800	5931800	y
+5931800	5933800	y
+5933800	5935800	y
+5937800	5939800	y
+5939800	5941800	y
+5941800	5943800	y
+5943800	5945800	y
+5945800	5947800	y
+5947800	5949800	y
+5949800	5951800	y
+5951800	5953800	y
+5953800	5955800	y
+5955800	5957800	y
+5957800	5959800	y
+5959800	5961800	y
+5961800	5963800	y
+5963800	5965800	y
+5965800	5967800	y
+5967800	5969800	y
+5969800	5971800	y
+5971800	5973800	y
+5973800	5975800	y
+5975800	5977800	y
+5977800	5979800	y
+5979800	5981800	y
+5981800	5983800	y
+5983800	5985800	y
+5985800	5987800	y
+5987800	5989800	y
+5989800	5991800	y
+5993800	5995800	y
+5995800	5997800	y
+5997800	5999800	y
+5999800	6001800	y
+6001800	6003800	y
+6003800	6005800	y
+6005800	6007800	y
+6007800	6009800	y
+6009800	6011800	y
+6011800	6013800	y
+6013800	6015800	y
+6015800	6017800	y
+6017800	6019800	y
+6021800	6023800	y
+6023800	6025800	y
+6025800	6027800	y
+6027800	6029800	y
+6029800	6031800	y
+6031800	6033800	y
+6033800	6035800	y
+6037800	6039800	y
+6039800	6041800	y
+6041800	6043800	y
+6043800	6045800	y
+6045800	6047800	y
+6047800	6049800	y
+6049800	6051800	y
+6051800	6053800	y
+6053800	6055800	y
+6055800	6057800	y
+6057800	6059800	y
+6059800	6061800	y
+6061800	6063800	y
+6063800	6065800	y
+6065800	6067800	y
+6067800	6069800	y
+6069800	6071800	y
+6071800	6073800	y
+6073800	6075800	y
+6075800	6077800	y
+6077800	6079800	y
+6079800	6081800	y
+6081800	6083800	y
+6083800	6085800	y
+6085800	6087800	y
+6087800	6089800	y
+6089800	6091800	y
+6091800	6093800	y
+6093800	6095800	y
+6095800	6097800	y
+6097800	6099800	y
+6099800	6101800	y
+6103800	6105800	y
+6105800	6107800	y
+6107800	6109800	y
+6109800	6111800	y
+6111800	6113800	y
+6113800	6115800	y
+6115800	6117800	y
+6117800	6119800	y
+6119800	6121800	y
+6121800	6123800	y
+6123800	6125800	y
+6125800	6127800	y
+6129800	6131800	y
+6131800	6133800	y
+6133800	6135800	y
+6135800	6137800	y
+6137800	6139800	y
+6139800	6141800	y
+6141800	6143800	y
+6143800	6145800	y
+6145800	6147800	y
+6147800	6149800	y
+6149800	6151800	y
+6151800	6153800	y
+6153800	6155800	y
+6155800	6157800	y
+6157800	6159800	y
+6159800	6161800	y
+6161800	6163800	y
+6163800	6165800	y
+6165800	6167800	y
+6167800	6169800	y
+6169800	6171800	y
+6171800	6173800	y
+6173800	6175800	y
+6175800	6177800	y
+6177800	6179800	y
+6179800	6181800	y
+6181800	6183800	y
+6185800	6187800	y
+6187800	6189800	y
+6189800	6191800	y
+6191800	6193800	y
+6193800	6195800	y
+6195800	6197800	y
+6197800	6199800	y
+6199800	6201800	y
+6201800	6203800	y
+6203800	6205800	y
+6205800	6207800	y
+6207800	6209800	y
+6209800	6211800	y
+6211800	6213800	y
+6213800	6215800	y
+6217800	6219800	y
+6219800	6221800	y
+6221800	6223800	y
+6223800	6225800	y
+6225800	6227800	y
+6227800	6229800	y
+6229800	6231800	y
+6231800	6233800	y
+6233800	6235800	y
+6235800	6237800	y
+6237800	6239800	y
+6239800	6241800	y
+6241800	6243800	y
+6243800	6245800	y
+6245800	6247800	y
+6247800	6249800	y
+6249800	6251800	y
+6251800	6253800	y
+6253800	6255800	y
+6255800	6257800	y
+6257800	6259800	y
+6259800	6261800	y
+6263800	6265800	y
+6265800	6267800	y
+6267800	6269800	y
+6269800	6271800	y
+6271800	6273800	y
+6273800	6275800	y
+6275800	6277800	y
+6277800	6279800	y
+6279800	6281800	y
+6281800	6283800	y
+6283800	6285800	y
+6285800	6287800	y
+6287800	6289800	y
+6289800	6291800	y
+6291800	6293800	y
+6293800	6295800	y
+6295800	6297800	y
+6297800	6299800	y
+6299800	6301800	y
+6301800	6303800	y
+6303800	6305800	y
+6305800	6307800	y
+6309800	6311800	y
+6311800	6313800	y
+6313800	6315800	y
+6315800	6317800	y
+6317800	6319800	y
+6319800	6321800	y
+6321800	6323800	y
+6323800	6325800	y
+6325800	6327800	y
+6327800	6329800	y
+6329800	6331800	y
+6331800	6333800	y
+6333800	6335800	y
+6335800	6337800	y
+6337800	6339800	y
+6339800	6341800	y
+6341800	6343800	y
+6343800	6345800	y
+6345800	6347800	y
+6349800	6351800	y
+6351800	6353800	y
+6353800	6355800	y
+6355800	6357800	y
+6357800	6359800	y
+6359800	6361800	y
+6361800	6363800	y
+6363800	6365800	y
+6365800	6367800	y
+6367800	6369800	y
+6369800	6371800	y
+6371800	6373800	y
+6373800	6375800	y
+6375800	6377800	y
+6377800	6379800	y
+6379800	6381800	y
+6381800	6383800	y
+6383800	6385800	y
+6385800	6387800	y
+6387800	6389800	y
+6389800	6391800	y
+6391800	6393800	y
+6393800	6395800	y
+6395800	6397800	y
+6399800	6401800	y
+6401800	6403800	y
+6403800	6405800	y
+6405800	6407800	y
+6407800	6409800	y
+6409800	6411800	y
+6411800	6413800	y
+6413800	6415800	y
+6415800	6417800	y
+6417800	6419800	y
+6419800	6421800	y
+6421800	6423800	y
+6423800	6425800	y
+6425800	6427800	y
+6427800	6429800	y
+6431800	6433800	y
+6433800	6435800	y
+6435800	6437800	y
+6437800	6439800	y
+6439800	6441800	y
+6441800	6443800	y
+6443800	6445800	y
+6445800	6447800	y
+6447800	6449800	y
+6449800	6451800	y
+6451800	6453800	y
+6455800	6457800	y
+6457800	6459800	y
+6459800	6461800	y
+6461800	6463800	y
+6463800	6465800	y
+6465800	6467800	y
+6467800	6469800	y
+6469800	6471800	y
+6471800	6473800	y
+6473800	6475800	y
+6475800	6477800	y
+6477800	6479800	y
+6479800	6481800	y
+6481800	6483800	y
+6483800	6485800	y
+6485800	6487800	y
+6487800	6489800	y
+6489800	6491800	y
+6491800	6493800	y
+6493800	6495800	y
+6495800	6497800	y
+6497800	6499800	y
+6499800	6501800	y
+6501800	6503800	y
+6503800	6505800	y
+6505800	6507800	y
+6507800	6509800	y
+6509800	6511800	y
+6513800	6515800	y
+6515800	6517800	y
+6517800	6519800	y
+6519800	6521800	y
+6521800	6523800	y
+6523800	6525800	y
+6525800	6527800	y
+6529800	6531800	y
+6531800	6533800	y
+6533800	6535800	y
+6535800	6537800	y
+6537800	6539800	y
+6539800	6541800	y
+6541800	6543800	y
+6543800	6545800	y
+6545800	6547800	y
+6547800	6549800	y
+6549800	6551800	y
+6551800	6553800	y
+6553800	6555800	y
+6555800	6557800	y
+6557800	6559800	y
+6559800	6561800	y
+6561800	6563800	y
+6563800	6565800	y
+6565800	6567800	y
+6567800	6569800	y
+6569800	6571800	y
+6571800	6573800	y
+6573800	6575800	y
+6577800	6579800	y
+6579800	6581800	y
+6581800	6583800	y
+6583800	6585800	y
+6585800	6587800	y
+6587800	6589800	y
+6589800	6591800	y
+6591800	6593800	y
+6593800	6595800	y
+6595800	6597800	y
+6597800	6599800	y
+6599800	6601800	y
+6601800	6603800	y
+6603800	6605800	y
+6605800	6607800	y
+6607800	6609800	y
+6609800	6611800	y
+6611800	6613800	y
+6613800	6615800	y
+6615800	6617800	y
+6617800	6619800	y
+6619800	6621800	y
+6623800	6625800	y
+6625800	6627800	y
+6627800	6629800	y
+6629800	6631800	y
+6631800	6633800	y
+6633800	6635800	y
+6635800	6637800	y
+6637800	6639800	y
+6639800	6641800	y
+6641800	6643800	y
+6643800	6645800	y
+6647800	6649800	y
+6649800	6651800	y
+6651800	6653800	y
+6653800	6655800	y
+6655800	6657800	y
+6657800	6659800	y
+6659800	6661800	y
+6661800	6663800	y
+6663800	6665800	y
+6667800	6669800	y
+6669800	6671800	y
+6671800	6673800	y
+6673800	6675800	y
+6675800	6677800	y
+6677800	6679800	y
+6679800	6681800	y
+6681800	6683800	y
+6683800	6685800	y
+6685800	6687800	y
+6687800	6689800	y
+6689800	6691800	y
+6691800	6693800	y
+6693800	6695800	y
+6695800	6697800	y
+6697800	6699800	y
+6699800	6701800	y
+6701800	6703800	y
+6703800	6705800	y
+6705800	6707800	y
+6707800	6709800	y
+6709800	6711800	y
+6711800	6713800	y
+6713800	6715800	y
+6715800	6717800	y
+6717800	6719800	y
+6719800	6721800	y
+6721800	6723800	y
+6723800	6725800	y
+6725800	6727800	y
+6727800	6729800	y
+6729800	6731800	y
+6731800	6733800	y
+6733800	6735800	y
+6735800	6737800	y
+6737800	6739800	y
+6739800	6741800	y
+6741800	6743800	y
+6743800	6745800	y
+6745800	6747800	y
+6747800	6749800	y
+6749800	6751800	y
+6751800	6753800	y
+6753800	6755800	y
+6755800	6757800	y
+6759800	6761800	y
+6761800	6763800	y
+6763800	6765800	y
+6765800	6767800	y
+6767800	6769800	y
+6769800	6771800	y
+6771800	6773800	y
+6773800	6775800	y
+6775800	6777800	y
+6777800	6779800	y
+6779800	6781800	y
+6781800	6783800	y
+6785800	6787800	y
+6787800	6789800	y
+6789800	6791800	y
+6791800	6793800	y
+6793800	6795800	y
+6795800	6797800	y
+6797800	6799800	y
+6799800	6801800	y
+6803800	6805800	y
+6805800	6807800	y
+6807800	6809800	y
+6809800	6811800	y
+6811800	6813800	y
+6813800	6815800	y
+6815800	6817800	y
+6817800	6819800	y
+6819800	6821800	y
+6821800	6823800	y
+6823800	6825800	y
+6825800	6827800	y
+6827800	6829800	y
+6829800	6831800	y
+6831800	6833800	y
+6833800	6835800	y
+6835800	6837800	y
+6837800	6839800	y
+6839800	6841800	y
+6841800	6843800	y
+6843800	6845800	y
+6847800	6849800	y
+6849800	6851800	y
+6851800	6853800	y
+6853800	6855800	y
+6855800	6857800	y
+6857800	6859800	y
+6859800	6861800	y
+6861800	6863800	y
+6863800	6865800	y
+6865800	6867800	y
+6867800	6869800	y
+6869800	6871800	y
+6871800	6873800	y
+6873800	6875800	y
+6875800	6877800	y
+6877800	6879800	y
+6879800	6881800	y
+6881800	6883800	y
+6883800	6885800	y
+6885800	6887800	y
+6887800	6889800	y
+6889800	6891800	y
+6893800	6895800	y
+6895800	6897800	y
+6897800	6899800	y
+6899800	6901800	y
+6901800	6903800	y
+6903800	6905800	y
+6905800	6907800	y
+6907800	6909800	y
+6909800	6911800	y
+6911800	6913800	y
+6913800	6915800	y
+6915800	6917800	y
+6917800	6919800	y
+6919800	6921800	y
+6921800	6923800	y
+6923800	6925800	y
+6925800	6927800	y
+6927800	6929800	y
+6929800	6931800	y
+6931800	6933800	y
+6935800	6937800	y
+6937800	6939800	y
+6939800	6941800	y
+6941800	6943800	y
+6943800	6945800	y
+6945800	6947800	y
+6947800	6949800	y
+6949800	6951800	y
+6951800	6953800	y
+6953800	6955800	y
+6955800	6957800	y
+6957800	6959800	y
+6959800	6961800	y
+6961800	6963800	y
+6963800	6965800	y
+6965800	6967800	y
+6967800	6969800	y
+6969800	6971800	y
+6971800	6973800	y
+6973800	6975800	y
+6975800	6977800	y
+6979800	6981800	y
+6981800	6983800	y
+6983800	6985800	y
+6985800	6987800	y
+6987800	6989800	y
+6989800	6991800	y
+6991800	6993800	y
+6993800	6995800	y
+6995800	6997800	y
+6997800	6999800	y
+6999800	7001800	y
+7001800	7003800	y
+7003800	7005800	y
+7007800	7009800	y
+7009800	7011800	y
+7011800	7013800	y
+7013800	7015800	y
+7015800	7017800	y
+7017800	7019800	y
+7019800	7021800	y
+7021800	7023800	y
+7023800	7025800	y
+7025800	7027800	y
+7029800	7031800	y
+7031800	7033800	y
+7033800	7035800	y
+7035800	7037800	y
+7037800	7039800	y
+7039800	7041800	y
+7041800	7043800	y
+7043800	7045800	y
+7045800	7047800	y
+7047800	7049800	y
+7049800	7051800	y
+7051800	7053800	y
+7053800	7055800	y
+7055800	7057800	y
+7057800	7059800	y
+7059800	7061800	y
+7061800	7063800	y
+7063800	7065800	y
+7065800	7067800	y
+7067800	7069800	y
+7071800	7073800	y
+7073800	7075800	y
+7075800	7077800	y
+7077800	7079800	y
+7079800	7081800	y
+7081800	7083800	y
+7083800	7085800	y
+7085800	7087800	y
+7087800	7089800	y
+7089800	7091800	y
+7091800	7093800	y
+7093800	7095800	y
+7095800	7097800	y
+7097800	7099800	y
+7101800	7103800	y
+7103800	7105800	y
+7105800	7107800	y
+7107800	7109800	y
+7109800	7111800	y
+7111800	7113800	y
+7113800	7115800	y
+7115800	7117800	y
+7117800	7119800	y
+7119800	7121800	y
+7121800	7123800	y
+7123800	7125800	y
+7127800	7129800	y
+7129800	7131800	y
+7131800	7133800	y
+7133800	7135800	y
+7135800	7137800	y
+7137800	7139800	y
+7139800	7141800	y
+7141800	7143800	y
+7143800	7145800	y
+7145800	7147800	y
+7147800	7149800	y
+7149800	7151800	y
+7151800	7153800	y
+7153800	7155800	y
+7159800	7161800	y
+7161800	7163800	y
+7163800	7165800	y
+7165800	7167800	y
+7167800	7169800	y
+7169800	7171800	y
+7171800	7173800	y
+7173800	7175800	y
+7175800	7177800	y
+7177800	7179800	y
+7179800	7181800	y
+7181800	7183800	y
+7183800	7187800	y
+7187800	7189800	y
+7189800	7191800	y
+7191800	7193800	y
+7193800	7195800	y
+7195800	7197800	y
+7197800	7199800	y
+7199800	7201800	y
+7201800	7203800	y
+7203800	7205800	y
+7205800	7207800	y
+7207800	7209800	y
+7209800	7211800	y
+7211800	7213800	y
+7213800	7215800	y
+7215800	7217800	y
+7217800	7219800	y
+7219800	7221800	y
+7221800	7223800	y
+7223800	7225800	y
+7225800	7227800	y
+7227800	7231800	y
+7231800	7233800	y
+7233800	7235800	y
+7235800	7237800	y
+7237800	7239800	y
+7239800	7243800	y
+7243800	7245800	y
+7245800	7247800	y
+7247800	7249800	y
+7249800	7251800	y
+7251800	7253800	y
+7253800	7255800	y
+7255800	7257800	y
+7257800	7259800	y
+7259800	7261800	y
+7261800	7263800	y
+7263800	7265800	y
+7265800	7267800	y
+7267800	7271800	y
+7271800	7273800	y
+7273800	7275800	y
+7275800	7277800	y
+7277800	7279800	y
+7279800	7281800	y
+7281800	7283800	y
+7283800	7285800	y
+7285800	7287800	y
+7287800	7289800	y
+7289800	7291800	y
+7291800	7293800	y
+7293800	7295800	y
+7295800	7299800	y
+7299800	7301800	y
+7301800	7303800	y
+7303800	7305800	y
+7305800	7307800	y
+7307800	7309800	y
+7309800	7311800	y
+7311800	7313800	y
+7313800	7315800	y
+7315800	7317800	y
+7317800	7319800	y
+7319800	7321800	y
+7321800	7323800	y
+7325800	7327800	y
+7327800	7329800	y
+7329800	7331800	y
+7331800	7333800	y
+7333800	7335800	y
+7335800	7337800	y
+7337800	7339800	y
+7339800	7341800	y
+7341800	7343800	y
+7343800	7345800	y
+7345800	7347800	y
+7347800	7349800	y
+7349800	7351800	y
+7351800	7355800	y
+7355800	7357800	y
+7357800	7359800	y
+7359800	7361800	y
+7361800	7363800	y
+7363800	7365800	y
+7365800	7367800	y
+7367800	7369800	y
+7369800	7371800	y
+7371800	7373800	y
+7373800	7375800	y
+7375800	7377800	y
+7377800	7379800	y
+7379800	7383800	y
+7383800	7385800	y
+7385800	7387800	y
+7387800	7389800	y
+7389800	7391800	y
+7391800	7393800	y
+7393800	7395800	y
+7395800	7397800	y
+7397800	7399800	y
+7399800	7401800	y
+7401800	7403800	y
+7403800	7405800	y
+7405800	7407800	y
+7407800	7411800	y
+7411800	7413800	y
+7413800	7415800	y
+7415800	7417800	y
+7417800	7419800	y
+7419800	7421800	y
+7421800	7423800	y
+7423800	7425800	y
+7425800	7427800	y
+7427800	7429800	y
+7429800	7431800	y
+7431800	7433800	y
+7433800	7435800	y
+7435800	7437800	y
+7437800	7439800	y
+7439800	7441800	y
+7441800	7443800	y
+7443800	7445800	y
+7445800	7447800	y
+7447800	7449800	y
+7449800	7451800	y
+7451800	7455800	y
+7455800	7457800	y
+7457800	7459800	y
+7459800	7461800	y
+7461800	7463800	y
+7463800	7467800	y
+7467800	7469800	y
+7469800	7471800	y
+7471800	7473800	y
+7473800	7475800	y
+7475800	7477800	y
+7477800	7479800	y
+7479800	7481800	y
+7481800	7483800	y
+7483800	7485800	y
+7485800	7487800	y
+7487800	7489800	y
+7489800	7491800	y
+7491800	7493800	y
+7493800	7495800	y
+7495800	7497800	y
+7497800	7499800	y
+7499800	7501800	y
+7501800	7503800	y
+7503800	7505800	y
+7505800	7507800	y
+7509800	7511800	y
+7511800	7513800	y
+7513800	7515800	y
+7515800	7517800	y
+7517800	7519800	y
+7519800	7521800	y
+7521800	7523800	y
+7523800	7525800	y
+7525800	7527800	y
+7527800	7529800	y
+7529800	7531800	y
+7531800	7533800	y
+7533800	7535800	y
+7537800	7539800	y
+7539800	7541800	y
+7541800	7543800	y
+7543800	7545800	y
+7545800	7547800	y
+7547800	7551800	y
+7551800	7553800	y
+7553800	7555800	y
+7555800	7557800	y
+7557800	7559800	y
+7559800	7561800	y
+7561800	7563800	y
+7563800	7565800	y
+7565800	7567800	y
+7567800	7569800	y
+7569800	7571800	y
+7571800	7573800	y
+7573800	7575800	y
+7575800	7579800	y
+7579800	7581800	y
+7581800	7583800	y
+7583800	7585800	y
+7585800	7587800	y
+7587800	7589800	y
+7589800	7591800	y
+7591800	7593800	y
+7593800	7595800	y
+7595800	7597800	y
+7597800	7599800	y
+7599800	7601800	y
+7601800	7603800	y
+7603800	7607800	y
+7607800	7609800	y
+7609800	7611800	y
+7611800	7613800	y
+7613800	7615800	y
+7615800	7617800	y
+7617800	7619800	y
+7619800	7621800	y
+7621800	7623800	y
+7623800	7625800	y
+7625800	7627800	y
+7627800	7629800	y
+7629800	7631800	y
+7631800	7633800	y
+7633800	7635800	y
+7635800	7637800	y
+7637800	7639800	y
+7639800	7641800	y
+7641800	7643800	y
+7643800	7645800	y
+7645800	7647800	y
+7649800	7651800	y
+7651800	7653800	y
+7653800	7655800	y
+7655800	7657800	y
+7657800	7659800	y
+7659800	7661800	y
+7661800	7663800	y
+7663800	7665800	y
+7665800	7667800	y
+7667800	7669800	y
+7669800	7671800	y
+7671800	7673800	y
+7673800	7675800	y
+7677800	7679800	y
+7679800	7681800	y
+7681800	7683800	y
+7683800	7685800	y
+7685800	7687800	y
+7687800	7689800	y
+7689800	7691800	y
+7691800	7693800	y
+7693800	7695800	y
+7695800	7697800	y
+7697800	7699800	y
+7699800	7701800	y
+7701800	7703800	y
+7705800	7707800	y
+7707800	7709800	y
+7709800	7711800	y
+7711800	7713800	y
+7713800	7715800	y
+7715800	7717800	y
+7717800	7719800	y
+7719800	7721800	y
+7721800	7723800	y
+7723800	7725800	y
+7725800	7727800	y
+7727800	7729800	y
+7729800	7731800	y
+7733800	7735800	y
+7735800	7737800	y
+7737800	7739800	y
+7739800	7741800	y
+7741800	7743800	y
+7743800	7747800	y
+7747800	7749800	y
+7749800	7751800	y
+7751800	7753800	y
+7753800	7755800	y
+7755800	7757800	y
+7757800	7759800	y
+7759800	7761800	y
+7761800	7763800	y
+7763800	7765800	y
+7765800	7767800	y
+7767800	7769800	y
+7769800	7771800	y
+7771800	7773800	y
+7773800	7775800	y
+7775800	7777800	y
+7777800	7779800	y
+7781800	7783800	y
+7783800	7785800	y
+7785800	7787800	y
+7787800	7789800	y
+7789800	7791800	y
+7791800	7793800	y
+7793800	7795800	y
+7795800	7797800	y
+7797800	7799800	y
+7799800	7801800	y
+7801800	7803800	y
+7803800	7805800	y
+7805800	7807800	y
+7807800	7809800	y
+7809800	7811800	y
+7811800	7813800	y
+7813800	7815800	y
+7817800	7819800	y
+7819800	7821800	y
+7821800	7823800	y
+7823800	7825800	y
+7825800	7827800	y
+7827800	7829800	y
+7829800	7831800	y
+7831800	7833800	y
+7833800	7835800	y
+7835800	7837800	y
+7837800	7839800	y
+7839800	7841800	y
+7841800	7843800	y
+7845800	7847800	y
+7847800	7849800	y
+7851800	7853800	y
+7853800	7855800	y
+7855800	7857800	y
+7857800	7859800	y
+7859800	7861800	y
+7861800	7863800	y
+7863800	7865800	y
+7865800	7867800	y
+7867800	7869800	y
+7869800	7871800	y
+7871800	7873800	y
+7873800	7875800	y
+7875800	7877800	y
+7877800	7879800	y
+7879800	7881800	y
+7883800	7885800	y
+7885800	7887800	y
+7887800	7889800	y
+7889800	7891800	y
+7891800	7893800	y
+7893800	7895800	y
+7895800	7897800	y
+7897800	7899800	y
+7899800	7901800	y
+7901800	7903800	y
+7903800	7905800	y
+7905800	7907800	y
+7907800	7909800	y
+7909800	7911800	y
+7911800	7913800	y
+7913800	7915800	y
+7915800	7917800	y
+7917800	7919800	y
+7919800	7921800	y
+7921800	7923800	y
+7923800	7925800	y
+7925800	7927800	y
+7929800	7931800	y
+7931800	7933800	y
+7933800	7935800	y
+7935800	7937800	y
+7939800	7941800	y
+7941800	7943800	y
+7943800	7945800	y
+7945800	7947800	y
+7947800	7949800	y
+7949800	7951800	y
+7951800	7953800	y
+7953800	7955800	y
+7955800	7957800	y
+7957800	7959800	y
+7959800	7961800	y
+7961800	7963800	y
+7963800	7965800	y
+7965800	7967800	y
+7967800	7969800	y
+7969800	7971800	y
+7971800	7973800	y
+7973800	7975800	y
+7975800	7977800	y
+7977800	7979800	y
+7979800	7981800	y
+7981800	7983800	y
+7985800	7987800	y
+7987800	7989800	y
+7989800	7991800	y
+7991800	7993800	y
+7993800	7995800	y
+7995800	7997800	y
+7997800	7999800	y
+7999800	8001800	y
+8001800	8003800	y
+8003800	8005800	y
+8005800	8007800	y
+8007800	8009800	y
+8009800	8011800	y
+8013800	8015800	y
+8015800	8017800	y
+8019800	8021800	y
+8021800	8023800	y
+8023800	8025800	y
+8025800	8027800	y
+8027800	8029800	y
+8029800	8031800	y
+8031800	8033800	y
+8033800	8035800	y
+8035800	8037800	y
+8037800	8039800	y
+8039800	8041800	y
+8041800	8043800	y
+8043800	8045800	y
+8045800	8047800	y
+8047800	8049800	y
+8051800	8053800	y
+8053800	8055800	y
+8055800	8057800	y
+8057800	8059800	y
+8059800	8061800	y
+8061800	8063800	y
+8063800	8065800	y
+8065800	8067800	y
+8067800	8069800	y
+8069800	8071800	y
+8071800	8073800	y
+8073800	8075800	y
+8075800	8077800	y
+8077800	8079800	y
+8079800	8081800	y
+8081800	8083800	y
+8083800	8085800	y
+8085800	8087800	y
+8087800	8089800	y
+8089800	8091800	y
+8091800	8093800	y
+8093800	8095800	y
+8097800	8099800	y
+8099800	8101800	y
+8101800	8103800	y
+8103800	8105800	y
+8105800	8107800	y
+8107800	8109800	y
+8109800	8111800	y
+8111800	8113800	y
+8113800	8115800	y
+8115800	8117800	y
+8117800	8119800	y
+8119800	8121800	y
+8121800	8123800	y
+8125800	8127800	y
+8127800	8129800	y
+8129800	8131800	y
+8131800	8133800	y
+8133800	8135800	y
+8135800	8137800	y
+8137800	8139800	y
+8139800	8141800	y
+8141800	8143800	y
+8143800	8145800	y
+8145800	8147800	y
+8147800	8149800	y
+8149800	8151800	y
+8153800	8155800	y
+8155800	8157800	y
+8159800	8161800	y

@@ -1,0 +1,71 @@
+,Topic,Emotions,start,end,text,politico,tokens,Oraciones,Porcentaje,marker
+0,Desarrollo,Positivo,146,146,146,146,146,146,61.34453781512605,green
+1,Derechos,Positivo,70,70,70,70,70,70,41.91616766467065,green
+2,Derechos,Negativo,58,58,58,58,58,58,34.73053892215569,red
+3,Trabajo,Positivo,58,58,58,58,58,58,72.5,green
+4,Competencia,Positivo,51,51,51,51,51,51,62.19512195121951,green
+5,Pobreza,Negativo,50,50,50,50,50,50,43.859649122807014,red
+6,Seguridad,Positivo,43,43,43,43,43,43,52.4390243902439,green
+7,Desarrollo,Negativo,38,38,38,38,38,38,15.966386554621847,red
+8,Gobierno,Positivo,36,36,36,36,36,36,78.26086956521739,green
+9,Educación,Positivo,35,35,35,35,35,35,71.42857142857143,green
+10,Pobreza,Positivo,32,32,32,32,32,32,28.07017543859649,green
+11,Desarrollo,Muy positivo,24,24,24,24,24,24,10.084033613445378,dark-green
+12,Derechos,Muy negativo,22,22,22,22,22,22,13.17365269461078,dark-red
+13,Pobreza,Muy negativo,22,22,22,22,22,22,19.298245614035086,dark-red
+14,Deuda,Negativo,20,20,20,20,20,20,44.44444444444444,red
+15,Seguridad,Negativo,19,19,19,19,19,19,23.170731707317074,red
+16,Desarrollo,Muy negativo,17,17,17,17,17,17,7.142857142857142,dark-red
+17,Deuda,Positivo,17,17,17,17,17,17,37.77777777777778,green
+18,Mercado,Positivo,16,16,16,16,16,16,51.61290322580645,green
+19,Desarrollo,Neutral,13,13,13,13,13,13,5.46218487394958,gray
+20,Reformas,Positivo,12,12,12,12,12,12,52.17391304347826,green
+21,Competencia,Muy positivo,11,11,11,11,11,11,13.414634146341465,dark-green
+22,Seguridad,Muy negativo,10,10,10,10,10,10,12.195121951219512,dark-red
+23,Capitalismo,Positivo,10,10,10,10,10,10,58.82352941176471,green
+24,Derechos,Neutral,10,10,10,10,10,10,5.9880239520958085,gray
+25,Pobreza,Neutral,8,8,8,8,8,8,7.017543859649122,gray
+26,Justicia,Positivo,8,8,8,8,8,8,57.14285714285714,green
+27,Competencia,Negativo,8,8,8,8,8,8,9.75609756097561,red
+28,Trabajo,Negativo,7,7,7,7,7,7,8.75,red
+29,Socialismo,Positivo,7,7,7,7,7,7,58.333333333333336,green
+30,Derechos,Muy positivo,7,7,7,7,7,7,4.191616766467066,dark-green
+31,Competencia,Neutral,7,7,7,7,7,7,8.536585365853659,gray
+32,Reformas,Negativo,7,7,7,7,7,7,30.434782608695656,red
+33,Trabajo,Neutral,7,7,7,7,7,7,8.75,gray
+34,Mercado,Negativo,6,6,6,6,6,6,19.35483870967742,red
+35,Educación,Muy negativo,6,6,6,6,6,6,12.244897959183673,dark-red
+36,Gobierno,Negativo,6,6,6,6,6,6,13.043478260869565,red
+37,Seguridad,Neutral,6,6,6,6,6,6,7.317073170731707,gray
+38,Capitalismo,Negativo,5,5,5,5,5,5,29.411764705882355,red
+39,Inflación,Positivo,5,5,5,5,5,5,31.25,green
+40,Competencia,Muy negativo,5,5,5,5,5,5,6.097560975609756,dark-red
+41,Educación,Negativo,5,5,5,5,5,5,10.204081632653061,red
+42,Mercado,Muy positivo,5,5,5,5,5,5,16.129032258064516,dark-green
+43,Inflación,Muy negativo,5,5,5,5,5,5,31.25,dark-red
+44,Seguridad,Muy positivo,4,4,4,4,4,4,4.878048780487805,dark-green
+45,Trabajo,Muy negativo,4,4,4,4,4,4,5.0,dark-red
+46,Trabajo,Muy positivo,4,4,4,4,4,4,5.0,dark-green
+47,Inflación,Negativo,4,4,4,4,4,4,25.0,red
+48,Deuda,Neutral,4,4,4,4,4,4,8.88888888888889,gray
+49,Socialismo,Muy positivo,3,3,3,3,3,3,25.0,dark-green
+50,Mercado,Muy negativo,3,3,3,3,3,3,9.67741935483871,dark-red
+51,Deuda,Muy negativo,3,3,3,3,3,3,6.666666666666667,dark-red
+52,Reformas,Muy positivo,3,3,3,3,3,3,13.043478260869565,dark-green
+53,Justicia,Negativo,3,3,3,3,3,3,21.428571428571427,red
+54,Pobreza,Muy positivo,2,2,2,2,2,2,1.7543859649122806,dark-green
+55,Educación,Muy positivo,2,2,2,2,2,2,4.081632653061225,dark-green
+56,Gobierno,Muy positivo,2,2,2,2,2,2,4.3478260869565215,dark-green
+57,Justicia,Neutral,2,2,2,2,2,2,14.285714285714285,gray
+58,Capitalismo,Muy positivo,2,2,2,2,2,2,11.76470588235294,dark-green
+59,Inflación,Muy positivo,1,1,1,1,1,1,6.25,dark-green
+60,Gobierno,Neutral,1,1,1,1,1,1,2.1739130434782608,gray
+61,Mercado,Neutral,1,1,1,1,1,1,3.225806451612903,gray
+62,Gobierno,Muy negativo,1,1,1,1,1,1,2.1739130434782608,dark-red
+63,Socialismo,Muy negativo,1,1,1,1,1,1,8.333333333333332,dark-red
+64,Inflación,Neutral,1,1,1,1,1,1,6.25,gray
+65,Socialismo,Negativo,1,1,1,1,1,1,8.333333333333332,red
+66,Educación,Neutral,1,1,1,1,1,1,2.0408163265306123,gray
+67,Justicia,Muy positivo,1,1,1,1,1,1,7.142857142857142,dark-green
+68,Reformas,Neutral,1,1,1,1,1,1,4.3478260869565215,gray
+69,Deuda,Muy positivo,1,1,1,1,1,1,2.2222222222222223,dark-green

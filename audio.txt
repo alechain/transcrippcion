@@ -1,0 +1,3495 @@
+でした talking
+música
+música
+música
+música
+música
+música
+música
+música
+música
+música
+música
+música
+música
+música
+música
+música
+música
+música
+música
+música
+música
+música
+música
+Bueno, buenas tardes a todos. Bienvenidos a las
+decimoseptimas jornadas de data mining y business intelligence
+para recordarles un poco estas jornadas son parte de actividad curricular
+de la maestría que son justamente unas materias que llaman casuística de implementación
+el nombre indica que esto van a ser una serie de casos
+la idea es que los casos sean presentados por quienes los llevaron a cabo
+proyectos de ciencia de datos realizados en las empresas o en estas zonas de empresas más importantes del país
+entonces ustedes los alumnos, los estudiantes de la maestría van a compartir justamente
+esta experiencia con quienes bueno tienen bastante experiencia en el campo justamente de ciencia de datos
+bueno quiero aprovechar para agradecer a todas las empresas que nos están apoyando
+bueno esto empezó hace como indica el número de las jornadas hace 17 años
+y muchas de las empresas han estado repitiendo siguen colaborando con nosotros en esta tarea
+muchos de los de las personas que van a hacer las presentaciones también son viejos conocidos
+así que también les agradezco la paciencia de seguir con nosotros
+bueno vamos para no perder mucho más tiempo simplemente voy a numerar un poco quiénes son los que van a participar como oyentes
+la base nuestra son los estudiantes tenemos un conjunto de estudiantes que corresponden a una edición presencial de la maestría
+que son primer y segundo año otro grupo de alumnos corresponden a la edición virtual de la maestría están en primer año
+empezaron en agosto y los alumnos de Rosario bueno donde tenemos también una nueva edición que empezó hace unos meses
+y de alumnos que están en segundo año el total de los alumnos estimo que está en un número en este momento hay pocos participantes
+pero el número cercano a los 250 este es una materia obligatoria no tendría que estar todos pero bueno
+tenemos excepciones como en todos los casos bueno para no desplazarnos demasiado en el tiempo ya son las 14 07
+vamos a invitar a nuestros amigos del mercado libre para presentar el tema que tienen preparado para hoy
+que es data mesh van a presentar Ignacio Wainberg y Gabriel Noche
+bueno pueden comenzar cuando gusten adelante
+bueno muchas gracias gracias a todos por asistir por darnos este espacio
+me presento mi nombre es Ignacio Wainberg trabajo en el equipo central core de data en el mercado libre en lo que es la vertical tech
+llevando el equipo de data engineering y hoy me acompaña Gabriel Noche también del equipo de plataformas y servicios
+y bueno venimos a contarles un poco cómo fue esta aventura podemos llamarlo de iniciarnos en algo es muy nuevo que se llama data mesh
+si quieren podemos ya comenzar
+esa es otra es de personalización
+bueno
+bueno por qué la llamamos la talla de la tamesh vainelli
+la tamesh es un término por eso un concepto muy nuevo
+y si ustedes buscan en internet o literatura no hay un libro de la chica que digamos acuñó el término
+es algo como muy conceptual casi filosófico decimos a veces nosotros
+entonces esta no es una charla sobre data mesh sobre el concepto de data mesh en sí
+porque podríamos hacer horas y horas de charla sobre el mismo sino que es una charla sobre nuestra interpretación
+y nuestra implementación de data mesh en mercado libre
+pero bueno claro que para todos aquellos que no conocen de qué se trata
+vamos a hacer una breve intro de qué es data mesh
+así que si pasamos a la siguiente
+formas de describirlo pueden haber muchas pero básicamente es un paradigma
+es un nuevo paradigma que representa un cambio tanto tecnológico como cultural
+y la idea de este cambio de paradigma es empoderar a distintos dominios dentro de la organización
+a que tenga el control completo de todo el ciclo de vida de los datos
+obviamente como decimos que también es un cambio tecnológico
+con todas las herramientas y las bases y el gobierno para que eso suceda de una manera ordenada
+pero al fin y al cabo el objetivo de esto de data mesh es hacer que todo lo que es el trabajo con datos
+escale al ritmo que el negocio necesita de manera orgánica
+ahora esto suena bastante dindo pero bueno vamos a repasar un poco por qué se plantea este cambio de paradigma
+siguiente
+esto creo que es una imagen conocida por muchos
+es un modelito bastante es una atracción de la realidad en la que vemos dos planos de datos
+a la izquierda no es el plano operacional es decir donde el dato nace y se origina en las organizaciones
+que pueden llegar a hacer todos esos sistemas transaccionales
+y a la derecha vemos el plano analítico donde en general los científicos de datos, los analítas y demás
+hacen su trabajo con esos productos de datos que ya están disponibles ya se hacen un data warehouse en un data lake
+¿Qué sucede en el medio? Necesitamos llevar esos datos del plano operacional modelarlos y disponibilizarlos
+para ser explotados de la mejor forma posible a este otro plano analítico
+entonces del lado izquierdo del plano operacional digamos a través de los años también fueron evolucionando
+y cambiando los paradigmas de lo que son las sistemas y las aplicaciones
+y muchos de ellos fueron haciendo un cambio de sistemas monolíticos a por ejemplo microservicios
+en los que hoy en día son manejados por distintos dominios de la organización
+por ejemplo les hablamos del mercado libre, hay aplicaciones que son del marketplace
+que es lo que todos conocemos como mercado libre
+pero también nosotros pensamos en el mercado libre como una empresa pero dentro de esa empresa hay muchas empresas
+la parte del marketplace, la parte del mercado en videos
+que es la empresa de logística y aún más grande de Latinoamérica bien día
+la parte de fintech, de créditos, bueno cada uno de esos representan dominios o jerarquías de dominios dentro de la organización
+y hoy en día son autónomos manejando sus propios microservicios, sus propias aplicaciones
+en lo que sería ese plano que vemos al lado izquierdo
+el lado derecho también esos dominios han ido generando autonomía
+que tienen sus propios equipos de datos, ¿no?
+pero qué sucede, en el medio todavía está manejado por un equipo central de datos
+ese equipo que toma esos datos y lo lleva hasta el plano analítico
+lo que coloquialmente se conoce como ETL, data engineer, se lo llamo últimamente
+era manejado por un equipo monolítico
+si vamos a la siguiente
+ahora esta extracción que veíamos ante la realidad es un poquitito más
+cercano a la realidad en lo que vemos en esta, ¿no?
+a medida que crece el negocio y que crecen las necesidades
+sobre todo en una empresa como Mercado Libre que es muy cambiante y todo el tiempo los modelos no son muy estables
+todo el tiempo necesitamos medir nuevos productos, medir cosas nuevas que van cambiando
+y a medida que crecen la cantidad como fue creciendo la cantidad exponencialmente de gente en Mercado Libre
+de usuarios que necesitan acceso a información
+ese equipo del medio que les contaba monolítico también creció exponencialmente
+y eso hace que no escale, ¿no?
+en dos años pasamos de tener un equipo central de data engineer de 6, 7 personas a 35
+y hoy somos casi 50
+no escala y por otro lado, si se fijan a la derecha también van a ver como esas marcas de ETL
+¿Qué sucede?
+Hay gente que así como está el dato en ese leico, en ese warehouse
+tampoco le termina sirviendo del todo, entonces como le decía
+hay equipos con skills de datos
+que también hacen sus propios ETLs, ¿no?
+pero ¿qué sucede? esos ETLs que hacen y esos productos de datos resultantes, esos ETLs
+no se hacen de manera bastante informal, ¿no?
+se hacen en algunos espacios llamados sandbox
+sin las garantías necesarias, sin procesos de vacab, sin un catalogado
+es decir, totalmente informal y cada uno manejando el lenguaje que le parece
+entonces ahí es donde viene este concepto de mesh
+a intentar distribuir estos cuello de botella, estos equipos monolíticos
+y pereespecializados que están en el medio de estos dos planos, ¿no?
+porque como habíamos dicho, a la izquierda tenemos dominios
+por ejemplo, no sé, mercado crédito, ¿no?
+y mercado crédito maneja sus aplicaciones en la izquierda
+y mercado crédito tiene su equipo de la explotación de datos del lado derecho
+pero tiene que pasar por ese embudo, por ese equipo monolítico
+y ser priorizados en ese equipo monolítico del medio
+entonces lo que viene a plantear data mesh es una arquitectura de datos distribuida
+en la que también este dominio por ejemplo de credits
+pueda manejar un equipo de data engineering
+y pueda disponibilizar datos a toda la organización, ¿no?
+si vemos la imagen siguiente
+esto demuestra un poco a nivel gráfico de qué se trata
+si se fijan ahí, están debajo los dos planos que viníamos hablando
+de la operación alienalítica
+y ya están unidos en esos diagramitas
+que representan a un dominio de la organización, ¿no?
+que puede ser mercado crédito
+cualquier parte de fintech o de envíos
+marketing
+en cada organización van a ser realidades distintas, ¿no?
+pero para que esto no los convierta
+no volvamos muchísimos años atrás, ¿no?
+a paradigmas anteriores
+y en los que esto no se convierta en data martes en silos
+la idea de esto es que puedan publicar
+productos de datos en un mismo ecosistema
+que esto esté unificado
+de ahí viene la palabra data mesh, ¿no?
+esa malla de datos
+en los que cada uno de ellos va a representar un nodo
+entonces para eso, para qué eso ocurra
+necesitamos también tener políticas
+necesitamos tener un gobierno federado
+y algunos aspectos más
+que los podemos ver en la siguiente
+que hablan de
+siguiendo por la teoría, ¿no?
+los cuatro principios que plantea data mesh
+el primero es una arquitectura
+lo que se llama domain driven, ¿no?
+es decir, basada en estos dominios
+diseñado todo en base a estos dominios de la organización
+la segunda es pensar los datos como un producto
+y no como un subproducto, ¿no?
+es decir, que el dato sea
+un producto que ofrezcamos
+y que hagamos
+apliquemos ese famoso product thinking, ¿no?
+y que otros dominios de la organización
+o cualquier empleado de mercado libre
+que necesita acceder a los datos
+lo tratemos como a un cliente
+entonces para eso
+necesitamos que ese producto de datos
+cumpla con determinadas cuestiones
+y le hagamos un seguimiento debido
+que luego Gaby va a hablar un poco de eso
+por tercer lugar
+tenemos que brindar una infraestructura self-service
+y el objetivo de esto es
+que estos dominios
+tengan que tener los skills necesarios
+para transformar los datos
+pero que no necesiten administrar
+su infraestructura
+o estar preocupados por cosas de bajo nivel
+y entonces de esa manera podríamos escalar
+bastante mejor, no sé por ejemplo
+que no tengan que preocuparse por
+cómo administrar los backups
+o cómo generar proyectos
+dentro de lo que es el lay-couch
+y por último
+pero muy importante
+es la parte del governance, ¿no?
+porque como dijimos estos dominios
+tienen que publicar
+en un mismo ecosistema
+hablar un mismo lenguaje
+porque estos productos de datos
+tienen que ser interoperables
+hasta el momento los publicaba un equipo
+que tenía sus buenas prácticas
+ahora esas buenas prácticas al estar distribuidas
+en muchos equipos
+ahí viene un gran desafío
+y ese desafío tiene que ser abordado
+del lado del governance
+siguiente
+bueno entonces
+vamos a ver un poco por qué
+fuimos a hacer
+este cambio de paradigma
+en el mercado libre
+que nos llegó a esa necesidad
+un poco ya lo contamos
+pero vamos a hacer un poquito de historia
+hace ya algunos años
+la imagen
+de la izquierda muestra
+un estadio
+que podría decir de año
+2014
+en el que
+los usuarios
+encontraban este cuello
+de botella que estamos hablando
+pero no en esa
+producción de datos
+que conectan ambos planos
+sino directamente en el consumo
+había un equipo
+de BI, clásico tradicional
+y ese equipo de BI
+en un momento comenzó
+a no poder escalar
+entonces empezó a llevar
+a hacer un trabajo de transformación
+para ir hacia
+la imagen que viene a la derecha
+en el que situamos al usuario
+en el centro
+hicimos cambios tecnológicos
+pero acá también
+un importante es el cambio cultural
+para empoderar a sus usuarios
+darle los skills necesarios
+para que sean autónomos
+para que puedan ellos mismos
+ir a buscar la información
+que tengan todas las herramientas necesarias
+para que eso suceda
+fue un camino
+progresivo
+de muchos años
+y creemos que fuimos bastante
+exitosos en eso
+logramos una autonomía
+de los usuarios en mercado libre
+para el consumo de datos
+pero como decíamos eso
+el consumo de datos opera sobre
+el plano que veíamos antes
+analítico
+tenemos la imagen siguiente
+aún nos quedaba
+este contexto actual
+que es
+en ese equipo que conecta
+el plano de operación analítico
+los datos ingenieros, LTL
+seguía haciendo
+monolítico
+y como les conté antes
+encontramos ahí un cuello de botella
+ahí si
+si se fijan en la imagen dice teradata
+que veníamos trabajando con teradatas en muchos años
+y justo
+este cambio que planteamos
+se dio de la mano de algunos cambios tecnológicos
+que ya veníamos planteando
+por ejemplo lo que es la migración a Bicueri
+entonces este equipo
+cuáles eran las desventajas
+por qué lo convertían en un cuello de botella
+aparte de esta escala que les venía comentando
+tenía que ser un equipo hiper especializado
+es decir tenía que haber gente
+que se experta
+en mercados millos
+que se experta en lo que es fintech
+que igual fintech dentro de fintech
+también tenemos otros dominios
+porque es fintech que podría ser una empresa aparte
+es decir un equipo
+con muy amplio scope
+pero que también tiene que ser muy deep
+en esos conocimientos de negocio
+por lo tanto
+representaba un cuello de botella
+y
+y ese cuello de botella también
+generaba una incapacidad de escalar
+orgánicamente con la
+velocidad que el negocio necesitaba
+entonces llegado
+a este punto
+y viendo el cambio que habíamos hecho
+en lo que es el consumo de datos
+nos dimos cuenta que estábamos
+en un problema y que teníamos que generar algún cambio
+seguimos la imagen siguiente
+así nos sentíamos
+y creo que
+muchos entienden
+lo que es
+sentirse de esta manera
+no solamente nosotros manejando
+la información
+sino los usuarios que querían consumir la información
+no
+ese cuello de botella
+representaba estos embotellamientos
+y que para nada son cómodos
+ni ninguna organización pero sobre todo
+en el mercado libre que es una empresa
+que se mueve muy rápido
+entonces cuando tuvimos
+en esta situación dijimos
+que bueno que sería
+tener algo como la imagen
+siguiente
+esta independencia
+esta autonomía
+para la cual claro
+para pasar de la imagen anterior a esta imagen
+siguiente hay que hacer cambios culturales
+pero también hay que construir
+cosas y bastantes cosas
+construir esta infraestructura
+construir estas autopistas
+para que los datos fluyan como deben fluir
+así que ahora los voy a dejar
+con Gaby que les va a contar un poco
+que sí
+Buenas tardes a todos
+como les va
+si podemos pasar a los siguientes slides
+bueno la idea es contar un poco
+que hicimos en base a lo que
+a las problemáticas que fue levantando
+o les fue comentando Nacho
+y también un poco repasar lo que fue la teoría
+y como lo llevamos adelante en la práctica
+así que si podemos pasar a los siguientes slides
+trabajamos sobre distintas verticales
+vamos a mencionar las principales
+para no entroentender que hicimos
+conformamos un equipo multidisciplinario
+y empezamos a primero tener definiciones
+pero creo que es un producto de datos
+bueno, un producto de datos es un set de datos
+publicado para toda la compañía
+generado por un dominio
+estos datos tendría que estar lo suficientemente curado
+tener una calidad adecuada
+ser observable, ser descubrible
+que eso lo vamos a ver más adelante
+tener un acuerdo de esa idea de disponibilidad
+de esa información en la tabla
+y quizá lo suficientemente autodescriptivos
+como vemos en la imagen de la derecha
+tenemos un set de datos
+donde abajo tenemos cierta información
+como por ejemplo la cantidad de filas
+que puede llegar a tener un data product
+si hay duplicados, freshness
+de la data
+cuánto espacio en disco
+puede llevar a ocupar el volumen
+cuánto es el costo que
+termina consumiendo este producto de datos
+así que esta es una de las verticales
+que estuvimos trabajando
+si pasamos a los siguientes slides
+podemos empezar a ver
+el concepto de plataforma SerService
+que mencionaba Nacho
+un técnico sistema llamado DataSuite
+que engloba un conjunto de herramientas
+para data hecha
+dentro del mercado libre
+en el cual dijimos, bueno, estas herramientas
+tienen, o sea, los usuarios que operan
+estas herramientas requieren un nivel técnico
+intermedio avanzado
+necesitamos que todos nuestros usuarios
+que quieran consumir o
+producir la data puedan hacerlo
+sin tener un skill técnico
+de tan alto nivel
+entonces agarramos todas las
+herramientas que teníamos
+dentro de lo que es DataSuite y empezamos
+a evaluar qué cambios eran requeridos
+dentro de estos cambios
+vimos que necesitábamos definir
+diferentes ambientes de trabajo
+el desarrollo y la producción
+hicimos un análisis de aquellos flujos
+de ingesta que ya existían
+y cuáles eran los más recurrentes dentro
+del mercado libre desde que originó
+mejor dicho, qué tecnología original
+qué tecnología destino
+con el objetivo de empezar a pensar
+pipelines de datos simplificados
+como le llamamos nosotros short steps
+que se lo vamos a mostrar un poco más adelante
+garantizar la seguridad
+y el acceso a la información
+y algo no menor en esta etapa
+en donde todo el negocio
+crece todo muy rápido es clave
+garantizar que la capacidad de cómputo
+esté distribuida para que no haya afectaciones
+entre distintos procesos
+en el día a día, y obviamente
+como mencionan Nacho, todo esto
+con una política de vacapi restor bajo el gobierno
+del equipo de Data Engineer
+que obviamente está definido para todos los dominios
+si pasamos a la siguiente slide
+podríamos ver
+uno de los conceptos claves de lo que es DataMesh
+que es Discoverability
+que es el descubrimiento, todos los productos
+de datos que van a ir generando los diferentes dominios
+pensamos que tiene que estar disponible
+para toda la organización y que puedan navegarlo
+entonces
+todas nuestras aplicaciones
+que conforman el ecosistema de Data Suite
+tienen que tener la suficiente inteligencia
+para generar el linaje
+de los distintos componentes
+y poder almacenar la descripción
+para que luego lo puedan explotar los distintos
+usuarios del mercado libre
+entonces cada objeto que conforma estos DataProduct
+van a estar correctamente catalogado
+van a estar
+haciendo compliance con lo que es PII
+que para nosotros es la gestión de los datos sensibles
+obviamente
+todo esto va a estar vinculado
+con otra herramienta que le voy a contar a continuación
+que te permite evaluar la integridad
+de estos DataProducts
+si pasamos a la siguiente slide
+veamos lo que sería
+Observability
+que es Observability, bueno es la capacidad
+de detectar anomalías en nuestros productos
+de datos generados
+esto es una herramienta que obviamente
+es de un tercero que logramos incorporar
+dentro de nuestra Suite que le vamos a contar
+como lo hicimos pero básicamente
+este patrón los permite entender
+que nuestros productos de datos tienen
+un estado y hay que monitorearlo correctamente
+y alertar en el caso de que se encuentre
+en alguna anomalía
+como ven ahí podríamos
+evaluar diferentes indicadores
+por ejemplo cuántas tablas tiene un dominio
+cuántas vista, la frescura
+cuántas inconsistencias puede llegar a ver
+y a su vez este tipo
+de patrón nos permite ir incorporando
+diferentes monitores
+particulares en base al gobierno que le quisieramos
+dar a todo nuestro dominio de DataMesh
+si pasamos a la siguiente slide
+podríamos ver
+ya contarles un poco cómo es nuestro
+estado real
+pasamos de la teoría, le contamos
+las iniciativas que abordamos
+y bueno
+nos sentamos y dijimos cómo hacemos
+girar esta rueda, cómo hacemos para implementar
+como saben DataMesh es orientado
+dominio, buscamos
+en distintas fuentes de data y dijimos
+dominio para todos tiene
+distintas aristas
+definimos para lo que nosotros es un dominio
+que es un dominio, es un equipo
+un equipo de colaboradores
+que está representado por un owner
+ese owner es el responsable
+de todo el equipo y de toda la infraestructura
+que les voy a contar
+ese equipo va a tener acceso
+a esta herramienta Dataflow
+que les comento que es nuestra herramienta pipeline
+si alguien conoce Pentajo que me imagino que sí
+es similar pero esto está evolucionado
+para el mercado libre en base a las necesidades
+prácticas que fuimos necesitando
+Dataflow tiene el mismo nombre que la
+herramienta de Google, no es la misma
+que la herramienta de ChangeHouse
+esta herramienta que te hace el pipeline
+de datos, toma datos de origen
+y la envía de un destino, notábamos
+que tuviéramos que meterle cierta lógica
+para simplificar
+todo este proceso de ingesta así que
+cuando un usuario se da de alta dentro
+de un dominio, automáticamente tiene acceso
+a esta herramienta con los flujos simplificados
+todos los flujos que va generando
+se terminan catalogando
+en la herramienta DC que es Data Catalog
+en nuestro catálogo hecho
+dentro de Mercado Libre
+ahora se los vamos a mostrar
+y por último Montecar, lo que es esta
+herramienta de mercado que
+nosotros customizamos para poder
+monitorar la seguridad de nuestros Data Pro
+es parte de todo este ecosistema
+que llamamos dominio
+por debajo
+tenemos todo lo que es un proyecto
+en BigQuery para desarrollo y para producción
+así que todo lo que es
+DataMesh dentro de Mercado Libre
+lo vamos a encontrar dentro
+de nuestro Data Warehouse en BigQuery
+si pasamos a la siguiente slide
+podríamos ver el siguiente concepto
+dijimos lo que era un dominio
+ahora que es un DME
+bueno es un DataMesh en Bironel
+si bajamos un poquito más nos damos cuentas
+de que necesitamos cierta infraestructura
+como dije un equipo, un owner
+y ya proyectos en BigQuery de desarrollo
+y producción con una misma
+estructura para todos los dominios
+con diferentes dataset
+staging, TBL
+y FeedView
+que es uno de esos dataset
+bueno básicamente es el orden en el cual le vamos a dar
+a todos nuestros dominios para que organizen su información
+durante todo el ciclo
+de vida de los datos
+para los que no saben lo que es un feed
+un feed es un tipo de tabla para
+almacenar información que proviene
+near real time o real time
+de un tópico de informaciones
+donde la estructura particular que tiene
+es que tiene un identificador
+de novedad
+todo el mensaje y distintas columnas
+de auditoría para saber la fecha, la hora
+y el momento en el cual se recibió
+esa novedad. A su vez dentro
+de lo que es este en Bironel
+le brindamos a los dominios un espacio
+para almacenar su información
+para cuando hace sus extractos y quisieran
+dejarlo en un repository lo pueden hacer
+los backup que ya le mencionamos anteriormente
+y automáticamente se da de alta lo que es
+una service account dentro
+de lo que es Monte Carlo para garantizar
+toda la salubridad
+del Dataproduct. Si pasamos a la siguiente slide
+podemos ver lo que es Data Integrity
+para nosotros, que es Data Integrity
+es una
+solución de Data Observability
+que nos permite
+como les dije poder ir
+evaluando la salud de cada
+Dataproduct pero per se
+implementar Monte Carlo solo no era
+la solución era customizar
+nuestros monitores para la necesidad
+que teníamos dentro del mercado libre
+como ven
+ahí a la derecha vemos una imagen
+por un lado tenemos Monte Carlo
+que es la herramienta de tercero
+pero por otro lado tenemos el Data Catal
+que es nuestra herramienta particular
+de catalogado de datos fíjense
+como ensamblamos los indicadores
+principales de Monte Carlo dentro de nuestra solución
+para que cualquier usuario
+que quiera acceder a una tabla pueda no solo
+saber la descripción de la misma sino el estado
+de la salud de ese producto de datos
+obviamente todo lo que es Data Integrity
+se crea un dominio dentro
+de lo que es Data Mesh
+si pasamos a la siguiente slide
+Data Catalog como les mencioné
+esta es una herramienta de Change House
+en el cual nos permite navegar
+sobre los diferentes Dataproduct
+y componentes de data
+que tenemos en el mercado libre
+básicamente lo que te permite es
+hacer una búsqueda y poder
+indexar la información que uno siente
+que es relevante para poder hacer
+una búsqueda de datos o por ejemplo
+responder a la pregunta de
+existe una tabla que tenga tal dato
+bueno uno lo puede explotar de esta manera
+con esta herramienta
+si pasamos a la siguiente slide
+Dataflow como les comenté
+era la herramienta que teníamos
+ya hace más de 5 años
+no hacía compliance
+con el nuevo paradigma de Data Mesh
+porque necesitábamos
+skill demasiado técnicos o particulares
+para poder operar la herramienta
+que pensó es
+simplifiquemos estos flujos de ingesta
+dejémoslo a disposición de un usuario
+y no solo eso
+sino que lo que nosotros
+entendíamos es que los pipeline de datos
+no es Data Mesh
+sino también poder gestionar todos los objetos
+que forman
+parte de este data por ejemplo las tablas
+entonces generamos secciones de
+poder administrar, crear
+todo el ciclo de vida de una tabla
+haciendo obviamente compliance
+de las emocionalidades que te permite
+BigQuery que no son pocas
+entonces tuvimos que adaptar todas nuestras herramientas
+por ejemplo ahí en la captura
+se puede ver un poco de
+tenemos la gestión de las tablas
+tenemos los tiempos de expiración
+tenemos un circuito de pasaje de producción
+con su correspondiente aprobación
+tenemos los distintos ambientes separados
+y una vez que generas esas tablas
+puedes generar ahí en la sección de allshops
+puedes cargar de tus diferentes jobs
+para que ingesten dentro de esa tabla
+que pasamos a la siguiente slide
+SDK Streaming, nosotros en Mercado Alí
+tenemos particularmente
+lo que es Batch y lo que es Real-Time
+o Near Real-Time
+la diferencia obviamente
+está en que lo que es Near Real-Time y Real-Time
+vienen de tópicos de novedades que nos
+pushean los distintos unidades de negocio
+por ejemplo Mercado Pado cuando alguien hace
+una transacción nos notifican
+alguna aplicación
+para que nosotros ingestemos esa información
+y la SDK Streaming
+viene a Nase para Datamech
+porque básicamente en Mercado Alí
+había una aplicación en la cual
+cuando los usuarios necesitaban
+streamer información en Near Real-Time o Real-Time
+tenía que suscribirse al producto
+y básicamente compartía la misma infraestructura
+todos los pipeline de datos de streaming
+con esta nueva SDK
+lo que hicimos fue tomar
+las funcionalidades claves
+de cada una de las soluciones
+que teníamos de streaming de datos
+de la SDK y dejarlos disponibles
+para cada dominio para que lo pueda implementar
+en cada uno de sus proyectos
+garantizando así que utilizan
+las funciones que están obviamente
+controladas, reglamentadas
+por el equipo de gobierno
+y a su vez nos aseguramos de que cada vez
+que hay alguien streamer información
+la información esté
+correctamente catalogada entre el tópico
+de novedades y el destino de los datos
+dicho esto
+si pasamos a la siguiente slide
+y vamos a empezar a ver lo que es un resumen
+de lo que les contamos nosotros
+en igual encontramos nuestra famosa
+malla de datos, tenemos
+ahí si ven el DMA-A, el DMA-B
+el C y el Core
+el Core es el equipo de gobierno
+que no deja de ser un dominio más
+vemos cómo los dominios se van comunicando
+lateralmente entre ellos
+pero la particularidad como dijo Nacho
+que tenemos dentro de un mercado libre
+es que tenemos un proyecto dedicado
+en el cual se publica
+información mediante una vista
+para que cualquier usuario lo pueda consumir
+eso lo pueden ver ahí
+en la gráfica en el centro
+con el logito de BigQuery
+cada dominio genera sus datos product
+pero lo deja disponible para todo mercado libre
+como una capa única de ingreso
+en ese proyecto de BigQuery
+sin más
+le contamos un poco de lo que fue la malla de datos
+no sé si Nachito quiere algo aportar
+en lo que fuimos comentando
+si no abrimos el espacio de preguntas
+y la respuesta para todos
+de eso última parte
+una de las cosas que nosotros pensamos
+cuando pensamos resolver
+y esta parte también de nuestra interpretación
+nuestra implementación
+es que cuando un usuario quiera consumir
+esos datos de mercado libre
+que vienen producidos totalmente descentralizados
+de cualquier lado
+era necesario
+que para un usuario terrenal
+que pide acceso a lo que es el Workhouse and Lay
+en principio no necesites saber
+que haya un single point of entry
+y a partir de ahí
+que pueda consumir todo el dato de la organización
+luego si le interesa saber
+si interesa contactarse con el loaner
+para eso está la herramienta de catalogo de datos
+pero fundamental era
+garantizar también
+ese único punto de entrada
+y que conviva en el mismo ecosistema
+y aclarado eso
+fue una charla cortita
+fue difícil resumir todo esto
+en tan poco
+son conceptos algunos complicados
+así que
+si tienen preguntas
+acá estamos
+acá tenemos
+Gabriel
+Ignacio
+muchísimas gracias
+su presentación ha sido excelente
+enriquecedora
+y ahí me imagino acá
+que están llenos
+han tenido muchísimos desafíos
+porque la complejidad
+que se está dando
+podrían seleccionar uno
+que realmente considerado
+un verdadero desafío que les costó
+y comentarnos lo por arriba
+aunque sea pero para saber
+el grado de
+complejidad que tiene esto
+yo tengo uno Nacho
+disculpame que
+pero creo que el primer escenario
+fue cuando nos sentamos a definir los conceptos
+y tuvimos que bajar a la práctica
+es entender los diferentes casos de uso
+y qué estamos dejando por fuera
+y cómo implementar toda esta solución
+sin saber
+a veces uno
+en la vista a muchos pies de altura es muy difícil
+entender los distintos casos de uso por ejemplo
+desde cómo declarar en una función
+en cada equipo puntual
+en Colombia
+entonces el entender y el relevar
+toda esa información creo que fue un gran desafío
+y bueno creo que
+no me lo voy a olvidar nunca
+muy bien
+honestía
+a mí se me ocurre uno que
+todavía hoy lo tenemos
+como les decía Tamella es un término
+un concepto muy nuevo
+y casi toda
+las referencias
+la literatura, lo que se encuentra
+cuando uno investiga
+hablan de un
+estadio ideal
+de adónde habría que llegar
+pero nadie comienza en esto
+de cero
+necesariamente un proceso de transformación
+entonces una de las cosas más complicadas
+para nosotros fue
+no encontrar referencias porque no hay muchas implementaciones
+de estas en el mundo
+y tener que
+está bueno aprender de los errores
+de los demás
+entonces queríamos ir a buscar esos
+y no los encontramos
+así que eso fue
+también un proceso bastante difícil
+ver cómo
+creanear todo esto
+por las nuestras
+muy bien
+acá tengo algunas preguntas más
+cuando me pregunto Emiliano
+cuando hablan de stream
+y de datos
+en SDK
+quieren si pueden hacer una aclaración
+ahí lo tomo yo
+dentro del mercado libre
+llamamos a lo que es streaming de datos
+cuando la información se genera una velocidad
+que se anilla real-time o real-time
+y es necesario dejarlo en el warehouse con esa velocidad
+por ejemplo todo evento que sucede
+en una unidad de negocio
+uno lo puede mandar al warehouse de dos maneras
+medio anti-batch
+corre un shop periódicamente croniado
+en un periodo de tiempo o no
+enviarla ni bien sucede la novedad
+hacemos referencia al streaming de datos
+a tomar esa información dentro un tópico de novedades
+que podría ser lo voy a simplificar
+si fuese colas mq
+si fuese un sistema de cola
+como rabit tendrías una novedad
+la cual te suscribes y estás escuchando
+constantemente la creación de esa novedad
+una vez que esa novedad llega
+la toma el equipo o en este caso la SDK
+y la termina enviando lo que es
+una tabla dentro del data warehouse
+es más que nada un flujo de datos
+de información en real-time o real-time
+no sé si respondí la pregunta
+y si no repregunta tranquilo
+no perfecto se entendió muy bien
+muchas gracias después
+Florencia, primero felicita por la
+presentación nos dice
+que fue muy interesante
+y nos hace una pregunta es
+si hay integración entre
+distintos dominios y fuese
+necesario integrar
+distintas áreas
+como es ese proceso
+si que debo y yo bajó
+nacho como óqueta
+por definición la idea
+es que los dominios sean interoperables
+que lo que publique un dominio puede hacer
+un origen para lo que publica otro
+o sea eso
+es una necesidad debe ser así
+no deben estar aislados
+no sé si la pregunta
+apuntaba ahí pero también
+acaba de mencionar otra cosa
+otra cuestión que es
+los dominios tampoco van a ser estativos
+las organizaciones son dinámicas
+y las iniciativas
+los productos o los equipos
+en las organizaciones también son dinámicos
+y van cambiando
+también nosotros pensamos esto de manera orgánica
+es decir hoy en día
+podemos definir un dominio
+y el día de mañana ese dominio se tiene que
+explicar
+va creciendo y ven la necesidad
+de que ese dominio el día de mañana sean dos
+o puede ser que dos dominios
+el día de mañana se unan
+eso
+tiene más que ver con
+la dinámica de la organización
+de estos dominios pero en cuanto
+a interoperabilidad
+por definición deben ser todos interoperables
+perfecto
+después Marco nos pregunta
+si la estructura
+que fue construida es el 100%
+self service
+o hay que hacer algún tipo
+de operatoria extra
+dentro de
+lo que es data mesh
+hoy en día el equipo de data se vivía
+dentro de mesh y fuera de mesh
+estamos en un proceso de incorporación
+de este nuevo paradigma
+todo lo que está dentro de mesh tiene carácter
+de self service
+y se desarrolla y se piensa de esa manera
+así que todas las soluciones que forman parte de mesh
+tienen que tener
+este carácter de self service
+obviamente por debajo
+no dejan de ser aplicaciones
+de un tipo de soporte
+que tenemos un equipo especializado
+pero es más que nada
+no soporte a la creación y el consumo
+de los datos sino a la utilización de la herramienta
+por si hay algún problema
+bien muchas gracias
+y por último nos preguntan
+si herramientas del tipo
+Kafka fueron usadas
+o alguna tecnología particular
+de cloud
+todo lo que
+van a ser
+todo lo que corre dentro
+de Mercado Libre
+está bajo la gestión
+de Fury que es una abstracción
+nuestra de tecnologías puntuales
+pero para responder puntualmente
+tu pregunta nosotros utilizamos
+lo que son tópicos de novedades
+que no quiere decir que abajo
+haya un Kafka pero básicamente
+lo que viene a simular estos tópicos de novedades
+es esa tecnología como un Rabbit MQ
+es todo cloud
+así que corresponde tu pregunta
+y tenemos tecnología simil Kafka
+creo que hay alguna parte de Kafka pero para nosotros es una abstracción
+necesitamos suscribirnos
+un tópico de novedades y eso está resuelto
+y para complementarte
+hoy
+hoy
+mesh
+corre con la tecnología que tenemos
+y
+creo que nos fuimos favorecidos
+cuando planteamos esto teníamos
+bastantes cosas a favor
+cambios tecnológicos que permitían que esto suceda
+un montón de equipos fuera del equipo central
+que ya estaban en equipos de negocio
+con los skill necesarios
+para que esto también suceda
+de hecho había gente que nos venía y golpeaba la puerta
+cuando puedo publicar datos
+para todo mercado libre
+pero esto no quiere decir
+de que continuemos
+de que no continuemos trabajando
+continuamos trabajando muy fuertemente porque
+las tecnologías
+que tenemos que seguir integrando
+son diversas
+cintas, hoy como decía
+en lo que fue esta evolución
+de nuestra herramienta de pipelines
+pudimos simplificar
+varios de los flujos
+más utilizados
+pero hay otros flujos que todavía no tenemos contemplados
+y que estamos justamente pensando
+como lo podemos hacer lo más sencillo posible
+por lo tanto
+tecnologías sí que
+media es todo full cloud
+pero
+pero que las tecnologías también van a ir evolucionando
+a medida que veamos que sea necesario
+bien
+y también nos preguntan
+cuál fue el primer dominio
+que eligieron si tuvo alguna razón
+de ser por el cual lo eligieron
+y en qué porcentaje
+los dominios ya están siendo
+migrados
+a esta nueva modalidad
+empezamos con
+cuatro dominios
+pero el primero que tuvimos en mente
+es un dominio
+es un equipo de Mercado en BIOS
+que nosotros llamamos Shipping
+internamente
+porque fue la primera área de datos
+que se creó
+externa al área central
+entonces después de algunos años
+era un equipo
+que tenía un montón de responsabilidad
+dentro de todo lo que es Shipping
+venían trabajando de una manera
+ellos se enojarían si yo digo informal
+pero bueno en cuanto a garantías
+de infraestructura y demás
+era informal
+entonces
+vimos que era un equipo muy maduro
+con muchos skills
+con gente que sabía mucho
+y le faltaba un poco esa asistencia
+de infraestructura
+de plataforma
+de que nosotros los ayudemos con las herramientas necesarias
+para que sean dueños del ciclo con el día
+completo del dato
+así que por un lado
+ese fue el primero que se nos vino a la mente
+y de momento
+el estadio hoy es que no lo abrimos
+como decimos nosotros a mal abierto
+todavía no está abierto a que cualquiera
+que quiera un dominio lo pueda tener
+porque como les decía antes
+es un proceso de transformación en el que
+dijimos
+vamos a ir de a poco
+pasos seguros
+y quizás si nos demoramos
+un poco más
+pero tener el feedback más rico
+de estos primeros equipos
+con mucho más expertise
+para ver si le pifiamos en algo
+si hay algo que tenemos que ajustar
+que va a ser mucho más fácil ajustarlo
+para pocos dominios
+que pensar
+que nos equivocamos en hacerlo en el rollout
+antes de lo esperado
+por lo tanto ahora estamos con cuatro dominios
+ahora vamos a ir con una segunda wave
+en la que estamos evaluando si vamos a ir por cuatro más
+o creo que ya nos sentimos bastante confiados
+como para aumentar bastante el número
+y seguramente ya en el 2023
+ya sea maravilloso
+perfecto
+y en relación a eso
+si fue proceso
+de educación de los usuarios
+para este nuevo paradigma
+lo que hicimos fue
+trabajar por distintos frentes en workshop
+y acompañamiento
+básicamente estuvimos
+todo lo que fue el cu pasado haciendo formación
+y training de los equipos porque
+esto no es solamente
+un cambio técnico o de tool
+sino que es un cambio cultural
+entonces hay muchas preguntas
+porque es que tenemos que responder a veces
+y saciar dudas
+así que fuimos trabajando en diferentes workshops
+y obviamente
+en acompañamiento
+tengo 25 shop
+tengo 25 tablas
+te acompañamos en las primeras para que te sientas confiado
+y luego puedas seguir
+ese fue el proceso por lo menos que fuimos caminando hasta el momento
+y una pregunta
+o ir cerrando
+si se necesitaron
+para cada dominio data engineer
+particulares
+si
+pero no necesitamos contratar de momento
+justamente
+como decía antes
+tuvimos un viento que soplaba favor
+que era que ya había
+muchos data engineers
+en equipos que no eran los equipos
+el equipo central
+es una de las imágenes que mostramos
+en los que no había
+ETLs solamente
+en esa parte central
+sino que había ETLs
+ya sucediendo de manera informal en un montón de equipos
+por lo tanto
+al menos para los primeros dominios
+que están saliendo
+a implementar mesh
+no
+no está siendo necesario contratar data engineers
+porque ya tienen
+gente con skills de data engineer
+pero seguramente si
+para otros
+dominios a futuro
+que quieran tomar el control completo
+del ciclo de vía a los datos
+seguramente los vayan a necesitar
+y complementando lo que dijo Gaby
+otra parte que para nosotros es fundamental
+en lo que es el cambio cultural
+es que esto
+da mayor poder
+a estos equipos
+pero también creemos
+que el poder viene de la mano
+de mayor responsabilidad
+por lo tanto
+tenemos que asegurarnos
+nosotros como equipos central
+de que estos equipos
+actúen con responsabilidad
+y quedó justamente
+si hay algo que se rompe
+tengan gente con skills adecuados
+para poder arreglarlo
+bien y una pregunta
+parece que generó mucho interés
+la idea que presentaron
+y lo que preguntan es
+cómo pensarían ustedes
+cómo se podría empezar
+para hacer un data mesh
+desde cero
+sin herramientas propias
+de medio
+creo que
+en este primer paso
+antes de pensar en una herramienta pensaría
+en los diferentes escenarios
+que tenés que abordar para cubrir
+la observabilidad
+el descubrimiento, el catalogado, trazabilidad
+primero las necesidades
+para que imagino que cada empresa
+obviamente va a tener sus distintos niveles
+de madurez para afrontar esto
+primero entendería bien
+eso y luego empezaría a buscar
+herramientas que obviamente
+se puedan, ahí creo que decía un premis
+herramientas que se puedan adaptar
+a ese tipo de necesidad
+para mí hoy en día implementar mesh
+el problema no está tanto en las herramientas
+sino en cómo hacer una solución
+de negocio que escale en el tiempo
+y no sea demasiado costosa
+en el punto de vista, no sé, Nachito
+si, concuerdo
+creo que herramientas hay de sobra
+el tema es ver
+cómo se adapta mesh
+primero hay que ver si la organización lo necesita
+quizás no sea necesario
+pero en el caso que lo necesite
+hay que ver cómo se adapta mesh
+a la estructura que necesitan hacer
+no es descentralizar por descentralizar
+es descentralizar con un sentido
+de agilidad controlada
+tuvimos hace
+unas semanas una charla
+con una persona que fue la que implementó mesh
+en el New York Times
+y a diferencia de nosotros, ellos tenían
+muy poquitos dominios y con eso ya estaban bien
+nosotros
+tenemos la necesidad por cómo el mercado libre
+de tener un número
+muchísimo más grande de dominios
+entonces tenemos un desafío
+bastante mayor en lo que es Gobernate
+en lo que es herramientas para que eso sea un mismo ecosistema
+pero
+si yo concuerdo con lo que decía David
+no es tanto, creo que herramientas siempre se encuentran
+una forma de solucionar un problema
+con una herramienta, hay muchísimo
+dando vueltas por ahí en el mercado
+el desafío más grande
+es
+es cómo hacer
+cómo combinar todo esto junto
+para que realmente funcione
+bien
+muchísimas gracias, excelente
+la presentación
+Juan, adelante por favor
+bueno
+quería agradecerles
+especialmente a Gabriela Ignacio
+por esta presentación
+que no solamente ha sido
+una presentación
+extremadamente prolija
+didáctica
+lo importante
+para nosotros es que hayan compartido
+justamente la experiencia
+que han tenido ustedes
+la implementación
+de esta nueva idea
+de Meys como lo dijo
+muy bien Gabriel
+Ignacio
+esto es algo nuevo, no podemos encontrar
+muchos antecedentes
+incluso en el mundo
+así que
+esto es más que valioso para nosotros
+bueno muchísimas gracias
+de nuevo
+Gabriela Ignacio por su participación
+en esta jornada
+bueno vamos a hacer ahora
+un pequeño intervalo
+y
+empezamos de nuevo a las 15
+con la presentación de Panamérica
+bueno muchas gracias
+y
+gracias
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y
+y

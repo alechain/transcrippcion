@@ -1,0 +1,1140 @@
+start	end	text
+0	8000	Bueno, continuando, entonces,
+8000	12000	con lo programado, tenemos la
+12000	16000	presentación de Panamerican,
+16000	19000	la presentación va a ser realizada
+19000	22000	por Martín Ruiz, quien ya conocemos
+22000	25000	del año pasado, estado con nosotros,
+25000	29000	y Diego Zobro, el título de la
+29000	32000	presentación de Panamerican,
+32000	35000	con modelos basados en árboles.
+35000	38000	Bueno, ¿están listos, Diego?
+38000	40000	Sí, estamos listos.
+40000	41000	Perfecto.
+41000	43000	¿A Martín?
+43000	47000	Martín se estaba uniendo.
+47000	52000	Bueno, comparto.
+52000	58000	Ok.
+58000	61000	Muchas gracias por la invitación.
+61000	67000	Vamos a estar hablando de
+67000	69000	predicción de ventas en estaciones de
+69000	71000	servicio como modelos basados en árboles.
+71000	73000	Vamos de una clasión, vamos a
+73000	75000	predecir cuánto va a vender una estación
+75000	76000	que todavía no existe.
+76000	79000	Esa es lo que tiene interesante.
+79000	82000	Y comenzamos, hablando un poco
+82000	84000	de otra acción de la colación,
+84000	86000	una viñeta clásica que nos muestra
+86000	88000	alguien que está buscando su
+88000	91000	billetera abajo de un farol
+91000	93000	y se le acerca a un policía y le
+93000	95000	pregunta si es ahí donde le había
+95000	97000	perdido, le dice no, la perdí en el
+97000	99000	parque, pero acá es donde hay luz.
+99000	101000	Esta viñeta es clásica, hay
+101000	103000	muchos variantes, con llaves,
+103000	106000	con billeteras, con monedas,
+106000	109000	y nos permite pasar una analogía
+109000	112000	en general con lo que es la
+112000	114000	ciencia de datos, el data mining,
+114000	116000	que en general los problemas
+116000	119000	están en el parque a tres o cuatro
+119000	121000	cuadras de donde está el farol,
+121000	123000	y generalmente tratamos de resolverlo
+123000	125000	con los datos que es justamente los
+125000	126000	que están debajo del farol.
+126000	128000	Y lo que vamos a contar hoy es
+128000	130000	cómo resolvimos un caso yendo
+130000	132000	a buscar el problema al parque.
+135000	137000	Básicamente el problema de negocio
+137000	139000	que queríamos resolver era
+139000	142000	evaluar la inversión en términos
+142000	144000	económicos de construir una nueva
+144000	146000	estación de servicio. Básicamente
+146000	148000	para hacer una evaluación económica
+148000	150000	y financiera de la construcción de
+150000	152000	una nueva estación de servicio, lo
+152000	154000	primero que hay que construir es un
+154000	156000	cashflow, y sobre ese cashflow se
+156000	158000	les van a aplicar algunos indicadores
+158000	160000	financieros, sobre ese cashflow se van
+160000	162000	a aplicar unos algoritmos que nos van
+162000	164000	a permitir obtener un valor actual
+164000	166000	neto, un valor presente neto,
+166000	168000	y una tasa interna de retorno.
+168000	170000	Pero básicamente esos son algoritmos,
+170000	172000	lo primero que hay que hacer es
+172000	174000	construir un cashflow.
+174000	176000	Y para construir bien un cashflow
+176000	178000	necesitamos básicamente tres
+178000	180000	componentes, las inversiones,
+180000	182000	los costos operativos y la
+182000	184000	facturación.
+184000	186000	Tenemos clarísimo cuánto
+186000	188000	cuesta hacer una estación de servicio.
+188000	190000	Si le pasamos a nuestro departamento
+190000	192000	de ingeniería, cómo va a hacer el
+192000	194000	diseño, y todos los detalles nos
+194000	196000	dicen exactamente cuánto va a costar
+196000	198000	ese es un valor que no tiene ninguna
+198000	200000	necesidad.
+200000	202000	Y para saber cuál es la facturación
+202000	204000	necesitamos dos valores.
+204000	206000	El precio de venta y el volumen
+206000	208000	de venta.
+208000	210000	El precio de venta en línea general
+210000	212000	y en particular en el mercado argentino
+212000	214000	es un valor que es muy estable
+214000	216000	en dólares, si miramos el precio
+216000	218000	en los últimos 10 o 15 años en dólares
+218000	220000	ha estado terriblemente
+220000	222000	estable cerca de entre los 90
+222000	224000	centavos y un dólar por litro.
+224000	226000	El gran problema es
+226000	228000	determinar cuál
+228000	230000	va a ser el volumen de ventas.
+230000	232000	Entonces el problema
+232000	234000	que tenemos se transforma justamente
+234000	236000	en estimar el volumen de ventas de esa
+236000	238000	estación que todavía no existe.
+238000	240000	¿Cómo hacemos tradicionalmente?
+240000	242000	¿Cómo hizo la industria tradicionalmente
+242000	244000	para hacer esto? Básicamente
+244000	246000	usando dos tipos de modelos
+246000	248000	y en algunos casos combinándolos.
+248000	250000	Tenemos modelos
+250000	252000	para lo que llamo áreas urbanas
+252000	254000	compactas, lo que puede ser
+254000	256000	el tejido urbano
+256000	258000	de una ciudad
+258000	260000	relativamente chica, 50.000, 100.000 habitantes
+260000	262000	que se basa en
+262000	264000	lo que llamamos trade áreas.
+264000	266000	Tenemos
+266000	268000	modelos para
+268000	270000	estaciones que están en rutas en autopistas
+270000	272000	que están basados en lo que llamamos tasas de captura.
+272000	274000	Esto es
+274000	276000	qué porcentaje de los vehículos que pasan por delante
+276000	278000	de la estación van a entrar y realmente
+278000	280000	cargará ahí. Y donde
+280000	282000	en los casos de áreas urbanas extensas
+282000	284000	que pueden ser una gran metrópolis
+284000	286000	como el área metropolitana de Buenos Aires,
+286000	288000	se suele combinar el trade area
+288000	290000	con las tasas de captura.
+290000	292000	Básicamente
+292000	294000	el trade area
+294000	296000	se basa en definir
+296000	298000	para una región
+298000	300000	los distintos segmentos
+300000	302000	de esa región
+302000	304000	que no compiten entre sí
+304000	306000	analizar cuáles son las estaciones que están ahí
+306000	308000	existentes, cuánto venden
+308000	310000	y cómo se puede repartir ese volumen.
+310000	312000	Para lo que son las tasas de captura
+312000	314000	básicamente es analizar el tránsito
+314000	316000	o descomponer ese tránsito
+316000	318000	en las componentes
+318000	320000	de tendencia, de estacionalidad
+320000	322000	y aleatoria
+322000	324000	y a partir de cómo va a evolucionar el futuro
+324000	326000	estimar cuánto podríamos llegar a capturar
+326000	328000	con nuestra estación.
+328000	330000	¿Qué problemas
+330000	332000	han tenido o tienen siguen teniendo
+332000	334000	estos métodos tradicionales de estimación?
+334000	336000	El trade area es básicamente
+336000	338000	que si bien conocemos
+338000	340000	las estaciones existen
+340000	342000	y cuánto venden
+342000	344000	no solamente es la ubicación
+344000	346000	y el tamaño de la estación
+346000	348000	lo que importa, sino también las instalaciones
+348000	350000	la operación
+350000	352000	el tráfico que circula por ese lugar
+354000	356000	y eso hace que
+356000	358000	sea relativamente fácil construir
+358000	360000	una matriz donde
+360000	362000	podemos
+362000	364000	ubicar la fortaleza
+364000	366000	de la ubicación
+366000	368000	y la fortaleza del site
+368000	370000	de las instalaciones
+370000	372000	y establecer un rango
+372000	374000	que es una buena posición
+374000	376000	y que es una buena instalación
+376000	378000	este tipo de métodos
+378000	380000	funciona muy bien en los extremos
+380000	382000	es decir, cuando una estación está muy bien ubicada
+382000	384000	y tiene muy buenas instalaciones
+384000	386000	queda bien evaluada
+386000	388000	cuando una estación está muy mal ubicada
+388000	390000	y tiene muy malas instalaciones queda muy mal evaluada
+390000	392000	y nos quedan como los extremos de una distribución normal
+392000	394000	y en esos casos generalmente
+394000	396000	poco error, el tema es que la mayoría
+396000	398000	de las estaciones están en el medio
+398000	400000	y eso es lo difícil de evaluar
+400000	402000	con este tipo de modelos
+402000	404000	y en el caso de las tasas de captura
+404000	406000	es
+406000	408000	la complejidad acá es cómo se estima
+408000	410000	ese porcentaje de ingreso
+410000	412000	de vehículos a la estación
+412000	414000	porque cuando uno mira los casos reales
+414000	416000	dependiendo
+416000	418000	del tipo de arteria
+418000	420000	la tasa de captura puede estar
+420000	422000	en torno al 1 al 1.5%
+422000	424000	en torno al 3.5%
+424000	426000	en torno al 5%
+426000	428000	en torno al 15%
+428000	430000	y la pregunta es de qué depende esto
+430000	432000	entonces
+432000	434000	en función de ver las limitaciones
+434000	436000	que tenían estos métodos tradicionales
+436000	438000	que usaba la industria
+438000	440000	nos surgió la siguiente hipótesis
+440000	442000	la pregunta que nos hacíamos es
+442000	444000	si tenemos un conjunto grande
+444000	446000	con gran cantidad de datos
+446000	448000	que tenga todas las características
+448000	450000	relevantes de una estación de servicio
+450000	452000	y que deberíamos en teoría
+452000	454000	poder entrenar un volumen
+454000	456000	que capture esas particularidades
+456000	458000	que explican el volumen
+458000	460000	y nos permita predecirlo
+460000	462000	en estaciones que no existen
+462000	464000	pero que van a tener ciertas características
+464000	466000	esta fue la gran idea
+466000	468000	que tuvimos con hipótesis
+468000	470000	y transformamos entonces
+470000	472000	este problema
+472000	474000	en tres problemas operacionalizables
+474000	476000	que son definir el tamaño del conjunto
+476000	478000	estimar cuáles son las características relevantes
+478000	480000	para el modelo
+482000	484000	vamos a ver
+484000	486000	cada una de estos tres problemas
+486000	488000	en particular
+488000	490000	y empezamos con la definición del tamaño del conjunto
+490000	492000	de qué tamaño debería ser el conjunto
+492000	494000	para entrenar este modelo
+494000	496000	bueno, en Argentina tenemos
+496000	498000	más o menos 4200 estaciones de servicio
+498000	500000	dado que es un número
+500000	502000	relativamente acotado
+502000	504000	dijimos cuanto más grande sea el conjunto
+504000	506000	mejor, ahora como le esquimos
+506000	508000	bueno, la variable
+508000	510000	de respuesta que queremos usar nosotros
+510000	512000	es el volumen de ventas
+512000	514000	no todas las estaciones que existen
+514000	516000	reportan el volumen de ventas en forma regular
+516000	518000	a la Secretaría de Energía
+518000	520000	con lo cual dijimos, vamos a agarrar el conjunto
+520000	522000	de estaciones que sí reportan en forma regular
+522000	524000	que terminaba
+524000	526000	transformándose en un conjunto de más o menos
+526000	528000	4200 estaciones
+528000	530000	un conjunto de aproximadamente 3.800 estaciones
+530000	532000	en segundo lugar
+532000	534000	nos quedaba definir
+534000	536000	las características relevantes
+536000	538000	de las estaciones para introducir el modelo
+538000	540000	esto lo hicimos en base
+540000	542000	a primer lugar
+542000	544000	tomando experiencia en la industria
+544000	546000	hicimos survey con expertos
+546000	548000	usamos nuestra experiencia de campo
+548000	550000	en particular
+550000	552000	esto lo hicimos desde el área de planeamiento de red
+552000	554000	el equipo que lo hizo
+554000	556000	había recorrido
+556000	558000	más de 30.000 kilómetros de rutas nacionales
+558000	560000	había visitado
+560000	562000	todas las ciudades de más de
+562000	564000	100.000 habitantes del país
+564000	566000	y todas las ciudades entre
+566000	568000	10.000 y 100.000 habitantes que estaban
+568000	570000	a los costados
+570000	572000	de estos 30.000 kilómetros de rutas nacionales
+572000	574000	con lo cual
+574000	576000	de alguna forma había generado
+576000	578000	una aurística después de ver más de
+578000	580000	2.000 estaciones de qué era lo importante
+580000	582000	y qué era lo que no
+582000	584000	y por último dado que
+584000	586000	al momento de definir las variables
+586000	588000	antes de tener que relevarlas no había límite
+588000	590000	hicimos un brainstorming con los sectores
+590000	592000	lucrados en el área de ventas
+592000	594000	para ver qué otras variables
+594000	596000	les podían ocurrir como relevantes
+598000	600000	y por último teníamos que definir
+600000	602000	qué modelos utilizar
+602000	604000	básicamente teníamos dos grandes candidatos
+604000	606000	los basados en árboles que son los que
+606000	608000	se suelen utilizar para
+608000	610000	datos estructurados
+610000	612000	también pensamos usar como candidato
+612000	614000	las redes neuronales al final funcionaron
+614000	616000	mucho mejor los diárboles por eso
+616000	618000	son los que vamos a contar hoy
+618000	620000	y vamos a entrar en los resultados
+620000	622000	de los modelos en base a
+622000	624000	redes neuronales artificiales
+626000	628000	yendo al primer problema
+628000	630000	que es la construcción de las listas de características
+630000	632000	una vez ya definido que vamos a trabajar
+632000	634000	sobre las 1.800 estaciones
+634000	636000	vamos a ver cómo lo hicimos
+636000	638000	tenemos
+638000	640000	tres grandes fuentes de características
+640000	642000	las variables
+642000	644000	que podemos obtener de alguna fuente pública
+644000	646000	o privada de fácil acceso
+646000	648000	que es lo que normalmente
+648000	650000	todos conocemos como el dataset
+650000	652000	en este caso sería
+652000	654000	volviendo a la analogía de la persona
+654000	656000	que estaba buscando la billetera
+656000	658000	esto sería lo que está bajo la luz
+658000	660000	¿Qué tenemos ahí?
+660000	662000	coordenadas las estaciones, precios
+662000	664000	volúmenes históricos
+664000	666000	después podemos
+666000	668000	a partir de las variables que tenemos
+668000	670000	calcular otras variables
+670000	672000	que es lo que normalmente llamamos
+672000	674000	feature engineering
+674000	676000	market share
+676000	678000	la población dentro de X radio
+678000	680000	y por último tenemos algo
+680000	682000	de lo que generalmente
+682000	684000	no hablamos
+684000	686000	que es las variables que no están en ningún lado
+686000	688000	y que hay que relevar
+688000	690000	en este caso estamos hablando del layout
+690000	692000	tipo de surtidores
+692000	694000	y otras más que vamos a
+694000	696000	ir comentando
+696000	698000	¿Cómo obtenemos
+698000	700000	esos datos?
+700000	702000	bueno para lo que son los datos públicos
+702000	704000	y privados básicamente
+704000	706000	lo que tenemos es un proceso clásico de tele
+706000	708000	de extracción, análisis, limpieza
+708000	710000	corrección e integración
+710000	712000	y esta primera
+712000	714000	construcción del modelo de predicción de ventas
+714000	716000	generó una serie de procesos
+716000	718000	que hoy son procesos mensuales
+718000	720000	que nos permiten además de
+720000	722000	alimentar este modelo
+722000	724000	alimentar otros muchos modelos
+724000	726000	y además tener un monitoreo
+726000	728000	de cómo está el mercado y cómo está la competencia
+728000	730000	con un nivel muy fino en forma mensual
+730000	732000	que va a generar datos trabajos de estaciones
+732000	734000	de volúmenes, de reviews de Google Maps
+736000	738000	El feature engineering
+738000	740000	lo usamos
+740000	742000	básicamente
+742000	744000	la mayoría de las variables son cálculos
+744000	746000	usando sistemas de información geográfica
+746000	748000	es decir es un feature engineering
+748000	750000	no con lógica matemática
+750000	752000	no transformamos las variables
+752000	754000	y obtenemos otras variables a partir
+754000	756000	de ciertas funciones sino
+756000	758000	buscamos cosas que puedan llegar a tener
+758000	760000	lógica de un sentido de negocio
+760000	762000	por ejemplo, cuál es el market share
+762000	764000	dentro del kilómetro de radio
+764000	766000	los dos kilómetros, los cinco kilómetros
+766000	768000	cuál es el love of share
+768000	770000	para el caso de tiendas cuántos kioscos tengo cerca
+770000	772000	cuántos cafés tengo cerca
+772000	774000	cuál es el nivel socioeconómico
+774000	776000	de la población
+776000	778000	que tengo dentro de determinado radio
+778000	780000	ese es el tipo de feature engineer que usamos acá
+780000	782000	y por último nos quedaba
+782000	784000	relevar
+784000	786000	130 características
+786000	788000	en esas aproximadamente 3.080 estaciones
+788000	790000	de servicio
+790000	792000	que eran las que habían surgido de el proceso
+792000	794000	que les comentamos antes de service con expertos
+796000	798000	de
+798000	800000	las heurísticas
+800000	802000	de haber
+802000	804000	recorrido el país y del
+804000	806000	proceso de brainstorming
+806000	808000	la pregunta que viene acá es
+808000	810000	cómo hacemos para que nos den presupuesto
+810000	812000	para
+812000	814000	relevar 3.080 estaciones de servicios
+814000	816000	en forma presencial
+816000	818000	estamos hablando
+818000	820000	de 200, 300.000 dólares
+820000	822000	que se hará hacer esto
+822000	824000	básicamente lo que hicimos fue
+824000	826000	presentar la idea
+826000	828000	y contar la historia de
+828000	830000	supermercados target
+830000	832000	es una historia que supongo que la
+832000	834000	habrán visto, que la conocen
+834000	836000	en el año 2002
+836000	838000	un estadístico que empezaba a trabajar
+838000	840000	en supermercados target
+840000	842000	recibió una pregunta de su equipo de marketing
+842000	844000	que le consultaba si
+844000	846000	consideraba que sería posible
+846000	848000	identificar
+848000	850000	cuando una mujer estaba embarazada
+850000	852000	incluso si
+852000	854000	esa mujer no quería que lo supieran
+854000	856000	y lo que hizo
+856000	858000	supermercados target fue armar
+858000	860000	con todos los datos que tenían
+860000	862000	un modelo que
+862000	864000	a partir de 25 productos trazadores
+864000	866000	le permitía identificar si una mujer
+866000	868000	estaba embarazada o no
+868000	870000	qué trimestre estaba cursando
+870000	872000	o si no se ha hecho probable departo
+872000	874000	este caso se hizo muy famoso
+874000	876000	no solamente porque está contado en el libro
+876000	878000	que mencionábamos, sino porque
+878000	880000	fue nota de Forbes cuando
+880000	882000	el padre de un adolescente se quejó
+882000	884000	al gerente de una sucursal
+884000	886000	porque su hija estaba recibiendo cupones de descuento
+886000	888000	para productos relacionados con bebé
+888000	890000	se quejaba porque les preguntaba
+890000	892000	si la estaban induciendo a quedar embarazada
+892000	894000	y unos días más tarde se disculpó
+894000	896000	porque
+896000	898000	justamente después de tener una charla con su hija
+898000	900000	que realmente estaba embarazada
+900000	902000	y justamente el caso se hizo famoso porque
+902000	904000	los sistemas estadísticos de target
+904000	906000	supieron que el adolescente estaba embarazada
+906000	908000	antes que el padre
+908000	910000	la gran enseñanza que sacamos de acá
+910000	912000	no solamente es que es posible ser
+912000	914000	con buenos datos
+914000	916000	sino que
+916000	918000	lo importante
+918000	920000	era el conjunto de datos
+920000	922000	target tenía
+922000	924000	el 50%
+924000	926000	de lo que vendía
+926000	928000	para asociar a una persona determinada
+928000	930000	es
+930000	932000	por eso que conociendo la demografía de los clientes
+932000	934000	podía ser en inferencias super
+934000	936000	robustas a partir de las ventas
+936000	938000	la clave en el modelo entonces
+938000	940000	de target estaba mucho más en el
+940000	942000	dataset que en el modelo estadístico
+942000	944000	entonces con esta idea en la cabeza
+944000	946000	convencimos
+946000	948000	al equipo de dirección
+948000	950000	que nos aprobaba el presupuesto
+950000	952000	ese proceso
+952000	954000	de contratación, relevamiento
+954000	956000	de datos nos llevó un año y medio
+956000	958000	el proceso
+958000	960000	de construcción de los datos
+960000	962000	originales nos llevó
+962000	964000	dos años
+964000	966000	básicamente lo empezamos antes
+966000	968000	y todo el proceso completo
+968000	970000	desde que empezamos a tener
+970000	972000	las ideas y fuimos
+972000	974000	obteniendo cada vez más datos
+974000	976000	hasta que llegamos al dataset
+976000	978000	que nos permitió construir el modelo
+978000	980000	nos habrá llevado aproximadamente unos 5 años
+980000	982000	desde que empezamos
+982000	984000	confirmamos la máxima
+984000	986000	de ETL
+986000	988000	y de los procesos Machine Learning
+988000	990000	donde se suele decir que
+990000	992000	el 95% del tiempo
+992000	994000	se va a obtener
+994000	996000	y construir el conjunto de datos
+996000	998000	y solamente 5% en entrenar
+998000	1000000	a los modelos y obtener los resultados
+1002000	1004000	una vez que tuvimos
+1004000	1006000	el conjunto de datos
+1006000	1008000	construido, las estaciones relevadas
+1008000	1010000	necesitábamos
+1010000	1012000	entrenar el modelo y predecir
+1012000	1014000	un volumen de ventas
+1014000	1016000	y lo que necesitábamos era un valor
+1016000	1018000	necesitábamos saber cuánto iba a vender
+1018000	1020000	en metros cúbicos
+1020000	1022000	entonces había dos formas de plantear el problema
+1022000	1024000	una era forma de problema continuo
+1024000	1026000	problema de regresión o de discreto
+1026000	1028000	de clasificación
+1028000	1030000	y la pregunta es si lo planteamos como
+1030000	1032000	continuo en ningún problema
+1032000	1034000	ponemos los volúmenes
+1034000	1036000	como variable de respuesta
+1036000	1038000	si lo planteamos como discreto la pregunta es
+1039000	1041000	y la solución
+1041000	1043000	que se nos ocurrió
+1043000	1045000	era hacer
+1045000	1047000	en el mismo conjunto
+1047000	1049000	en reparticiones de dos clases
+1049000	1051000	esas dos clases iban a ser
+1051000	1053000	la estación vende más de un x volumen
+1053000	1055000	o menos de un x volumen por mes
+1055000	1057000	y esas x las definimos en
+1057000	1059000	100 mil litros
+1059000	1061000	150 mil litros
+1061000	1063000	200 mil litros, 250 mil litros
+1063000	1065000	y así con cortes de 50 mil
+1065000	1067000	hasta un millón de litros
+1067000	1069000	trabajamos en metros cúbicos
+1069000	1071000	por eso también 200, 150, 200
+1071000	1073000	etc.
+1073000	1075000	y el modelo fue entrenado para que pudiera
+1075000	1077000	trabajar bien en el rango de
+1077000	1079000	100 metros cúbicos hasta
+1079000	1081000	1000 metros cúbicos
+1081000	1083000	a este
+1083000	1085000	conjunto de datos y a cada una
+1085000	1087000	de esas particiones le aplicamos
+1087000	1089000	un conjunto de algoritmos
+1089000	1091000	y básicamente usamos random forest
+1091000	1093000	c50,
+1093000	1095000	catbus,
+1095000	1097000	y daishi bien
+1097000	1099000	y al principio hicimos separaciones
+1099000	1101000	para probar en conjuntos de trénites
+1101000	1103000	entre 25, 75, 80,
+1103000	1105000	15, 85, 90
+1105000	1107000	10, nos terminamos
+1107000	1109000	quedando con el de 20, 80
+1109000	1111000	pero no vimos grandes variaciones entre todos
+1111000	1113000	como
+1113000	1115000	producto final
+1115000	1117000	de este proceso
+1117000	1119000	tuvimos los modelos entrenados
+1119000	1121000	y la importancia relativa de
+1121000	1123000	variables
+1123000	1125000	este es un ejemplo de algunos modelos
+1125000	1127000	entrenados con
+1127000	1129000	las métricas de accuracy
+1129000	1131000	de sensibilidad
+1131000	1133000	de especificidad y de área bajo la curva
+1133000	1135000	en línea general, bueno ahora vamos a ver
+1135000	1137000	que si bien usamos todos estos
+1137000	1139000	terminaron dando muy muy bien
+1139000	1141000	los más justos terminaron siendo random forest
+1141000	1143000	y c50 que fue con los que nos terminamos
+1143000	1145000	quedando al final
+1147000	1149000	¿Cómo es el resultado cuando aplicamos
+1149000	1151000	estos modelos entrenados
+1151000	1153000	en el conjunto de test?
+1153000	1155000	Bueno, habiendo hecho las particiones
+1155000	1157000	lo que tenemos es
+1157000	1159000	básicamente
+1159000	1161000	una probabilidad
+1161000	1163000	por rango de volumen, lo que nos está diciendo
+1163000	1165000	para esta estación en particular el modelo
+1165000	1167000	es que está viendo un 0,78
+1167000	1169000	de probabilidad de que venda
+1169000	1171000	100,000 litros por mes
+1173000	1175000	más de 100,000 litros
+1175000	1177000	y 0,13 de que venda más de 150,000
+1177000	1179000	básicamente
+1179000	1181000	diciendo que esta estación debería estar
+1181000	1183000	en torno a los 100,000 litros
+1183000	1185000	por mes
+1185000	1187000	este es la probabilidad
+1187000	1189000	promedio, fíjense que cada uno de los modelos
+1189000	1191000	da bastante similar, tiene una barra
+1191000	1193000	muy alta y después
+1193000	1195000	las probabilidades se caen
+1195000	1197000	y recordemos que como decíamos al principio
+1197000	1199000	el modelo está entrenado para el rango de
+1199000	1201000	100 a 1000
+1201000	1203000	con lo cual lo que sea menos de 100
+1203000	1205000	y más de 1000 le va a costar más
+1205000	1207000	en este caso la estación
+1207000	1209000	vendía 93 metros
+1209000	1211000	casi 94
+1211000	1213000	y nos estaba dando una probabilidad de casi 0,80
+1213000	1215000	de vender 100
+1215000	1217000	el modelo andaba bien para este caso
+1219000	1221000	vemos acá otro ejemplo
+1221000	1223000	una estación
+1223000	1225000	de la bandera gel
+1225000	1227000	y acá lo que estamos viendo es que
+1227000	1229000	el modelo nos está diciendo que esta estación
+1229000	1231000	tiene una probabilidad alta de vender
+1231000	1233000	más de 100,000 litros
+1233000	1235000	alta de vender más de 150,000 litros
+1235000	1237000	alta de vender más de 200,000 litros
+1237000	1239000	pero ya baja
+1239000	1241000	muy baja de vender más de 250,000
+1241000	1243000	litros
+1243000	1245000	esto se traduce en que el modelo nos está diciendo que esta estación
+1245000	1247000	está más o menos entre los 200
+1247000	1249000	y los 250 metros
+1249000	1251000	prácticamente todos los modelos dan
+1251000	1253000	muy similar
+1253000	1255000	y el promedio da este resultado
+1255000	1257000	cuando vemos cuánto vende realmente la estación
+1257000	1259000	vemos que vende 205 metros cúbicos
+1259000	1261000	vamos a ver otro ejemplo
+1261000	1263000	acá lo que tenemos es una IPF
+1263000	1265000	fíjense que vimos una oil
+1265000	1267000	una gel, una IPF
+1267000	1269000	estamos viendo todas estaciones de otras banderas
+1269000	1271000	con lo cual estamos usando
+1271000	1273000	información que obtuvimos
+1273000	1275000	en forma pública pues
+1275000	1277000	salvo el volumen que está reportado
+1277000	1279000	del resto no sabemos nada
+1279000	1281000	en este ejemplo
+1281000	1283000	lo que vemos es que el promedio
+1283000	1285000	nos está diciendo que esta estación tiene una probabilidad
+1285000	1287000	altas de vender
+1287000	1289000	de 100, 150
+1289000	1291000	200, 250
+1291000	1293000	300, 350
+1293000	1295000	400 y baja
+1295000	1297000	en 450
+1297000	1299000	es decir que es una estación que tiene probabilidad alta de vender
+1299000	1301000	más de 400 menos de 450 metros
+1303000	1305000	vende 400 casi 413 metros
+1307000	1309000	acá también tenemos el modelo
+1309000	1311000	prediciendo muy bien el rango de ventas
+1313000	1315000	lo mismo para otra estación IPF
+1315000	1317000	vamos a ver que las probabilidades
+1317000	1319000	son altas
+1319000	1321000	para 100, 150
+1321000	1323000	200, 250
+1323000	1325000	300, 350
+1325000	1327000	400, 450
+1327000	1329000	500, 550
+1329000	1331000	600, 650
+1331000	1333000	700, 750 crepes
+1333000	1335000	hasta 800 que llega
+1335000	1337000	y lo que vemos es que vende entre
+1337000	1339000	800 y 850
+1339000	1341000	también el modelo
+1341000	1343000	funciona muy bien en este caso
+1345000	1347000	qué pasa
+1347000	1349000	acá
+1349000	1351000	acá tengo un modelo
+1351000	1353000	que me está diciendo que las probabilidades son muy altas
+1353000	1355000	para todos los rangos
+1355000	1357000	en ningún momento cae
+1357000	1359000	por qué
+1359000	1361000	porque la estación vende
+1361000	1363000	1,470,000 litros
+1363000	1365000	y el modelo está entrenado
+1365000	1367000	para predecir
+1367000	1369000	bien
+1369000	1371000	en el rango de 100 a 1000
+1371000	1373000	lo que esté arriba de 1000
+1373000	1375000	es decir, si es alto
+1375000	1377000	vende más de 1000 con una probabilidad alta
+1377000	1379000	pero no te puedo decir si son
+1379000	1381000	1,150, 1,100, 2,000, 3,000
+1381000	1383000	o lo que sea
+1385000	1387000	esto puede parecer
+1387000	1389000	un problema, la realidad es que las bocas
+1389000	1391000	que venden, las estaciones que venden
+1391000	1393000	más de 1 millón de litros en Argentina
+1393000	1395000	son del orden del 2%
+1395000	1397000	es decir que para el grueso
+1397000	1399000	de las estaciones que existen y se construyan
+1399000	1401000	esto anda muy bien
+1401000	1403000	por último, un caso
+1405000	1407000	raro
+1407000	1409000	¿por qué digo raro?
+1409000	1411000	porque el modelo nos está diciendo que
+1411000	1413000	cuando uno lo mira acá
+1413000	1415000	nos dice que esta estación tiene
+1415000	1417000	probabilidad alta de vender más de 100, 150, 200
+1417000	1419000	250, 300, 350
+1419000	1421000	400 metros cúbicos
+1421000	1423000	pero
+1423000	1425000	muy baja probabilidad de vender
+1425000	1427000	más de 450
+1427000	1429000	ahora cuando vemos
+1429000	1431000	todo esto es lo que realmente vende
+1431000	1433000	330
+1433000	1435000	es decir que esta barra de acá nos está
+1435000	1437000	confundiendo
+1437000	1439000	tendría que haber considerado esta
+1439000	1441000	ahora eso a priori no lo sabemos
+1441000	1443000	por eso el modelo funciona
+1443000	1445000	bien
+1445000	1447000	más o menos 9 de cada 10 casos
+1447000	1449000	tenemos un orden de error
+1449000	1451000	del 10%
+1451000	1453000	igualmente
+1453000	1455000	no predice con la precisión que quisiéramos
+1455000	1457000	pero tampoco es que
+1457000	1459000	estamos muy lejos de la realidad
+1461000	1463000	con esto entrenado
+1463000	1465000	nos quedaba un problema
+1465000	1467000	adicional antes de pasar a producción
+1467000	1469000	y era que
+1469000	1471000	la cantidad de variables que teníamos originalmente
+1471000	1473000	en el modelo estaban en torno a las 400
+1473000	1475000	entonces
+1475000	1477000	cuando esto está listo y uno le dice bueno
+1477000	1479000	vamos a alguien
+1479000	1481000	el área de desarrollo de rendos
+1481000	1483000	vamos a construir una estación nueva
+1483000	1485000	me puedo decir que volumen va a vender
+1485000	1487000	pero me tenés que dar estas 400 variables
+1487000	1489000	y es medio
+1489000	1491000	poco operativo eso
+1491000	1493000	entonces lo que buscamos es
+1493000	1495000	ver de reducir esas variables
+1495000	1497000	buscarlas las más relevantes
+1497000	1499000	y ver si cuando reentrenábamos el modelo
+1499000	1501000	perdíamos qué capacidad predictiva perdíamos
+1501000	1503000	y la realidad que lo hicimos
+1503000	1505000	y no solamente vimos que no perdíamos capacidad
+1505000	1507000	predictiva sino que
+1507000	1509000	en la versión final
+1509000	1511000	llegábamos a tener mayor capacidad
+1511000	1513000	predictiva que en los modelos originales
+1513000	1515000	y terminamos con
+1517000	1519000	un rango de accuracy
+1519000	1521000	en torno a 0.9
+1525000	1527000	cuando aplicamos esto sobre un caso real
+1527000	1529000	esto hasta ahora vimos en test
+1529000	1531000	le estamos mostrando un caso real que no prosperó
+1531000	1533000	los casos que prosperaron
+1533000	1535000	lamentablemente no los podemos compartir
+1535000	1537000	pero queríamos instalar
+1537000	1539000	una estación de servicio en esta zona
+1539000	1541000	en algún punto
+1541000	1543000	de este círculo de la
+1543000	1545000	de la ciudad de La Plata
+1545000	1547000	corrimos el modelo
+1547000	1549000	nos dio este resultado
+1551000	1553000	este es otro caso particular que no vimos antes
+1553000	1555000	antes vimos probabilidades que estaban
+1555000	1557000	que estaban bien definidas muy alto
+1557000	1559000	hasta cierto valor y caía y era muy bajo
+1559000	1561000	en algunos casos el resultado
+1561000	1563000	aparece como un escalón
+1563000	1565000	cuando aparece como un escalón
+1565000	1567000	para la interpretación de esto vamos al criterio clásico de probabilidades
+1567000	1569000	y nos quedamos con probabilidad muy alta
+1569000	1571000	y es más de 0.85
+1571000	1573000	alta si es de más de 0.75
+1573000	1575000	moderada si es más de la mitad
+1575000	1577000	y baja si es menos de la mitad
+1577000	1579000	en este caso la probabilidad alta daba
+1579000	1581000	200.000 litros
+1581000	1583000	con más de 75%
+1583000	1585000	con ese volumen no resultaba ser
+1585000	1587000	un potencial negocio interesante
+1587000	1589000	y por eso
+1589000	1591000	fue descartado
+1593000	1595000	esto era
+1595000	1597000	lo que teníamos para contarles
+1597000	1599000	para poder mostrar
+1599000	1601000	el caso
+1601000	1603000	desde el problema
+1603000	1605000	a la solución específica
+1605000	1607000	de cómo solucionamos ese problema
+1607000	1609000	o sea, ir no de los datos
+1609000	1611000	sino del problema de negocio
+1611000	1613000	y no sólo mostrar el producto final
+1613000	1615000	que era básicamente el predictor de ventas
+1615000	1617000	sino contar todo el proceso
+1617000	1619000	con el cual había sido construido
+1619000	1621000	y esto es básicamente
+1621000	1623000	mostrar no solamente el edificio
+1623000	1625000	sino todos los andamios
+1625000	1627000	que se movieron las personas
+1627000	1629000	que lo construyeron
+1629000	1631000	Bueno, digo
+1631000	1633000	muchísimas gracias
+1633000	1635000	excelente la presentación
+1635000	1637000	y hay algunas preguntas
+1637000	1639000	En primer lugar
+1639000	1641000	Alejandro nos pregunta
+1641000	1643000	¿Cuánto fue la cantidad
+1643000	1645000	de variables que tuvo el dataset
+1645000	1647000	previo al feature engineering?
+1649000	1651000	¿Tenés una idea?
+1651000	1653000	Sí, debemos haber tenido
+1653000	1655000	en total terminamos con unas 400
+1655000	1657000	y algo y debe haber unas 100 que son de feature
+1657000	1659000	así que damos del orden de 300
+1659000	1661000	300
+1661000	1663000	Y en este relevamiento de campo
+1663000	1665000	también pregunta Alejandro
+1665000	1667000	¿Hubo alguna variable importante
+1667000	1669000	que les haya destacado algo
+1669000	1671000	que les haya sorprendido?
+1671000	1673000	En el relevamiento de campo no
+1673000	1675000	Sí, el relevamiento de campo
+1675000	1677000	son lo que mandamos a relevar
+1677000	1679000	Si nos sorprendieron algunas cosas
+1679000	1681000	cuando apareció la importancia
+1681000	1683000	de variables, lamentablemente
+1683000	1685000	y justamente ese dato no está puesto
+1685000	1687000	es parte del know-how
+1687000	1689000	que quedó del proceso pero sí
+1689000	1691000	¿Hubo algunas variables
+1691000	1693000	que no hubiésemos dicho
+1693000	1695000	que iban a estar y estuvieron?
+1699000	1701000	¿Qué les decía?
+1701000	1703000	¿Esta realmente es importante?
+1703000	1705000	Sí, esa realmente es importante
+1705000	1707000	Siempre pasa
+1707000	1709000	Nunca la capacidad de asombres
+1709000	1711000	es infinita
+1715000	1717000	Si recordás
+1717000	1719000	si nos puedes explicar algo del proceso
+1719000	1721000	de hyperparametrización
+1721000	1723000	¿Cómo lo trabajaron?
+1725000	1727000	Originalmente
+1727000	1729000	esto lo hicimos hace bastante
+1729000	1731000	Empezamos
+1731000	1733000	el primero lo hicimos con una búsqueda
+1733000	1735000	por grid search
+1735000	1737000	y después fuimos directamente ya más
+1737000	1739000	modelos de métodos
+1739000	1741000	No lo hicimos una vez esto
+1741000	1743000	fuimos más a métodos
+1743000	1745000	de random search
+1745000	1747000	dentro del rango de parámetros
+1747000	1749000	que teníamos
+1749000	1751000	estimados para los hyperparámetros
+1753000	1755000	Acá nos dice
+1755000	1757000	también nos preguntan
+1757000	1759000	el mantenimiento posterior
+1759000	1761000	una vez que ya sacaron el modelo
+1763000	1765000	luego de esto
+1765000	1767000	el mantenimiento
+1767000	1769000	el mantenimiento posterior
+1769000	1771000	tiene dos procesos
+1771000	1773000	uno de mantenimiento y uno de enrequisimiento
+1775000	1777000	lo que hacemos es una vez por año
+1777000	1779000	relevamos las estaciones nuevas
+1779000	1781000	o sea
+1781000	1783000	el conjunto original se hizo una vez
+1783000	1785000	y en el medio se van construyendo
+1785000	1787000	estaciones van apareciendo
+1787000	1789000	algunas van cambiando de bandera
+1789000	1791000	algunas tienen alguna obra
+1791000	1793000	una vez por año relevamos los deltas
+1793000	1795000	incorporamos
+1795000	1797000	y si aparece algún elemento
+1797000	1799000	nuevo
+1799000	1801000	dentro del set de datos
+1801000	1803000	también lo incorporamos por ejemplo
+1803000	1805000	este modelo que estuvimos contando
+1805000	1807000	no tiene como datos los reviews
+1807000	1809000	ni las puntuaciones de google maps
+1809000	1811000	a fin de este año
+1811000	1813000	cuando terminemos el relevamiento de las estaciones
+1813000	1815000	que se construyeron en 2022
+1815000	1817000	más lo que pasó en pandemia
+1817000	1819000	que eso todavía no estaba relevado
+1819000	1821000	vamos a agregarle al nuevo set de datos
+1821000	1823000	las puntuaciones promedios
+1823000	1825000	y algún dato más
+1825000	1827000	que saben de google maps
+1827000	1829000	de no solo nuestro sino de todo el resto de las banderas
+1829000	1831000	a ver si
+1831000	1833000	con ese dato mejoramos algún tipo
+1833000	1835000	de surgeador relevante
+1835000	1837000	y mejoramos la predicción
+1837000	1839000	en cuyo caso después tendremos que ver
+1839000	1841000	como lo estimamos
+1841000	1843000	cuando vamos a construir una boca nueva
+1843000	1845000	podemos tener que si por ejemplo
+1845000	1847000	supongamos que
+1847000	1849000	el rating promedio de una estación
+1849000	1851000	como variable relevante
+1851000	1853000	tendríamos que cuando vamos a construir una nueva
+1853000	1855000	darle un rating promedio estimado
+1855000	1857000	y decir mira para que esta estación venda
+1857000	1859000	esto vas a tener que esperar a un nivel de
+1859000	1861000	4, 4.5
+1861000	1863000	4.3 estrellas
+1863000	1865000	perfecto
+1865000	1867000	después siguen diciendo
+1867000	1869000	muy buena la presentación
+1869000	1871000	muy interesante la charla
+1871000	1873000	y si sabes
+1873000	1875000	si en alguna otra industria
+1875000	1877000	están trabajando con algo
+1877000	1879000	en este sentido
+1879000	1881000	bueno
+1881000	1883000	yo les voy a decir lo que es
+1883000	1885000	tradicionalmente
+1885000	1887000	se usaban estos modelos que comenté
+1887000	1889000	básicamente
+1889000	1891000	se usaba un modelo que fue desarrollado
+1891000	1893000	conceptualmente en la década de 1930
+1893000	1895000	que es un modelo gravitacional
+1895000	1897000	que hablaba de
+1897000	1899000	demandas por distancias
+1899000	1901000	que variaban con la inversa del cuadro
+1901000	1903000	de la distancia como si fuera la gravitación
+1903000	1905000	pero con la inversa del cuadro de la distancia
+1905000	1907000	a donde estaba el público consumidor
+1907000	1909000	ese modelo
+1909000	1911000	una empresa
+1911000	1913000	norteamericana
+1913000	1915000	que lo aplica
+1915000	1917000	vende el servicio para
+1917000	1919000	Estados Unidos, para Europa y para América Latina
+1919000	1921000	lo estuvo usando hasta hace
+1921000	1923000	dos o tres años
+1923000	1925000	que empezaron un modelo similar
+1925000	1927000	a este pero cuando lo vimos
+1927000	1929000	la última vez que teníamos contacto con ellos
+1929000	1931000	el modelo de ellos
+1931000	1933000	estaba por así decirlo
+1933000	1935000	es más avanzado que el nuestro
+1935000	1937000	así que la industria entiendo
+1937000	1939000	que está yendo en este sentido
+1939000	1941000	pero el modelo que tenemos
+1941000	1943000	nosotros está bastante en punta
+1943000	1945000	muy bien
+1945000	1947000	y después si evaluaron
+1947000	1949000	hicieron una clase
+1949000	1951000	modelos de clasificación pero si evaluaron
+1951000	1953000	algún modelo de regresión
+1953000	1955000	con intervalos de
+1955000	1957000	confianza
+1957000	1959000	si, lo hicimos
+1959000	1961000	continuo y discreto
+1961000	1963000	funcionó para nosotros mucho mejor el discreto
+1963000	1965000	nos permite tener justamente
+1965000	1967000	esta curva
+1967000	1969000	que resulta
+1969000	1971000	muy interesante porque
+1971000	1973000	claramente se ven donde están
+1973000	1975000	los quiebres grandes y uno dice
+1975000	1977000	por ahí es por donde va a estar el volumen
+1977000	1979000	le vamos a agregar algo más
+1979000	1981000	que este modelo hoy no tiene
+1981000	1983000	que es en lugar de tener una curva
+1983000	1985000	o lo que nuestro próximo
+1985000	1987000	desafío es tener una familia de curvas
+1987000	1989000	porque estimamos que
+1989000	1991000	para cada una de esas barras
+1991000	1993000	la incertidumbre no es la misma
+1993000	1995000	en función de la cantidad de casos que tengo
+1995000	1997000	pero eso
+1997000	1999000	lo contaremos en todo caso en las jornadas del año que viene
+1999000	2001000	lo vamos a empezar a estar aplicando
+2001000	2003000	aplicando a partir de marzo a brinco
+2003000	2005000	y después
+2005000	2007000	dicen cuánto tiempo le llevó
+2007000	2009000	todo este análisis ya me imagino
+2009000	2011000	que bueno todo el proceso estuvo en cinco años
+2011000	2013000	y me lo recuerdo
+2013000	2015000	desde el momento en el que empezamos a tener datos
+2015000	2017000	lo suficientemente granulares
+2017000	2019000	como para empezar a pensar en algo distinto
+2019000	2021000	hasta que tenemos el conjunto
+2021000	2023000	relevado de las 3.800 estaciones
+2023000	2025000	pasan cinco años
+2025000	2027000	después construir todos los modelos
+2027000	2029000	calibrarlos, probar
+2029000	2031000	la predicción, ponerlo en producción
+2031000	2033000	entre 6 y 9 meses
+2035000	2037000	bien y acá siempre
+2037000	2039000	lo que les gusta preguntar es
+2039000	2041000	¿cuáles fueron los problemas más
+2041000	2043000	grandes
+2043000	2045000	que se encontraron dentro del proceso?
+2045000	2047000	el conjunto de datos y dentro de ese
+2047000	2049000	los errores
+2049000	2051000	los errores tanto
+2051000	2053000	en lo que viene de información pública
+2053000	2055000	o sea yo conté algo
+2055000	2057000	a ver, alguno detalle no lo conté
+2057000	2059000	pero los volúmenes que uno usa
+2059000	2061000	son los volúmenes que están públicos
+2061000	2063000	informados por cada una de las estaciones
+2063000	2065000	a la Secretaría de Energía
+2065000	2067000	ese conjunto no viene limpio
+2067000	2069000	ese conjunto viene con un montón de
+2069000	2071000	errores
+2071000	2073000	hay que corregirlo
+2073000	2075000	hay un montón de reglas eurísticas
+2075000	2077000	porque son errores que uno se da cuenta
+2077000	2079000	entonces ella directamente aplica ciertas
+2079000	2081000	reglas como por ejemplo
+2081000	2083000	cargar litros en lugar de metros cúbicos
+2083000	2085000	y hay un montón de reglas estadísticas en términos de
+2085000	2087000	hay errores que se detectan
+2087000	2089000	aplicando series de tiempo diciendo
+2089000	2091000	no, si hubiese sido el valor real
+2091000	2093000	tendría que haber sido este otro
+2093000	2095000	entonces tenemos
+2095000	2097000	todo un conjunto muy grande de reglas
+2097000	2099000	de corrección para tratar
+2099000	2101000	esos volúmenes que están publicados
+2101000	2103000	en Secretaría de Energía
+2103000	2105000	ese es uno, el otro es
+2105000	2107000	cuando uno mira el conjunto de estaciones
+2107000	2109000	también que están en ese
+2109000	2111000	en ese dataset
+2111000	2113000	las estaciones no están bien en términos de
+2113000	2115000	cuál es la marca
+2115000	2117000	nosotros lo llamamos bandera pero cuál es la marca
+2117000	2119000	uno encuentra que dice que es una IPF
+2119000	2121000	pero no es una IPF o dice que es una oil
+2121000	2123000	pero no es una oil o dice que es una gel
+2123000	2125000	pero no es una gel y saber exactamente
+2125000	2127000	qué estación es requiere otro proceso
+2127000	2129000	que implica mantener un dataset actualizado
+2129000	2131000	barriendo información pública
+2131000	2133000	información también de Google Maps
+2133000	2135000	de cuáles son las estaciones y dónde están
+2137000	2139000	otra de las complejidades fue cuando mandamos
+2139000	2141000	a relevar las estaciones de servicio
+2141000	2143000	venía la información y teníamos que buscar la forma
+2143000	2145000	de auditar lo que venía
+2145000	2147000	entonces había también cierto
+2147000	2149000	conjunto de consistencia de reglas
+2149000	2151000	para ver si lo que estaba viendo estaba bien
+2151000	2153000	pero de vuelta
+2153000	2155000	lo más complejo por lejos
+2155000	2157000	es el conjunto de datos
+2157000	2159000	lo suficientemente bueno como para que el modelo
+2159000	2161000	pueda dar esos resultados
+2161000	2163000	bien
+2163000	2165000	y para ahí finalizando
+2165000	2167000	preguntan si
+2167000	2169000	se basan solamente en uno
+2169000	2171000	de los modelos o hacen alguna
+2171000	2173000	algún tipo de ponderación entre los modelos
+2173000	2175000	mencionados
+2175000	2177000	nos basamos básicamente
+2177000	2179000	el mejor resultado
+2179000	2181000	de todos lo obtenemos
+2181000	2183000	lo obtenemos hoy ponderando
+2183000	2185000	C50 con Random Forest
+2185000	2187000	aunque parezca raro
+2187000	2189000	porque no esperaría que fueran Exibus
+2189000	2191000	o que fueran la HBM
+2191000	2193000	que son los algoritmos
+2193000	2195000	más avanzados o incluso Cat Boost
+2195000	2197000	el mejor resultado lo tenemos
+2197000	2199000	haciendo promedios
+2199000	2201000	de
+2201000	2203000	C50 y Random Forest
+2203000	2205000	y haciendo algo
+2205000	2207000	promediando algo que no aclaré
+2207000	2209000	que es esa partición
+2209000	2211000	de mayor y menor
+2211000	2213000	la corremos para un lado y para el otro
+2213000	2215000	no solamente lo que es más de esto
+2215000	2217000	y menos de esto sino la corremos al revés
+2217000	2219000	y promedíamos las dos cosas
+2219000	2221000	bien y por último
+2221000	2223000	si tenés alguna impresión
+2223000	2225000	por qué los modelos
+2225000	2227000	de redes neuronales
+2227000	2229000	no fueron tan buenos
+2229000	2231000	como los que terminaron eligiendo
+2231000	2233000	si sospechar de algo algún norte
+2233000	2235000	puede haber
+2235000	2237000	a ver todavía no tengo una
+2237000	2239000	una noción
+2239000	2241000	del porqué matemático
+2241000	2243000	ahora desde el punto de vista empírico
+2247000	2249000	toda la experiencia de la gente
+2249000	2251000	que ya había trabajado con modelos
+2251000	2253000	con datos estructurados nos decía
+2253000	2255000	los árboles funcionan mejor
+2255000	2257000	las pruebas con otras cosas
+2257000	2259000	nos daba que funcionaban mejor
+2259000	2261000	cuando uno lee
+2261000	2263000	lo que
+2263000	2265000	escriben los campeones
+2265000	2267000	de las competencias de Kaggle
+2267000	2269000	dicen que cuando hay que trabajar
+2269000	2271000	en la que vienen conjuntos datos estructurados
+2271000	2273000	lo que mejor les funcionan son los árboles
+2273000	2275000	entonces de vuelta
+2275000	2277000	no te podría decir por qué desde el punto
+2277000	2279000	de vista matemático desde el punto de vista empírico
+2279000	2281000	para datos estructurados están funcionando
+2281000	2283000	mejor los árboles
+2283000	2285000	quiero creer que es por el tipo de
+2285000	2287000	de estructura de estructura matemática
+2287000	2289000	de la data
+2289000	2291000	más que
+2291000	2293000	más que del algoritmo
+2293000	2295000	y si había otra cosa había algo que si
+2295000	2297000	queríamos por lo cual si hubieran dado
+2297000	2299000	no digo
+2299000	2301000	igual
+2301000	2303000	tendría que haber dado muchísimo mejor
+2303000	2305000	redes neuronales
+2305000	2307000	si hubiesen dado igual también nos hubiésemos quedado con árboles
+2307000	2309000	árboles nos permitía
+2309000	2311000	tener un ranking
+2311000	2313000	estimado de la importancia relativa de variables
+2313000	2315000	incluso cuando usamos
+2315000	2317000	modelos de boosting
+2317000	2319000	el ranking no es perfecto es surge de un promedio
+2319000	2321000	pero nos permite decir
+2321000	2323000	esta variable es mucho más importante
+2323000	2325000	que esta otra
+2325000	2327000	que los modelos de redes neuronales
+2327000	2329000	es imposible
+2329000	2331000	por qué
+2331000	2333000	más allá de
+2333000	2335000	esto tiene otro spin off
+2335000	2337000	más allá de la predicción del volumen
+2337000	2339000	para cuando tenemos que construir una estación que no existe
+2339000	2341000	tener un ranking de variables importantes
+2341000	2343000	nos permite si la variable
+2343000	2345000	es modificable
+2345000	2347000	hay variables que no son modificables por ejemplo
+2347000	2349000	si dentro de esa importancia está la cantidad de metros cuadrados
+2349000	2351000	que tiene una estación
+2351000	2353000	y uno está hablando de una estación de ciudad
+2353000	2355000	que tiene dos mil metros cuadrados
+2355000	2357000	no va a tener más porque seguramente al lado hay un edificio
+2357000	2359000	un negocio
+2359000	2361000	pero si la variable fuera
+2361000	2363000	por ejemplo
+2363000	2365000	tener surtidores de
+2365000	2367000	lo que llamo soft tuples
+2367000	2369000	de cuatro picos por lado o sea de ocho picos
+2369000	2371000	ver sustenar surtidores quadruples que son de dos picos por lado
+2371000	2373000	uno tranquilamente lo que puede hacer es
+2373000	2375000	cambiar los surtidores para mejorar la venta
+2375000	2377000	de volumen
+2377000	2379000	esa es otra de las ventajas que nos daba los modelos de árboles
+2379000	2381000	bien
+2381000	2383000	bueno digo felicitaciones
+2383000	2385000	excelente la presentación
+2385000	2387000	muchísimas gracias
+2387000	2389000	bueno
